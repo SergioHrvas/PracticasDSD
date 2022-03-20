@@ -16,54 +16,6 @@
 #define SIG_PF void(*)(int)
 #endif
 
-static tipo_simple *
-_suma_1 (operacion  *argp, struct svc_req *rqstp)
-{
-	return (suma_1_svc(*argp, rqstp));
-}
-
-static tipo_simple *
-_resta_1 (operacion  *argp, struct svc_req *rqstp)
-{
-	return (resta_1_svc(*argp, rqstp));
-}
-
-static tipo_simple *
-_multiplicacion_1 (operacion  *argp, struct svc_req *rqstp)
-{
-	return (multiplicacion_1_svc(*argp, rqstp));
-}
-
-static tipo_simple *
-_division_1 (operacion  *argp, struct svc_req *rqstp)
-{
-	return (division_1_svc(*argp, rqstp));
-}
-
-static tipo_vector *
-_suma_vectores_1 (vectores  *argp, struct svc_req *rqstp)
-{
-	return (suma_vectores_1_svc(*argp, rqstp));
-}
-
-static tipo_vector *
-_resta_vectores_1 (vectores  *argp, struct svc_req *rqstp)
-{
-	return (resta_vectores_1_svc(*argp, rqstp));
-}
-
-static tipo_vector *
-_multiplicacion_vectores_1 (vectores  *argp, struct svc_req *rqstp)
-{
-	return (multiplicacion_vectores_1_svc(*argp, rqstp));
-}
-
-static tipo_vector *
-_division_vectores_1 (vectores  *argp, struct svc_req *rqstp)
-{
-	return (division_vectores_1_svc(*argp, rqstp));
-}
-
 static void
 dirprog_1(struct svc_req *rqstp, register SVCXPRT *transp)
 {
@@ -89,49 +41,49 @@ dirprog_1(struct svc_req *rqstp, register SVCXPRT *transp)
 	case SUMA:
 		_xdr_argument = (xdrproc_t) xdr_operacion;
 		_xdr_result = (xdrproc_t) xdr_tipo_simple;
-		local = (char *(*)(char *, struct svc_req *)) _suma_1;
+		local = (char *(*)(char *, struct svc_req *)) suma_1_svc;
 		break;
 
 	case RESTA:
 		_xdr_argument = (xdrproc_t) xdr_operacion;
 		_xdr_result = (xdrproc_t) xdr_tipo_simple;
-		local = (char *(*)(char *, struct svc_req *)) _resta_1;
+		local = (char *(*)(char *, struct svc_req *)) resta_1_svc;
 		break;
 
 	case MULTIPLICACION:
 		_xdr_argument = (xdrproc_t) xdr_operacion;
 		_xdr_result = (xdrproc_t) xdr_tipo_simple;
-		local = (char *(*)(char *, struct svc_req *)) _multiplicacion_1;
+		local = (char *(*)(char *, struct svc_req *)) multiplicacion_1_svc;
 		break;
 
 	case DIVISION:
 		_xdr_argument = (xdrproc_t) xdr_operacion;
 		_xdr_result = (xdrproc_t) xdr_tipo_simple;
-		local = (char *(*)(char *, struct svc_req *)) _division_1;
+		local = (char *(*)(char *, struct svc_req *)) division_1_svc;
 		break;
 
 	case SUMA_VECTORES:
 		_xdr_argument = (xdrproc_t) xdr_vectores;
 		_xdr_result = (xdrproc_t) xdr_tipo_vector;
-		local = (char *(*)(char *, struct svc_req *)) _suma_vectores_1;
+		local = (char *(*)(char *, struct svc_req *)) suma_vectores_1_svc;
 		break;
 
 	case RESTA_VECTORES:
 		_xdr_argument = (xdrproc_t) xdr_vectores;
 		_xdr_result = (xdrproc_t) xdr_tipo_vector;
-		local = (char *(*)(char *, struct svc_req *)) _resta_vectores_1;
+		local = (char *(*)(char *, struct svc_req *)) resta_vectores_1_svc;
 		break;
 
 	case MULTIPLICACION_VECTORES:
 		_xdr_argument = (xdrproc_t) xdr_vectores;
 		_xdr_result = (xdrproc_t) xdr_tipo_vector;
-		local = (char *(*)(char *, struct svc_req *)) _multiplicacion_vectores_1;
+		local = (char *(*)(char *, struct svc_req *)) multiplicacion_vectores_1_svc;
 		break;
 
 	case DIVISION_VECTORES:
 		_xdr_argument = (xdrproc_t) xdr_vectores;
 		_xdr_result = (xdrproc_t) xdr_tipo_vector;
-		local = (char *(*)(char *, struct svc_req *)) _division_vectores_1;
+		local = (char *(*)(char *, struct svc_req *)) division_vectores_1_svc;
 		break;
 
 	default:

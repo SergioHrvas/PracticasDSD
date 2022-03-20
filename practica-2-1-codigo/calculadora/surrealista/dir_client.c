@@ -104,40 +104,40 @@ dirprog_1(char *host)
 					printf("--->%f %c %f\n",operando1,operacion,operando2);
 					suma_1_arg1.firstparam = operando1;
 					suma_1_arg1.secondparam = operando2;
-					result_1 = suma_1(suma_1_arg1, clnt);
+					result_1 = suma_1(&suma_1_arg1, clnt);
 					if (result_1 == (tipo_simple *) NULL) {
 						clnt_perror (clnt, "call failed");
 					}
-					resultado = (*result_1).tipo_u.resultado;
+					resultado = (*result_1).tipo_simple_u.resultado;
 				}
 				
 				else if(operacion == '-'){
 					resta_1_arg1.firstparam = operando1;
 					resta_1_arg1.secondparam = operando2;
-					result_2 = resta_1(resta_1_arg1, clnt);
+					result_2 = resta_1(&resta_1_arg1, clnt);
 					if (result_2 == (tipo_simple *) NULL) {
 						clnt_perror (clnt, "call failed");
 					}
-					resultado = (*result_2).tipo_u.resultado;
+					resultado = (*result_2).tipo_simple_u.resultado;
 				}
 				
 				else if(operacion == '*'){
 					multiplicacion_1_arg1.firstparam = operando1;
 					multiplicacion_1_arg1.secondparam = operando2;
-					result_3 = multiplicacion_1(multiplicacion_1_arg1, clnt);
+					result_3 = multiplicacion_1(&multiplicacion_1_arg1, clnt);
 					if (result_3 == (tipo_simple *) NULL) {
 						clnt_perror (clnt, "call failed");
 					}
-					resultado = (*result_3).tipo_u.resultado;
+					resultado = (*result_3).tipo_simple_u.resultado;
 				}
 				else if(operacion == '/'){
 					division_1_arg1.firstparam = operando1;
 					division_1_arg1.secondparam = operando2;
-					result_4 = division_1(division_1_arg1, clnt);
+					result_4 = division_1(&division_1_arg1, clnt);
 					if (result_4 == (tipo_simple *) NULL) {
 						clnt_perror (clnt, "call failed");
 					}
-					resultado = (*result_4).tipo_u.resultado;
+					resultado = (*result_4).tipo_simple_u.resultado;
 				}
 			
 			printf("%f", resultado);
@@ -151,26 +151,27 @@ dirprog_1(char *host)
 			terminado = 0;
 			printf("\n");
 			break;
-
-		case 'v':
-			result_5 = suma_vectores_1(suma_vectores_1_arg1, clnt);
-			if (result_5 == (tipo_vector *) NULL) {
-				clnt_perror (clnt, "call failed");
-			}
-			result_6 = resta_vectores_1(resta_vectores_1_arg1, clnt);
-			if (result_6 == (tipo_vector *) NULL) {
-				clnt_perror (clnt, "call failed");
-			}
-			result_7 = multiplicacion_vectores_1(multiplicacion_vectores_1_arg1, clnt);
-			if (result_7 == (tipo_vector *) NULL) {
-				clnt_perror (clnt, "call failed");
-			}
-			result_8 = division_vectores_1(division_vectores_1_arg1, clnt);
-			if (result_8 == (tipo_vector *) NULL) {
-				clnt_perror (clnt, "call failed");
-			}
-		break;
-	}
+			
+			case 'v':
+				result_5 = suma_vectores_1(&suma_vectores_1_arg1, clnt);
+				if (result_5 == (tipo_vector *) NULL) {
+					clnt_perror (clnt, "call failed");
+				}
+				result_6 = resta_vectores_1(&resta_vectores_1_arg1, clnt);
+				if (result_6 == (tipo_vector *) NULL) {
+					clnt_perror (clnt, "call failed");
+				}
+				result_7 = multiplicacion_vectores_1(&multiplicacion_vectores_1_arg1, clnt);
+				if (result_7 == (tipo_vector *) NULL) {
+					clnt_perror (clnt, "call failed");
+				}
+				result_8 = division_vectores_1(&division_vectores_1_arg1, clnt);
+				if (result_8 == (tipo_vector *) NULL) {
+					clnt_perror (clnt, "call failed");
+				}
+			break;
+		}
+		
 }
 	
 #ifndef	DEBUG

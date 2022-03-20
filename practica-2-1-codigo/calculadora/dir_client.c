@@ -6,160 +6,330 @@
 
 #include "dir.h"
 
-
-void
-dirprog_1(char *host)
+void dirprog_1(char *host)
 {
 	CLIENT *clnt;
-	tipo  *result_1;
+	tipo_simple *result_1;
 	operacion suma_1_arg1;
-	tipo  *result_2;
+	tipo_simple *result_2;
 	operacion resta_1_arg1;
-	tipo  *result_3;
+	tipo_simple *result_3;
 	operacion multiplicacion_1_arg1;
-	tipo  *result_4;
+	tipo_simple *result_4;
 	operacion division_1_arg1;
+	tipo_vector *result_5;
+	vectores suma_vectores_1_arg1;
+	tipo_vector *result_6;
+	vectores resta_vectores_1_arg1;
+	tipo_vector *result_7;
+	vectores multiplicacion_vectores_1_arg1;
+	tipo_vector *result_8;
+	vectores division_vectores_1_arg1;
+	float escalar = 0;
 	char operacion;
 	float operando1, operando2;
 	char opcion;
-	char terminado = 'n';
+	char continuo = 's';
 	int primeravez = 1;
 	float resultado = 0;
 
+	int tam = 2;
 
-#ifndef	DEBUG
-	clnt = clnt_create (host, DIRPROG, DIRVER, "udp");
-	if (clnt == NULL) {
-		clnt_pcreateerror (host);
-		exit (1);
+#ifndef DEBUG
+	clnt = clnt_create(host, DIRPROG, DIRVER, "udp");
+	if (clnt == NULL)
+	{
+		clnt_pcreateerror(host);
+		exit(1);
 	}
-#endif	/* DEBUG */
-	
-	while (opcion != 'q'){
+#endif /* DEBUG */
+
+	while (opcion != 'q')
+	{
 		printf("=======CALCULADORA========\n");
 		printf("Operaciones simples: s\n");
 		printf("Operaciones con polinomios: p\n");
 		printf("Operaciones con vectores: v\n");
 		printf("Operaciones con matrices: m\n");
 		printf("Salir: q\n");
-		scanf("%c",&opcion);
-		while(opcion == ' ' || opcion == '\n'){
-			scanf("%c",&opcion);
-
+		scanf("%c", &opcion);
+		while (opcion == ' ' || opcion == '\n')
+		{
+			scanf("%c", &opcion);
 		}
 
-		while(opcion != 's' && opcion != 'p' && opcion != 'v' && opcion != 'm' && opcion != 'q'){
+		while (opcion != 's' && opcion != 'p' && opcion != 'v' && opcion != 'm' && opcion != 'q')
+		{
 			printf("\nIntroduzca una opción correcta\n");
 			printf("Operaciones simples: s\n");
 			printf("Operaciones con polinomios: p\n");
 			printf("Operaciones con vectores: v\n");
 			printf("Operaciones con matrices: m\n");
 			printf("Salir: q\n");
-			scanf("%c",&opcion);
-			while(opcion==' ' || opcion == '\n'){
-				scanf("%c",&opcion);
+			scanf("%c", &opcion);
+			while (opcion == ' ' || opcion == '\n')
+			{
+				scanf("%c", &opcion);
 			}
-
 		}
-		switch(opcion){
-			case 's':
-				while(terminado != 's'){
-				
-				if(primeravez!=1){
+		switch (opcion)
+		{
+		case 's':
+			while (continuo != 'n')
+			{
+
+				if (primeravez != 1)
+				{
 					operando1 = resultado;
-					printf("%f",operando1);
+					printf("%f", operando1);
 				}
-				
-				if(primeravez){
+
+				if (primeravez)
+				{
 					printf("Introduzca la operacion (ej: '4 + 5'):\n");
-					scanf("%f",&operando1);
-					while((operando1 == '\n' || operando1 == ' ')){
-						scanf("%f",&operando1);
+					scanf("%f", &operando1);
+					while ((operando1 == '\n' || operando1 == ' '))
+					{
+						scanf("%f", &operando1);
 					}
 
-					primeravez=0;
+					primeravez = 0;
 				}
-				
-				scanf("%c",&operacion);
-				while(operacion == '\n'  || operacion == ' '){
-					scanf("%c",&operacion);
+
+				scanf("%c", &operacion);
+				while (operacion == '\n' || operacion == ' ')
+				{
+					scanf("%c", &operacion);
 				}
-				
-				scanf("%f",&operando2);
-				while(operando2 == '\n' || operando2 == ' '){
-					scanf("%f",&operando2);
+
+				scanf("%f", &operando2);
+				while (operando2 == '\n' || operando2 == ' ')
+				{
+					scanf("%f", &operando2);
 				}
-									printf("--->%f %c %f\n",operando1,operacion,operando2);
-				if(operacion == '+'){
-					printf("--->%f %c %f\n",operando1,operacion,operando2);
+
+				printf("--->%f %c %f\n", operando1, operacion, operando2);
+				if (operacion == '+')
+				{
+					printf("--->%f %c %f\n", operando1, operacion, operando2);
 					suma_1_arg1.firstparam = operando1;
 					suma_1_arg1.secondparam = operando2;
 					result_1 = suma_1(suma_1_arg1, clnt);
-					if (result_1 == (tipo *) NULL) {
-						clnt_perror (clnt, "call failed");
+					if (result_1 == (tipo_simple *)NULL)
+					{
+						clnt_perror(clnt, "call failed");
 					}
-					resultado = (*result_1).tipo_u.resultado;
+					resultado = (*result_1).tipo_simple_u.resultado;
 				}
-				
-				else if(operacion == '-'){
+
+				else if (operacion == '-')
+				{
 					resta_1_arg1.firstparam = operando1;
 					resta_1_arg1.secondparam = operando2;
 					result_2 = resta_1(resta_1_arg1, clnt);
-					if (result_2 == (tipo *) NULL) {
-						clnt_perror (clnt, "call failed");
+					if (result_2 == (tipo_simple *)NULL)
+					{
+						clnt_perror(clnt, "call failed");
 					}
-					resultado = (*result_2).tipo_u.resultado;
+					resultado = (*result_2).tipo_simple_u.resultado;
 				}
-				
-				else if(operacion == '*'){
+
+				else if (operacion == '*')
+				{
 					multiplicacion_1_arg1.firstparam = operando1;
 					multiplicacion_1_arg1.secondparam = operando2;
 					result_3 = multiplicacion_1(multiplicacion_1_arg1, clnt);
-					if (result_3 == (tipo *) NULL) {
-						clnt_perror (clnt, "call failed");
+					if (result_3 == (tipo_simple *)NULL)
+					{
+						clnt_perror(clnt, "call failed");
 					}
-					resultado = (*result_3).tipo_u.resultado;
+					resultado = (*result_3).tipo_simple_u.resultado;
 				}
-				else if(operacion == '/'){
+				else if (operacion == '/')
+				{
 					division_1_arg1.firstparam = operando1;
 					division_1_arg1.secondparam = operando2;
 					result_4 = division_1(division_1_arg1, clnt);
-					if (result_4 == (tipo *) NULL) {
-						clnt_perror (clnt, "call failed");
+					if (result_4 == (tipo_simple *)NULL)
+					{
+						clnt_perror(clnt, "call failed");
 					}
-					resultado = (*result_4).tipo_u.resultado;
+					resultado = (*result_4).tipo_simple_u.resultado;
 				}
-			
-			printf("%f", resultado);
-			printf("\n¿Desea terminar?: ('s' para si | 'n' para no)\n");
-			scanf("%c", &terminado);
-			while(terminado != 's' && terminado != 'n'){
-				scanf("%c",&terminado);
-			}
+
+				printf("%f", resultado);
+				printf("\n¿Desea continuar?: ('s' para si | 'n' para no)\n");
+				scanf("%c", &continuo);
+				while (continuo != 's' && continuo != 'n')
+				{
+					scanf("%c", &continuo);
+				}
 			}
 			primeravez = 1;
-			terminado = 0;
+			continuo = 0;
 			printf("\n");
 			break;
+
+		case 'v':
+			printf("Introduzca la operación que desea realizar:\n");
+			printf("> Suma: +\n");
+			printf("> Resta: -\n");
+			printf("> Producto escalar: *\n");
+			printf("> Multiplicación por escalar: m\n");
+			printf("> División por escalar: d\n");
+
+			scanf("%c", &operacion);
+			while ((operacion == '\n' || operacion == ' ') || (operacion != '+') && (operacion != '-') && (operacion != '*') && (operacion != 'm') && (operacion != 'd'))
+			{
+				scanf("%c", &operacion);
+			}
+
+			if(operacion != 'm' || operacion != 'd')
+				printf("Introduzca el tamaño de los vectores\n");
+			else{
+				printf("Introduzca el tamaño del vector");
+			}
+
+			scanf("%d", &tam);
+			while ((tam == '\n' || tam == ' ') || (tam <= 0))
+			{
+				scanf("%d", &tam);
+			}
+			float *vector1 = (float *)malloc(tam);
+
+			if(operacion != 'm' || operacion != 'd')
+				printf("Introduzca los elementos del primer vector:\n");
+			else{
+				printf("Introduzca los elementos del vector:\n");
+			}
+			for (int k = 0; k < tam; k++)
+			{
+				scanf("%f", &vector1[k]);
+				while (vector1[k] == '\n' || vector1[k] == ' ')
+				{
+					scanf("%f", &vector1[k]);
+				}
+			}
+			float *vector2;
+			if(operacion != 'm' || operacion != 'd'){
+
+				vector2 = (float *)malloc(tam);
+
+				printf("Introduzca los elementos del segundo vector:\n");
+				for (int k = 0; k < tam; k++)
+				{
+					scanf("%f", &vector2[k]);
+					while (vector2[k] == '\n' || vector2[k] == ' ')
+					{
+						scanf("%f", &vector2[k]);
+					}
+				}
+				printf("[ ");
+				for (int k = 0; k < tam; k++)
+				{
+					printf("%f ", vector1[k]);
+				}
+				printf("] %c [ ", operacion);
+				for (int k = 0; k < tam; k++)
+				{
+					printf("%f ", vector2[k]);
+				}
+				printf("] = ");
+			}
+			else{
+				printf("Introduzca un número: \n");
+					scanf("%f", &escalar);
+					while (escalar == '\n' || escalar == ' ')
+					{
+						scanf("%f", &escalar);
+					}
+				printf("[ ");
+				for (int k = 0; k < tam; k++)
+				{
+					printf("%f ", vector1[k]);
+				}
+				printf("] ");
+				if(operacion=='m')
+					printf(" * ");
+				else
+					printf(" / ");
+				printf("%f = ", escalar);
+					
+			}
+			switch (operacion)
+			{
+			case '+':
+				suma_vectores_1_arg1.v1.v1_val = vector1;
+				suma_vectores_1_arg1.v2.v2_val = vector2;
+				suma_vectores_1_arg1.v2.v2_len = tam;
+				suma_vectores_1_arg1.v1.v1_len = tam;
+				result_5 = suma_vectores_1(suma_vectores_1_arg1, clnt);
+				if (result_5 == (tipo_vector *)NULL)
+				{
+					clnt_perror(clnt, "call failed");
+				}
+				printf("[ ");
+				for (int k = 0; k < tam; k++)
+				{
+					printf("%f ", (*result_5).tipo_vector_u.resultado.resultado_val[k]);
+				}
+				printf("]");
+				break;
+			case '-':
+				resta_vectores_1_arg1.v1.v1_val = vector1;
+				resta_vectores_1_arg1.v2.v2_val = vector2;
+				resta_vectores_1_arg1.v2.v2_len = tam;
+				resta_vectores_1_arg1.v1.v1_len = tam;
+				result_6 = resta_vectores_1(resta_vectores_1_arg1, clnt);
+				if (result_6 == (tipo_vector *)NULL)
+				{
+					clnt_perror(clnt, "call failed");
+				}
+				printf("[ ");
+				for (int k = 0; k < tam; k++)
+				{
+					printf("%f ", (*result_6).tipo_vector_u.resultado.resultado_val[k]);
+				}
+				printf("]");
+				break;
+			case '*':
+				multiplicacion_vectores_1_arg1.v1.v1_val = vector1;
+				multiplicacion_vectores_1_arg1.v2.v2_val = vector2;
+				multiplicacion_vectores_1_arg1.v2.v2_len = tam;
+				multiplicacion_vectores_1_arg1.v1.v1_len = tam;
+				result_7 = multiplicacion_vectores_1(multiplicacion_vectores_1_arg1, clnt);
+				if (result_7 == (tipo_vector *)NULL)
+				{
+					clnt_perror(clnt, "call failed");
+				}
+				printf("[ ");
+				for (int k = 0; k < tam; k++)
+				{
+					printf("%f ", (*result_7).tipo_vector_u.resultado.resultado_val[k]);
+				}
+				printf("]");
+				break;
+				printf("\n");
+			}
+			break;
 		}
-}
-	
-#ifndef	DEBUG
-	clnt_destroy (clnt);
-#endif	 /* DEBUG */
+	}
+
+#ifndef DEBUG
+	clnt_destroy(clnt);
+#endif /* DEBUG */
 }
 
-
-int
-main (int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	char *host;
 
-	if (argc < 2) {
-		printf ("usage: %s server_host\n", argv[0]);
-		exit (1);
+	if (argc < 2)
+	{
+		printf("usage: %s server_host\n", argv[0]);
+		exit(1);
 	}
 	host = argv[1];
-	dirprog_1 (host);
-exit (0);
+	dirprog_1(host);
+	exit(0);
 }

@@ -10,13 +10,13 @@
 static struct timeval TIMEOUT = { 25, 0 };
 
 tipo_simple *
-suma_1(operacion arg1,  CLIENT *clnt)
+suma_1(operacion *argp, CLIENT *clnt)
 {
 	static tipo_simple clnt_res;
 
 	memset((char *)&clnt_res, 0, sizeof(clnt_res));
 	if (clnt_call (clnt, SUMA,
-		(xdrproc_t) xdr_operacion, (caddr_t) &arg1,
+		(xdrproc_t) xdr_operacion, (caddr_t) argp,
 		(xdrproc_t) xdr_tipo_simple, (caddr_t) &clnt_res,
 		TIMEOUT) != RPC_SUCCESS) {
 		return (NULL);
@@ -25,13 +25,13 @@ suma_1(operacion arg1,  CLIENT *clnt)
 }
 
 tipo_simple *
-resta_1(operacion arg1,  CLIENT *clnt)
+resta_1(operacion *argp, CLIENT *clnt)
 {
 	static tipo_simple clnt_res;
 
 	memset((char *)&clnt_res, 0, sizeof(clnt_res));
 	if (clnt_call (clnt, RESTA,
-		(xdrproc_t) xdr_operacion, (caddr_t) &arg1,
+		(xdrproc_t) xdr_operacion, (caddr_t) argp,
 		(xdrproc_t) xdr_tipo_simple, (caddr_t) &clnt_res,
 		TIMEOUT) != RPC_SUCCESS) {
 		return (NULL);
@@ -40,13 +40,13 @@ resta_1(operacion arg1,  CLIENT *clnt)
 }
 
 tipo_simple *
-multiplicacion_1(operacion arg1,  CLIENT *clnt)
+multiplicacion_1(operacion *argp, CLIENT *clnt)
 {
 	static tipo_simple clnt_res;
 
 	memset((char *)&clnt_res, 0, sizeof(clnt_res));
 	if (clnt_call (clnt, MULTIPLICACION,
-		(xdrproc_t) xdr_operacion, (caddr_t) &arg1,
+		(xdrproc_t) xdr_operacion, (caddr_t) argp,
 		(xdrproc_t) xdr_tipo_simple, (caddr_t) &clnt_res,
 		TIMEOUT) != RPC_SUCCESS) {
 		return (NULL);
@@ -55,13 +55,13 @@ multiplicacion_1(operacion arg1,  CLIENT *clnt)
 }
 
 tipo_simple *
-division_1(operacion arg1,  CLIENT *clnt)
+division_1(operacion *argp, CLIENT *clnt)
 {
 	static tipo_simple clnt_res;
 
 	memset((char *)&clnt_res, 0, sizeof(clnt_res));
 	if (clnt_call (clnt, DIVISION,
-		(xdrproc_t) xdr_operacion, (caddr_t) &arg1,
+		(xdrproc_t) xdr_operacion, (caddr_t) argp,
 		(xdrproc_t) xdr_tipo_simple, (caddr_t) &clnt_res,
 		TIMEOUT) != RPC_SUCCESS) {
 		return (NULL);
@@ -70,13 +70,13 @@ division_1(operacion arg1,  CLIENT *clnt)
 }
 
 tipo_vector *
-suma_vectores_1(vectores arg1,  CLIENT *clnt)
+suma_vectores_1(vectores *argp, CLIENT *clnt)
 {
 	static tipo_vector clnt_res;
 
 	memset((char *)&clnt_res, 0, sizeof(clnt_res));
 	if (clnt_call (clnt, SUMA_VECTORES,
-		(xdrproc_t) xdr_vectores, (caddr_t) &arg1,
+		(xdrproc_t) xdr_vectores, (caddr_t) argp,
 		(xdrproc_t) xdr_tipo_vector, (caddr_t) &clnt_res,
 		TIMEOUT) != RPC_SUCCESS) {
 		return (NULL);
@@ -85,13 +85,13 @@ suma_vectores_1(vectores arg1,  CLIENT *clnt)
 }
 
 tipo_vector *
-resta_vectores_1(vectores arg1,  CLIENT *clnt)
+resta_vectores_1(vectores *argp, CLIENT *clnt)
 {
 	static tipo_vector clnt_res;
 
 	memset((char *)&clnt_res, 0, sizeof(clnt_res));
 	if (clnt_call (clnt, RESTA_VECTORES,
-		(xdrproc_t) xdr_vectores, (caddr_t) &arg1,
+		(xdrproc_t) xdr_vectores, (caddr_t) argp,
 		(xdrproc_t) xdr_tipo_vector, (caddr_t) &clnt_res,
 		TIMEOUT) != RPC_SUCCESS) {
 		return (NULL);
@@ -100,13 +100,13 @@ resta_vectores_1(vectores arg1,  CLIENT *clnt)
 }
 
 tipo_vector *
-multiplicacion_vectores_1(vectores arg1,  CLIENT *clnt)
+multiplicacion_vectores_1(vectores *argp, CLIENT *clnt)
 {
 	static tipo_vector clnt_res;
 
 	memset((char *)&clnt_res, 0, sizeof(clnt_res));
 	if (clnt_call (clnt, MULTIPLICACION_VECTORES,
-		(xdrproc_t) xdr_vectores, (caddr_t) &arg1,
+		(xdrproc_t) xdr_vectores, (caddr_t) argp,
 		(xdrproc_t) xdr_tipo_vector, (caddr_t) &clnt_res,
 		TIMEOUT) != RPC_SUCCESS) {
 		return (NULL);
@@ -115,13 +115,13 @@ multiplicacion_vectores_1(vectores arg1,  CLIENT *clnt)
 }
 
 tipo_vector *
-division_vectores_1(vectores arg1,  CLIENT *clnt)
+division_vectores_1(vectores *argp, CLIENT *clnt)
 {
 	static tipo_vector clnt_res;
 
 	memset((char *)&clnt_res, 0, sizeof(clnt_res));
 	if (clnt_call (clnt, DIVISION_VECTORES,
-		(xdrproc_t) xdr_vectores, (caddr_t) &arg1,
+		(xdrproc_t) xdr_vectores, (caddr_t) argp,
 		(xdrproc_t) xdr_tipo_vector, (caddr_t) &clnt_res,
 		TIMEOUT) != RPC_SUCCESS) {
 		return (NULL);

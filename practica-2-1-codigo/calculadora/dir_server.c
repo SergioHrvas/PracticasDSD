@@ -6,11 +6,11 @@
 
 #include "dir.h"
 
-tipo *
+tipo_simple *
 suma_1_svc(operacion arg1,  struct svc_req *rqstp)
 {
-	static tipo  result;
-	result.tipo_u.resultado = arg1.firstparam + arg1.secondparam;
+	static tipo_simple  result;
+	result.tipo_simple_u.resultado = arg1.firstparam + arg1.secondparam;
 	/*
 	 * insert server code here
 	 */
@@ -18,11 +18,11 @@ suma_1_svc(operacion arg1,  struct svc_req *rqstp)
 	return &result;
 }
 
-tipo *
+tipo_simple *
 resta_1_svc(operacion arg1,  struct svc_req *rqstp)
 {
-	static tipo  result;
-	result.tipo_u.resultado = arg1.firstparam - arg1.secondparam;
+	static tipo_simple  result;
+	result.tipo_simple_u.resultado = arg1.firstparam - arg1.secondparam;
 	/*
 	 * insert server code here
 	 */
@@ -30,11 +30,11 @@ resta_1_svc(operacion arg1,  struct svc_req *rqstp)
 	return &result;
 }
 
-tipo *
+tipo_simple *
 multiplicacion_1_svc(operacion arg1,  struct svc_req *rqstp)
 {
-	static tipo  result;
-	result.tipo_u.resultado = arg1.firstparam * arg1.secondparam;
+	static tipo_simple  result;
+	result.tipo_simple_u.resultado = arg1.firstparam * arg1.secondparam;
 	/*
 	 * insert server code here
 	 */
@@ -42,11 +42,68 @@ multiplicacion_1_svc(operacion arg1,  struct svc_req *rqstp)
 	return &result;
 }
 
-tipo *
+tipo_simple *
 division_1_svc(operacion arg1,  struct svc_req *rqstp)
 {
-	static tipo  result;
-	result.tipo_u.resultado = arg1.firstparam / arg1.secondparam;
+	static tipo_simple  result;
+	result.tipo_simple_u.resultado = arg1.firstparam / arg1.secondparam;
+	/*
+	 * insert server code here
+	 */
+
+	return &result;
+}
+
+tipo_vector *
+suma_vectores_1_svc(vectores arg1,  struct svc_req *rqstp)
+{
+	static tipo_vector  result;
+	result.tipo_vector_u.resultado.resultado_val = (float*) malloc(arg1.v1.v1_len);
+		result.tipo_vector_u.resultado.resultado_len = 0;
+
+	for(int k = 0; k < arg1.v1.v1_len; k++){
+		result.tipo_vector_u.resultado.resultado_val[k] = arg1.v1.v1_val[k] + arg1.v2.v2_val[k];
+		result.tipo_vector_u.resultado.resultado_len++;
+	}
+
+	return &result;
+}
+
+tipo_vector *
+resta_vectores_1_svc(vectores arg1,  struct svc_req *rqstp)
+{
+	static tipo_vector  result;
+	result.tipo_vector_u.resultado.resultado_val = (float*) malloc(arg1.v1.v1_len);
+		result.tipo_vector_u.resultado.resultado_len = 0;
+
+	for(int k = 0; k < arg1.v1.v1_len; k++){
+		result.tipo_vector_u.resultado.resultado_val[k] = arg1.v1.v1_val[k] - arg1.v2.v2_val[k];
+		result.tipo_vector_u.resultado.resultado_len++;
+	}
+
+	return &result;
+}
+
+tipo_vector *
+multiplicacion_vectores_1_svc(vectores arg1,  struct svc_req *rqstp)
+{
+	static tipo_vector  result;
+	result.tipo_vector_u.resultado.resultado_val = (float*) malloc(arg1.v1.v1_len);
+		result.tipo_vector_u.resultado.resultado_len = 0;
+
+	for(int k = 0; k < arg1.v1.v1_len; k++){
+		result.tipo_vector_u.resultado.resultado_val[k] = arg1.v1.v1_val[k] * arg1.v2.v2_val[k];
+		result.tipo_vector_u.resultado.resultado_len++;
+	}
+
+	return &result;
+}
+
+tipo_vector *
+division_vectores_1_svc(vectores arg1,  struct svc_req *rqstp)
+{
+	static tipo_vector  result;
+
 	/*
 	 * insert server code here
 	 */

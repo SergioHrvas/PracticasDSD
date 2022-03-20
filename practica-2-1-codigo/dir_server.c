@@ -6,15 +6,98 @@
 
 #include "dir.h"
 
-int *
-calculadora_1_svc(struct svc_req *rqstp)
+tipo_simple *
+suma_1_svc(operacion arg1,  struct svc_req *rqstp)
 {
-	static int  result;
+	static tipo_simple  result;
+	result.tipo_u.resultado = arg1.firstparam + arg1.secondparam;
+	/*
+	 * insert server code here
+	 */
+
+	return &result;
+}
+
+tipo_simple *
+resta_1_svc(operacion arg1,  struct svc_req *rqstp)
+{
+	static tipo_simple  result;
+	result.tipo_u.resultado = arg1.firstparam - arg1.secondparam;
+	/*
+	 * insert server code here
+	 */
+
+	return &result;
+}
+
+tipo_simple *
+multiplicacion_1_svc(operacion arg1,  struct svc_req *rqstp)
+{
+	static tipo_simple  result;
+	result.tipo_u.resultado = arg1.firstparam * arg1.secondparam;
+	/*
+	 * insert server code here
+	 */
+
+	return &result;
+}
+
+tipo_simple *
+division_1_svc(operacion arg1,  struct svc_req *rqstp)
+{
+	static tipo_simple  result;
+	result.tipo_u.resultado = arg1.firstparam / arg1.secondparam;
+	/*
+	 * insert server code here
+	 */
+
+	return &result;
+}
+
+tipo_vector *
+suma_vectores_1_svc(vectores arg1,  struct svc_req *rqstp)
+{
+	static tipo_vector  result;
 
 	/*
 	 * insert server code here
 	 */
-	 result = 9;
+
+	return &result;
+}
+
+tipo_vector *
+resta_vectores_1_svc(vectores arg1,  struct svc_req *rqstp)
+{
+	static tipo_vector  result;
+
+	/*
+	 * insert server code here
+	 */
+
+	return &result;
+}
+
+tipo_vector *
+multiplicacion_vectores_1_svc(vectores arg1,  struct svc_req *rqstp)
+{
+	static tipo_vector  result;
+
+	/*
+	 * insert server code here
+	 */
+
+	return &result;
+}
+
+tipo_vector *
+division_vectores_1_svc(vectores arg1,  struct svc_req *rqstp)
+{
+	static tipo_vector  result;
+
+	/*
+	 * insert server code here
+	 */
 
 	return &result;
 }

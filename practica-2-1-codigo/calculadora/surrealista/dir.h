@@ -56,29 +56,29 @@ typedef struct tipo_vector tipo_vector;
 
 #if defined(__STDC__) || defined(__cplusplus)
 #define SUMA 1
-extern  tipo_simple * suma_1(operacion , CLIENT *);
-extern  tipo_simple * suma_1_svc(operacion , struct svc_req *);
+extern  tipo_simple * suma_1(operacion *, CLIENT *);
+extern  tipo_simple * suma_1_svc(operacion *, struct svc_req *);
 #define RESTA 2
-extern  tipo_simple * resta_1(operacion , CLIENT *);
-extern  tipo_simple * resta_1_svc(operacion , struct svc_req *);
+extern  tipo_simple * resta_1(operacion *, CLIENT *);
+extern  tipo_simple * resta_1_svc(operacion *, struct svc_req *);
 #define MULTIPLICACION 3
-extern  tipo_simple * multiplicacion_1(operacion , CLIENT *);
-extern  tipo_simple * multiplicacion_1_svc(operacion , struct svc_req *);
+extern  tipo_simple * multiplicacion_1(operacion *, CLIENT *);
+extern  tipo_simple * multiplicacion_1_svc(operacion *, struct svc_req *);
 #define DIVISION 4
-extern  tipo_simple * division_1(operacion , CLIENT *);
-extern  tipo_simple * division_1_svc(operacion , struct svc_req *);
+extern  tipo_simple * division_1(operacion *, CLIENT *);
+extern  tipo_simple * division_1_svc(operacion *, struct svc_req *);
 #define SUMA_VECTORES 5
-extern  tipo_vector * suma_vectores_1(vectores , CLIENT *);
-extern  tipo_vector * suma_vectores_1_svc(vectores , struct svc_req *);
+extern  tipo_vector * suma_vectores_1(vectores *, CLIENT *);
+extern  tipo_vector * suma_vectores_1_svc(vectores *, struct svc_req *);
 #define RESTA_VECTORES 6
-extern  tipo_vector * resta_vectores_1(vectores , CLIENT *);
-extern  tipo_vector * resta_vectores_1_svc(vectores , struct svc_req *);
+extern  tipo_vector * resta_vectores_1(vectores *, CLIENT *);
+extern  tipo_vector * resta_vectores_1_svc(vectores *, struct svc_req *);
 #define MULTIPLICACION_VECTORES 7
-extern  tipo_vector * multiplicacion_vectores_1(vectores , CLIENT *);
-extern  tipo_vector * multiplicacion_vectores_1_svc(vectores , struct svc_req *);
+extern  tipo_vector * multiplicacion_vectores_1(vectores *, CLIENT *);
+extern  tipo_vector * multiplicacion_vectores_1_svc(vectores *, struct svc_req *);
 #define DIVISION_VECTORES 8
-extern  tipo_vector * division_vectores_1(vectores , CLIENT *);
-extern  tipo_vector * division_vectores_1_svc(vectores , struct svc_req *);
+extern  tipo_vector * division_vectores_1(vectores *, CLIENT *);
+extern  tipo_vector * division_vectores_1_svc(vectores *, struct svc_req *);
 extern int dirprog_1_freeresult (SVCXPRT *, xdrproc_t, caddr_t);
 
 #else /* K&R C */
