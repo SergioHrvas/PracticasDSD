@@ -32,6 +32,15 @@ struct vectores {
 };
 typedef struct vectores vectores;
 
+struct vectoryescalar {
+	struct {
+		u_int v_len;
+		float *v_val;
+	} v;
+	float num;
+};
+typedef struct vectoryescalar vectoryescalar;
+
 struct tipo_simple {
 	int errno;
 	union {
@@ -73,12 +82,15 @@ extern  tipo_vector * suma_vectores_1_svc(vectores , struct svc_req *);
 #define RESTA_VECTORES 6
 extern  tipo_vector * resta_vectores_1(vectores , CLIENT *);
 extern  tipo_vector * resta_vectores_1_svc(vectores , struct svc_req *);
-#define MULTIPLICACION_VECTORES 7
-extern  tipo_vector * multiplicacion_vectores_1(vectores , CLIENT *);
-extern  tipo_vector * multiplicacion_vectores_1_svc(vectores , struct svc_req *);
-#define DIVISION_VECTORES 8
-extern  tipo_vector * division_vectores_1(vectores , CLIENT *);
-extern  tipo_vector * division_vectores_1_svc(vectores , struct svc_req *);
+#define PRODUCTO_ESCALAR 7
+extern  tipo_simple * producto_escalar_1(vectores , CLIENT *);
+extern  tipo_simple * producto_escalar_1_svc(vectores , struct svc_req *);
+#define MULTI_VECTOR_ESCALAR 8
+extern  tipo_vector * multi_vector_escalar_1(vectoryescalar , CLIENT *);
+extern  tipo_vector * multi_vector_escalar_1_svc(vectoryescalar , struct svc_req *);
+#define DIVI_VECTOR_ESCALAR 9
+extern  tipo_vector * divi_vector_escalar_1(vectoryescalar , CLIENT *);
+extern  tipo_vector * divi_vector_escalar_1_svc(vectoryescalar , struct svc_req *);
 extern int dirprog_1_freeresult (SVCXPRT *, xdrproc_t, caddr_t);
 
 #else /* K&R C */
@@ -100,12 +112,15 @@ extern  tipo_vector * suma_vectores_1_svc();
 #define RESTA_VECTORES 6
 extern  tipo_vector * resta_vectores_1();
 extern  tipo_vector * resta_vectores_1_svc();
-#define MULTIPLICACION_VECTORES 7
-extern  tipo_vector * multiplicacion_vectores_1();
-extern  tipo_vector * multiplicacion_vectores_1_svc();
-#define DIVISION_VECTORES 8
-extern  tipo_vector * division_vectores_1();
-extern  tipo_vector * division_vectores_1_svc();
+#define PRODUCTO_ESCALAR 7
+extern  tipo_simple * producto_escalar_1();
+extern  tipo_simple * producto_escalar_1_svc();
+#define MULTI_VECTOR_ESCALAR 8
+extern  tipo_vector * multi_vector_escalar_1();
+extern  tipo_vector * multi_vector_escalar_1_svc();
+#define DIVI_VECTOR_ESCALAR 9
+extern  tipo_vector * divi_vector_escalar_1();
+extern  tipo_vector * divi_vector_escalar_1_svc();
 extern int dirprog_1_freeresult ();
 #endif /* K&R C */
 
@@ -114,12 +129,14 @@ extern int dirprog_1_freeresult ();
 #if defined(__STDC__) || defined(__cplusplus)
 extern  bool_t xdr_operacion (XDR *, operacion*);
 extern  bool_t xdr_vectores (XDR *, vectores*);
+extern  bool_t xdr_vectoryescalar (XDR *, vectoryescalar*);
 extern  bool_t xdr_tipo_simple (XDR *, tipo_simple*);
 extern  bool_t xdr_tipo_vector (XDR *, tipo_vector*);
 
 #else /* K&R C */
 extern bool_t xdr_operacion ();
 extern bool_t xdr_vectores ();
+extern bool_t xdr_vectoryescalar ();
 extern bool_t xdr_tipo_simple ();
 extern bool_t xdr_tipo_vector ();
 

@@ -32,6 +32,19 @@ xdr_vectores (XDR *xdrs, vectores *objp)
 }
 
 bool_t
+xdr_vectoryescalar (XDR *xdrs, vectoryescalar *objp)
+{
+	register int32_t *buf;
+
+	 if (!xdr_array (xdrs, (char **)&objp->v.v_val, (u_int *) &objp->v.v_len, ~0,
+		sizeof (float), (xdrproc_t) xdr_float))
+		 return FALSE;
+	 if (!xdr_float (xdrs, &objp->num))
+		 return FALSE;
+	return TRUE;
+}
+
+bool_t
 xdr_tipo_simple (XDR *xdrs, tipo_simple *objp)
 {
 	register int32_t *buf;

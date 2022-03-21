@@ -84,29 +84,53 @@ resta_vectores_1_svc(vectores arg1,  struct svc_req *rqstp)
 	return &result;
 }
 
-tipo_vector *
-multiplicacion_vectores_1_svc(vectores arg1,  struct svc_req *rqstp)
-{
-	static tipo_vector  result;
-	result.tipo_vector_u.resultado.resultado_val = (float*) malloc(arg1.v1.v1_len);
-		result.tipo_vector_u.resultado.resultado_len = 0;
 
+tipo_simple *
+producto_escalar_1_svc(vectores arg1,  struct svc_req *rqstp)
+{
+	static tipo_simple  result;
+	result.tipo_simple_u.resultado;
 	for(int k = 0; k < arg1.v1.v1_len; k++){
-		result.tipo_vector_u.resultado.resultado_val[k] = arg1.v1.v1_val[k] * arg1.v2.v2_val[k];
-		result.tipo_vector_u.resultado.resultado_len++;
+		result.tipo_simple_u.resultado += arg1.v1.v1_val[k] * arg1.v2.v2_val[k];
 	}
-
-	return &result;
-}
-
-tipo_vector *
-division_vectores_1_svc(vectores arg1,  struct svc_req *rqstp)
-{
-	static tipo_vector  result;
 
 	/*
 	 * insert server code here
 	 */
 
+	return &result;
+}
+
+tipo_vector *
+multi_vector_escalar_1_svc(vectoryescalar arg1,  struct svc_req *rqstp)
+{
+	static tipo_vector  result;
+ 	result.tipo_vector_u.resultado.resultado_len = 0;
+	result.tipo_vector_u.resultado.resultado_val = (float*) malloc(arg1.v.v_len);
+
+	/*
+	 * insert server code here
+	 */
+	for(int k = 0; k < arg1.v.v_len; k++){
+		result.tipo_vector_u.resultado.resultado_val[k] = arg1.v.v_val[k] * arg1.num;
+		result.tipo_vector_u.resultado.resultado_len++;
+	}
+	return &result;
+}
+
+tipo_vector *
+divi_vector_escalar_1_svc(vectoryescalar arg1,  struct svc_req *rqstp)
+{
+	static tipo_vector  result;
+ 	result.tipo_vector_u.resultado.resultado_len = 0;
+	result.tipo_vector_u.resultado.resultado_val = (float*) malloc(arg1.v.v_len);
+
+	/*
+	 * insert server code here
+	 */
+	for(int k = 0; k < arg1.v.v_len; k++){
+		result.tipo_vector_u.resultado.resultado_val[k] = arg1.v.v_val[k] / arg1.num;
+		result.tipo_vector_u.resultado.resultado_len++;
+	}
 	return &result;
 }

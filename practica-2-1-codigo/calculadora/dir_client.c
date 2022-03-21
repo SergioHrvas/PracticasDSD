@@ -6,25 +6,29 @@
 
 #include "dir.h"
 
-void dirprog_1(char *host)
+
+void
+dirprog_1(char *host)
 {
 	CLIENT *clnt;
-	tipo_simple *result_1;
+	tipo_simple  *result_1;
 	operacion suma_1_arg1;
-	tipo_simple *result_2;
+	tipo_simple  *result_2;
 	operacion resta_1_arg1;
-	tipo_simple *result_3;
+	tipo_simple  *result_3;
 	operacion multiplicacion_1_arg1;
-	tipo_simple *result_4;
+	tipo_simple  *result_4;
 	operacion division_1_arg1;
-	tipo_vector *result_5;
-	vectores suma_vectores_1_arg1;
-	tipo_vector *result_6;
-	vectores resta_vectores_1_arg1;
-	tipo_vector *result_7;
-	vectores multiplicacion_vectores_1_arg1;
-	tipo_vector *result_8;
-	vectores division_vectores_1_arg1;
+	tipo_vector  *result_5;
+	vectores  suma_vectores_1_arg1;
+	tipo_vector  *result_6;
+	vectores  resta_vectores_1_arg1;
+	tipo_simple  *result_7;
+	vectores  producto_escalar_1_arg1;
+	tipo_vector  *result_8;
+	vectoryescalar  multi_vector_escalar_1_arg1;
+	tipo_vector  *result_9;
+	vectoryescalar  divi_vector_escalar_1_arg1;
 	float escalar = 0;
 	char operacion;
 	float operando1, operando2;
@@ -184,10 +188,10 @@ void dirprog_1(char *host)
 				scanf("%c", &operacion);
 			}
 
-			if(operacion != 'm' || operacion != 'd')
-				printf("Introduzca el tamaño de los vectores\n");
+			if(operacion != 'm' && operacion != 'd')
+				printf("Introduzca el tamaño de los vectores:\n");
 			else{
-				printf("Introduzca el tamaño del vector");
+				printf("Introduzca el tamaño del vector:\n");
 			}
 
 			scanf("%d", &tam);
@@ -197,7 +201,7 @@ void dirprog_1(char *host)
 			}
 			float *vector1 = (float *)malloc(tam);
 
-			if(operacion != 'm' || operacion != 'd')
+			if(operacion != 'm' && operacion != 'd')
 				printf("Introduzca los elementos del primer vector:\n");
 			else{
 				printf("Introduzca los elementos del vector:\n");
@@ -211,7 +215,7 @@ void dirprog_1(char *host)
 				}
 			}
 			float *vector2;
-			if(operacion != 'm' || operacion != 'd'){
+			if(operacion != 'm' && operacion != 'd'){
 
 				vector2 = (float *)malloc(tam);
 
@@ -293,43 +297,76 @@ void dirprog_1(char *host)
 				printf("]");
 				break;
 			case '*':
-				multiplicacion_vectores_1_arg1.v1.v1_val = vector1;
-				multiplicacion_vectores_1_arg1.v2.v2_val = vector2;
-				multiplicacion_vectores_1_arg1.v2.v2_len = tam;
-				multiplicacion_vectores_1_arg1.v1.v1_len = tam;
-				result_7 = multiplicacion_vectores_1(multiplicacion_vectores_1_arg1, clnt);
-				if (result_7 == (tipo_vector *)NULL)
-				{
-					clnt_perror(clnt, "call failed");
+				producto_escalar_1_arg1.v1.v1_val = vector1;
+				producto_escalar_1_arg1.v2.v2_val = vector2;
+				producto_escalar_1_arg1.v2.v2_len = tam;
+				producto_escalar_1_arg1.v1.v1_len = tam;
+				result_7 = producto_escalar_1(producto_escalar_1_arg1, clnt);
+				if (result_7 == (tipo_simple *) NULL) {
+					clnt_perror (clnt, "call failed");
 				}
+
+
+					printf("%f ", (*result_7).tipo_simple_u.resultado);
+				
+				break;
+			case 'm':
+				multi_vector_escalar_1_arg1.v.v_val = vector1;
+				multi_vector_escalar_1_arg1.num = escalar;
+				multi_vector_escalar_1_arg1.v.v_len = tam;
+				result_8 = multi_vector_escalar_1(multi_vector_escalar_1_arg1, clnt);
+				if (result_8 == (tipo_vector *) NULL) {
+					clnt_perror (clnt, "call failed");
+				}
+
 				printf("[ ");
 				for (int k = 0; k < tam; k++)
 				{
-					printf("%f ", (*result_7).tipo_vector_u.resultado.resultado_val[k]);
+					printf("%f ", (*result_8).tipo_vector_u.resultado.resultado_val[k]);
 				}
 				printf("]");
 				break;
-				printf("\n");
+
+			case 'd':
+				divi_vector_escalar_1_arg1.v.v_val = vector1;
+				divi_vector_escalar_1_arg1.num = escalar;
+				divi_vector_escalar_1_arg1.v.v_len = tam;
+				result_9 = divi_vector_escalar_1(divi_vector_escalar_1_arg1, clnt);
+				if (result_9 == (tipo_vector *) NULL) {
+					clnt_perror (clnt, "call failed");
+				}
+
+				printf("[ ");
+				for (int k = 0; k < tam; k++)
+				{
+					printf("%f ", (*result_9).tipo_vector_u.resultado.resultado_val[k]);
+				}
+				printf("]");
+				break;
+
 			}
-			break;
+			printf("\n");
+
+		break;
 		}
 	}
 
-#ifndef DEBUG
-	clnt_destroy(clnt);
-#endif /* DEBUG */
+#ifndef	DEBUG
+	clnt_destroy (clnt);
+#endif	 /* DEBUG */
 }
 
-int main(int argc, char *argv[])
+
+int
+main (int argc, char *argv[])
 {
 	char *host;
 
-	if (argc < 2)
-	{
-		printf("usage: %s server_host\n", argv[0]);
-		exit(1);
+	if (argc < 2) {
+		printf ("usage: %s server_host\n", argv[0]);
+		exit (1);
 	}
 	host = argv[1];
-	dirprog_1(host);
-	exit(0);
+	dirprog_1 (host);
+exit (0);
 }

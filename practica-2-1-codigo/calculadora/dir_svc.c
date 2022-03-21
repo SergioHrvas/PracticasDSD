@@ -52,16 +52,22 @@ _resta_vectores_1 (vectores  *argp, struct svc_req *rqstp)
 	return (resta_vectores_1_svc(*argp, rqstp));
 }
 
-static tipo_vector *
-_multiplicacion_vectores_1 (vectores  *argp, struct svc_req *rqstp)
+static tipo_simple *
+_producto_escalar_1 (vectores  *argp, struct svc_req *rqstp)
 {
-	return (multiplicacion_vectores_1_svc(*argp, rqstp));
+	return (producto_escalar_1_svc(*argp, rqstp));
 }
 
 static tipo_vector *
-_division_vectores_1 (vectores  *argp, struct svc_req *rqstp)
+_multi_vector_escalar_1 (vectoryescalar  *argp, struct svc_req *rqstp)
 {
-	return (division_vectores_1_svc(*argp, rqstp));
+	return (multi_vector_escalar_1_svc(*argp, rqstp));
+}
+
+static tipo_vector *
+_divi_vector_escalar_1 (vectoryescalar  *argp, struct svc_req *rqstp)
+{
+	return (divi_vector_escalar_1_svc(*argp, rqstp));
 }
 
 static void
@@ -74,8 +80,9 @@ dirprog_1(struct svc_req *rqstp, register SVCXPRT *transp)
 		operacion division_1_arg;
 		vectores suma_vectores_1_arg;
 		vectores resta_vectores_1_arg;
-		vectores multiplicacion_vectores_1_arg;
-		vectores division_vectores_1_arg;
+		vectores producto_escalar_1_arg;
+		vectoryescalar multi_vector_escalar_1_arg;
+		vectoryescalar divi_vector_escalar_1_arg;
 	} argument;
 	char *result;
 	xdrproc_t _xdr_argument, _xdr_result;
@@ -122,16 +129,22 @@ dirprog_1(struct svc_req *rqstp, register SVCXPRT *transp)
 		local = (char *(*)(char *, struct svc_req *)) _resta_vectores_1;
 		break;
 
-	case MULTIPLICACION_VECTORES:
+	case PRODUCTO_ESCALAR:
 		_xdr_argument = (xdrproc_t) xdr_vectores;
-		_xdr_result = (xdrproc_t) xdr_tipo_vector;
-		local = (char *(*)(char *, struct svc_req *)) _multiplicacion_vectores_1;
+		_xdr_result = (xdrproc_t) xdr_tipo_simple;
+		local = (char *(*)(char *, struct svc_req *)) _producto_escalar_1;
 		break;
 
-	case DIVISION_VECTORES:
-		_xdr_argument = (xdrproc_t) xdr_vectores;
+	case MULTI_VECTOR_ESCALAR:
+		_xdr_argument = (xdrproc_t) xdr_vectoryescalar;
 		_xdr_result = (xdrproc_t) xdr_tipo_vector;
-		local = (char *(*)(char *, struct svc_req *)) _division_vectores_1;
+		local = (char *(*)(char *, struct svc_req *)) _multi_vector_escalar_1;
+		break;
+
+	case DIVI_VECTOR_ESCALAR:
+		_xdr_argument = (xdrproc_t) xdr_vectoryescalar;
+		_xdr_result = (xdrproc_t) xdr_tipo_vector;
+		local = (char *(*)(char *, struct svc_req *)) _divi_vector_escalar_1;
 		break;
 
 	default:

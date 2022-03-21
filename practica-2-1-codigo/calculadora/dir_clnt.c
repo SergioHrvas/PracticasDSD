@@ -99,14 +99,29 @@ resta_vectores_1(vectores arg1,  CLIENT *clnt)
 	return (&clnt_res);
 }
 
+tipo_simple *
+producto_escalar_1(vectores arg1,  CLIENT *clnt)
+{
+	static tipo_simple clnt_res;
+
+	memset((char *)&clnt_res, 0, sizeof(clnt_res));
+	if (clnt_call (clnt, PRODUCTO_ESCALAR,
+		(xdrproc_t) xdr_vectores, (caddr_t) &arg1,
+		(xdrproc_t) xdr_tipo_simple, (caddr_t) &clnt_res,
+		TIMEOUT) != RPC_SUCCESS) {
+		return (NULL);
+	}
+	return (&clnt_res);
+}
+
 tipo_vector *
-multiplicacion_vectores_1(vectores arg1,  CLIENT *clnt)
+multi_vector_escalar_1(vectoryescalar arg1,  CLIENT *clnt)
 {
 	static tipo_vector clnt_res;
 
 	memset((char *)&clnt_res, 0, sizeof(clnt_res));
-	if (clnt_call (clnt, MULTIPLICACION_VECTORES,
-		(xdrproc_t) xdr_vectores, (caddr_t) &arg1,
+	if (clnt_call (clnt, MULTI_VECTOR_ESCALAR,
+		(xdrproc_t) xdr_vectoryescalar, (caddr_t) &arg1,
 		(xdrproc_t) xdr_tipo_vector, (caddr_t) &clnt_res,
 		TIMEOUT) != RPC_SUCCESS) {
 		return (NULL);
@@ -115,13 +130,13 @@ multiplicacion_vectores_1(vectores arg1,  CLIENT *clnt)
 }
 
 tipo_vector *
-division_vectores_1(vectores arg1,  CLIENT *clnt)
+divi_vector_escalar_1(vectoryescalar arg1,  CLIENT *clnt)
 {
 	static tipo_vector clnt_res;
 
 	memset((char *)&clnt_res, 0, sizeof(clnt_res));
-	if (clnt_call (clnt, DIVISION_VECTORES,
-		(xdrproc_t) xdr_vectores, (caddr_t) &arg1,
+	if (clnt_call (clnt, DIVI_VECTOR_ESCALAR,
+		(xdrproc_t) xdr_vectoryescalar, (caddr_t) &arg1,
 		(xdrproc_t) xdr_tipo_vector, (caddr_t) &clnt_res,
 		TIMEOUT) != RPC_SUCCESS) {
 		return (NULL);

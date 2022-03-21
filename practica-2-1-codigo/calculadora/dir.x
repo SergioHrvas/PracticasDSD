@@ -10,6 +10,10 @@ struct vectores {
 	float v2<>;
 };
  
+ struct vectoryescalar{
+	 float v<>;
+	 float num;
+ };
 /* la siguiente union se utiliza para discriminar entre llamadas con exito y llamadas con errores */
 union tipo_simple switch (int errno) {
 	case 0:
@@ -33,8 +37,9 @@ program DIRPROG {
 		tipo_simple DIVISION(operacion) = 4;
 		tipo_vector SUMA_VECTORES(vectores) = 5;
 		tipo_vector RESTA_VECTORES(vectores) = 6;
-		tipo_vector MULTIPLICACION_VECTORES(vectores) = 7;
-		tipo_vector DIVISION_VECTORES(vectores) = 8;
+		tipo_simple PRODUCTO_ESCALAR(vectores) = 7;
+		tipo_vector MULTI_VECTOR_ESCALAR(vectoryescalar) = 8;
+		tipo_vector DIVI_VECTOR_ESCALAR(vectoryescalar) = 9;
 
 	} =1;
 } = 0x20000155;
