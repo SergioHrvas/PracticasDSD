@@ -45,6 +45,60 @@ xdr_vectoryescalar (XDR *xdrs, vectoryescalar *objp)
 }
 
 bool_t
+xdr_matriz (XDR *xdrs, matriz *objp)
+{
+	register int32_t *buf;
+
+	 if (!xdr_array (xdrs, (char **)&objp->v1.v1_val, (u_int *) &objp->v1.v1_len, ~0,
+		sizeof (float), (xdrproc_t) xdr_float))
+		 return FALSE;
+	 if (!xdr_int (xdrs, &objp->v1_f))
+		 return FALSE;
+	 if (!xdr_int (xdrs, &objp->v1_c))
+		 return FALSE;
+	return TRUE;
+}
+
+bool_t
+xdr_matrices (XDR *xdrs, matrices *objp)
+{
+	register int32_t *buf;
+
+	 if (!xdr_array (xdrs, (char **)&objp->v1.v1_val, (u_int *) &objp->v1.v1_len, ~0,
+		sizeof (float), (xdrproc_t) xdr_float))
+		 return FALSE;
+	 if (!xdr_int (xdrs, &objp->v1_f))
+		 return FALSE;
+	 if (!xdr_int (xdrs, &objp->v1_c))
+		 return FALSE;
+	 if (!xdr_array (xdrs, (char **)&objp->v2.v2_val, (u_int *) &objp->v2.v2_len, ~0,
+		sizeof (float), (xdrproc_t) xdr_float))
+		 return FALSE;
+	 if (!xdr_int (xdrs, &objp->v2_f))
+		 return FALSE;
+	 if (!xdr_int (xdrs, &objp->v2_c))
+		 return FALSE;
+	return TRUE;
+}
+
+bool_t
+xdr_matrizyescalar (XDR *xdrs, matrizyescalar *objp)
+{
+	register int32_t *buf;
+
+	 if (!xdr_array (xdrs, (char **)&objp->v1.v1_val, (u_int *) &objp->v1.v1_len, ~0,
+		sizeof (float), (xdrproc_t) xdr_float))
+		 return FALSE;
+	 if (!xdr_int (xdrs, &objp->v1_f))
+		 return FALSE;
+	 if (!xdr_int (xdrs, &objp->v1_c))
+		 return FALSE;
+	 if (!xdr_float (xdrs, &objp->num))
+		 return FALSE;
+	return TRUE;
+}
+
+bool_t
 xdr_tipo_simple (XDR *xdrs, tipo_simple *objp)
 {
 	register int32_t *buf;
@@ -73,6 +127,24 @@ xdr_tipo_vector (XDR *xdrs, tipo_vector *objp)
 	case 0:
 		 if (!xdr_array (xdrs, (char **)&objp->tipo_vector_u.resultado.resultado_val, (u_int *) &objp->tipo_vector_u.resultado.resultado_len, ~0,
 			sizeof (float), (xdrproc_t) xdr_float))
+			 return FALSE;
+		break;
+	default:
+		break;
+	}
+	return TRUE;
+}
+
+bool_t
+xdr_tipo_matriz (XDR *xdrs, tipo_matriz *objp)
+{
+	register int32_t *buf;
+
+	 if (!xdr_int (xdrs, &objp->errno))
+		 return FALSE;
+	switch (objp->errno) {
+	case 0:
+		 if (!xdr_matriz (xdrs, &objp->tipo_matriz_u.m))
 			 return FALSE;
 		break;
 	default:

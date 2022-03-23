@@ -143,3 +143,93 @@ divi_vector_escalar_1(vectoryescalar arg1,  CLIENT *clnt)
 	}
 	return (&clnt_res);
 }
+
+tipo_matriz *
+suma_matrices_1(matrices arg1,  CLIENT *clnt)
+{
+	static tipo_matriz clnt_res;
+
+	memset((char *)&clnt_res, 0, sizeof(clnt_res));
+	if (clnt_call (clnt, SUMA_MATRICES,
+		(xdrproc_t) xdr_matrices, (caddr_t) &arg1,
+		(xdrproc_t) xdr_tipo_matriz, (caddr_t) &clnt_res,
+		TIMEOUT) != RPC_SUCCESS) {
+		return (NULL);
+	}
+	return (&clnt_res);
+}
+
+tipo_matriz *
+resta_matrices_1(matrices arg1,  CLIENT *clnt)
+{
+	static tipo_matriz clnt_res;
+
+	memset((char *)&clnt_res, 0, sizeof(clnt_res));
+	if (clnt_call (clnt, RESTA_MATRICES,
+		(xdrproc_t) xdr_matrices, (caddr_t) &arg1,
+		(xdrproc_t) xdr_tipo_matriz, (caddr_t) &clnt_res,
+		TIMEOUT) != RPC_SUCCESS) {
+		return (NULL);
+	}
+	return (&clnt_res);
+}
+
+tipo_matriz *
+producto_matrices_1(matrices arg1,  CLIENT *clnt)
+{
+	static tipo_matriz clnt_res;
+
+	memset((char *)&clnt_res, 0, sizeof(clnt_res));
+	if (clnt_call (clnt, PRODUCTO_MATRICES,
+		(xdrproc_t) xdr_matrices, (caddr_t) &arg1,
+		(xdrproc_t) xdr_tipo_matriz, (caddr_t) &clnt_res,
+		TIMEOUT) != RPC_SUCCESS) {
+		return (NULL);
+	}
+	return (&clnt_res);
+}
+
+tipo_simple *
+determinante_1(matriz arg1,  CLIENT *clnt)
+{
+	static tipo_simple clnt_res;
+
+	memset((char *)&clnt_res, 0, sizeof(clnt_res));
+	if (clnt_call (clnt, DETERMINANTE,
+		(xdrproc_t) xdr_matriz, (caddr_t) &arg1,
+		(xdrproc_t) xdr_tipo_simple, (caddr_t) &clnt_res,
+		TIMEOUT) != RPC_SUCCESS) {
+		return (NULL);
+	}
+	return (&clnt_res);
+}
+
+tipo_matriz *
+multi_matriz_escalar_1(matrizyescalar arg1,  CLIENT *clnt)
+{
+	static tipo_matriz clnt_res;
+
+	memset((char *)&clnt_res, 0, sizeof(clnt_res));
+	if (clnt_call (clnt, MULTI_MATRIZ_ESCALAR,
+		(xdrproc_t) xdr_matrizyescalar, (caddr_t) &arg1,
+		(xdrproc_t) xdr_tipo_matriz, (caddr_t) &clnt_res,
+		TIMEOUT) != RPC_SUCCESS) {
+		return (NULL);
+	}
+	return (&clnt_res);
+}
+
+tipo_matriz *
+divi_matriz_escalar_1(matrizyescalar arg1,  CLIENT *clnt)
+{
+	static tipo_matriz clnt_res;
+
+	memset((char *)&clnt_res, 0, sizeof(clnt_res));
+	if (clnt_call (clnt, DIVI_MATRIZ_ESCALAR,
+		(xdrproc_t) xdr_matrizyescalar, (caddr_t) &arg1,
+		(xdrproc_t) xdr_tipo_matriz, (caddr_t) &clnt_res,
+		TIMEOUT) != RPC_SUCCESS) {
+		return (NULL);
+	}
+	return (&clnt_res);
+}

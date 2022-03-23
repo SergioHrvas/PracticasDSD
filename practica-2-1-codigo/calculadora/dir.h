@@ -41,6 +41,43 @@ struct vectoryescalar {
 };
 typedef struct vectoryescalar vectoryescalar;
 
+struct matriz {
+	struct {
+		u_int v1_len;
+		float *v1_val;
+	} v1;
+	int v1_f;
+	int v1_c;
+};
+typedef struct matriz matriz;
+
+struct matrices {
+	struct {
+		u_int v1_len;
+		float *v1_val;
+	} v1;
+	int v1_f;
+	int v1_c;
+	struct {
+		u_int v2_len;
+		float *v2_val;
+	} v2;
+	int v2_f;
+	int v2_c;
+};
+typedef struct matrices matrices;
+
+struct matrizyescalar {
+	struct {
+		u_int v1_len;
+		float *v1_val;
+	} v1;
+	int v1_f;
+	int v1_c;
+	float num;
+};
+typedef struct matrizyescalar matrizyescalar;
+
 struct tipo_simple {
 	int errno;
 	union {
@@ -59,6 +96,14 @@ struct tipo_vector {
 	} tipo_vector_u;
 };
 typedef struct tipo_vector tipo_vector;
+
+struct tipo_matriz {
+	int errno;
+	union {
+		matriz m;
+	} tipo_matriz_u;
+};
+typedef struct tipo_matriz tipo_matriz;
 
 #define DIRPROG 0x20000155
 #define DIRVER 1
@@ -91,6 +136,24 @@ extern  tipo_vector * multi_vector_escalar_1_svc(vectoryescalar , struct svc_req
 #define DIVI_VECTOR_ESCALAR 9
 extern  tipo_vector * divi_vector_escalar_1(vectoryescalar , CLIENT *);
 extern  tipo_vector * divi_vector_escalar_1_svc(vectoryescalar , struct svc_req *);
+#define SUMA_MATRICES 10
+extern  tipo_matriz * suma_matrices_1(matrices , CLIENT *);
+extern  tipo_matriz * suma_matrices_1_svc(matrices , struct svc_req *);
+#define RESTA_MATRICES 11
+extern  tipo_matriz * resta_matrices_1(matrices , CLIENT *);
+extern  tipo_matriz * resta_matrices_1_svc(matrices , struct svc_req *);
+#define PRODUCTO_MATRICES 12
+extern  tipo_matriz * producto_matrices_1(matrices , CLIENT *);
+extern  tipo_matriz * producto_matrices_1_svc(matrices , struct svc_req *);
+#define DETERMINANTE 13
+extern  tipo_simple * determinante_1(matriz , CLIENT *);
+extern  tipo_simple * determinante_1_svc(matriz , struct svc_req *);
+#define MULTI_MATRIZ_ESCALAR 14
+extern  tipo_matriz * multi_matriz_escalar_1(matrizyescalar , CLIENT *);
+extern  tipo_matriz * multi_matriz_escalar_1_svc(matrizyescalar , struct svc_req *);
+#define DIVI_MATRIZ_ESCALAR 15
+extern  tipo_matriz * divi_matriz_escalar_1(matrizyescalar , CLIENT *);
+extern  tipo_matriz * divi_matriz_escalar_1_svc(matrizyescalar , struct svc_req *);
 extern int dirprog_1_freeresult (SVCXPRT *, xdrproc_t, caddr_t);
 
 #else /* K&R C */
@@ -121,6 +184,24 @@ extern  tipo_vector * multi_vector_escalar_1_svc();
 #define DIVI_VECTOR_ESCALAR 9
 extern  tipo_vector * divi_vector_escalar_1();
 extern  tipo_vector * divi_vector_escalar_1_svc();
+#define SUMA_MATRICES 10
+extern  tipo_matriz * suma_matrices_1();
+extern  tipo_matriz * suma_matrices_1_svc();
+#define RESTA_MATRICES 11
+extern  tipo_matriz * resta_matrices_1();
+extern  tipo_matriz * resta_matrices_1_svc();
+#define PRODUCTO_MATRICES 12
+extern  tipo_matriz * producto_matrices_1();
+extern  tipo_matriz * producto_matrices_1_svc();
+#define DETERMINANTE 13
+extern  tipo_simple * determinante_1();
+extern  tipo_simple * determinante_1_svc();
+#define MULTI_MATRIZ_ESCALAR 14
+extern  tipo_matriz * multi_matriz_escalar_1();
+extern  tipo_matriz * multi_matriz_escalar_1_svc();
+#define DIVI_MATRIZ_ESCALAR 15
+extern  tipo_matriz * divi_matriz_escalar_1();
+extern  tipo_matriz * divi_matriz_escalar_1_svc();
 extern int dirprog_1_freeresult ();
 #endif /* K&R C */
 
@@ -130,15 +211,23 @@ extern int dirprog_1_freeresult ();
 extern  bool_t xdr_operacion (XDR *, operacion*);
 extern  bool_t xdr_vectores (XDR *, vectores*);
 extern  bool_t xdr_vectoryescalar (XDR *, vectoryescalar*);
+extern  bool_t xdr_matriz (XDR *, matriz*);
+extern  bool_t xdr_matrices (XDR *, matrices*);
+extern  bool_t xdr_matrizyescalar (XDR *, matrizyescalar*);
 extern  bool_t xdr_tipo_simple (XDR *, tipo_simple*);
 extern  bool_t xdr_tipo_vector (XDR *, tipo_vector*);
+extern  bool_t xdr_tipo_matriz (XDR *, tipo_matriz*);
 
 #else /* K&R C */
 extern bool_t xdr_operacion ();
 extern bool_t xdr_vectores ();
 extern bool_t xdr_vectoryescalar ();
+extern bool_t xdr_matriz ();
+extern bool_t xdr_matrices ();
+extern bool_t xdr_matrizyescalar ();
 extern bool_t xdr_tipo_simple ();
 extern bool_t xdr_tipo_vector ();
+extern bool_t xdr_tipo_matriz ();
 
 #endif /* K&R C */
 

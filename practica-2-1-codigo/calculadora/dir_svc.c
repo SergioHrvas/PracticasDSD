@@ -70,6 +70,42 @@ _divi_vector_escalar_1 (vectoryescalar  *argp, struct svc_req *rqstp)
 	return (divi_vector_escalar_1_svc(*argp, rqstp));
 }
 
+static tipo_matriz *
+_suma_matrices_1 (matrices  *argp, struct svc_req *rqstp)
+{
+	return (suma_matrices_1_svc(*argp, rqstp));
+}
+
+static tipo_matriz *
+_resta_matrices_1 (matrices  *argp, struct svc_req *rqstp)
+{
+	return (resta_matrices_1_svc(*argp, rqstp));
+}
+
+static tipo_matriz *
+_producto_matrices_1 (matrices  *argp, struct svc_req *rqstp)
+{
+	return (producto_matrices_1_svc(*argp, rqstp));
+}
+
+static tipo_simple *
+_determinante_1 (matriz  *argp, struct svc_req *rqstp)
+{
+	return (determinante_1_svc(*argp, rqstp));
+}
+
+static tipo_matriz *
+_multi_matriz_escalar_1 (matrizyescalar  *argp, struct svc_req *rqstp)
+{
+	return (multi_matriz_escalar_1_svc(*argp, rqstp));
+}
+
+static tipo_matriz *
+_divi_matriz_escalar_1 (matrizyescalar  *argp, struct svc_req *rqstp)
+{
+	return (divi_matriz_escalar_1_svc(*argp, rqstp));
+}
+
 static void
 dirprog_1(struct svc_req *rqstp, register SVCXPRT *transp)
 {
@@ -83,6 +119,12 @@ dirprog_1(struct svc_req *rqstp, register SVCXPRT *transp)
 		vectores producto_escalar_1_arg;
 		vectoryescalar multi_vector_escalar_1_arg;
 		vectoryescalar divi_vector_escalar_1_arg;
+		matrices suma_matrices_1_arg;
+		matrices resta_matrices_1_arg;
+		matrices producto_matrices_1_arg;
+		matriz determinante_1_arg;
+		matrizyescalar multi_matriz_escalar_1_arg;
+		matrizyescalar divi_matriz_escalar_1_arg;
 	} argument;
 	char *result;
 	xdrproc_t _xdr_argument, _xdr_result;
@@ -145,6 +187,42 @@ dirprog_1(struct svc_req *rqstp, register SVCXPRT *transp)
 		_xdr_argument = (xdrproc_t) xdr_vectoryescalar;
 		_xdr_result = (xdrproc_t) xdr_tipo_vector;
 		local = (char *(*)(char *, struct svc_req *)) _divi_vector_escalar_1;
+		break;
+
+	case SUMA_MATRICES:
+		_xdr_argument = (xdrproc_t) xdr_matrices;
+		_xdr_result = (xdrproc_t) xdr_tipo_matriz;
+		local = (char *(*)(char *, struct svc_req *)) _suma_matrices_1;
+		break;
+
+	case RESTA_MATRICES:
+		_xdr_argument = (xdrproc_t) xdr_matrices;
+		_xdr_result = (xdrproc_t) xdr_tipo_matriz;
+		local = (char *(*)(char *, struct svc_req *)) _resta_matrices_1;
+		break;
+
+	case PRODUCTO_MATRICES:
+		_xdr_argument = (xdrproc_t) xdr_matrices;
+		_xdr_result = (xdrproc_t) xdr_tipo_matriz;
+		local = (char *(*)(char *, struct svc_req *)) _producto_matrices_1;
+		break;
+
+	case DETERMINANTE:
+		_xdr_argument = (xdrproc_t) xdr_matriz;
+		_xdr_result = (xdrproc_t) xdr_tipo_simple;
+		local = (char *(*)(char *, struct svc_req *)) _determinante_1;
+		break;
+
+	case MULTI_MATRIZ_ESCALAR:
+		_xdr_argument = (xdrproc_t) xdr_matrizyescalar;
+		_xdr_result = (xdrproc_t) xdr_tipo_matriz;
+		local = (char *(*)(char *, struct svc_req *)) _multi_matriz_escalar_1;
+		break;
+
+	case DIVI_MATRIZ_ESCALAR:
+		_xdr_argument = (xdrproc_t) xdr_matrizyescalar;
+		_xdr_result = (xdrproc_t) xdr_tipo_matriz;
+		local = (char *(*)(char *, struct svc_req *)) _divi_matriz_escalar_1;
 		break;
 
 	default:
