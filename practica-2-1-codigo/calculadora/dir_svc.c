@@ -88,12 +88,6 @@ _producto_matrices_1 (matrices  *argp, struct svc_req *rqstp)
 	return (producto_matrices_1_svc(*argp, rqstp));
 }
 
-static tipo_simple *
-_determinante_1 (matriz  *argp, struct svc_req *rqstp)
-{
-	return (determinante_1_svc(*argp, rqstp));
-}
-
 static tipo_matriz *
 _multi_matriz_escalar_1 (matrizyescalar  *argp, struct svc_req *rqstp)
 {
@@ -122,7 +116,6 @@ dirprog_1(struct svc_req *rqstp, register SVCXPRT *transp)
 		matrices suma_matrices_1_arg;
 		matrices resta_matrices_1_arg;
 		matrices producto_matrices_1_arg;
-		matriz determinante_1_arg;
 		matrizyescalar multi_matriz_escalar_1_arg;
 		matrizyescalar divi_matriz_escalar_1_arg;
 	} argument;
@@ -205,12 +198,6 @@ dirprog_1(struct svc_req *rqstp, register SVCXPRT *transp)
 		_xdr_argument = (xdrproc_t) xdr_matrices;
 		_xdr_result = (xdrproc_t) xdr_tipo_matriz;
 		local = (char *(*)(char *, struct svc_req *)) _producto_matrices_1;
-		break;
-
-	case DETERMINANTE:
-		_xdr_argument = (xdrproc_t) xdr_matriz;
-		_xdr_result = (xdrproc_t) xdr_tipo_simple;
-		local = (char *(*)(char *, struct svc_req *)) _determinante_1;
 		break;
 
 	case MULTI_MATRIZ_ESCALAR:

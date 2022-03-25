@@ -145,13 +145,10 @@ extern  tipo_matriz * resta_matrices_1_svc(matrices , struct svc_req *);
 #define PRODUCTO_MATRICES 12
 extern  tipo_matriz * producto_matrices_1(matrices , CLIENT *);
 extern  tipo_matriz * producto_matrices_1_svc(matrices , struct svc_req *);
-#define DETERMINANTE 13
-extern  tipo_simple * determinante_1(matriz , CLIENT *);
-extern  tipo_simple * determinante_1_svc(matriz , struct svc_req *);
-#define MULTI_MATRIZ_ESCALAR 14
+#define MULTI_MATRIZ_ESCALAR 13
 extern  tipo_matriz * multi_matriz_escalar_1(matrizyescalar , CLIENT *);
 extern  tipo_matriz * multi_matriz_escalar_1_svc(matrizyescalar , struct svc_req *);
-#define DIVI_MATRIZ_ESCALAR 15
+#define DIVI_MATRIZ_ESCALAR 14
 extern  tipo_matriz * divi_matriz_escalar_1(matrizyescalar , CLIENT *);
 extern  tipo_matriz * divi_matriz_escalar_1_svc(matrizyescalar , struct svc_req *);
 extern int dirprog_1_freeresult (SVCXPRT *, xdrproc_t, caddr_t);
@@ -193,13 +190,10 @@ extern  tipo_matriz * resta_matrices_1_svc();
 #define PRODUCTO_MATRICES 12
 extern  tipo_matriz * producto_matrices_1();
 extern  tipo_matriz * producto_matrices_1_svc();
-#define DETERMINANTE 13
-extern  tipo_simple * determinante_1();
-extern  tipo_simple * determinante_1_svc();
-#define MULTI_MATRIZ_ESCALAR 14
+#define MULTI_MATRIZ_ESCALAR 13
 extern  tipo_matriz * multi_matriz_escalar_1();
 extern  tipo_matriz * multi_matriz_escalar_1_svc();
-#define DIVI_MATRIZ_ESCALAR 15
+#define DIVI_MATRIZ_ESCALAR 14
 extern  tipo_matriz * divi_matriz_escalar_1();
 extern  tipo_matriz * divi_matriz_escalar_1_svc();
 extern int dirprog_1_freeresult ();

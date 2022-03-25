@@ -35,11 +35,9 @@ dirprog_1(char *host)
 	matrices resta_matrices_1_arg1;
 	tipo_matriz  *result_12;
 	matrices producto_matrices_1_arg1;
-	tipo_simple  *result_13;
-	matriz determinante_1_arg1;
-	tipo_matriz  *result_14;
+	tipo_matriz  *result_13;
 	matrizyescalar multi_matriz_escalar_1_arg1;
-	tipo_matriz  *result_15;
+	tipo_matriz  *result_14;
 	matrizyescalar divi_matriz_escalar_1_arg1;
 	float escalar = 0;
 	char operacion;
@@ -212,7 +210,7 @@ dirprog_1(char *host)
 			{
 				scanf("%d", &tam);
 			}
-			float *vector1 = (float *)malloc(tam);
+			float *vector1 = (float *)malloc(tam*sizeof(float));
 
 			if (operacion != 'm' && operacion != 'd')
 				printf("Introduzca los elementos del primer vector:\n");
@@ -232,7 +230,7 @@ dirprog_1(char *host)
 			if (operacion != 'm' && operacion != 'd')
 			{
 
-				vector2 = (float *)malloc(tam);
+				vector2 = (float *)malloc(tam*sizeof(float));
 
 				printf("Introduzca los elementos del segundo vector:\n");
 				for (int k = 0; k < tam; k++)
@@ -293,6 +291,7 @@ dirprog_1(char *host)
 					printf("%f ", (*result_5).tipo_vector_u.resultado.resultado_val[k]);
 				}
 				printf("]");
+				free(result_5->tipo_vector_u.resultado.resultado_val);
 				break;
 			case '-':
 				resta_vectores_1_arg1.v1.v1_val = vector1;
@@ -310,6 +309,8 @@ dirprog_1(char *host)
 					printf("%f ", (*result_6).tipo_vector_u.resultado.resultado_val[k]);
 				}
 				printf("]");
+				free(result_6->tipo_vector_u.resultado.resultado_val);
+
 				break;
 			case '*':
 				producto_escalar_1_arg1.v1.v1_val = vector1;
@@ -323,7 +324,6 @@ dirprog_1(char *host)
 				}
 
 				printf("%f ", (*result_7).tipo_simple_u.resultado);
-
 				break;
 			case 'm':
 				multi_vector_escalar_1_arg1.v.v_val = vector1;
@@ -341,6 +341,7 @@ dirprog_1(char *host)
 					printf("%f ", (*result_8).tipo_vector_u.resultado.resultado_val[k]);
 				}
 				printf("]");
+				free(result_8->tipo_vector_u.resultado.resultado_val);
 				break;
 
 			case 'd':
@@ -359,10 +360,12 @@ dirprog_1(char *host)
 					printf("%f ", (*result_9).tipo_vector_u.resultado.resultado_val[k]);
 				}
 				printf("]");
+				free(result_9->tipo_vector_u.resultado.resultado_val);
 				break;
 			}
 			printf("\n");
-
+			free(vector1);
+			free(vector2);
 			break;
 
 		case 'm':
@@ -370,12 +373,11 @@ dirprog_1(char *host)
 			printf("> Suma: +\n");
 			printf("> Resta: -\n");
 			printf("> Producto: *\n");
-			printf("> Determinante: t\n");
 			printf("> Matriz por escalar: m\n");
 			printf("> Matriz entre escalar: d\n");
 
 			scanf("%c", &operacion);
-			while ((operacion == '\n' || operacion == ' ') || (operacion != '+') && (operacion != '-') && (operacion != '*') && (operacion != 'd') && (operacion != 'p') && (operacion != '/'))
+			while ((operacion == '\n' || operacion == ' ') || (operacion != '+') && (operacion != '-') && (operacion != '*') && (operacion != 'd') && (operacion != 'm'))
 			{
 				scanf("%c", &operacion);
 			}
@@ -412,8 +414,8 @@ dirprog_1(char *host)
 			{
 				scanf("%d", &tamcolumnas1);
 			}
-			printf("%d %d", tamfilas1,tamcolumnas1);
-			float *matriz1 = (float *)malloc(tamfilas1 * tamcolumnas1);
+			printf("%d %d\n", tamfilas1,tamcolumnas1);
+			float *matriz1 = (float *)malloc(tamfilas1 * tamcolumnas1*sizeof(float));
 			float *matriz2;
 
 			if (operacion == '*')
@@ -434,21 +436,22 @@ dirprog_1(char *host)
 				{
 					scanf("%d", &tamcolumnas2);
 				}
-				matriz2 = (float *)malloc(tamfilas2 * tamcolumnas2);
+				matriz2 = (float *)malloc(tamfilas2 * tamcolumnas2*sizeof(float));
 			}
 			else if (operacion == '+' || operacion == '-')
 			{
 				tamfilas2 = tamfilas1;
 				tamcolumnas2 = tamcolumnas1;
-				matriz2 = (float *)malloc(tamfilas1 * tamcolumnas1);
+				matriz2 = (float *)malloc(tamfilas2 * tamcolumnas2*sizeof(float));
 			}
 
-			if (operacion != 'm' && operacion != 'd' && operacion != 't')
+			if (operacion != 'm' && operacion != 'd')
 				printf("Introduzca los elementos de la primera matriz:\n");
 			else
 			{
 				printf("Introduzca los elementos de la matriz:\n");
 			}
+			printf("(Fila por fila)\n");
 			for (int f = 0; f < tamfilas1; f++)
 			{
 				for (int c = 0; c < tamcolumnas1; c++)
@@ -464,6 +467,7 @@ dirprog_1(char *host)
 			if (operacion == '*' || operacion == '+' || operacion == '-')
 			{
 				printf("Introduzca los elementos de la segunda matriz:\n");
+				printf("(Fila por fila)\n");
 
 				for (int f = 0; f < tamfilas2; f++)
 				{
@@ -518,7 +522,7 @@ dirprog_1(char *host)
 					printf(" * ");
 				else
 					printf(" / ");
-				printf("%f = ", escalar);
+				printf("\n %f = \n", escalar);
 			}
 			switch (operacion)
 			{
@@ -546,6 +550,7 @@ dirprog_1(char *host)
 					}
 					printf("\n");
 				}
+				free(result_10->tipo_matriz_u.m.v1.v1_val);
 				break;
 			case '-':
 				resta_matrices_1_arg1.v1.v1_val = matriz1;
@@ -572,6 +577,7 @@ dirprog_1(char *host)
 					}
 					printf("\n");
 				}
+				free(result_11->tipo_matriz_u.m.v1.v1_val);
 				break;
 			case '*':
 				producto_matrices_1_arg1.v1.v1_val = matriz1;
@@ -598,60 +604,64 @@ dirprog_1(char *host)
 					}
 					printf("\n");
 				}
-			/*case 'm':
-				multi_vector_escalar_1_arg1.v.v_val = vector1;
-				multi_vector_escalar_1_arg1.num = escalar;
-				multi_vector_escalar_1_arg1.v.v_len = tam;
-				result_8 = multi_vector_escalar_1(multi_vector_escalar_1_arg1, clnt);
-				if (result_8 == (tipo_vector *)NULL)
-				{
-					clnt_perror(clnt, "call failed");
+				free(result_12->tipo_matriz_u.m.v1.v1_val);
+				break;
+			case 'm':
+				multi_matriz_escalar_1_arg1.v1.v1_val = matriz1;
+				multi_matriz_escalar_1_arg1.num = escalar;
+				multi_matriz_escalar_1_arg1.v1_c = tamcolumnas1;
+				multi_matriz_escalar_1_arg1.v1_f = tamfilas1;				
+				multi_matriz_escalar_1_arg1.v1.v1_len = multi_matriz_escalar_1_arg1.v1_f * multi_matriz_escalar_1_arg1.v1_c;
+				result_13 = multi_matriz_escalar_1(multi_matriz_escalar_1_arg1, clnt);
+				if (result_13 == (tipo_matriz *) NULL) {
+					clnt_perror (clnt, "call failed");
 				}
 
-				printf("[ ");
-				for (int k = 0; k < tam; k++)
+				for (int f = 0; f < result_13->tipo_matriz_u.m.v1_f; f++)
 				{
-					printf("%f ", (*result_8).tipo_vector_u.resultado.resultado_val[k]);
+					for (int c = 0; c < result_13->tipo_matriz_u.m.v1_c; c++)
+					{
+						printf("%f ", result_13->tipo_matriz_u.m.v1.v1_val[f * result_13->tipo_matriz_u.m.v1_c +c]);
+
+					}
+					printf("\n");
 				}
-				printf("]");
+				free(result_13->tipo_matriz_u.m.v1.v1_val);
 				break;
 
 			case 'd':
-				divi_vector_escalar_1_arg1.v.v_val = vector1;
-				divi_vector_escalar_1_arg1.num = escalar;
-				divi_vector_escalar_1_arg1.v.v_len = tam;
-				result_9 = divi_vector_escalar_1(divi_vector_escalar_1_arg1, clnt);
-				if (result_9 == (tipo_vector *)NULL)
-				{
-					clnt_perror(clnt, "call failed");
+				divi_matriz_escalar_1_arg1.v1.v1_val = matriz1;
+				divi_matriz_escalar_1_arg1.num = escalar;
+				divi_matriz_escalar_1_arg1.v1_c = tamcolumnas1;
+				divi_matriz_escalar_1_arg1.v1_f = tamfilas1;				
+				divi_matriz_escalar_1_arg1.v1.v1_len = divi_matriz_escalar_1_arg1.v1_f * divi_matriz_escalar_1_arg1.v1_c;
+				result_14 = divi_matriz_escalar_1(divi_matriz_escalar_1_arg1, clnt);
+				if (result_14 == (tipo_matriz *) NULL) {
+					clnt_perror (clnt, "call failed");
 				}
 
-				printf("[ ");
-				for (int k = 0; k < tam; k++)
+				for (int f = 0; f < result_14->tipo_matriz_u.m.v1_f; f++)
 				{
-					printf("%f ", (*result_9).tipo_vector_u.resultado.resultado_val[k]);
+					for (int c = 0; c < result_14->tipo_matriz_u.m.v1_c; c++)
+					{
+						printf("%f ", result_14->tipo_matriz_u.m.v1.v1_val[f * result_14->tipo_matriz_u.m.v1_c +c]);
+
+					}
+					printf("\n");
 				}
-				printf("]");
-				break;*/
+				free(result_14->tipo_matriz_u.m.v1.v1_val);
+				break;
 			}
 			printf("\n");
-
+			free(matriz1);
+			free(matriz2);
+			
 			break;
 		}
 	}
-/*
 
-
-	result_13 = determinante_1(determinante_1_arg1, clnt);
-	if (result_13 == (tipo_simple *) NULL) {
-		clnt_perror (clnt, "call failed");
-	}
-	result_14 = multi_matriz_escalar_1(multi_matriz_escalar_1_arg1, clnt);
+	result_14 = divi_matriz_escalar_1(divi_matriz_escalar_1_arg1, clnt);
 	if (result_14 == (tipo_matriz *) NULL) {
-		clnt_perror (clnt, "call failed");
-	}
-	result_15 = divi_matriz_escalar_1(divi_matriz_escalar_1_arg1, clnt);
-	if (result_15 == (tipo_matriz *) NULL) {
 		clnt_perror (clnt, "call failed");
 	}
 #ifndef	DEBUG

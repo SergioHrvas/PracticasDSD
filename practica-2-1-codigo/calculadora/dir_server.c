@@ -52,7 +52,7 @@ tipo_vector *
 suma_vectores_1_svc(vectores arg1,  struct svc_req *rqstp)
 {
 	static tipo_vector  result;
-	result.tipo_vector_u.resultado.resultado_val = (float*) malloc(arg1.v1.v1_len);
+	result.tipo_vector_u.resultado.resultado_val = (float*) malloc(arg1.v1.v1_len*sizeof(float));
 		result.tipo_vector_u.resultado.resultado_len = 0;
 
 	for(int k = 0; k < arg1.v1.v1_len; k++){
@@ -67,7 +67,7 @@ tipo_vector *
 resta_vectores_1_svc(vectores arg1,  struct svc_req *rqstp)
 {
 	static tipo_vector  result;
-	result.tipo_vector_u.resultado.resultado_val = (float*) malloc(arg1.v1.v1_len);
+	result.tipo_vector_u.resultado.resultado_val = (float*) malloc(arg1.v1.v1_len*sizeof(float));
 		result.tipo_vector_u.resultado.resultado_len = 0;
 
 	for(int k = 0; k < arg1.v1.v1_len; k++){
@@ -100,7 +100,7 @@ multi_vector_escalar_1_svc(vectoryescalar arg1,  struct svc_req *rqstp)
 {
 	static tipo_vector  result;
  	result.tipo_vector_u.resultado.resultado_len = 0;
-	result.tipo_vector_u.resultado.resultado_val = (float*) malloc(arg1.v.v_len);
+	result.tipo_vector_u.resultado.resultado_val = (float*) malloc(arg1.v.v_len*sizeof(float));
 
 	/*
 	 * insert server code here
@@ -117,7 +117,7 @@ divi_vector_escalar_1_svc(vectoryescalar arg1,  struct svc_req *rqstp)
 {
 	static tipo_vector  result;
  	result.tipo_vector_u.resultado.resultado_len = 0;
-	result.tipo_vector_u.resultado.resultado_val = (float*) malloc(arg1.v.v_len);
+	result.tipo_vector_u.resultado.resultado_val = (float*) malloc(arg1.v.v_len*sizeof(float));
 
 	/*
 	 * insert server code here
@@ -137,7 +137,7 @@ suma_matrices_1_svc(matrices arg1,  struct svc_req *rqstp)
 	result.tipo_matriz_u.m.v1_c = arg1.v1_c;
 	result.tipo_matriz_u.m.v1_f = arg1.v1_f;
 	result.tipo_matriz_u.m.v1.v1_len = result.tipo_matriz_u.m.v1_c*result.tipo_matriz_u.m.v1_f;
-	result.tipo_matriz_u.m.v1.v1_val = (float*) malloc(result.tipo_matriz_u.m.v1.v1_len);
+	result.tipo_matriz_u.m.v1.v1_val = (float*) malloc(result.tipo_matriz_u.m.v1.v1_len*sizeof(float));
 
 	for(int f = 0; f < result.tipo_matriz_u.m.v1_f; f++){
 		for(int c = 0; c < result.tipo_matriz_u.m.v1_c; c++){
@@ -157,7 +157,7 @@ resta_matrices_1_svc(matrices arg1,  struct svc_req *rqstp)
 	result.tipo_matriz_u.m.v1_c = arg1.v1_c;
 	result.tipo_matriz_u.m.v1_f = arg1.v1_f;
 	result.tipo_matriz_u.m.v1.v1_len = result.tipo_matriz_u.m.v1_c*result.tipo_matriz_u.m.v1_f;
-	result.tipo_matriz_u.m.v1.v1_val = (float*) malloc(result.tipo_matriz_u.m.v1.v1_len);
+	result.tipo_matriz_u.m.v1.v1_val = (float*) malloc(result.tipo_matriz_u.m.v1.v1_len*sizeof(float));
 
 	for(int f = 0; f < result.tipo_matriz_u.m.v1_f; f++){
 		for(int c = 0; c < result.tipo_matriz_u.m.v1_c; c++){
@@ -178,7 +178,7 @@ producto_matrices_1_svc(matrices arg1,  struct svc_req *rqstp)
 	}
 
 		result.tipo_matriz_u.m.v1.v1_len = result.tipo_matriz_u.m.v1_c*result.tipo_matriz_u.m.v1_f;
-		result.tipo_matriz_u.m.v1.v1_val = (float*) malloc(result.tipo_matriz_u.m.v1.v1_len);
+		result.tipo_matriz_u.m.v1.v1_val = (float*) malloc(result.tipo_matriz_u.m.v1.v1_len*sizeof(float));
 		float suma;
 		for(int f = 0; f < arg1.v1_f; f++){
 			for(int c = 0; c < arg1.v2_c; c++){
@@ -196,27 +196,24 @@ producto_matrices_1_svc(matrices arg1,  struct svc_req *rqstp)
 
 	return &result;
 }
-
-tipo_simple *
-determinante_1_svc(matriz arg1,  struct svc_req *rqstp)
-{
-	static tipo_simple  result;
-
-	/*
-	 * insert server code here
-	 */
-
-	return &result;
-}
-
 tipo_matriz *
 multi_matriz_escalar_1_svc(matrizyescalar arg1,  struct svc_req *rqstp)
 {
 	static tipo_matriz  result;
 
-	/*
-	 * insert server code here
-	 */
+	result.tipo_matriz_u.m.v1_c = arg1.v1_c;
+	result.tipo_matriz_u.m.v1_f = arg1.v1_f;
+
+	result.tipo_matriz_u.m.v1.v1_len = result.tipo_matriz_u.m.v1_c * result.tipo_matriz_u.m.v1_f;
+	result.tipo_matriz_u.m.v1.v1_val = (float *)malloc(result.tipo_matriz_u.m.v1.v1_len*sizeof(float));
+
+	for (int f = 0; f < arg1.v1_f; f++)
+	{
+		for (int c = 0; c < arg1.v1_c; c++)
+		{
+			 result.tipo_matriz_u.m.v1.v1_val[f*result.tipo_matriz_u.m.v1_c+c] = arg1.v1.v1_val[f*result.tipo_matriz_u.m.v1_c+c]*arg1.num;
+		}
+	}
 
 	return &result;
 }
@@ -226,9 +223,19 @@ divi_matriz_escalar_1_svc(matrizyescalar arg1,  struct svc_req *rqstp)
 {
 	static tipo_matriz  result;
 
-	/*
-	 * insert server code here
-	 */
+	result.tipo_matriz_u.m.v1_c = arg1.v1_c;
+	result.tipo_matriz_u.m.v1_f = arg1.v1_f;
+
+	result.tipo_matriz_u.m.v1.v1_len = result.tipo_matriz_u.m.v1_c * result.tipo_matriz_u.m.v1_f;
+	result.tipo_matriz_u.m.v1.v1_val = (float *)malloc(result.tipo_matriz_u.m.v1.v1_len*sizeof(float));
+
+	for (int f = 0; f < arg1.v1_f; f++)
+	{
+		for (int c = 0; c < arg1.v1_c; c++)
+		{
+			 result.tipo_matriz_u.m.v1.v1_val[f*result.tipo_matriz_u.m.v1_c+c] = arg1.v1.v1_val[f*result.tipo_matriz_u.m.v1_c+c]/arg1.num;
+		}
+	}
 
 	return &result;
 }

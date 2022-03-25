@@ -74,9 +74,8 @@ program DIRPROG {
 		tipo_matriz SUMA_MATRICES(matrices) = 10;
 		tipo_matriz RESTA_MATRICES(matrices) = 11;
 		tipo_matriz PRODUCTO_MATRICES(matrices) = 12;
-		tipo_simple DETERMINANTE(matriz) = 13;
-		tipo_matriz MULTI_MATRIZ_ESCALAR(matrizyescalar) = 14;
-		tipo_matriz DIVI_MATRIZ_ESCALAR(matrizyescalar) = 15;
+		tipo_matriz MULTI_MATRIZ_ESCALAR(matrizyescalar) = 13;
+		tipo_matriz DIVI_MATRIZ_ESCALAR(matrizyescalar) = 14;
 
 	} =1;
 } = 0x20000155;

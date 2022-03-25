@@ -189,21 +189,6 @@ producto_matrices_1(matrices arg1,  CLIENT *clnt)
 	return (&clnt_res);
 }
 
-tipo_simple *
-determinante_1(matriz arg1,  CLIENT *clnt)
-{
-	static tipo_simple clnt_res;
-
-	memset((char *)&clnt_res, 0, sizeof(clnt_res));
-	if (clnt_call (clnt, DETERMINANTE,
-		(xdrproc_t) xdr_matriz, (caddr_t) &arg1,
-		(xdrproc_t) xdr_tipo_simple, (caddr_t) &clnt_res,
-		TIMEOUT) != RPC_SUCCESS) {
-		return (NULL);
-	}
-	return (&clnt_res);
-}
-
 tipo_matriz *
 multi_matriz_escalar_1(matrizyescalar arg1,  CLIENT *clnt)
 {
