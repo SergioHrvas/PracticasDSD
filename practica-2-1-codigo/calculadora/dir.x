@@ -13,6 +13,7 @@ struct vectores {
  struct vectoryescalar{
 	 float v<>;
 	 float num;
+
  };
 
 
@@ -79,3 +80,5 @@ program DIRPROG {
 
 	} =1;
 } = 0x20000155;
+
+
