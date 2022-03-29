@@ -12,10 +12,21 @@ public int resta(int a, int b){
 	return a-b;
 }
 
-public int suma ( int a , int b ){
+public int suma( int a , int b ){
 	System.out.println("He sumado");
 
 	return a + b ;
+}
 
+public int multiplicacion( int a , int b ){
+	System.out.println("He multiplicado");
+
+	return a * b ;
+}
+
+public int division( int a , int b ){
+	System.out.println("He dividido");
+
+	return a / b ;
 }
 }

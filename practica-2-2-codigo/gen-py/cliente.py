@@ -9,7 +9,7 @@ from thrift.protocol import TBinaryProtocol
 
 def operacionesSimples():
         resultado = 0
-        continuo = 0
+        continuo = 's'
         primeravez = 1
         while (continuo != 'n'):
             if (primeravez != 1):
@@ -28,44 +28,21 @@ def operacionesSimples():
                 resultado = client.suma(operando1, operando2)
             elif (operacion == "-"):
                 resultado = client.resta(operando1, operando2)
+            elif (operacion == "*"):
+                resultado = client.multiplicacion(operando1, operando2)
+            elif (operacion == "/"):
+                resultado = client.division(operando1, operando2)
 
             print(f"{operando1} {operacion} {operando2} = {resultado}")
 
-'''      else if (operacion == '*')
-            {
-                multiplicacion_1_arg1.firstparam = operando1;
-                multiplicacion_1_arg1.secondparam = operando2;
-                result_3 = multiplicacion_1(multiplicacion_1_arg1, clnt);
-                if (result_3 == (tipo_simple *)NULL)
-                {
-                    clnt_perror(clnt, "call failed");
-                }
-                resultado = (*result_3).tipo_simple_u.resultado;
-            }
-            else if (operacion == '/')
-            {
-                division_1_arg1.firstparam = operando1;
-                division_1_arg1.secondparam = operando2;
-                result_4 = division_1(division_1_arg1, clnt);
-                if (result_4 == (tipo_simple *)NULL)
-                {
-                    clnt_perror(clnt, "call failed");
-                }
-                resultado = (*result_4).tipo_simple_u.resultado;
-            }
+            print("\n¿Desea continuar?: ('s' para si | 'n' para no)\n");
+            continuo = input()
+            while(continuo != 's' and continuo != 'n'):
+                print("\n¿Desea continuar?: ('s' para si | 'n' para no)\n");
+                continuo = input()
 
-            printf("%f", resultado);
-            printf("\n¿Desea continuar?: ('s' para si | 'n' para no)\n");
-            scanf("%c", &continuo);
-            while (continuo != 's' && continuo != 'n')
-            {
-                scanf("%c", &continuo);
-            }
 
-        primeravez = 1;
-        continuo = 0;
-        printf("\n");
-        break;'''
+
 
     
 
