@@ -12,13 +12,33 @@ public class Calculadora {
 
     public void ping() throws org.apache.thrift.TException;
 
-    public int suma(int num1, int num2) throws org.apache.thrift.TException;
+    public double suma(double num1, double num2) throws org.apache.thrift.TException;
 
-    public int resta(int num1, int num2) throws org.apache.thrift.TException;
+    public double resta(double num1, double num2) throws org.apache.thrift.TException;
 
-    public int multiplicacion(int num1, int num2) throws org.apache.thrift.TException;
+    public double multiplicacion(double num1, double num2) throws org.apache.thrift.TException;
 
-    public int division(int num1, int num2) throws org.apache.thrift.TException;
+    public double division(double num1, double num2) throws org.apache.thrift.TException;
+
+    public java.util.List<java.lang.Double> suma_vectores(java.util.List<java.lang.Double> vector1, java.util.List<java.lang.Double> vector2) throws org.apache.thrift.TException;
+
+    public java.util.List<java.lang.Double> resta_vectores(java.util.List<java.lang.Double> vector1, java.util.List<java.lang.Double> vector2) throws org.apache.thrift.TException;
+
+    public double producto_escalar(java.util.List<java.lang.Double> vector1, java.util.List<java.lang.Double> vector2) throws org.apache.thrift.TException;
+
+    public java.util.List<java.lang.Double> multi_vector_escalar(java.util.List<java.lang.Double> vector1, double escalar) throws org.apache.thrift.TException;
+
+    public java.util.List<java.lang.Double> division_vector_escalar(java.util.List<java.lang.Double> vector1, double escalar) throws org.apache.thrift.TException;
+
+    public java.util.List<java.util.List<java.lang.Double>> suma_matrices(java.util.List<java.util.List<java.lang.Double>> matriz1, java.util.List<java.util.List<java.lang.Double>> matriz2) throws org.apache.thrift.TException;
+
+    public java.util.List<java.util.List<java.lang.Double>> resta_matrices(java.util.List<java.util.List<java.lang.Double>> matriz1, java.util.List<java.util.List<java.lang.Double>> matriz2) throws org.apache.thrift.TException;
+
+    public java.util.List<java.util.List<java.lang.Double>> producto_matrices(java.util.List<java.util.List<java.lang.Double>> matriz1, java.util.List<java.util.List<java.lang.Double>> matriz2) throws org.apache.thrift.TException;
+
+    public java.util.List<java.util.List<java.lang.Double>> multi_matriz_escalar(java.util.List<java.util.List<java.lang.Double>> matriz1, double escalar) throws org.apache.thrift.TException;
+
+    public java.util.List<java.util.List<java.lang.Double>> division_matriz_escalar(java.util.List<java.util.List<java.lang.Double>> matriz1, double escalar) throws org.apache.thrift.TException;
 
   }
 
@@ -26,13 +46,33 @@ public class Calculadora {
 
     public void ping(org.apache.thrift.async.AsyncMethodCallback<Void> resultHandler) throws org.apache.thrift.TException;
 
-    public void suma(int num1, int num2, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException;
+    public void suma(double num1, double num2, org.apache.thrift.async.AsyncMethodCallback<java.lang.Double> resultHandler) throws org.apache.thrift.TException;
 
-    public void resta(int num1, int num2, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException;
+    public void resta(double num1, double num2, org.apache.thrift.async.AsyncMethodCallback<java.lang.Double> resultHandler) throws org.apache.thrift.TException;
 
-    public void multiplicacion(int num1, int num2, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException;
+    public void multiplicacion(double num1, double num2, org.apache.thrift.async.AsyncMethodCallback<java.lang.Double> resultHandler) throws org.apache.thrift.TException;
 
-    public void division(int num1, int num2, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException;
+    public void division(double num1, double num2, org.apache.thrift.async.AsyncMethodCallback<java.lang.Double> resultHandler) throws org.apache.thrift.TException;
+
+    public void suma_vectores(java.util.List<java.lang.Double> vector1, java.util.List<java.lang.Double> vector2, org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.lang.Double>> resultHandler) throws org.apache.thrift.TException;
+
+    public void resta_vectores(java.util.List<java.lang.Double> vector1, java.util.List<java.lang.Double> vector2, org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.lang.Double>> resultHandler) throws org.apache.thrift.TException;
+
+    public void producto_escalar(java.util.List<java.lang.Double> vector1, java.util.List<java.lang.Double> vector2, org.apache.thrift.async.AsyncMethodCallback<java.lang.Double> resultHandler) throws org.apache.thrift.TException;
+
+    public void multi_vector_escalar(java.util.List<java.lang.Double> vector1, double escalar, org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.lang.Double>> resultHandler) throws org.apache.thrift.TException;
+
+    public void division_vector_escalar(java.util.List<java.lang.Double> vector1, double escalar, org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.lang.Double>> resultHandler) throws org.apache.thrift.TException;
+
+    public void suma_matrices(java.util.List<java.util.List<java.lang.Double>> matriz1, java.util.List<java.util.List<java.lang.Double>> matriz2, org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.util.List<java.lang.Double>>> resultHandler) throws org.apache.thrift.TException;
+
+    public void resta_matrices(java.util.List<java.util.List<java.lang.Double>> matriz1, java.util.List<java.util.List<java.lang.Double>> matriz2, org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.util.List<java.lang.Double>>> resultHandler) throws org.apache.thrift.TException;
+
+    public void producto_matrices(java.util.List<java.util.List<java.lang.Double>> matriz1, java.util.List<java.util.List<java.lang.Double>> matriz2, org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.util.List<java.lang.Double>>> resultHandler) throws org.apache.thrift.TException;
+
+    public void multi_matriz_escalar(java.util.List<java.util.List<java.lang.Double>> matriz1, double escalar, org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.util.List<java.lang.Double>>> resultHandler) throws org.apache.thrift.TException;
+
+    public void division_matriz_escalar(java.util.List<java.util.List<java.lang.Double>> matriz1, double escalar, org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.util.List<java.lang.Double>>> resultHandler) throws org.apache.thrift.TException;
 
   }
 
@@ -75,13 +115,13 @@ public class Calculadora {
       return;
     }
 
-    public int suma(int num1, int num2) throws org.apache.thrift.TException
+    public double suma(double num1, double num2) throws org.apache.thrift.TException
     {
       send_suma(num1, num2);
       return recv_suma();
     }
 
-    public void send_suma(int num1, int num2) throws org.apache.thrift.TException
+    public void send_suma(double num1, double num2) throws org.apache.thrift.TException
     {
       suma_args args = new suma_args();
       args.setNum1(num1);
@@ -89,7 +129,7 @@ public class Calculadora {
       sendBase("suma", args);
     }
 
-    public int recv_suma() throws org.apache.thrift.TException
+    public double recv_suma() throws org.apache.thrift.TException
     {
       suma_result result = new suma_result();
       receiveBase(result, "suma");
@@ -99,13 +139,13 @@ public class Calculadora {
       throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "suma failed: unknown result");
     }
 
-    public int resta(int num1, int num2) throws org.apache.thrift.TException
+    public double resta(double num1, double num2) throws org.apache.thrift.TException
     {
       send_resta(num1, num2);
       return recv_resta();
     }
 
-    public void send_resta(int num1, int num2) throws org.apache.thrift.TException
+    public void send_resta(double num1, double num2) throws org.apache.thrift.TException
     {
       resta_args args = new resta_args();
       args.setNum1(num1);
@@ -113,7 +153,7 @@ public class Calculadora {
       sendBase("resta", args);
     }
 
-    public int recv_resta() throws org.apache.thrift.TException
+    public double recv_resta() throws org.apache.thrift.TException
     {
       resta_result result = new resta_result();
       receiveBase(result, "resta");
@@ -123,13 +163,13 @@ public class Calculadora {
       throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "resta failed: unknown result");
     }
 
-    public int multiplicacion(int num1, int num2) throws org.apache.thrift.TException
+    public double multiplicacion(double num1, double num2) throws org.apache.thrift.TException
     {
       send_multiplicacion(num1, num2);
       return recv_multiplicacion();
     }
 
-    public void send_multiplicacion(int num1, int num2) throws org.apache.thrift.TException
+    public void send_multiplicacion(double num1, double num2) throws org.apache.thrift.TException
     {
       multiplicacion_args args = new multiplicacion_args();
       args.setNum1(num1);
@@ -137,7 +177,7 @@ public class Calculadora {
       sendBase("multiplicacion", args);
     }
 
-    public int recv_multiplicacion() throws org.apache.thrift.TException
+    public double recv_multiplicacion() throws org.apache.thrift.TException
     {
       multiplicacion_result result = new multiplicacion_result();
       receiveBase(result, "multiplicacion");
@@ -147,13 +187,13 @@ public class Calculadora {
       throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "multiplicacion failed: unknown result");
     }
 
-    public int division(int num1, int num2) throws org.apache.thrift.TException
+    public double division(double num1, double num2) throws org.apache.thrift.TException
     {
       send_division(num1, num2);
       return recv_division();
     }
 
-    public void send_division(int num1, int num2) throws org.apache.thrift.TException
+    public void send_division(double num1, double num2) throws org.apache.thrift.TException
     {
       division_args args = new division_args();
       args.setNum1(num1);
@@ -161,7 +201,7 @@ public class Calculadora {
       sendBase("division", args);
     }
 
-    public int recv_division() throws org.apache.thrift.TException
+    public double recv_division() throws org.apache.thrift.TException
     {
       division_result result = new division_result();
       receiveBase(result, "division");
@@ -169,6 +209,246 @@ public class Calculadora {
         return result.success;
       }
       throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "division failed: unknown result");
+    }
+
+    public java.util.List<java.lang.Double> suma_vectores(java.util.List<java.lang.Double> vector1, java.util.List<java.lang.Double> vector2) throws org.apache.thrift.TException
+    {
+      send_suma_vectores(vector1, vector2);
+      return recv_suma_vectores();
+    }
+
+    public void send_suma_vectores(java.util.List<java.lang.Double> vector1, java.util.List<java.lang.Double> vector2) throws org.apache.thrift.TException
+    {
+      suma_vectores_args args = new suma_vectores_args();
+      args.setVector1(vector1);
+      args.setVector2(vector2);
+      sendBase("suma_vectores", args);
+    }
+
+    public java.util.List<java.lang.Double> recv_suma_vectores() throws org.apache.thrift.TException
+    {
+      suma_vectores_result result = new suma_vectores_result();
+      receiveBase(result, "suma_vectores");
+      if (result.isSetSuccess()) {
+        return result.success;
+      }
+      throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "suma_vectores failed: unknown result");
+    }
+
+    public java.util.List<java.lang.Double> resta_vectores(java.util.List<java.lang.Double> vector1, java.util.List<java.lang.Double> vector2) throws org.apache.thrift.TException
+    {
+      send_resta_vectores(vector1, vector2);
+      return recv_resta_vectores();
+    }
+
+    public void send_resta_vectores(java.util.List<java.lang.Double> vector1, java.util.List<java.lang.Double> vector2) throws org.apache.thrift.TException
+    {
+      resta_vectores_args args = new resta_vectores_args();
+      args.setVector1(vector1);
+      args.setVector2(vector2);
+      sendBase("resta_vectores", args);
+    }
+
+    public java.util.List<java.lang.Double> recv_resta_vectores() throws org.apache.thrift.TException
+    {
+      resta_vectores_result result = new resta_vectores_result();
+      receiveBase(result, "resta_vectores");
+      if (result.isSetSuccess()) {
+        return result.success;
+      }
+      throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "resta_vectores failed: unknown result");
+    }
+
+    public double producto_escalar(java.util.List<java.lang.Double> vector1, java.util.List<java.lang.Double> vector2) throws org.apache.thrift.TException
+    {
+      send_producto_escalar(vector1, vector2);
+      return recv_producto_escalar();
+    }
+
+    public void send_producto_escalar(java.util.List<java.lang.Double> vector1, java.util.List<java.lang.Double> vector2) throws org.apache.thrift.TException
+    {
+      producto_escalar_args args = new producto_escalar_args();
+      args.setVector1(vector1);
+      args.setVector2(vector2);
+      sendBase("producto_escalar", args);
+    }
+
+    public double recv_producto_escalar() throws org.apache.thrift.TException
+    {
+      producto_escalar_result result = new producto_escalar_result();
+      receiveBase(result, "producto_escalar");
+      if (result.isSetSuccess()) {
+        return result.success;
+      }
+      throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "producto_escalar failed: unknown result");
+    }
+
+    public java.util.List<java.lang.Double> multi_vector_escalar(java.util.List<java.lang.Double> vector1, double escalar) throws org.apache.thrift.TException
+    {
+      send_multi_vector_escalar(vector1, escalar);
+      return recv_multi_vector_escalar();
+    }
+
+    public void send_multi_vector_escalar(java.util.List<java.lang.Double> vector1, double escalar) throws org.apache.thrift.TException
+    {
+      multi_vector_escalar_args args = new multi_vector_escalar_args();
+      args.setVector1(vector1);
+      args.setEscalar(escalar);
+      sendBase("multi_vector_escalar", args);
+    }
+
+    public java.util.List<java.lang.Double> recv_multi_vector_escalar() throws org.apache.thrift.TException
+    {
+      multi_vector_escalar_result result = new multi_vector_escalar_result();
+      receiveBase(result, "multi_vector_escalar");
+      if (result.isSetSuccess()) {
+        return result.success;
+      }
+      throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "multi_vector_escalar failed: unknown result");
+    }
+
+    public java.util.List<java.lang.Double> division_vector_escalar(java.util.List<java.lang.Double> vector1, double escalar) throws org.apache.thrift.TException
+    {
+      send_division_vector_escalar(vector1, escalar);
+      return recv_division_vector_escalar();
+    }
+
+    public void send_division_vector_escalar(java.util.List<java.lang.Double> vector1, double escalar) throws org.apache.thrift.TException
+    {
+      division_vector_escalar_args args = new division_vector_escalar_args();
+      args.setVector1(vector1);
+      args.setEscalar(escalar);
+      sendBase("division_vector_escalar", args);
+    }
+
+    public java.util.List<java.lang.Double> recv_division_vector_escalar() throws org.apache.thrift.TException
+    {
+      division_vector_escalar_result result = new division_vector_escalar_result();
+      receiveBase(result, "division_vector_escalar");
+      if (result.isSetSuccess()) {
+        return result.success;
+      }
+      throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "division_vector_escalar failed: unknown result");
+    }
+
+    public java.util.List<java.util.List<java.lang.Double>> suma_matrices(java.util.List<java.util.List<java.lang.Double>> matriz1, java.util.List<java.util.List<java.lang.Double>> matriz2) throws org.apache.thrift.TException
+    {
+      send_suma_matrices(matriz1, matriz2);
+      return recv_suma_matrices();
+    }
+
+    public void send_suma_matrices(java.util.List<java.util.List<java.lang.Double>> matriz1, java.util.List<java.util.List<java.lang.Double>> matriz2) throws org.apache.thrift.TException
+    {
+      suma_matrices_args args = new suma_matrices_args();
+      args.setMatriz1(matriz1);
+      args.setMatriz2(matriz2);
+      sendBase("suma_matrices", args);
+    }
+
+    public java.util.List<java.util.List<java.lang.Double>> recv_suma_matrices() throws org.apache.thrift.TException
+    {
+      suma_matrices_result result = new suma_matrices_result();
+      receiveBase(result, "suma_matrices");
+      if (result.isSetSuccess()) {
+        return result.success;
+      }
+      throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "suma_matrices failed: unknown result");
+    }
+
+    public java.util.List<java.util.List<java.lang.Double>> resta_matrices(java.util.List<java.util.List<java.lang.Double>> matriz1, java.util.List<java.util.List<java.lang.Double>> matriz2) throws org.apache.thrift.TException
+    {
+      send_resta_matrices(matriz1, matriz2);
+      return recv_resta_matrices();
+    }
+
+    public void send_resta_matrices(java.util.List<java.util.List<java.lang.Double>> matriz1, java.util.List<java.util.List<java.lang.Double>> matriz2) throws org.apache.thrift.TException
+    {
+      resta_matrices_args args = new resta_matrices_args();
+      args.setMatriz1(matriz1);
+      args.setMatriz2(matriz2);
+      sendBase("resta_matrices", args);
+    }
+
+    public java.util.List<java.util.List<java.lang.Double>> recv_resta_matrices() throws org.apache.thrift.TException
+    {
+      resta_matrices_result result = new resta_matrices_result();
+      receiveBase(result, "resta_matrices");
+      if (result.isSetSuccess()) {
+        return result.success;
+      }
+      throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "resta_matrices failed: unknown result");
+    }
+
+    public java.util.List<java.util.List<java.lang.Double>> producto_matrices(java.util.List<java.util.List<java.lang.Double>> matriz1, java.util.List<java.util.List<java.lang.Double>> matriz2) throws org.apache.thrift.TException
+    {
+      send_producto_matrices(matriz1, matriz2);
+      return recv_producto_matrices();
+    }
+
+    public void send_producto_matrices(java.util.List<java.util.List<java.lang.Double>> matriz1, java.util.List<java.util.List<java.lang.Double>> matriz2) throws org.apache.thrift.TException
+    {
+      producto_matrices_args args = new producto_matrices_args();
+      args.setMatriz1(matriz1);
+      args.setMatriz2(matriz2);
+      sendBase("producto_matrices", args);
+    }
+
+    public java.util.List<java.util.List<java.lang.Double>> recv_producto_matrices() throws org.apache.thrift.TException
+    {
+      producto_matrices_result result = new producto_matrices_result();
+      receiveBase(result, "producto_matrices");
+      if (result.isSetSuccess()) {
+        return result.success;
+      }
+      throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "producto_matrices failed: unknown result");
+    }
+
+    public java.util.List<java.util.List<java.lang.Double>> multi_matriz_escalar(java.util.List<java.util.List<java.lang.Double>> matriz1, double escalar) throws org.apache.thrift.TException
+    {
+      send_multi_matriz_escalar(matriz1, escalar);
+      return recv_multi_matriz_escalar();
+    }
+
+    public void send_multi_matriz_escalar(java.util.List<java.util.List<java.lang.Double>> matriz1, double escalar) throws org.apache.thrift.TException
+    {
+      multi_matriz_escalar_args args = new multi_matriz_escalar_args();
+      args.setMatriz1(matriz1);
+      args.setEscalar(escalar);
+      sendBase("multi_matriz_escalar", args);
+    }
+
+    public java.util.List<java.util.List<java.lang.Double>> recv_multi_matriz_escalar() throws org.apache.thrift.TException
+    {
+      multi_matriz_escalar_result result = new multi_matriz_escalar_result();
+      receiveBase(result, "multi_matriz_escalar");
+      if (result.isSetSuccess()) {
+        return result.success;
+      }
+      throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "multi_matriz_escalar failed: unknown result");
+    }
+
+    public java.util.List<java.util.List<java.lang.Double>> division_matriz_escalar(java.util.List<java.util.List<java.lang.Double>> matriz1, double escalar) throws org.apache.thrift.TException
+    {
+      send_division_matriz_escalar(matriz1, escalar);
+      return recv_division_matriz_escalar();
+    }
+
+    public void send_division_matriz_escalar(java.util.List<java.util.List<java.lang.Double>> matriz1, double escalar) throws org.apache.thrift.TException
+    {
+      division_matriz_escalar_args args = new division_matriz_escalar_args();
+      args.setMatriz1(matriz1);
+      args.setEscalar(escalar);
+      sendBase("division_matriz_escalar", args);
+    }
+
+    public java.util.List<java.util.List<java.lang.Double>> recv_division_matriz_escalar() throws org.apache.thrift.TException
+    {
+      division_matriz_escalar_result result = new division_matriz_escalar_result();
+      receiveBase(result, "division_matriz_escalar");
+      if (result.isSetSuccess()) {
+        return result.success;
+      }
+      throw new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.MISSING_RESULT, "division_matriz_escalar failed: unknown result");
     }
 
   }
@@ -218,17 +498,17 @@ public class Calculadora {
       }
     }
 
-    public void suma(int num1, int num2, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
+    public void suma(double num1, double num2, org.apache.thrift.async.AsyncMethodCallback<java.lang.Double> resultHandler) throws org.apache.thrift.TException {
       checkReady();
       suma_call method_call = new suma_call(num1, num2, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
       ___manager.call(method_call);
     }
 
-    public static class suma_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.Integer> {
-      private int num1;
-      private int num2;
-      public suma_call(int num1, int num2, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+    public static class suma_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.Double> {
+      private double num1;
+      private double num2;
+      public suma_call(double num1, double num2, org.apache.thrift.async.AsyncMethodCallback<java.lang.Double> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.num1 = num1;
         this.num2 = num2;
@@ -243,7 +523,7 @@ public class Calculadora {
         prot.writeMessageEnd();
       }
 
-      public java.lang.Integer getResult() throws org.apache.thrift.TException {
+      public java.lang.Double getResult() throws org.apache.thrift.TException {
         if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
           throw new java.lang.IllegalStateException("Method call not finished!");
         }
@@ -253,17 +533,17 @@ public class Calculadora {
       }
     }
 
-    public void resta(int num1, int num2, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
+    public void resta(double num1, double num2, org.apache.thrift.async.AsyncMethodCallback<java.lang.Double> resultHandler) throws org.apache.thrift.TException {
       checkReady();
       resta_call method_call = new resta_call(num1, num2, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
       ___manager.call(method_call);
     }
 
-    public static class resta_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.Integer> {
-      private int num1;
-      private int num2;
-      public resta_call(int num1, int num2, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+    public static class resta_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.Double> {
+      private double num1;
+      private double num2;
+      public resta_call(double num1, double num2, org.apache.thrift.async.AsyncMethodCallback<java.lang.Double> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.num1 = num1;
         this.num2 = num2;
@@ -278,7 +558,7 @@ public class Calculadora {
         prot.writeMessageEnd();
       }
 
-      public java.lang.Integer getResult() throws org.apache.thrift.TException {
+      public java.lang.Double getResult() throws org.apache.thrift.TException {
         if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
           throw new java.lang.IllegalStateException("Method call not finished!");
         }
@@ -288,17 +568,17 @@ public class Calculadora {
       }
     }
 
-    public void multiplicacion(int num1, int num2, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
+    public void multiplicacion(double num1, double num2, org.apache.thrift.async.AsyncMethodCallback<java.lang.Double> resultHandler) throws org.apache.thrift.TException {
       checkReady();
       multiplicacion_call method_call = new multiplicacion_call(num1, num2, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
       ___manager.call(method_call);
     }
 
-    public static class multiplicacion_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.Integer> {
-      private int num1;
-      private int num2;
-      public multiplicacion_call(int num1, int num2, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+    public static class multiplicacion_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.Double> {
+      private double num1;
+      private double num2;
+      public multiplicacion_call(double num1, double num2, org.apache.thrift.async.AsyncMethodCallback<java.lang.Double> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.num1 = num1;
         this.num2 = num2;
@@ -313,7 +593,7 @@ public class Calculadora {
         prot.writeMessageEnd();
       }
 
-      public java.lang.Integer getResult() throws org.apache.thrift.TException {
+      public java.lang.Double getResult() throws org.apache.thrift.TException {
         if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
           throw new java.lang.IllegalStateException("Method call not finished!");
         }
@@ -323,17 +603,17 @@ public class Calculadora {
       }
     }
 
-    public void division(int num1, int num2, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
+    public void division(double num1, double num2, org.apache.thrift.async.AsyncMethodCallback<java.lang.Double> resultHandler) throws org.apache.thrift.TException {
       checkReady();
       division_call method_call = new division_call(num1, num2, resultHandler, this, ___protocolFactory, ___transport);
       this.___currentMethod = method_call;
       ___manager.call(method_call);
     }
 
-    public static class division_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.Integer> {
-      private int num1;
-      private int num2;
-      public division_call(int num1, int num2, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+    public static class division_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.Double> {
+      private double num1;
+      private double num2;
+      public division_call(double num1, double num2, org.apache.thrift.async.AsyncMethodCallback<java.lang.Double> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
         super(client, protocolFactory, transport, resultHandler, false);
         this.num1 = num1;
         this.num2 = num2;
@@ -348,13 +628,363 @@ public class Calculadora {
         prot.writeMessageEnd();
       }
 
-      public java.lang.Integer getResult() throws org.apache.thrift.TException {
+      public java.lang.Double getResult() throws org.apache.thrift.TException {
         if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
           throw new java.lang.IllegalStateException("Method call not finished!");
         }
         org.apache.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
         org.apache.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
         return (new Client(prot)).recv_division();
+      }
+    }
+
+    public void suma_vectores(java.util.List<java.lang.Double> vector1, java.util.List<java.lang.Double> vector2, org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.lang.Double>> resultHandler) throws org.apache.thrift.TException {
+      checkReady();
+      suma_vectores_call method_call = new suma_vectores_call(vector1, vector2, resultHandler, this, ___protocolFactory, ___transport);
+      this.___currentMethod = method_call;
+      ___manager.call(method_call);
+    }
+
+    public static class suma_vectores_call extends org.apache.thrift.async.TAsyncMethodCall<java.util.List<java.lang.Double>> {
+      private java.util.List<java.lang.Double> vector1;
+      private java.util.List<java.lang.Double> vector2;
+      public suma_vectores_call(java.util.List<java.lang.Double> vector1, java.util.List<java.lang.Double> vector2, org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.lang.Double>> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+        super(client, protocolFactory, transport, resultHandler, false);
+        this.vector1 = vector1;
+        this.vector2 = vector2;
+      }
+
+      public void write_args(org.apache.thrift.protocol.TProtocol prot) throws org.apache.thrift.TException {
+        prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("suma_vectores", org.apache.thrift.protocol.TMessageType.CALL, 0));
+        suma_vectores_args args = new suma_vectores_args();
+        args.setVector1(vector1);
+        args.setVector2(vector2);
+        args.write(prot);
+        prot.writeMessageEnd();
+      }
+
+      public java.util.List<java.lang.Double> getResult() throws org.apache.thrift.TException {
+        if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
+          throw new java.lang.IllegalStateException("Method call not finished!");
+        }
+        org.apache.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
+        org.apache.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
+        return (new Client(prot)).recv_suma_vectores();
+      }
+    }
+
+    public void resta_vectores(java.util.List<java.lang.Double> vector1, java.util.List<java.lang.Double> vector2, org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.lang.Double>> resultHandler) throws org.apache.thrift.TException {
+      checkReady();
+      resta_vectores_call method_call = new resta_vectores_call(vector1, vector2, resultHandler, this, ___protocolFactory, ___transport);
+      this.___currentMethod = method_call;
+      ___manager.call(method_call);
+    }
+
+    public static class resta_vectores_call extends org.apache.thrift.async.TAsyncMethodCall<java.util.List<java.lang.Double>> {
+      private java.util.List<java.lang.Double> vector1;
+      private java.util.List<java.lang.Double> vector2;
+      public resta_vectores_call(java.util.List<java.lang.Double> vector1, java.util.List<java.lang.Double> vector2, org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.lang.Double>> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+        super(client, protocolFactory, transport, resultHandler, false);
+        this.vector1 = vector1;
+        this.vector2 = vector2;
+      }
+
+      public void write_args(org.apache.thrift.protocol.TProtocol prot) throws org.apache.thrift.TException {
+        prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("resta_vectores", org.apache.thrift.protocol.TMessageType.CALL, 0));
+        resta_vectores_args args = new resta_vectores_args();
+        args.setVector1(vector1);
+        args.setVector2(vector2);
+        args.write(prot);
+        prot.writeMessageEnd();
+      }
+
+      public java.util.List<java.lang.Double> getResult() throws org.apache.thrift.TException {
+        if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
+          throw new java.lang.IllegalStateException("Method call not finished!");
+        }
+        org.apache.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
+        org.apache.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
+        return (new Client(prot)).recv_resta_vectores();
+      }
+    }
+
+    public void producto_escalar(java.util.List<java.lang.Double> vector1, java.util.List<java.lang.Double> vector2, org.apache.thrift.async.AsyncMethodCallback<java.lang.Double> resultHandler) throws org.apache.thrift.TException {
+      checkReady();
+      producto_escalar_call method_call = new producto_escalar_call(vector1, vector2, resultHandler, this, ___protocolFactory, ___transport);
+      this.___currentMethod = method_call;
+      ___manager.call(method_call);
+    }
+
+    public static class producto_escalar_call extends org.apache.thrift.async.TAsyncMethodCall<java.lang.Double> {
+      private java.util.List<java.lang.Double> vector1;
+      private java.util.List<java.lang.Double> vector2;
+      public producto_escalar_call(java.util.List<java.lang.Double> vector1, java.util.List<java.lang.Double> vector2, org.apache.thrift.async.AsyncMethodCallback<java.lang.Double> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+        super(client, protocolFactory, transport, resultHandler, false);
+        this.vector1 = vector1;
+        this.vector2 = vector2;
+      }
+
+      public void write_args(org.apache.thrift.protocol.TProtocol prot) throws org.apache.thrift.TException {
+        prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("producto_escalar", org.apache.thrift.protocol.TMessageType.CALL, 0));
+        producto_escalar_args args = new producto_escalar_args();
+        args.setVector1(vector1);
+        args.setVector2(vector2);
+        args.write(prot);
+        prot.writeMessageEnd();
+      }
+
+      public java.lang.Double getResult() throws org.apache.thrift.TException {
+        if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
+          throw new java.lang.IllegalStateException("Method call not finished!");
+        }
+        org.apache.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
+        org.apache.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
+        return (new Client(prot)).recv_producto_escalar();
+      }
+    }
+
+    public void multi_vector_escalar(java.util.List<java.lang.Double> vector1, double escalar, org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.lang.Double>> resultHandler) throws org.apache.thrift.TException {
+      checkReady();
+      multi_vector_escalar_call method_call = new multi_vector_escalar_call(vector1, escalar, resultHandler, this, ___protocolFactory, ___transport);
+      this.___currentMethod = method_call;
+      ___manager.call(method_call);
+    }
+
+    public static class multi_vector_escalar_call extends org.apache.thrift.async.TAsyncMethodCall<java.util.List<java.lang.Double>> {
+      private java.util.List<java.lang.Double> vector1;
+      private double escalar;
+      public multi_vector_escalar_call(java.util.List<java.lang.Double> vector1, double escalar, org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.lang.Double>> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+        super(client, protocolFactory, transport, resultHandler, false);
+        this.vector1 = vector1;
+        this.escalar = escalar;
+      }
+
+      public void write_args(org.apache.thrift.protocol.TProtocol prot) throws org.apache.thrift.TException {
+        prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("multi_vector_escalar", org.apache.thrift.protocol.TMessageType.CALL, 0));
+        multi_vector_escalar_args args = new multi_vector_escalar_args();
+        args.setVector1(vector1);
+        args.setEscalar(escalar);
+        args.write(prot);
+        prot.writeMessageEnd();
+      }
+
+      public java.util.List<java.lang.Double> getResult() throws org.apache.thrift.TException {
+        if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
+          throw new java.lang.IllegalStateException("Method call not finished!");
+        }
+        org.apache.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
+        org.apache.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
+        return (new Client(prot)).recv_multi_vector_escalar();
+      }
+    }
+
+    public void division_vector_escalar(java.util.List<java.lang.Double> vector1, double escalar, org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.lang.Double>> resultHandler) throws org.apache.thrift.TException {
+      checkReady();
+      division_vector_escalar_call method_call = new division_vector_escalar_call(vector1, escalar, resultHandler, this, ___protocolFactory, ___transport);
+      this.___currentMethod = method_call;
+      ___manager.call(method_call);
+    }
+
+    public static class division_vector_escalar_call extends org.apache.thrift.async.TAsyncMethodCall<java.util.List<java.lang.Double>> {
+      private java.util.List<java.lang.Double> vector1;
+      private double escalar;
+      public division_vector_escalar_call(java.util.List<java.lang.Double> vector1, double escalar, org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.lang.Double>> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+        super(client, protocolFactory, transport, resultHandler, false);
+        this.vector1 = vector1;
+        this.escalar = escalar;
+      }
+
+      public void write_args(org.apache.thrift.protocol.TProtocol prot) throws org.apache.thrift.TException {
+        prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("division_vector_escalar", org.apache.thrift.protocol.TMessageType.CALL, 0));
+        division_vector_escalar_args args = new division_vector_escalar_args();
+        args.setVector1(vector1);
+        args.setEscalar(escalar);
+        args.write(prot);
+        prot.writeMessageEnd();
+      }
+
+      public java.util.List<java.lang.Double> getResult() throws org.apache.thrift.TException {
+        if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
+          throw new java.lang.IllegalStateException("Method call not finished!");
+        }
+        org.apache.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
+        org.apache.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
+        return (new Client(prot)).recv_division_vector_escalar();
+      }
+    }
+
+    public void suma_matrices(java.util.List<java.util.List<java.lang.Double>> matriz1, java.util.List<java.util.List<java.lang.Double>> matriz2, org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.util.List<java.lang.Double>>> resultHandler) throws org.apache.thrift.TException {
+      checkReady();
+      suma_matrices_call method_call = new suma_matrices_call(matriz1, matriz2, resultHandler, this, ___protocolFactory, ___transport);
+      this.___currentMethod = method_call;
+      ___manager.call(method_call);
+    }
+
+    public static class suma_matrices_call extends org.apache.thrift.async.TAsyncMethodCall<java.util.List<java.util.List<java.lang.Double>>> {
+      private java.util.List<java.util.List<java.lang.Double>> matriz1;
+      private java.util.List<java.util.List<java.lang.Double>> matriz2;
+      public suma_matrices_call(java.util.List<java.util.List<java.lang.Double>> matriz1, java.util.List<java.util.List<java.lang.Double>> matriz2, org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.util.List<java.lang.Double>>> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+        super(client, protocolFactory, transport, resultHandler, false);
+        this.matriz1 = matriz1;
+        this.matriz2 = matriz2;
+      }
+
+      public void write_args(org.apache.thrift.protocol.TProtocol prot) throws org.apache.thrift.TException {
+        prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("suma_matrices", org.apache.thrift.protocol.TMessageType.CALL, 0));
+        suma_matrices_args args = new suma_matrices_args();
+        args.setMatriz1(matriz1);
+        args.setMatriz2(matriz2);
+        args.write(prot);
+        prot.writeMessageEnd();
+      }
+
+      public java.util.List<java.util.List<java.lang.Double>> getResult() throws org.apache.thrift.TException {
+        if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
+          throw new java.lang.IllegalStateException("Method call not finished!");
+        }
+        org.apache.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
+        org.apache.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
+        return (new Client(prot)).recv_suma_matrices();
+      }
+    }
+
+    public void resta_matrices(java.util.List<java.util.List<java.lang.Double>> matriz1, java.util.List<java.util.List<java.lang.Double>> matriz2, org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.util.List<java.lang.Double>>> resultHandler) throws org.apache.thrift.TException {
+      checkReady();
+      resta_matrices_call method_call = new resta_matrices_call(matriz1, matriz2, resultHandler, this, ___protocolFactory, ___transport);
+      this.___currentMethod = method_call;
+      ___manager.call(method_call);
+    }
+
+    public static class resta_matrices_call extends org.apache.thrift.async.TAsyncMethodCall<java.util.List<java.util.List<java.lang.Double>>> {
+      private java.util.List<java.util.List<java.lang.Double>> matriz1;
+      private java.util.List<java.util.List<java.lang.Double>> matriz2;
+      public resta_matrices_call(java.util.List<java.util.List<java.lang.Double>> matriz1, java.util.List<java.util.List<java.lang.Double>> matriz2, org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.util.List<java.lang.Double>>> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+        super(client, protocolFactory, transport, resultHandler, false);
+        this.matriz1 = matriz1;
+        this.matriz2 = matriz2;
+      }
+
+      public void write_args(org.apache.thrift.protocol.TProtocol prot) throws org.apache.thrift.TException {
+        prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("resta_matrices", org.apache.thrift.protocol.TMessageType.CALL, 0));
+        resta_matrices_args args = new resta_matrices_args();
+        args.setMatriz1(matriz1);
+        args.setMatriz2(matriz2);
+        args.write(prot);
+        prot.writeMessageEnd();
+      }
+
+      public java.util.List<java.util.List<java.lang.Double>> getResult() throws org.apache.thrift.TException {
+        if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
+          throw new java.lang.IllegalStateException("Method call not finished!");
+        }
+        org.apache.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
+        org.apache.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
+        return (new Client(prot)).recv_resta_matrices();
+      }
+    }
+
+    public void producto_matrices(java.util.List<java.util.List<java.lang.Double>> matriz1, java.util.List<java.util.List<java.lang.Double>> matriz2, org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.util.List<java.lang.Double>>> resultHandler) throws org.apache.thrift.TException {
+      checkReady();
+      producto_matrices_call method_call = new producto_matrices_call(matriz1, matriz2, resultHandler, this, ___protocolFactory, ___transport);
+      this.___currentMethod = method_call;
+      ___manager.call(method_call);
+    }
+
+    public static class producto_matrices_call extends org.apache.thrift.async.TAsyncMethodCall<java.util.List<java.util.List<java.lang.Double>>> {
+      private java.util.List<java.util.List<java.lang.Double>> matriz1;
+      private java.util.List<java.util.List<java.lang.Double>> matriz2;
+      public producto_matrices_call(java.util.List<java.util.List<java.lang.Double>> matriz1, java.util.List<java.util.List<java.lang.Double>> matriz2, org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.util.List<java.lang.Double>>> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+        super(client, protocolFactory, transport, resultHandler, false);
+        this.matriz1 = matriz1;
+        this.matriz2 = matriz2;
+      }
+
+      public void write_args(org.apache.thrift.protocol.TProtocol prot) throws org.apache.thrift.TException {
+        prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("producto_matrices", org.apache.thrift.protocol.TMessageType.CALL, 0));
+        producto_matrices_args args = new producto_matrices_args();
+        args.setMatriz1(matriz1);
+        args.setMatriz2(matriz2);
+        args.write(prot);
+        prot.writeMessageEnd();
+      }
+
+      public java.util.List<java.util.List<java.lang.Double>> getResult() throws org.apache.thrift.TException {
+        if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
+          throw new java.lang.IllegalStateException("Method call not finished!");
+        }
+        org.apache.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
+        org.apache.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
+        return (new Client(prot)).recv_producto_matrices();
+      }
+    }
+
+    public void multi_matriz_escalar(java.util.List<java.util.List<java.lang.Double>> matriz1, double escalar, org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.util.List<java.lang.Double>>> resultHandler) throws org.apache.thrift.TException {
+      checkReady();
+      multi_matriz_escalar_call method_call = new multi_matriz_escalar_call(matriz1, escalar, resultHandler, this, ___protocolFactory, ___transport);
+      this.___currentMethod = method_call;
+      ___manager.call(method_call);
+    }
+
+    public static class multi_matriz_escalar_call extends org.apache.thrift.async.TAsyncMethodCall<java.util.List<java.util.List<java.lang.Double>>> {
+      private java.util.List<java.util.List<java.lang.Double>> matriz1;
+      private double escalar;
+      public multi_matriz_escalar_call(java.util.List<java.util.List<java.lang.Double>> matriz1, double escalar, org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.util.List<java.lang.Double>>> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+        super(client, protocolFactory, transport, resultHandler, false);
+        this.matriz1 = matriz1;
+        this.escalar = escalar;
+      }
+
+      public void write_args(org.apache.thrift.protocol.TProtocol prot) throws org.apache.thrift.TException {
+        prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("multi_matriz_escalar", org.apache.thrift.protocol.TMessageType.CALL, 0));
+        multi_matriz_escalar_args args = new multi_matriz_escalar_args();
+        args.setMatriz1(matriz1);
+        args.setEscalar(escalar);
+        args.write(prot);
+        prot.writeMessageEnd();
+      }
+
+      public java.util.List<java.util.List<java.lang.Double>> getResult() throws org.apache.thrift.TException {
+        if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
+          throw new java.lang.IllegalStateException("Method call not finished!");
+        }
+        org.apache.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
+        org.apache.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
+        return (new Client(prot)).recv_multi_matriz_escalar();
+      }
+    }
+
+    public void division_matriz_escalar(java.util.List<java.util.List<java.lang.Double>> matriz1, double escalar, org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.util.List<java.lang.Double>>> resultHandler) throws org.apache.thrift.TException {
+      checkReady();
+      division_matriz_escalar_call method_call = new division_matriz_escalar_call(matriz1, escalar, resultHandler, this, ___protocolFactory, ___transport);
+      this.___currentMethod = method_call;
+      ___manager.call(method_call);
+    }
+
+    public static class division_matriz_escalar_call extends org.apache.thrift.async.TAsyncMethodCall<java.util.List<java.util.List<java.lang.Double>>> {
+      private java.util.List<java.util.List<java.lang.Double>> matriz1;
+      private double escalar;
+      public division_matriz_escalar_call(java.util.List<java.util.List<java.lang.Double>> matriz1, double escalar, org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.util.List<java.lang.Double>>> resultHandler, org.apache.thrift.async.TAsyncClient client, org.apache.thrift.protocol.TProtocolFactory protocolFactory, org.apache.thrift.transport.TNonblockingTransport transport) throws org.apache.thrift.TException {
+        super(client, protocolFactory, transport, resultHandler, false);
+        this.matriz1 = matriz1;
+        this.escalar = escalar;
+      }
+
+      public void write_args(org.apache.thrift.protocol.TProtocol prot) throws org.apache.thrift.TException {
+        prot.writeMessageBegin(new org.apache.thrift.protocol.TMessage("division_matriz_escalar", org.apache.thrift.protocol.TMessageType.CALL, 0));
+        division_matriz_escalar_args args = new division_matriz_escalar_args();
+        args.setMatriz1(matriz1);
+        args.setEscalar(escalar);
+        args.write(prot);
+        prot.writeMessageEnd();
+      }
+
+      public java.util.List<java.util.List<java.lang.Double>> getResult() throws org.apache.thrift.TException {
+        if (getState() != org.apache.thrift.async.TAsyncMethodCall.State.RESPONSE_READ) {
+          throw new java.lang.IllegalStateException("Method call not finished!");
+        }
+        org.apache.thrift.transport.TMemoryInputTransport memoryTransport = new org.apache.thrift.transport.TMemoryInputTransport(getFrameBuffer().array());
+        org.apache.thrift.protocol.TProtocol prot = client.getProtocolFactory().getProtocol(memoryTransport);
+        return (new Client(prot)).recv_division_matriz_escalar();
       }
     }
 
@@ -376,6 +1006,16 @@ public class Calculadora {
       processMap.put("resta", new resta());
       processMap.put("multiplicacion", new multiplicacion());
       processMap.put("division", new division());
+      processMap.put("suma_vectores", new suma_vectores());
+      processMap.put("resta_vectores", new resta_vectores());
+      processMap.put("producto_escalar", new producto_escalar());
+      processMap.put("multi_vector_escalar", new multi_vector_escalar());
+      processMap.put("division_vector_escalar", new division_vector_escalar());
+      processMap.put("suma_matrices", new suma_matrices());
+      processMap.put("resta_matrices", new resta_matrices());
+      processMap.put("producto_matrices", new producto_matrices());
+      processMap.put("multi_matriz_escalar", new multi_matriz_escalar());
+      processMap.put("division_matriz_escalar", new division_matriz_escalar());
       return processMap;
     }
 
@@ -508,6 +1148,257 @@ public class Calculadora {
       }
     }
 
+    public static class suma_vectores<I extends Iface> extends org.apache.thrift.ProcessFunction<I, suma_vectores_args> {
+      public suma_vectores() {
+        super("suma_vectores");
+      }
+
+      public suma_vectores_args getEmptyArgsInstance() {
+        return new suma_vectores_args();
+      }
+
+      protected boolean isOneway() {
+        return false;
+      }
+
+      @Override
+      protected boolean rethrowUnhandledExceptions() {
+        return false;
+      }
+
+      public suma_vectores_result getResult(I iface, suma_vectores_args args) throws org.apache.thrift.TException {
+        suma_vectores_result result = new suma_vectores_result();
+        result.success = iface.suma_vectores(args.vector1, args.vector2);
+        return result;
+      }
+    }
+
+    public static class resta_vectores<I extends Iface> extends org.apache.thrift.ProcessFunction<I, resta_vectores_args> {
+      public resta_vectores() {
+        super("resta_vectores");
+      }
+
+      public resta_vectores_args getEmptyArgsInstance() {
+        return new resta_vectores_args();
+      }
+
+      protected boolean isOneway() {
+        return false;
+      }
+
+      @Override
+      protected boolean rethrowUnhandledExceptions() {
+        return false;
+      }
+
+      public resta_vectores_result getResult(I iface, resta_vectores_args args) throws org.apache.thrift.TException {
+        resta_vectores_result result = new resta_vectores_result();
+        result.success = iface.resta_vectores(args.vector1, args.vector2);
+        return result;
+      }
+    }
+
+    public static class producto_escalar<I extends Iface> extends org.apache.thrift.ProcessFunction<I, producto_escalar_args> {
+      public producto_escalar() {
+        super("producto_escalar");
+      }
+
+      public producto_escalar_args getEmptyArgsInstance() {
+        return new producto_escalar_args();
+      }
+
+      protected boolean isOneway() {
+        return false;
+      }
+
+      @Override
+      protected boolean rethrowUnhandledExceptions() {
+        return false;
+      }
+
+      public producto_escalar_result getResult(I iface, producto_escalar_args args) throws org.apache.thrift.TException {
+        producto_escalar_result result = new producto_escalar_result();
+        result.success = iface.producto_escalar(args.vector1, args.vector2);
+        result.setSuccessIsSet(true);
+        return result;
+      }
+    }
+
+    public static class multi_vector_escalar<I extends Iface> extends org.apache.thrift.ProcessFunction<I, multi_vector_escalar_args> {
+      public multi_vector_escalar() {
+        super("multi_vector_escalar");
+      }
+
+      public multi_vector_escalar_args getEmptyArgsInstance() {
+        return new multi_vector_escalar_args();
+      }
+
+      protected boolean isOneway() {
+        return false;
+      }
+
+      @Override
+      protected boolean rethrowUnhandledExceptions() {
+        return false;
+      }
+
+      public multi_vector_escalar_result getResult(I iface, multi_vector_escalar_args args) throws org.apache.thrift.TException {
+        multi_vector_escalar_result result = new multi_vector_escalar_result();
+        result.success = iface.multi_vector_escalar(args.vector1, args.escalar);
+        return result;
+      }
+    }
+
+    public static class division_vector_escalar<I extends Iface> extends org.apache.thrift.ProcessFunction<I, division_vector_escalar_args> {
+      public division_vector_escalar() {
+        super("division_vector_escalar");
+      }
+
+      public division_vector_escalar_args getEmptyArgsInstance() {
+        return new division_vector_escalar_args();
+      }
+
+      protected boolean isOneway() {
+        return false;
+      }
+
+      @Override
+      protected boolean rethrowUnhandledExceptions() {
+        return false;
+      }
+
+      public division_vector_escalar_result getResult(I iface, division_vector_escalar_args args) throws org.apache.thrift.TException {
+        division_vector_escalar_result result = new division_vector_escalar_result();
+        result.success = iface.division_vector_escalar(args.vector1, args.escalar);
+        return result;
+      }
+    }
+
+    public static class suma_matrices<I extends Iface> extends org.apache.thrift.ProcessFunction<I, suma_matrices_args> {
+      public suma_matrices() {
+        super("suma_matrices");
+      }
+
+      public suma_matrices_args getEmptyArgsInstance() {
+        return new suma_matrices_args();
+      }
+
+      protected boolean isOneway() {
+        return false;
+      }
+
+      @Override
+      protected boolean rethrowUnhandledExceptions() {
+        return false;
+      }
+
+      public suma_matrices_result getResult(I iface, suma_matrices_args args) throws org.apache.thrift.TException {
+        suma_matrices_result result = new suma_matrices_result();
+        result.success = iface.suma_matrices(args.matriz1, args.matriz2);
+        return result;
+      }
+    }
+
+    public static class resta_matrices<I extends Iface> extends org.apache.thrift.ProcessFunction<I, resta_matrices_args> {
+      public resta_matrices() {
+        super("resta_matrices");
+      }
+
+      public resta_matrices_args getEmptyArgsInstance() {
+        return new resta_matrices_args();
+      }
+
+      protected boolean isOneway() {
+        return false;
+      }
+
+      @Override
+      protected boolean rethrowUnhandledExceptions() {
+        return false;
+      }
+
+      public resta_matrices_result getResult(I iface, resta_matrices_args args) throws org.apache.thrift.TException {
+        resta_matrices_result result = new resta_matrices_result();
+        result.success = iface.resta_matrices(args.matriz1, args.matriz2);
+        return result;
+      }
+    }
+
+    public static class producto_matrices<I extends Iface> extends org.apache.thrift.ProcessFunction<I, producto_matrices_args> {
+      public producto_matrices() {
+        super("producto_matrices");
+      }
+
+      public producto_matrices_args getEmptyArgsInstance() {
+        return new producto_matrices_args();
+      }
+
+      protected boolean isOneway() {
+        return false;
+      }
+
+      @Override
+      protected boolean rethrowUnhandledExceptions() {
+        return false;
+      }
+
+      public producto_matrices_result getResult(I iface, producto_matrices_args args) throws org.apache.thrift.TException {
+        producto_matrices_result result = new producto_matrices_result();
+        result.success = iface.producto_matrices(args.matriz1, args.matriz2);
+        return result;
+      }
+    }
+
+    public static class multi_matriz_escalar<I extends Iface> extends org.apache.thrift.ProcessFunction<I, multi_matriz_escalar_args> {
+      public multi_matriz_escalar() {
+        super("multi_matriz_escalar");
+      }
+
+      public multi_matriz_escalar_args getEmptyArgsInstance() {
+        return new multi_matriz_escalar_args();
+      }
+
+      protected boolean isOneway() {
+        return false;
+      }
+
+      @Override
+      protected boolean rethrowUnhandledExceptions() {
+        return false;
+      }
+
+      public multi_matriz_escalar_result getResult(I iface, multi_matriz_escalar_args args) throws org.apache.thrift.TException {
+        multi_matriz_escalar_result result = new multi_matriz_escalar_result();
+        result.success = iface.multi_matriz_escalar(args.matriz1, args.escalar);
+        return result;
+      }
+    }
+
+    public static class division_matriz_escalar<I extends Iface> extends org.apache.thrift.ProcessFunction<I, division_matriz_escalar_args> {
+      public division_matriz_escalar() {
+        super("division_matriz_escalar");
+      }
+
+      public division_matriz_escalar_args getEmptyArgsInstance() {
+        return new division_matriz_escalar_args();
+      }
+
+      protected boolean isOneway() {
+        return false;
+      }
+
+      @Override
+      protected boolean rethrowUnhandledExceptions() {
+        return false;
+      }
+
+      public division_matriz_escalar_result getResult(I iface, division_matriz_escalar_args args) throws org.apache.thrift.TException {
+        division_matriz_escalar_result result = new division_matriz_escalar_result();
+        result.success = iface.division_matriz_escalar(args.matriz1, args.escalar);
+        return result;
+      }
+    }
+
   }
 
   public static class AsyncProcessor<I extends AsyncIface> extends org.apache.thrift.TBaseAsyncProcessor<I> {
@@ -526,6 +1417,16 @@ public class Calculadora {
       processMap.put("resta", new resta());
       processMap.put("multiplicacion", new multiplicacion());
       processMap.put("division", new division());
+      processMap.put("suma_vectores", new suma_vectores());
+      processMap.put("resta_vectores", new resta_vectores());
+      processMap.put("producto_escalar", new producto_escalar());
+      processMap.put("multi_vector_escalar", new multi_vector_escalar());
+      processMap.put("division_vector_escalar", new division_vector_escalar());
+      processMap.put("suma_matrices", new suma_matrices());
+      processMap.put("resta_matrices", new resta_matrices());
+      processMap.put("producto_matrices", new producto_matrices());
+      processMap.put("multi_matriz_escalar", new multi_matriz_escalar());
+      processMap.put("division_matriz_escalar", new division_matriz_escalar());
       return processMap;
     }
 
@@ -589,7 +1490,7 @@ public class Calculadora {
       }
     }
 
-    public static class suma<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, suma_args, java.lang.Integer> {
+    public static class suma<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, suma_args, java.lang.Double> {
       public suma() {
         super("suma");
       }
@@ -598,10 +1499,10 @@ public class Calculadora {
         return new suma_args();
       }
 
-      public org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
+      public org.apache.thrift.async.AsyncMethodCallback<java.lang.Double> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
         final org.apache.thrift.AsyncProcessFunction fcall = this;
-        return new org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer>() { 
-          public void onComplete(java.lang.Integer o) {
+        return new org.apache.thrift.async.AsyncMethodCallback<java.lang.Double>() { 
+          public void onComplete(java.lang.Double o) {
             suma_result result = new suma_result();
             result.success = o;
             result.setSuccessIsSet(true);
@@ -646,12 +1547,12 @@ public class Calculadora {
         return false;
       }
 
-      public void start(I iface, suma_args args, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
+      public void start(I iface, suma_args args, org.apache.thrift.async.AsyncMethodCallback<java.lang.Double> resultHandler) throws org.apache.thrift.TException {
         iface.suma(args.num1, args.num2,resultHandler);
       }
     }
 
-    public static class resta<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, resta_args, java.lang.Integer> {
+    public static class resta<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, resta_args, java.lang.Double> {
       public resta() {
         super("resta");
       }
@@ -660,10 +1561,10 @@ public class Calculadora {
         return new resta_args();
       }
 
-      public org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
+      public org.apache.thrift.async.AsyncMethodCallback<java.lang.Double> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
         final org.apache.thrift.AsyncProcessFunction fcall = this;
-        return new org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer>() { 
-          public void onComplete(java.lang.Integer o) {
+        return new org.apache.thrift.async.AsyncMethodCallback<java.lang.Double>() { 
+          public void onComplete(java.lang.Double o) {
             resta_result result = new resta_result();
             result.success = o;
             result.setSuccessIsSet(true);
@@ -708,12 +1609,12 @@ public class Calculadora {
         return false;
       }
 
-      public void start(I iface, resta_args args, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
+      public void start(I iface, resta_args args, org.apache.thrift.async.AsyncMethodCallback<java.lang.Double> resultHandler) throws org.apache.thrift.TException {
         iface.resta(args.num1, args.num2,resultHandler);
       }
     }
 
-    public static class multiplicacion<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, multiplicacion_args, java.lang.Integer> {
+    public static class multiplicacion<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, multiplicacion_args, java.lang.Double> {
       public multiplicacion() {
         super("multiplicacion");
       }
@@ -722,10 +1623,10 @@ public class Calculadora {
         return new multiplicacion_args();
       }
 
-      public org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
+      public org.apache.thrift.async.AsyncMethodCallback<java.lang.Double> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
         final org.apache.thrift.AsyncProcessFunction fcall = this;
-        return new org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer>() { 
-          public void onComplete(java.lang.Integer o) {
+        return new org.apache.thrift.async.AsyncMethodCallback<java.lang.Double>() { 
+          public void onComplete(java.lang.Double o) {
             multiplicacion_result result = new multiplicacion_result();
             result.success = o;
             result.setSuccessIsSet(true);
@@ -770,12 +1671,12 @@ public class Calculadora {
         return false;
       }
 
-      public void start(I iface, multiplicacion_args args, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
+      public void start(I iface, multiplicacion_args args, org.apache.thrift.async.AsyncMethodCallback<java.lang.Double> resultHandler) throws org.apache.thrift.TException {
         iface.multiplicacion(args.num1, args.num2,resultHandler);
       }
     }
 
-    public static class division<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, division_args, java.lang.Integer> {
+    public static class division<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, division_args, java.lang.Double> {
       public division() {
         super("division");
       }
@@ -784,10 +1685,10 @@ public class Calculadora {
         return new division_args();
       }
 
-      public org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
+      public org.apache.thrift.async.AsyncMethodCallback<java.lang.Double> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
         final org.apache.thrift.AsyncProcessFunction fcall = this;
-        return new org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer>() { 
-          public void onComplete(java.lang.Integer o) {
+        return new org.apache.thrift.async.AsyncMethodCallback<java.lang.Double>() { 
+          public void onComplete(java.lang.Double o) {
             division_result result = new division_result();
             result.success = o;
             result.setSuccessIsSet(true);
@@ -832,8 +1733,619 @@ public class Calculadora {
         return false;
       }
 
-      public void start(I iface, division_args args, org.apache.thrift.async.AsyncMethodCallback<java.lang.Integer> resultHandler) throws org.apache.thrift.TException {
+      public void start(I iface, division_args args, org.apache.thrift.async.AsyncMethodCallback<java.lang.Double> resultHandler) throws org.apache.thrift.TException {
         iface.division(args.num1, args.num2,resultHandler);
+      }
+    }
+
+    public static class suma_vectores<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, suma_vectores_args, java.util.List<java.lang.Double>> {
+      public suma_vectores() {
+        super("suma_vectores");
+      }
+
+      public suma_vectores_args getEmptyArgsInstance() {
+        return new suma_vectores_args();
+      }
+
+      public org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.lang.Double>> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
+        final org.apache.thrift.AsyncProcessFunction fcall = this;
+        return new org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.lang.Double>>() { 
+          public void onComplete(java.util.List<java.lang.Double> o) {
+            suma_vectores_result result = new suma_vectores_result();
+            result.success = o;
+            try {
+              fcall.sendResponse(fb, result, org.apache.thrift.protocol.TMessageType.REPLY,seqid);
+            } catch (org.apache.thrift.transport.TTransportException e) {
+              _LOGGER.error("TTransportException writing to internal frame buffer", e);
+              fb.close();
+            } catch (java.lang.Exception e) {
+              _LOGGER.error("Exception writing to internal frame buffer", e);
+              onError(e);
+            }
+          }
+          public void onError(java.lang.Exception e) {
+            byte msgType = org.apache.thrift.protocol.TMessageType.REPLY;
+            org.apache.thrift.TSerializable msg;
+            suma_vectores_result result = new suma_vectores_result();
+            if (e instanceof org.apache.thrift.transport.TTransportException) {
+              _LOGGER.error("TTransportException inside handler", e);
+              fb.close();
+              return;
+            } else if (e instanceof org.apache.thrift.TApplicationException) {
+              _LOGGER.error("TApplicationException inside handler", e);
+              msgType = org.apache.thrift.protocol.TMessageType.EXCEPTION;
+              msg = (org.apache.thrift.TApplicationException)e;
+            } else {
+              _LOGGER.error("Exception inside handler", e);
+              msgType = org.apache.thrift.protocol.TMessageType.EXCEPTION;
+              msg = new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.INTERNAL_ERROR, e.getMessage());
+            }
+            try {
+              fcall.sendResponse(fb,msg,msgType,seqid);
+            } catch (java.lang.Exception ex) {
+              _LOGGER.error("Exception writing to internal frame buffer", ex);
+              fb.close();
+            }
+          }
+        };
+      }
+
+      protected boolean isOneway() {
+        return false;
+      }
+
+      public void start(I iface, suma_vectores_args args, org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.lang.Double>> resultHandler) throws org.apache.thrift.TException {
+        iface.suma_vectores(args.vector1, args.vector2,resultHandler);
+      }
+    }
+
+    public static class resta_vectores<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, resta_vectores_args, java.util.List<java.lang.Double>> {
+      public resta_vectores() {
+        super("resta_vectores");
+      }
+
+      public resta_vectores_args getEmptyArgsInstance() {
+        return new resta_vectores_args();
+      }
+
+      public org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.lang.Double>> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
+        final org.apache.thrift.AsyncProcessFunction fcall = this;
+        return new org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.lang.Double>>() { 
+          public void onComplete(java.util.List<java.lang.Double> o) {
+            resta_vectores_result result = new resta_vectores_result();
+            result.success = o;
+            try {
+              fcall.sendResponse(fb, result, org.apache.thrift.protocol.TMessageType.REPLY,seqid);
+            } catch (org.apache.thrift.transport.TTransportException e) {
+              _LOGGER.error("TTransportException writing to internal frame buffer", e);
+              fb.close();
+            } catch (java.lang.Exception e) {
+              _LOGGER.error("Exception writing to internal frame buffer", e);
+              onError(e);
+            }
+          }
+          public void onError(java.lang.Exception e) {
+            byte msgType = org.apache.thrift.protocol.TMessageType.REPLY;
+            org.apache.thrift.TSerializable msg;
+            resta_vectores_result result = new resta_vectores_result();
+            if (e instanceof org.apache.thrift.transport.TTransportException) {
+              _LOGGER.error("TTransportException inside handler", e);
+              fb.close();
+              return;
+            } else if (e instanceof org.apache.thrift.TApplicationException) {
+              _LOGGER.error("TApplicationException inside handler", e);
+              msgType = org.apache.thrift.protocol.TMessageType.EXCEPTION;
+              msg = (org.apache.thrift.TApplicationException)e;
+            } else {
+              _LOGGER.error("Exception inside handler", e);
+              msgType = org.apache.thrift.protocol.TMessageType.EXCEPTION;
+              msg = new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.INTERNAL_ERROR, e.getMessage());
+            }
+            try {
+              fcall.sendResponse(fb,msg,msgType,seqid);
+            } catch (java.lang.Exception ex) {
+              _LOGGER.error("Exception writing to internal frame buffer", ex);
+              fb.close();
+            }
+          }
+        };
+      }
+
+      protected boolean isOneway() {
+        return false;
+      }
+
+      public void start(I iface, resta_vectores_args args, org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.lang.Double>> resultHandler) throws org.apache.thrift.TException {
+        iface.resta_vectores(args.vector1, args.vector2,resultHandler);
+      }
+    }
+
+    public static class producto_escalar<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, producto_escalar_args, java.lang.Double> {
+      public producto_escalar() {
+        super("producto_escalar");
+      }
+
+      public producto_escalar_args getEmptyArgsInstance() {
+        return new producto_escalar_args();
+      }
+
+      public org.apache.thrift.async.AsyncMethodCallback<java.lang.Double> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
+        final org.apache.thrift.AsyncProcessFunction fcall = this;
+        return new org.apache.thrift.async.AsyncMethodCallback<java.lang.Double>() { 
+          public void onComplete(java.lang.Double o) {
+            producto_escalar_result result = new producto_escalar_result();
+            result.success = o;
+            result.setSuccessIsSet(true);
+            try {
+              fcall.sendResponse(fb, result, org.apache.thrift.protocol.TMessageType.REPLY,seqid);
+            } catch (org.apache.thrift.transport.TTransportException e) {
+              _LOGGER.error("TTransportException writing to internal frame buffer", e);
+              fb.close();
+            } catch (java.lang.Exception e) {
+              _LOGGER.error("Exception writing to internal frame buffer", e);
+              onError(e);
+            }
+          }
+          public void onError(java.lang.Exception e) {
+            byte msgType = org.apache.thrift.protocol.TMessageType.REPLY;
+            org.apache.thrift.TSerializable msg;
+            producto_escalar_result result = new producto_escalar_result();
+            if (e instanceof org.apache.thrift.transport.TTransportException) {
+              _LOGGER.error("TTransportException inside handler", e);
+              fb.close();
+              return;
+            } else if (e instanceof org.apache.thrift.TApplicationException) {
+              _LOGGER.error("TApplicationException inside handler", e);
+              msgType = org.apache.thrift.protocol.TMessageType.EXCEPTION;
+              msg = (org.apache.thrift.TApplicationException)e;
+            } else {
+              _LOGGER.error("Exception inside handler", e);
+              msgType = org.apache.thrift.protocol.TMessageType.EXCEPTION;
+              msg = new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.INTERNAL_ERROR, e.getMessage());
+            }
+            try {
+              fcall.sendResponse(fb,msg,msgType,seqid);
+            } catch (java.lang.Exception ex) {
+              _LOGGER.error("Exception writing to internal frame buffer", ex);
+              fb.close();
+            }
+          }
+        };
+      }
+
+      protected boolean isOneway() {
+        return false;
+      }
+
+      public void start(I iface, producto_escalar_args args, org.apache.thrift.async.AsyncMethodCallback<java.lang.Double> resultHandler) throws org.apache.thrift.TException {
+        iface.producto_escalar(args.vector1, args.vector2,resultHandler);
+      }
+    }
+
+    public static class multi_vector_escalar<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, multi_vector_escalar_args, java.util.List<java.lang.Double>> {
+      public multi_vector_escalar() {
+        super("multi_vector_escalar");
+      }
+
+      public multi_vector_escalar_args getEmptyArgsInstance() {
+        return new multi_vector_escalar_args();
+      }
+
+      public org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.lang.Double>> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
+        final org.apache.thrift.AsyncProcessFunction fcall = this;
+        return new org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.lang.Double>>() { 
+          public void onComplete(java.util.List<java.lang.Double> o) {
+            multi_vector_escalar_result result = new multi_vector_escalar_result();
+            result.success = o;
+            try {
+              fcall.sendResponse(fb, result, org.apache.thrift.protocol.TMessageType.REPLY,seqid);
+            } catch (org.apache.thrift.transport.TTransportException e) {
+              _LOGGER.error("TTransportException writing to internal frame buffer", e);
+              fb.close();
+            } catch (java.lang.Exception e) {
+              _LOGGER.error("Exception writing to internal frame buffer", e);
+              onError(e);
+            }
+          }
+          public void onError(java.lang.Exception e) {
+            byte msgType = org.apache.thrift.protocol.TMessageType.REPLY;
+            org.apache.thrift.TSerializable msg;
+            multi_vector_escalar_result result = new multi_vector_escalar_result();
+            if (e instanceof org.apache.thrift.transport.TTransportException) {
+              _LOGGER.error("TTransportException inside handler", e);
+              fb.close();
+              return;
+            } else if (e instanceof org.apache.thrift.TApplicationException) {
+              _LOGGER.error("TApplicationException inside handler", e);
+              msgType = org.apache.thrift.protocol.TMessageType.EXCEPTION;
+              msg = (org.apache.thrift.TApplicationException)e;
+            } else {
+              _LOGGER.error("Exception inside handler", e);
+              msgType = org.apache.thrift.protocol.TMessageType.EXCEPTION;
+              msg = new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.INTERNAL_ERROR, e.getMessage());
+            }
+            try {
+              fcall.sendResponse(fb,msg,msgType,seqid);
+            } catch (java.lang.Exception ex) {
+              _LOGGER.error("Exception writing to internal frame buffer", ex);
+              fb.close();
+            }
+          }
+        };
+      }
+
+      protected boolean isOneway() {
+        return false;
+      }
+
+      public void start(I iface, multi_vector_escalar_args args, org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.lang.Double>> resultHandler) throws org.apache.thrift.TException {
+        iface.multi_vector_escalar(args.vector1, args.escalar,resultHandler);
+      }
+    }
+
+    public static class division_vector_escalar<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, division_vector_escalar_args, java.util.List<java.lang.Double>> {
+      public division_vector_escalar() {
+        super("division_vector_escalar");
+      }
+
+      public division_vector_escalar_args getEmptyArgsInstance() {
+        return new division_vector_escalar_args();
+      }
+
+      public org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.lang.Double>> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
+        final org.apache.thrift.AsyncProcessFunction fcall = this;
+        return new org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.lang.Double>>() { 
+          public void onComplete(java.util.List<java.lang.Double> o) {
+            division_vector_escalar_result result = new division_vector_escalar_result();
+            result.success = o;
+            try {
+              fcall.sendResponse(fb, result, org.apache.thrift.protocol.TMessageType.REPLY,seqid);
+            } catch (org.apache.thrift.transport.TTransportException e) {
+              _LOGGER.error("TTransportException writing to internal frame buffer", e);
+              fb.close();
+            } catch (java.lang.Exception e) {
+              _LOGGER.error("Exception writing to internal frame buffer", e);
+              onError(e);
+            }
+          }
+          public void onError(java.lang.Exception e) {
+            byte msgType = org.apache.thrift.protocol.TMessageType.REPLY;
+            org.apache.thrift.TSerializable msg;
+            division_vector_escalar_result result = new division_vector_escalar_result();
+            if (e instanceof org.apache.thrift.transport.TTransportException) {
+              _LOGGER.error("TTransportException inside handler", e);
+              fb.close();
+              return;
+            } else if (e instanceof org.apache.thrift.TApplicationException) {
+              _LOGGER.error("TApplicationException inside handler", e);
+              msgType = org.apache.thrift.protocol.TMessageType.EXCEPTION;
+              msg = (org.apache.thrift.TApplicationException)e;
+            } else {
+              _LOGGER.error("Exception inside handler", e);
+              msgType = org.apache.thrift.protocol.TMessageType.EXCEPTION;
+              msg = new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.INTERNAL_ERROR, e.getMessage());
+            }
+            try {
+              fcall.sendResponse(fb,msg,msgType,seqid);
+            } catch (java.lang.Exception ex) {
+              _LOGGER.error("Exception writing to internal frame buffer", ex);
+              fb.close();
+            }
+          }
+        };
+      }
+
+      protected boolean isOneway() {
+        return false;
+      }
+
+      public void start(I iface, division_vector_escalar_args args, org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.lang.Double>> resultHandler) throws org.apache.thrift.TException {
+        iface.division_vector_escalar(args.vector1, args.escalar,resultHandler);
+      }
+    }
+
+    public static class suma_matrices<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, suma_matrices_args, java.util.List<java.util.List<java.lang.Double>>> {
+      public suma_matrices() {
+        super("suma_matrices");
+      }
+
+      public suma_matrices_args getEmptyArgsInstance() {
+        return new suma_matrices_args();
+      }
+
+      public org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.util.List<java.lang.Double>>> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
+        final org.apache.thrift.AsyncProcessFunction fcall = this;
+        return new org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.util.List<java.lang.Double>>>() { 
+          public void onComplete(java.util.List<java.util.List<java.lang.Double>> o) {
+            suma_matrices_result result = new suma_matrices_result();
+            result.success = o;
+            try {
+              fcall.sendResponse(fb, result, org.apache.thrift.protocol.TMessageType.REPLY,seqid);
+            } catch (org.apache.thrift.transport.TTransportException e) {
+              _LOGGER.error("TTransportException writing to internal frame buffer", e);
+              fb.close();
+            } catch (java.lang.Exception e) {
+              _LOGGER.error("Exception writing to internal frame buffer", e);
+              onError(e);
+            }
+          }
+          public void onError(java.lang.Exception e) {
+            byte msgType = org.apache.thrift.protocol.TMessageType.REPLY;
+            org.apache.thrift.TSerializable msg;
+            suma_matrices_result result = new suma_matrices_result();
+            if (e instanceof org.apache.thrift.transport.TTransportException) {
+              _LOGGER.error("TTransportException inside handler", e);
+              fb.close();
+              return;
+            } else if (e instanceof org.apache.thrift.TApplicationException) {
+              _LOGGER.error("TApplicationException inside handler", e);
+              msgType = org.apache.thrift.protocol.TMessageType.EXCEPTION;
+              msg = (org.apache.thrift.TApplicationException)e;
+            } else {
+              _LOGGER.error("Exception inside handler", e);
+              msgType = org.apache.thrift.protocol.TMessageType.EXCEPTION;
+              msg = new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.INTERNAL_ERROR, e.getMessage());
+            }
+            try {
+              fcall.sendResponse(fb,msg,msgType,seqid);
+            } catch (java.lang.Exception ex) {
+              _LOGGER.error("Exception writing to internal frame buffer", ex);
+              fb.close();
+            }
+          }
+        };
+      }
+
+      protected boolean isOneway() {
+        return false;
+      }
+
+      public void start(I iface, suma_matrices_args args, org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.util.List<java.lang.Double>>> resultHandler) throws org.apache.thrift.TException {
+        iface.suma_matrices(args.matriz1, args.matriz2,resultHandler);
+      }
+    }
+
+    public static class resta_matrices<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, resta_matrices_args, java.util.List<java.util.List<java.lang.Double>>> {
+      public resta_matrices() {
+        super("resta_matrices");
+      }
+
+      public resta_matrices_args getEmptyArgsInstance() {
+        return new resta_matrices_args();
+      }
+
+      public org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.util.List<java.lang.Double>>> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
+        final org.apache.thrift.AsyncProcessFunction fcall = this;
+        return new org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.util.List<java.lang.Double>>>() { 
+          public void onComplete(java.util.List<java.util.List<java.lang.Double>> o) {
+            resta_matrices_result result = new resta_matrices_result();
+            result.success = o;
+            try {
+              fcall.sendResponse(fb, result, org.apache.thrift.protocol.TMessageType.REPLY,seqid);
+            } catch (org.apache.thrift.transport.TTransportException e) {
+              _LOGGER.error("TTransportException writing to internal frame buffer", e);
+              fb.close();
+            } catch (java.lang.Exception e) {
+              _LOGGER.error("Exception writing to internal frame buffer", e);
+              onError(e);
+            }
+          }
+          public void onError(java.lang.Exception e) {
+            byte msgType = org.apache.thrift.protocol.TMessageType.REPLY;
+            org.apache.thrift.TSerializable msg;
+            resta_matrices_result result = new resta_matrices_result();
+            if (e instanceof org.apache.thrift.transport.TTransportException) {
+              _LOGGER.error("TTransportException inside handler", e);
+              fb.close();
+              return;
+            } else if (e instanceof org.apache.thrift.TApplicationException) {
+              _LOGGER.error("TApplicationException inside handler", e);
+              msgType = org.apache.thrift.protocol.TMessageType.EXCEPTION;
+              msg = (org.apache.thrift.TApplicationException)e;
+            } else {
+              _LOGGER.error("Exception inside handler", e);
+              msgType = org.apache.thrift.protocol.TMessageType.EXCEPTION;
+              msg = new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.INTERNAL_ERROR, e.getMessage());
+            }
+            try {
+              fcall.sendResponse(fb,msg,msgType,seqid);
+            } catch (java.lang.Exception ex) {
+              _LOGGER.error("Exception writing to internal frame buffer", ex);
+              fb.close();
+            }
+          }
+        };
+      }
+
+      protected boolean isOneway() {
+        return false;
+      }
+
+      public void start(I iface, resta_matrices_args args, org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.util.List<java.lang.Double>>> resultHandler) throws org.apache.thrift.TException {
+        iface.resta_matrices(args.matriz1, args.matriz2,resultHandler);
+      }
+    }
+
+    public static class producto_matrices<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, producto_matrices_args, java.util.List<java.util.List<java.lang.Double>>> {
+      public producto_matrices() {
+        super("producto_matrices");
+      }
+
+      public producto_matrices_args getEmptyArgsInstance() {
+        return new producto_matrices_args();
+      }
+
+      public org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.util.List<java.lang.Double>>> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
+        final org.apache.thrift.AsyncProcessFunction fcall = this;
+        return new org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.util.List<java.lang.Double>>>() { 
+          public void onComplete(java.util.List<java.util.List<java.lang.Double>> o) {
+            producto_matrices_result result = new producto_matrices_result();
+            result.success = o;
+            try {
+              fcall.sendResponse(fb, result, org.apache.thrift.protocol.TMessageType.REPLY,seqid);
+            } catch (org.apache.thrift.transport.TTransportException e) {
+              _LOGGER.error("TTransportException writing to internal frame buffer", e);
+              fb.close();
+            } catch (java.lang.Exception e) {
+              _LOGGER.error("Exception writing to internal frame buffer", e);
+              onError(e);
+            }
+          }
+          public void onError(java.lang.Exception e) {
+            byte msgType = org.apache.thrift.protocol.TMessageType.REPLY;
+            org.apache.thrift.TSerializable msg;
+            producto_matrices_result result = new producto_matrices_result();
+            if (e instanceof org.apache.thrift.transport.TTransportException) {
+              _LOGGER.error("TTransportException inside handler", e);
+              fb.close();
+              return;
+            } else if (e instanceof org.apache.thrift.TApplicationException) {
+              _LOGGER.error("TApplicationException inside handler", e);
+              msgType = org.apache.thrift.protocol.TMessageType.EXCEPTION;
+              msg = (org.apache.thrift.TApplicationException)e;
+            } else {
+              _LOGGER.error("Exception inside handler", e);
+              msgType = org.apache.thrift.protocol.TMessageType.EXCEPTION;
+              msg = new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.INTERNAL_ERROR, e.getMessage());
+            }
+            try {
+              fcall.sendResponse(fb,msg,msgType,seqid);
+            } catch (java.lang.Exception ex) {
+              _LOGGER.error("Exception writing to internal frame buffer", ex);
+              fb.close();
+            }
+          }
+        };
+      }
+
+      protected boolean isOneway() {
+        return false;
+      }
+
+      public void start(I iface, producto_matrices_args args, org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.util.List<java.lang.Double>>> resultHandler) throws org.apache.thrift.TException {
+        iface.producto_matrices(args.matriz1, args.matriz2,resultHandler);
+      }
+    }
+
+    public static class multi_matriz_escalar<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, multi_matriz_escalar_args, java.util.List<java.util.List<java.lang.Double>>> {
+      public multi_matriz_escalar() {
+        super("multi_matriz_escalar");
+      }
+
+      public multi_matriz_escalar_args getEmptyArgsInstance() {
+        return new multi_matriz_escalar_args();
+      }
+
+      public org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.util.List<java.lang.Double>>> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
+        final org.apache.thrift.AsyncProcessFunction fcall = this;
+        return new org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.util.List<java.lang.Double>>>() { 
+          public void onComplete(java.util.List<java.util.List<java.lang.Double>> o) {
+            multi_matriz_escalar_result result = new multi_matriz_escalar_result();
+            result.success = o;
+            try {
+              fcall.sendResponse(fb, result, org.apache.thrift.protocol.TMessageType.REPLY,seqid);
+            } catch (org.apache.thrift.transport.TTransportException e) {
+              _LOGGER.error("TTransportException writing to internal frame buffer", e);
+              fb.close();
+            } catch (java.lang.Exception e) {
+              _LOGGER.error("Exception writing to internal frame buffer", e);
+              onError(e);
+            }
+          }
+          public void onError(java.lang.Exception e) {
+            byte msgType = org.apache.thrift.protocol.TMessageType.REPLY;
+            org.apache.thrift.TSerializable msg;
+            multi_matriz_escalar_result result = new multi_matriz_escalar_result();
+            if (e instanceof org.apache.thrift.transport.TTransportException) {
+              _LOGGER.error("TTransportException inside handler", e);
+              fb.close();
+              return;
+            } else if (e instanceof org.apache.thrift.TApplicationException) {
+              _LOGGER.error("TApplicationException inside handler", e);
+              msgType = org.apache.thrift.protocol.TMessageType.EXCEPTION;
+              msg = (org.apache.thrift.TApplicationException)e;
+            } else {
+              _LOGGER.error("Exception inside handler", e);
+              msgType = org.apache.thrift.protocol.TMessageType.EXCEPTION;
+              msg = new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.INTERNAL_ERROR, e.getMessage());
+            }
+            try {
+              fcall.sendResponse(fb,msg,msgType,seqid);
+            } catch (java.lang.Exception ex) {
+              _LOGGER.error("Exception writing to internal frame buffer", ex);
+              fb.close();
+            }
+          }
+        };
+      }
+
+      protected boolean isOneway() {
+        return false;
+      }
+
+      public void start(I iface, multi_matriz_escalar_args args, org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.util.List<java.lang.Double>>> resultHandler) throws org.apache.thrift.TException {
+        iface.multi_matriz_escalar(args.matriz1, args.escalar,resultHandler);
+      }
+    }
+
+    public static class division_matriz_escalar<I extends AsyncIface> extends org.apache.thrift.AsyncProcessFunction<I, division_matriz_escalar_args, java.util.List<java.util.List<java.lang.Double>>> {
+      public division_matriz_escalar() {
+        super("division_matriz_escalar");
+      }
+
+      public division_matriz_escalar_args getEmptyArgsInstance() {
+        return new division_matriz_escalar_args();
+      }
+
+      public org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.util.List<java.lang.Double>>> getResultHandler(final org.apache.thrift.server.AbstractNonblockingServer.AsyncFrameBuffer fb, final int seqid) {
+        final org.apache.thrift.AsyncProcessFunction fcall = this;
+        return new org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.util.List<java.lang.Double>>>() { 
+          public void onComplete(java.util.List<java.util.List<java.lang.Double>> o) {
+            division_matriz_escalar_result result = new division_matriz_escalar_result();
+            result.success = o;
+            try {
+              fcall.sendResponse(fb, result, org.apache.thrift.protocol.TMessageType.REPLY,seqid);
+            } catch (org.apache.thrift.transport.TTransportException e) {
+              _LOGGER.error("TTransportException writing to internal frame buffer", e);
+              fb.close();
+            } catch (java.lang.Exception e) {
+              _LOGGER.error("Exception writing to internal frame buffer", e);
+              onError(e);
+            }
+          }
+          public void onError(java.lang.Exception e) {
+            byte msgType = org.apache.thrift.protocol.TMessageType.REPLY;
+            org.apache.thrift.TSerializable msg;
+            division_matriz_escalar_result result = new division_matriz_escalar_result();
+            if (e instanceof org.apache.thrift.transport.TTransportException) {
+              _LOGGER.error("TTransportException inside handler", e);
+              fb.close();
+              return;
+            } else if (e instanceof org.apache.thrift.TApplicationException) {
+              _LOGGER.error("TApplicationException inside handler", e);
+              msgType = org.apache.thrift.protocol.TMessageType.EXCEPTION;
+              msg = (org.apache.thrift.TApplicationException)e;
+            } else {
+              _LOGGER.error("Exception inside handler", e);
+              msgType = org.apache.thrift.protocol.TMessageType.EXCEPTION;
+              msg = new org.apache.thrift.TApplicationException(org.apache.thrift.TApplicationException.INTERNAL_ERROR, e.getMessage());
+            }
+            try {
+              fcall.sendResponse(fb,msg,msgType,seqid);
+            } catch (java.lang.Exception ex) {
+              _LOGGER.error("Exception writing to internal frame buffer", ex);
+              fb.close();
+            }
+          }
+        };
+      }
+
+      protected boolean isOneway() {
+        return false;
+      }
+
+      public void start(I iface, division_matriz_escalar_args args, org.apache.thrift.async.AsyncMethodCallback<java.util.List<java.util.List<java.lang.Double>>> resultHandler) throws org.apache.thrift.TException {
+        iface.division_matriz_escalar(args.matriz1, args.escalar,resultHandler);
       }
     }
 
@@ -1346,14 +2858,14 @@ public class Calculadora {
   public static class suma_args implements org.apache.thrift.TBase<suma_args, suma_args._Fields>, java.io.Serializable, Cloneable, Comparable<suma_args>   {
     private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("suma_args");
 
-    private static final org.apache.thrift.protocol.TField NUM1_FIELD_DESC = new org.apache.thrift.protocol.TField("num1", org.apache.thrift.protocol.TType.I32, (short)1);
-    private static final org.apache.thrift.protocol.TField NUM2_FIELD_DESC = new org.apache.thrift.protocol.TField("num2", org.apache.thrift.protocol.TType.I32, (short)2);
+    private static final org.apache.thrift.protocol.TField NUM1_FIELD_DESC = new org.apache.thrift.protocol.TField("num1", org.apache.thrift.protocol.TType.DOUBLE, (short)1);
+    private static final org.apache.thrift.protocol.TField NUM2_FIELD_DESC = new org.apache.thrift.protocol.TField("num2", org.apache.thrift.protocol.TType.DOUBLE, (short)2);
 
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new suma_argsStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new suma_argsTupleSchemeFactory();
 
-    public int num1; // required
-    public int num2; // required
+    public double num1; // required
+    public double num2; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -1426,9 +2938,9 @@ public class Calculadora {
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.NUM1, new org.apache.thrift.meta_data.FieldMetaData("num1", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE)));
       tmpMap.put(_Fields.NUM2, new org.apache.thrift.meta_data.FieldMetaData("num2", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(suma_args.class, metaDataMap);
     }
@@ -1437,8 +2949,8 @@ public class Calculadora {
     }
 
     public suma_args(
-      int num1,
-      int num2)
+      double num1,
+      double num2)
     {
       this();
       this.num1 = num1;
@@ -1463,16 +2975,16 @@ public class Calculadora {
     @Override
     public void clear() {
       setNum1IsSet(false);
-      this.num1 = 0;
+      this.num1 = 0.0;
       setNum2IsSet(false);
-      this.num2 = 0;
+      this.num2 = 0.0;
     }
 
-    public int getNum1() {
+    public double getNum1() {
       return this.num1;
     }
 
-    public suma_args setNum1(int num1) {
+    public suma_args setNum1(double num1) {
       this.num1 = num1;
       setNum1IsSet(true);
       return this;
@@ -1491,11 +3003,11 @@ public class Calculadora {
       __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __NUM1_ISSET_ID, value);
     }
 
-    public int getNum2() {
+    public double getNum2() {
       return this.num2;
     }
 
-    public suma_args setNum2(int num2) {
+    public suma_args setNum2(double num2) {
       this.num2 = num2;
       setNum2IsSet(true);
       return this;
@@ -1520,7 +3032,7 @@ public class Calculadora {
         if (value == null) {
           unsetNum1();
         } else {
-          setNum1((java.lang.Integer)value);
+          setNum1((java.lang.Double)value);
         }
         break;
 
@@ -1528,7 +3040,7 @@ public class Calculadora {
         if (value == null) {
           unsetNum2();
         } else {
-          setNum2((java.lang.Integer)value);
+          setNum2((java.lang.Double)value);
         }
         break;
 
@@ -1601,9 +3113,9 @@ public class Calculadora {
     public int hashCode() {
       int hashCode = 1;
 
-      hashCode = hashCode * 8191 + num1;
+      hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(num1);
 
-      hashCode = hashCode * 8191 + num2;
+      hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(num2);
 
       return hashCode;
     }
@@ -1710,16 +3222,16 @@ public class Calculadora {
           }
           switch (schemeField.id) {
             case 1: // NUM1
-              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                struct.num1 = iprot.readI32();
+              if (schemeField.type == org.apache.thrift.protocol.TType.DOUBLE) {
+                struct.num1 = iprot.readDouble();
                 struct.setNum1IsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
               }
               break;
             case 2: // NUM2
-              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                struct.num2 = iprot.readI32();
+              if (schemeField.type == org.apache.thrift.protocol.TType.DOUBLE) {
+                struct.num2 = iprot.readDouble();
                 struct.setNum2IsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -1741,10 +3253,10 @@ public class Calculadora {
 
         oprot.writeStructBegin(STRUCT_DESC);
         oprot.writeFieldBegin(NUM1_FIELD_DESC);
-        oprot.writeI32(struct.num1);
+        oprot.writeDouble(struct.num1);
         oprot.writeFieldEnd();
         oprot.writeFieldBegin(NUM2_FIELD_DESC);
-        oprot.writeI32(struct.num2);
+        oprot.writeDouble(struct.num2);
         oprot.writeFieldEnd();
         oprot.writeFieldStop();
         oprot.writeStructEnd();
@@ -1772,10 +3284,10 @@ public class Calculadora {
         }
         oprot.writeBitSet(optionals, 2);
         if (struct.isSetNum1()) {
-          oprot.writeI32(struct.num1);
+          oprot.writeDouble(struct.num1);
         }
         if (struct.isSetNum2()) {
-          oprot.writeI32(struct.num2);
+          oprot.writeDouble(struct.num2);
         }
       }
 
@@ -1784,11 +3296,11 @@ public class Calculadora {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(2);
         if (incoming.get(0)) {
-          struct.num1 = iprot.readI32();
+          struct.num1 = iprot.readDouble();
           struct.setNum1IsSet(true);
         }
         if (incoming.get(1)) {
-          struct.num2 = iprot.readI32();
+          struct.num2 = iprot.readDouble();
           struct.setNum2IsSet(true);
         }
       }
@@ -1802,12 +3314,12 @@ public class Calculadora {
   public static class suma_result implements org.apache.thrift.TBase<suma_result, suma_result._Fields>, java.io.Serializable, Cloneable, Comparable<suma_result>   {
     private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("suma_result");
 
-    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.I32, (short)0);
+    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.DOUBLE, (short)0);
 
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new suma_resultStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new suma_resultTupleSchemeFactory();
 
-    public int success; // required
+    public double success; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -1876,7 +3388,7 @@ public class Calculadora {
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(suma_result.class, metaDataMap);
     }
@@ -1885,7 +3397,7 @@ public class Calculadora {
     }
 
     public suma_result(
-      int success)
+      double success)
     {
       this();
       this.success = success;
@@ -1907,14 +3419,14 @@ public class Calculadora {
     @Override
     public void clear() {
       setSuccessIsSet(false);
-      this.success = 0;
+      this.success = 0.0;
     }
 
-    public int getSuccess() {
+    public double getSuccess() {
       return this.success;
     }
 
-    public suma_result setSuccess(int success) {
+    public suma_result setSuccess(double success) {
       this.success = success;
       setSuccessIsSet(true);
       return this;
@@ -1939,7 +3451,7 @@ public class Calculadora {
         if (value == null) {
           unsetSuccess();
         } else {
-          setSuccess((java.lang.Integer)value);
+          setSuccess((java.lang.Double)value);
         }
         break;
 
@@ -1998,7 +3510,7 @@ public class Calculadora {
     public int hashCode() {
       int hashCode = 1;
 
-      hashCode = hashCode * 8191 + success;
+      hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(success);
 
       return hashCode;
     }
@@ -2091,8 +3603,8 @@ public class Calculadora {
           }
           switch (schemeField.id) {
             case 0: // SUCCESS
-              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                struct.success = iprot.readI32();
+              if (schemeField.type == org.apache.thrift.protocol.TType.DOUBLE) {
+                struct.success = iprot.readDouble();
                 struct.setSuccessIsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -2115,7 +3627,7 @@ public class Calculadora {
         oprot.writeStructBegin(STRUCT_DESC);
         if (struct.isSetSuccess()) {
           oprot.writeFieldBegin(SUCCESS_FIELD_DESC);
-          oprot.writeI32(struct.success);
+          oprot.writeDouble(struct.success);
           oprot.writeFieldEnd();
         }
         oprot.writeFieldStop();
@@ -2141,7 +3653,7 @@ public class Calculadora {
         }
         oprot.writeBitSet(optionals, 1);
         if (struct.isSetSuccess()) {
-          oprot.writeI32(struct.success);
+          oprot.writeDouble(struct.success);
         }
       }
 
@@ -2150,7 +3662,7 @@ public class Calculadora {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(1);
         if (incoming.get(0)) {
-          struct.success = iprot.readI32();
+          struct.success = iprot.readDouble();
           struct.setSuccessIsSet(true);
         }
       }
@@ -2164,14 +3676,14 @@ public class Calculadora {
   public static class resta_args implements org.apache.thrift.TBase<resta_args, resta_args._Fields>, java.io.Serializable, Cloneable, Comparable<resta_args>   {
     private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("resta_args");
 
-    private static final org.apache.thrift.protocol.TField NUM1_FIELD_DESC = new org.apache.thrift.protocol.TField("num1", org.apache.thrift.protocol.TType.I32, (short)1);
-    private static final org.apache.thrift.protocol.TField NUM2_FIELD_DESC = new org.apache.thrift.protocol.TField("num2", org.apache.thrift.protocol.TType.I32, (short)2);
+    private static final org.apache.thrift.protocol.TField NUM1_FIELD_DESC = new org.apache.thrift.protocol.TField("num1", org.apache.thrift.protocol.TType.DOUBLE, (short)1);
+    private static final org.apache.thrift.protocol.TField NUM2_FIELD_DESC = new org.apache.thrift.protocol.TField("num2", org.apache.thrift.protocol.TType.DOUBLE, (short)2);
 
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new resta_argsStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new resta_argsTupleSchemeFactory();
 
-    public int num1; // required
-    public int num2; // required
+    public double num1; // required
+    public double num2; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -2244,9 +3756,9 @@ public class Calculadora {
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.NUM1, new org.apache.thrift.meta_data.FieldMetaData("num1", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE)));
       tmpMap.put(_Fields.NUM2, new org.apache.thrift.meta_data.FieldMetaData("num2", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(resta_args.class, metaDataMap);
     }
@@ -2255,8 +3767,8 @@ public class Calculadora {
     }
 
     public resta_args(
-      int num1,
-      int num2)
+      double num1,
+      double num2)
     {
       this();
       this.num1 = num1;
@@ -2281,16 +3793,16 @@ public class Calculadora {
     @Override
     public void clear() {
       setNum1IsSet(false);
-      this.num1 = 0;
+      this.num1 = 0.0;
       setNum2IsSet(false);
-      this.num2 = 0;
+      this.num2 = 0.0;
     }
 
-    public int getNum1() {
+    public double getNum1() {
       return this.num1;
     }
 
-    public resta_args setNum1(int num1) {
+    public resta_args setNum1(double num1) {
       this.num1 = num1;
       setNum1IsSet(true);
       return this;
@@ -2309,11 +3821,11 @@ public class Calculadora {
       __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __NUM1_ISSET_ID, value);
     }
 
-    public int getNum2() {
+    public double getNum2() {
       return this.num2;
     }
 
-    public resta_args setNum2(int num2) {
+    public resta_args setNum2(double num2) {
       this.num2 = num2;
       setNum2IsSet(true);
       return this;
@@ -2338,7 +3850,7 @@ public class Calculadora {
         if (value == null) {
           unsetNum1();
         } else {
-          setNum1((java.lang.Integer)value);
+          setNum1((java.lang.Double)value);
         }
         break;
 
@@ -2346,7 +3858,7 @@ public class Calculadora {
         if (value == null) {
           unsetNum2();
         } else {
-          setNum2((java.lang.Integer)value);
+          setNum2((java.lang.Double)value);
         }
         break;
 
@@ -2419,9 +3931,9 @@ public class Calculadora {
     public int hashCode() {
       int hashCode = 1;
 
-      hashCode = hashCode * 8191 + num1;
+      hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(num1);
 
-      hashCode = hashCode * 8191 + num2;
+      hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(num2);
 
       return hashCode;
     }
@@ -2528,16 +4040,16 @@ public class Calculadora {
           }
           switch (schemeField.id) {
             case 1: // NUM1
-              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                struct.num1 = iprot.readI32();
+              if (schemeField.type == org.apache.thrift.protocol.TType.DOUBLE) {
+                struct.num1 = iprot.readDouble();
                 struct.setNum1IsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
               }
               break;
             case 2: // NUM2
-              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                struct.num2 = iprot.readI32();
+              if (schemeField.type == org.apache.thrift.protocol.TType.DOUBLE) {
+                struct.num2 = iprot.readDouble();
                 struct.setNum2IsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -2559,10 +4071,10 @@ public class Calculadora {
 
         oprot.writeStructBegin(STRUCT_DESC);
         oprot.writeFieldBegin(NUM1_FIELD_DESC);
-        oprot.writeI32(struct.num1);
+        oprot.writeDouble(struct.num1);
         oprot.writeFieldEnd();
         oprot.writeFieldBegin(NUM2_FIELD_DESC);
-        oprot.writeI32(struct.num2);
+        oprot.writeDouble(struct.num2);
         oprot.writeFieldEnd();
         oprot.writeFieldStop();
         oprot.writeStructEnd();
@@ -2590,10 +4102,10 @@ public class Calculadora {
         }
         oprot.writeBitSet(optionals, 2);
         if (struct.isSetNum1()) {
-          oprot.writeI32(struct.num1);
+          oprot.writeDouble(struct.num1);
         }
         if (struct.isSetNum2()) {
-          oprot.writeI32(struct.num2);
+          oprot.writeDouble(struct.num2);
         }
       }
 
@@ -2602,11 +4114,11 @@ public class Calculadora {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(2);
         if (incoming.get(0)) {
-          struct.num1 = iprot.readI32();
+          struct.num1 = iprot.readDouble();
           struct.setNum1IsSet(true);
         }
         if (incoming.get(1)) {
-          struct.num2 = iprot.readI32();
+          struct.num2 = iprot.readDouble();
           struct.setNum2IsSet(true);
         }
       }
@@ -2620,12 +4132,12 @@ public class Calculadora {
   public static class resta_result implements org.apache.thrift.TBase<resta_result, resta_result._Fields>, java.io.Serializable, Cloneable, Comparable<resta_result>   {
     private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("resta_result");
 
-    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.I32, (short)0);
+    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.DOUBLE, (short)0);
 
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new resta_resultStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new resta_resultTupleSchemeFactory();
 
-    public int success; // required
+    public double success; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -2694,7 +4206,7 @@ public class Calculadora {
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(resta_result.class, metaDataMap);
     }
@@ -2703,7 +4215,7 @@ public class Calculadora {
     }
 
     public resta_result(
-      int success)
+      double success)
     {
       this();
       this.success = success;
@@ -2725,14 +4237,14 @@ public class Calculadora {
     @Override
     public void clear() {
       setSuccessIsSet(false);
-      this.success = 0;
+      this.success = 0.0;
     }
 
-    public int getSuccess() {
+    public double getSuccess() {
       return this.success;
     }
 
-    public resta_result setSuccess(int success) {
+    public resta_result setSuccess(double success) {
       this.success = success;
       setSuccessIsSet(true);
       return this;
@@ -2757,7 +4269,7 @@ public class Calculadora {
         if (value == null) {
           unsetSuccess();
         } else {
-          setSuccess((java.lang.Integer)value);
+          setSuccess((java.lang.Double)value);
         }
         break;
 
@@ -2816,7 +4328,7 @@ public class Calculadora {
     public int hashCode() {
       int hashCode = 1;
 
-      hashCode = hashCode * 8191 + success;
+      hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(success);
 
       return hashCode;
     }
@@ -2909,8 +4421,8 @@ public class Calculadora {
           }
           switch (schemeField.id) {
             case 0: // SUCCESS
-              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                struct.success = iprot.readI32();
+              if (schemeField.type == org.apache.thrift.protocol.TType.DOUBLE) {
+                struct.success = iprot.readDouble();
                 struct.setSuccessIsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -2933,7 +4445,7 @@ public class Calculadora {
         oprot.writeStructBegin(STRUCT_DESC);
         if (struct.isSetSuccess()) {
           oprot.writeFieldBegin(SUCCESS_FIELD_DESC);
-          oprot.writeI32(struct.success);
+          oprot.writeDouble(struct.success);
           oprot.writeFieldEnd();
         }
         oprot.writeFieldStop();
@@ -2959,7 +4471,7 @@ public class Calculadora {
         }
         oprot.writeBitSet(optionals, 1);
         if (struct.isSetSuccess()) {
-          oprot.writeI32(struct.success);
+          oprot.writeDouble(struct.success);
         }
       }
 
@@ -2968,7 +4480,7 @@ public class Calculadora {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(1);
         if (incoming.get(0)) {
-          struct.success = iprot.readI32();
+          struct.success = iprot.readDouble();
           struct.setSuccessIsSet(true);
         }
       }
@@ -2982,14 +4494,14 @@ public class Calculadora {
   public static class multiplicacion_args implements org.apache.thrift.TBase<multiplicacion_args, multiplicacion_args._Fields>, java.io.Serializable, Cloneable, Comparable<multiplicacion_args>   {
     private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("multiplicacion_args");
 
-    private static final org.apache.thrift.protocol.TField NUM1_FIELD_DESC = new org.apache.thrift.protocol.TField("num1", org.apache.thrift.protocol.TType.I32, (short)1);
-    private static final org.apache.thrift.protocol.TField NUM2_FIELD_DESC = new org.apache.thrift.protocol.TField("num2", org.apache.thrift.protocol.TType.I32, (short)2);
+    private static final org.apache.thrift.protocol.TField NUM1_FIELD_DESC = new org.apache.thrift.protocol.TField("num1", org.apache.thrift.protocol.TType.DOUBLE, (short)1);
+    private static final org.apache.thrift.protocol.TField NUM2_FIELD_DESC = new org.apache.thrift.protocol.TField("num2", org.apache.thrift.protocol.TType.DOUBLE, (short)2);
 
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new multiplicacion_argsStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new multiplicacion_argsTupleSchemeFactory();
 
-    public int num1; // required
-    public int num2; // required
+    public double num1; // required
+    public double num2; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -3062,9 +4574,9 @@ public class Calculadora {
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.NUM1, new org.apache.thrift.meta_data.FieldMetaData("num1", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE)));
       tmpMap.put(_Fields.NUM2, new org.apache.thrift.meta_data.FieldMetaData("num2", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(multiplicacion_args.class, metaDataMap);
     }
@@ -3073,8 +4585,8 @@ public class Calculadora {
     }
 
     public multiplicacion_args(
-      int num1,
-      int num2)
+      double num1,
+      double num2)
     {
       this();
       this.num1 = num1;
@@ -3099,16 +4611,16 @@ public class Calculadora {
     @Override
     public void clear() {
       setNum1IsSet(false);
-      this.num1 = 0;
+      this.num1 = 0.0;
       setNum2IsSet(false);
-      this.num2 = 0;
+      this.num2 = 0.0;
     }
 
-    public int getNum1() {
+    public double getNum1() {
       return this.num1;
     }
 
-    public multiplicacion_args setNum1(int num1) {
+    public multiplicacion_args setNum1(double num1) {
       this.num1 = num1;
       setNum1IsSet(true);
       return this;
@@ -3127,11 +4639,11 @@ public class Calculadora {
       __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __NUM1_ISSET_ID, value);
     }
 
-    public int getNum2() {
+    public double getNum2() {
       return this.num2;
     }
 
-    public multiplicacion_args setNum2(int num2) {
+    public multiplicacion_args setNum2(double num2) {
       this.num2 = num2;
       setNum2IsSet(true);
       return this;
@@ -3156,7 +4668,7 @@ public class Calculadora {
         if (value == null) {
           unsetNum1();
         } else {
-          setNum1((java.lang.Integer)value);
+          setNum1((java.lang.Double)value);
         }
         break;
 
@@ -3164,7 +4676,7 @@ public class Calculadora {
         if (value == null) {
           unsetNum2();
         } else {
-          setNum2((java.lang.Integer)value);
+          setNum2((java.lang.Double)value);
         }
         break;
 
@@ -3237,9 +4749,9 @@ public class Calculadora {
     public int hashCode() {
       int hashCode = 1;
 
-      hashCode = hashCode * 8191 + num1;
+      hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(num1);
 
-      hashCode = hashCode * 8191 + num2;
+      hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(num2);
 
       return hashCode;
     }
@@ -3346,16 +4858,16 @@ public class Calculadora {
           }
           switch (schemeField.id) {
             case 1: // NUM1
-              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                struct.num1 = iprot.readI32();
+              if (schemeField.type == org.apache.thrift.protocol.TType.DOUBLE) {
+                struct.num1 = iprot.readDouble();
                 struct.setNum1IsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
               }
               break;
             case 2: // NUM2
-              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                struct.num2 = iprot.readI32();
+              if (schemeField.type == org.apache.thrift.protocol.TType.DOUBLE) {
+                struct.num2 = iprot.readDouble();
                 struct.setNum2IsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -3377,10 +4889,10 @@ public class Calculadora {
 
         oprot.writeStructBegin(STRUCT_DESC);
         oprot.writeFieldBegin(NUM1_FIELD_DESC);
-        oprot.writeI32(struct.num1);
+        oprot.writeDouble(struct.num1);
         oprot.writeFieldEnd();
         oprot.writeFieldBegin(NUM2_FIELD_DESC);
-        oprot.writeI32(struct.num2);
+        oprot.writeDouble(struct.num2);
         oprot.writeFieldEnd();
         oprot.writeFieldStop();
         oprot.writeStructEnd();
@@ -3408,10 +4920,10 @@ public class Calculadora {
         }
         oprot.writeBitSet(optionals, 2);
         if (struct.isSetNum1()) {
-          oprot.writeI32(struct.num1);
+          oprot.writeDouble(struct.num1);
         }
         if (struct.isSetNum2()) {
-          oprot.writeI32(struct.num2);
+          oprot.writeDouble(struct.num2);
         }
       }
 
@@ -3420,11 +4932,11 @@ public class Calculadora {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(2);
         if (incoming.get(0)) {
-          struct.num1 = iprot.readI32();
+          struct.num1 = iprot.readDouble();
           struct.setNum1IsSet(true);
         }
         if (incoming.get(1)) {
-          struct.num2 = iprot.readI32();
+          struct.num2 = iprot.readDouble();
           struct.setNum2IsSet(true);
         }
       }
@@ -3438,12 +4950,12 @@ public class Calculadora {
   public static class multiplicacion_result implements org.apache.thrift.TBase<multiplicacion_result, multiplicacion_result._Fields>, java.io.Serializable, Cloneable, Comparable<multiplicacion_result>   {
     private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("multiplicacion_result");
 
-    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.I32, (short)0);
+    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.DOUBLE, (short)0);
 
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new multiplicacion_resultStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new multiplicacion_resultTupleSchemeFactory();
 
-    public int success; // required
+    public double success; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -3512,7 +5024,7 @@ public class Calculadora {
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(multiplicacion_result.class, metaDataMap);
     }
@@ -3521,7 +5033,7 @@ public class Calculadora {
     }
 
     public multiplicacion_result(
-      int success)
+      double success)
     {
       this();
       this.success = success;
@@ -3543,14 +5055,14 @@ public class Calculadora {
     @Override
     public void clear() {
       setSuccessIsSet(false);
-      this.success = 0;
+      this.success = 0.0;
     }
 
-    public int getSuccess() {
+    public double getSuccess() {
       return this.success;
     }
 
-    public multiplicacion_result setSuccess(int success) {
+    public multiplicacion_result setSuccess(double success) {
       this.success = success;
       setSuccessIsSet(true);
       return this;
@@ -3575,7 +5087,7 @@ public class Calculadora {
         if (value == null) {
           unsetSuccess();
         } else {
-          setSuccess((java.lang.Integer)value);
+          setSuccess((java.lang.Double)value);
         }
         break;
 
@@ -3634,7 +5146,7 @@ public class Calculadora {
     public int hashCode() {
       int hashCode = 1;
 
-      hashCode = hashCode * 8191 + success;
+      hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(success);
 
       return hashCode;
     }
@@ -3727,8 +5239,8 @@ public class Calculadora {
           }
           switch (schemeField.id) {
             case 0: // SUCCESS
-              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                struct.success = iprot.readI32();
+              if (schemeField.type == org.apache.thrift.protocol.TType.DOUBLE) {
+                struct.success = iprot.readDouble();
                 struct.setSuccessIsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -3751,7 +5263,7 @@ public class Calculadora {
         oprot.writeStructBegin(STRUCT_DESC);
         if (struct.isSetSuccess()) {
           oprot.writeFieldBegin(SUCCESS_FIELD_DESC);
-          oprot.writeI32(struct.success);
+          oprot.writeDouble(struct.success);
           oprot.writeFieldEnd();
         }
         oprot.writeFieldStop();
@@ -3777,7 +5289,7 @@ public class Calculadora {
         }
         oprot.writeBitSet(optionals, 1);
         if (struct.isSetSuccess()) {
-          oprot.writeI32(struct.success);
+          oprot.writeDouble(struct.success);
         }
       }
 
@@ -3786,7 +5298,7 @@ public class Calculadora {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(1);
         if (incoming.get(0)) {
-          struct.success = iprot.readI32();
+          struct.success = iprot.readDouble();
           struct.setSuccessIsSet(true);
         }
       }
@@ -3800,14 +5312,14 @@ public class Calculadora {
   public static class division_args implements org.apache.thrift.TBase<division_args, division_args._Fields>, java.io.Serializable, Cloneable, Comparable<division_args>   {
     private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("division_args");
 
-    private static final org.apache.thrift.protocol.TField NUM1_FIELD_DESC = new org.apache.thrift.protocol.TField("num1", org.apache.thrift.protocol.TType.I32, (short)1);
-    private static final org.apache.thrift.protocol.TField NUM2_FIELD_DESC = new org.apache.thrift.protocol.TField("num2", org.apache.thrift.protocol.TType.I32, (short)2);
+    private static final org.apache.thrift.protocol.TField NUM1_FIELD_DESC = new org.apache.thrift.protocol.TField("num1", org.apache.thrift.protocol.TType.DOUBLE, (short)1);
+    private static final org.apache.thrift.protocol.TField NUM2_FIELD_DESC = new org.apache.thrift.protocol.TField("num2", org.apache.thrift.protocol.TType.DOUBLE, (short)2);
 
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new division_argsStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new division_argsTupleSchemeFactory();
 
-    public int num1; // required
-    public int num2; // required
+    public double num1; // required
+    public double num2; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -3880,9 +5392,9 @@ public class Calculadora {
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.NUM1, new org.apache.thrift.meta_data.FieldMetaData("num1", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE)));
       tmpMap.put(_Fields.NUM2, new org.apache.thrift.meta_data.FieldMetaData("num2", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(division_args.class, metaDataMap);
     }
@@ -3891,8 +5403,8 @@ public class Calculadora {
     }
 
     public division_args(
-      int num1,
-      int num2)
+      double num1,
+      double num2)
     {
       this();
       this.num1 = num1;
@@ -3917,16 +5429,16 @@ public class Calculadora {
     @Override
     public void clear() {
       setNum1IsSet(false);
-      this.num1 = 0;
+      this.num1 = 0.0;
       setNum2IsSet(false);
-      this.num2 = 0;
+      this.num2 = 0.0;
     }
 
-    public int getNum1() {
+    public double getNum1() {
       return this.num1;
     }
 
-    public division_args setNum1(int num1) {
+    public division_args setNum1(double num1) {
       this.num1 = num1;
       setNum1IsSet(true);
       return this;
@@ -3945,11 +5457,11 @@ public class Calculadora {
       __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __NUM1_ISSET_ID, value);
     }
 
-    public int getNum2() {
+    public double getNum2() {
       return this.num2;
     }
 
-    public division_args setNum2(int num2) {
+    public division_args setNum2(double num2) {
       this.num2 = num2;
       setNum2IsSet(true);
       return this;
@@ -3974,7 +5486,7 @@ public class Calculadora {
         if (value == null) {
           unsetNum1();
         } else {
-          setNum1((java.lang.Integer)value);
+          setNum1((java.lang.Double)value);
         }
         break;
 
@@ -3982,7 +5494,7 @@ public class Calculadora {
         if (value == null) {
           unsetNum2();
         } else {
-          setNum2((java.lang.Integer)value);
+          setNum2((java.lang.Double)value);
         }
         break;
 
@@ -4055,9 +5567,9 @@ public class Calculadora {
     public int hashCode() {
       int hashCode = 1;
 
-      hashCode = hashCode * 8191 + num1;
+      hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(num1);
 
-      hashCode = hashCode * 8191 + num2;
+      hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(num2);
 
       return hashCode;
     }
@@ -4164,16 +5676,16 @@ public class Calculadora {
           }
           switch (schemeField.id) {
             case 1: // NUM1
-              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                struct.num1 = iprot.readI32();
+              if (schemeField.type == org.apache.thrift.protocol.TType.DOUBLE) {
+                struct.num1 = iprot.readDouble();
                 struct.setNum1IsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
               }
               break;
             case 2: // NUM2
-              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                struct.num2 = iprot.readI32();
+              if (schemeField.type == org.apache.thrift.protocol.TType.DOUBLE) {
+                struct.num2 = iprot.readDouble();
                 struct.setNum2IsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -4195,10 +5707,10 @@ public class Calculadora {
 
         oprot.writeStructBegin(STRUCT_DESC);
         oprot.writeFieldBegin(NUM1_FIELD_DESC);
-        oprot.writeI32(struct.num1);
+        oprot.writeDouble(struct.num1);
         oprot.writeFieldEnd();
         oprot.writeFieldBegin(NUM2_FIELD_DESC);
-        oprot.writeI32(struct.num2);
+        oprot.writeDouble(struct.num2);
         oprot.writeFieldEnd();
         oprot.writeFieldStop();
         oprot.writeStructEnd();
@@ -4226,10 +5738,10 @@ public class Calculadora {
         }
         oprot.writeBitSet(optionals, 2);
         if (struct.isSetNum1()) {
-          oprot.writeI32(struct.num1);
+          oprot.writeDouble(struct.num1);
         }
         if (struct.isSetNum2()) {
-          oprot.writeI32(struct.num2);
+          oprot.writeDouble(struct.num2);
         }
       }
 
@@ -4238,11 +5750,11 @@ public class Calculadora {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(2);
         if (incoming.get(0)) {
-          struct.num1 = iprot.readI32();
+          struct.num1 = iprot.readDouble();
           struct.setNum1IsSet(true);
         }
         if (incoming.get(1)) {
-          struct.num2 = iprot.readI32();
+          struct.num2 = iprot.readDouble();
           struct.setNum2IsSet(true);
         }
       }
@@ -4256,12 +5768,12 @@ public class Calculadora {
   public static class division_result implements org.apache.thrift.TBase<division_result, division_result._Fields>, java.io.Serializable, Cloneable, Comparable<division_result>   {
     private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("division_result");
 
-    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.I32, (short)0);
+    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.DOUBLE, (short)0);
 
     private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new division_resultStandardSchemeFactory();
     private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new division_resultTupleSchemeFactory();
 
-    public int success; // required
+    public double success; // required
 
     /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
     public enum _Fields implements org.apache.thrift.TFieldIdEnum {
@@ -4330,7 +5842,7 @@ public class Calculadora {
     static {
       java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
       tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
-          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.I32)));
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE)));
       metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
       org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(division_result.class, metaDataMap);
     }
@@ -4339,7 +5851,7 @@ public class Calculadora {
     }
 
     public division_result(
-      int success)
+      double success)
     {
       this();
       this.success = success;
@@ -4361,14 +5873,14 @@ public class Calculadora {
     @Override
     public void clear() {
       setSuccessIsSet(false);
-      this.success = 0;
+      this.success = 0.0;
     }
 
-    public int getSuccess() {
+    public double getSuccess() {
       return this.success;
     }
 
-    public division_result setSuccess(int success) {
+    public division_result setSuccess(double success) {
       this.success = success;
       setSuccessIsSet(true);
       return this;
@@ -4393,7 +5905,7 @@ public class Calculadora {
         if (value == null) {
           unsetSuccess();
         } else {
-          setSuccess((java.lang.Integer)value);
+          setSuccess((java.lang.Double)value);
         }
         break;
 
@@ -4452,7 +5964,7 @@ public class Calculadora {
     public int hashCode() {
       int hashCode = 1;
 
-      hashCode = hashCode * 8191 + success;
+      hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(success);
 
       return hashCode;
     }
@@ -4545,8 +6057,8 @@ public class Calculadora {
           }
           switch (schemeField.id) {
             case 0: // SUCCESS
-              if (schemeField.type == org.apache.thrift.protocol.TType.I32) {
-                struct.success = iprot.readI32();
+              if (schemeField.type == org.apache.thrift.protocol.TType.DOUBLE) {
+                struct.success = iprot.readDouble();
                 struct.setSuccessIsSet(true);
               } else { 
                 org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
@@ -4569,7 +6081,7 @@ public class Calculadora {
         oprot.writeStructBegin(STRUCT_DESC);
         if (struct.isSetSuccess()) {
           oprot.writeFieldBegin(SUCCESS_FIELD_DESC);
-          oprot.writeI32(struct.success);
+          oprot.writeDouble(struct.success);
           oprot.writeFieldEnd();
         }
         oprot.writeFieldStop();
@@ -4595,7 +6107,7 @@ public class Calculadora {
         }
         oprot.writeBitSet(optionals, 1);
         if (struct.isSetSuccess()) {
-          oprot.writeI32(struct.success);
+          oprot.writeDouble(struct.success);
         }
       }
 
@@ -4604,7 +6116,10065 @@ public class Calculadora {
         org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
         java.util.BitSet incoming = iprot.readBitSet(1);
         if (incoming.get(0)) {
-          struct.success = iprot.readI32();
+          struct.success = iprot.readDouble();
+          struct.setSuccessIsSet(true);
+        }
+      }
+    }
+
+    private static <S extends org.apache.thrift.scheme.IScheme> S scheme(org.apache.thrift.protocol.TProtocol proto) {
+      return (org.apache.thrift.scheme.StandardScheme.class.equals(proto.getScheme()) ? STANDARD_SCHEME_FACTORY : TUPLE_SCHEME_FACTORY).getScheme();
+    }
+  }
+
+  public static class suma_vectores_args implements org.apache.thrift.TBase<suma_vectores_args, suma_vectores_args._Fields>, java.io.Serializable, Cloneable, Comparable<suma_vectores_args>   {
+    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("suma_vectores_args");
+
+    private static final org.apache.thrift.protocol.TField VECTOR1_FIELD_DESC = new org.apache.thrift.protocol.TField("vector1", org.apache.thrift.protocol.TType.LIST, (short)1);
+    private static final org.apache.thrift.protocol.TField VECTOR2_FIELD_DESC = new org.apache.thrift.protocol.TField("vector2", org.apache.thrift.protocol.TType.LIST, (short)2);
+
+    private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new suma_vectores_argsStandardSchemeFactory();
+    private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new suma_vectores_argsTupleSchemeFactory();
+
+    public @org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> vector1; // required
+    public @org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> vector2; // required
+
+    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+      VECTOR1((short)1, "vector1"),
+      VECTOR2((short)2, "vector2");
+
+      private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
+
+      static {
+        for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
+          byName.put(field.getFieldName(), field);
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, or null if its not found.
+       */
+      @org.apache.thrift.annotation.Nullable
+      public static _Fields findByThriftId(int fieldId) {
+        switch(fieldId) {
+          case 1: // VECTOR1
+            return VECTOR1;
+          case 2: // VECTOR2
+            return VECTOR2;
+          default:
+            return null;
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, throwing an exception
+       * if it is not found.
+       */
+      public static _Fields findByThriftIdOrThrow(int fieldId) {
+        _Fields fields = findByThriftId(fieldId);
+        if (fields == null) throw new java.lang.IllegalArgumentException("Field " + fieldId + " doesn't exist!");
+        return fields;
+      }
+
+      /**
+       * Find the _Fields constant that matches name, or null if its not found.
+       */
+      @org.apache.thrift.annotation.Nullable
+      public static _Fields findByName(java.lang.String name) {
+        return byName.get(name);
+      }
+
+      private final short _thriftId;
+      private final java.lang.String _fieldName;
+
+      _Fields(short thriftId, java.lang.String fieldName) {
+        _thriftId = thriftId;
+        _fieldName = fieldName;
+      }
+
+      public short getThriftFieldId() {
+        return _thriftId;
+      }
+
+      public java.lang.String getFieldName() {
+        return _fieldName;
+      }
+    }
+
+    // isset id assignments
+    public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    static {
+      java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
+      tmpMap.put(_Fields.VECTOR1, new org.apache.thrift.meta_data.FieldMetaData("vector1", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
+              new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE))));
+      tmpMap.put(_Fields.VECTOR2, new org.apache.thrift.meta_data.FieldMetaData("vector2", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
+              new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE))));
+      metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
+      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(suma_vectores_args.class, metaDataMap);
+    }
+
+    public suma_vectores_args() {
+    }
+
+    public suma_vectores_args(
+      java.util.List<java.lang.Double> vector1,
+      java.util.List<java.lang.Double> vector2)
+    {
+      this();
+      this.vector1 = vector1;
+      this.vector2 = vector2;
+    }
+
+    /**
+     * Performs a deep copy on <i>other</i>.
+     */
+    public suma_vectores_args(suma_vectores_args other) {
+      if (other.isSetVector1()) {
+        java.util.List<java.lang.Double> __this__vector1 = new java.util.ArrayList<java.lang.Double>(other.vector1);
+        this.vector1 = __this__vector1;
+      }
+      if (other.isSetVector2()) {
+        java.util.List<java.lang.Double> __this__vector2 = new java.util.ArrayList<java.lang.Double>(other.vector2);
+        this.vector2 = __this__vector2;
+      }
+    }
+
+    public suma_vectores_args deepCopy() {
+      return new suma_vectores_args(this);
+    }
+
+    @Override
+    public void clear() {
+      this.vector1 = null;
+      this.vector2 = null;
+    }
+
+    public int getVector1Size() {
+      return (this.vector1 == null) ? 0 : this.vector1.size();
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.Iterator<java.lang.Double> getVector1Iterator() {
+      return (this.vector1 == null) ? null : this.vector1.iterator();
+    }
+
+    public void addToVector1(double elem) {
+      if (this.vector1 == null) {
+        this.vector1 = new java.util.ArrayList<java.lang.Double>();
+      }
+      this.vector1.add(elem);
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.List<java.lang.Double> getVector1() {
+      return this.vector1;
+    }
+
+    public suma_vectores_args setVector1(@org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> vector1) {
+      this.vector1 = vector1;
+      return this;
+    }
+
+    public void unsetVector1() {
+      this.vector1 = null;
+    }
+
+    /** Returns true if field vector1 is set (has been assigned a value) and false otherwise */
+    public boolean isSetVector1() {
+      return this.vector1 != null;
+    }
+
+    public void setVector1IsSet(boolean value) {
+      if (!value) {
+        this.vector1 = null;
+      }
+    }
+
+    public int getVector2Size() {
+      return (this.vector2 == null) ? 0 : this.vector2.size();
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.Iterator<java.lang.Double> getVector2Iterator() {
+      return (this.vector2 == null) ? null : this.vector2.iterator();
+    }
+
+    public void addToVector2(double elem) {
+      if (this.vector2 == null) {
+        this.vector2 = new java.util.ArrayList<java.lang.Double>();
+      }
+      this.vector2.add(elem);
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.List<java.lang.Double> getVector2() {
+      return this.vector2;
+    }
+
+    public suma_vectores_args setVector2(@org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> vector2) {
+      this.vector2 = vector2;
+      return this;
+    }
+
+    public void unsetVector2() {
+      this.vector2 = null;
+    }
+
+    /** Returns true if field vector2 is set (has been assigned a value) and false otherwise */
+    public boolean isSetVector2() {
+      return this.vector2 != null;
+    }
+
+    public void setVector2IsSet(boolean value) {
+      if (!value) {
+        this.vector2 = null;
+      }
+    }
+
+    public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable java.lang.Object value) {
+      switch (field) {
+      case VECTOR1:
+        if (value == null) {
+          unsetVector1();
+        } else {
+          setVector1((java.util.List<java.lang.Double>)value);
+        }
+        break;
+
+      case VECTOR2:
+        if (value == null) {
+          unsetVector2();
+        } else {
+          setVector2((java.util.List<java.lang.Double>)value);
+        }
+        break;
+
+      }
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.lang.Object getFieldValue(_Fields field) {
+      switch (field) {
+      case VECTOR1:
+        return getVector1();
+
+      case VECTOR2:
+        return getVector2();
+
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    public boolean isSet(_Fields field) {
+      if (field == null) {
+        throw new java.lang.IllegalArgumentException();
+      }
+
+      switch (field) {
+      case VECTOR1:
+        return isSetVector1();
+      case VECTOR2:
+        return isSetVector2();
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    @Override
+    public boolean equals(java.lang.Object that) {
+      if (that instanceof suma_vectores_args)
+        return this.equals((suma_vectores_args)that);
+      return false;
+    }
+
+    public boolean equals(suma_vectores_args that) {
+      if (that == null)
+        return false;
+      if (this == that)
+        return true;
+
+      boolean this_present_vector1 = true && this.isSetVector1();
+      boolean that_present_vector1 = true && that.isSetVector1();
+      if (this_present_vector1 || that_present_vector1) {
+        if (!(this_present_vector1 && that_present_vector1))
+          return false;
+        if (!this.vector1.equals(that.vector1))
+          return false;
+      }
+
+      boolean this_present_vector2 = true && this.isSetVector2();
+      boolean that_present_vector2 = true && that.isSetVector2();
+      if (this_present_vector2 || that_present_vector2) {
+        if (!(this_present_vector2 && that_present_vector2))
+          return false;
+        if (!this.vector2.equals(that.vector2))
+          return false;
+      }
+
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      int hashCode = 1;
+
+      hashCode = hashCode * 8191 + ((isSetVector1()) ? 131071 : 524287);
+      if (isSetVector1())
+        hashCode = hashCode * 8191 + vector1.hashCode();
+
+      hashCode = hashCode * 8191 + ((isSetVector2()) ? 131071 : 524287);
+      if (isSetVector2())
+        hashCode = hashCode * 8191 + vector2.hashCode();
+
+      return hashCode;
+    }
+
+    @Override
+    public int compareTo(suma_vectores_args other) {
+      if (!getClass().equals(other.getClass())) {
+        return getClass().getName().compareTo(other.getClass().getName());
+      }
+
+      int lastComparison = 0;
+
+      lastComparison = java.lang.Boolean.compare(isSetVector1(), other.isSetVector1());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetVector1()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.vector1, other.vector1);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      lastComparison = java.lang.Boolean.compare(isSetVector2(), other.isSetVector2());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetVector2()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.vector2, other.vector2);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      return 0;
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public _Fields fieldForId(int fieldId) {
+      return _Fields.findByThriftId(fieldId);
+    }
+
+    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
+      scheme(iprot).read(iprot, this);
+    }
+
+    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+      scheme(oprot).write(oprot, this);
+    }
+
+    @Override
+    public java.lang.String toString() {
+      java.lang.StringBuilder sb = new java.lang.StringBuilder("suma_vectores_args(");
+      boolean first = true;
+
+      sb.append("vector1:");
+      if (this.vector1 == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.vector1);
+      }
+      first = false;
+      if (!first) sb.append(", ");
+      sb.append("vector2:");
+      if (this.vector2 == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.vector2);
+      }
+      first = false;
+      sb.append(")");
+      return sb.toString();
+    }
+
+    public void validate() throws org.apache.thrift.TException {
+      // check for required fields
+      // check for sub-struct validity
+    }
+
+    private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
+      try {
+        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
+      try {
+        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private static class suma_vectores_argsStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public suma_vectores_argsStandardScheme getScheme() {
+        return new suma_vectores_argsStandardScheme();
+      }
+    }
+
+    private static class suma_vectores_argsStandardScheme extends org.apache.thrift.scheme.StandardScheme<suma_vectores_args> {
+
+      public void read(org.apache.thrift.protocol.TProtocol iprot, suma_vectores_args struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TField schemeField;
+        iprot.readStructBegin();
+        while (true)
+        {
+          schemeField = iprot.readFieldBegin();
+          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) { 
+            break;
+          }
+          switch (schemeField.id) {
+            case 1: // VECTOR1
+              if (schemeField.type == org.apache.thrift.protocol.TType.LIST) {
+                {
+                  org.apache.thrift.protocol.TList _list0 = iprot.readListBegin();
+                  struct.vector1 = new java.util.ArrayList<java.lang.Double>(_list0.size);
+                  double _elem1;
+                  for (int _i2 = 0; _i2 < _list0.size; ++_i2)
+                  {
+                    _elem1 = iprot.readDouble();
+                    struct.vector1.add(_elem1);
+                  }
+                  iprot.readListEnd();
+                }
+                struct.setVector1IsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            case 2: // VECTOR2
+              if (schemeField.type == org.apache.thrift.protocol.TType.LIST) {
+                {
+                  org.apache.thrift.protocol.TList _list3 = iprot.readListBegin();
+                  struct.vector2 = new java.util.ArrayList<java.lang.Double>(_list3.size);
+                  double _elem4;
+                  for (int _i5 = 0; _i5 < _list3.size; ++_i5)
+                  {
+                    _elem4 = iprot.readDouble();
+                    struct.vector2.add(_elem4);
+                  }
+                  iprot.readListEnd();
+                }
+                struct.setVector2IsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            default:
+              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+          }
+          iprot.readFieldEnd();
+        }
+        iprot.readStructEnd();
+
+        // check for required fields of primitive type, which can't be checked in the validate method
+        struct.validate();
+      }
+
+      public void write(org.apache.thrift.protocol.TProtocol oprot, suma_vectores_args struct) throws org.apache.thrift.TException {
+        struct.validate();
+
+        oprot.writeStructBegin(STRUCT_DESC);
+        if (struct.vector1 != null) {
+          oprot.writeFieldBegin(VECTOR1_FIELD_DESC);
+          {
+            oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.DOUBLE, struct.vector1.size()));
+            for (double _iter6 : struct.vector1)
+            {
+              oprot.writeDouble(_iter6);
+            }
+            oprot.writeListEnd();
+          }
+          oprot.writeFieldEnd();
+        }
+        if (struct.vector2 != null) {
+          oprot.writeFieldBegin(VECTOR2_FIELD_DESC);
+          {
+            oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.DOUBLE, struct.vector2.size()));
+            for (double _iter7 : struct.vector2)
+            {
+              oprot.writeDouble(_iter7);
+            }
+            oprot.writeListEnd();
+          }
+          oprot.writeFieldEnd();
+        }
+        oprot.writeFieldStop();
+        oprot.writeStructEnd();
+      }
+
+    }
+
+    private static class suma_vectores_argsTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public suma_vectores_argsTupleScheme getScheme() {
+        return new suma_vectores_argsTupleScheme();
+      }
+    }
+
+    private static class suma_vectores_argsTupleScheme extends org.apache.thrift.scheme.TupleScheme<suma_vectores_args> {
+
+      @Override
+      public void write(org.apache.thrift.protocol.TProtocol prot, suma_vectores_args struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet optionals = new java.util.BitSet();
+        if (struct.isSetVector1()) {
+          optionals.set(0);
+        }
+        if (struct.isSetVector2()) {
+          optionals.set(1);
+        }
+        oprot.writeBitSet(optionals, 2);
+        if (struct.isSetVector1()) {
+          {
+            oprot.writeI32(struct.vector1.size());
+            for (double _iter8 : struct.vector1)
+            {
+              oprot.writeDouble(_iter8);
+            }
+          }
+        }
+        if (struct.isSetVector2()) {
+          {
+            oprot.writeI32(struct.vector2.size());
+            for (double _iter9 : struct.vector2)
+            {
+              oprot.writeDouble(_iter9);
+            }
+          }
+        }
+      }
+
+      @Override
+      public void read(org.apache.thrift.protocol.TProtocol prot, suma_vectores_args struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet incoming = iprot.readBitSet(2);
+        if (incoming.get(0)) {
+          {
+            org.apache.thrift.protocol.TList _list10 = iprot.readListBegin(org.apache.thrift.protocol.TType.DOUBLE);
+            struct.vector1 = new java.util.ArrayList<java.lang.Double>(_list10.size);
+            double _elem11;
+            for (int _i12 = 0; _i12 < _list10.size; ++_i12)
+            {
+              _elem11 = iprot.readDouble();
+              struct.vector1.add(_elem11);
+            }
+          }
+          struct.setVector1IsSet(true);
+        }
+        if (incoming.get(1)) {
+          {
+            org.apache.thrift.protocol.TList _list13 = iprot.readListBegin(org.apache.thrift.protocol.TType.DOUBLE);
+            struct.vector2 = new java.util.ArrayList<java.lang.Double>(_list13.size);
+            double _elem14;
+            for (int _i15 = 0; _i15 < _list13.size; ++_i15)
+            {
+              _elem14 = iprot.readDouble();
+              struct.vector2.add(_elem14);
+            }
+          }
+          struct.setVector2IsSet(true);
+        }
+      }
+    }
+
+    private static <S extends org.apache.thrift.scheme.IScheme> S scheme(org.apache.thrift.protocol.TProtocol proto) {
+      return (org.apache.thrift.scheme.StandardScheme.class.equals(proto.getScheme()) ? STANDARD_SCHEME_FACTORY : TUPLE_SCHEME_FACTORY).getScheme();
+    }
+  }
+
+  public static class suma_vectores_result implements org.apache.thrift.TBase<suma_vectores_result, suma_vectores_result._Fields>, java.io.Serializable, Cloneable, Comparable<suma_vectores_result>   {
+    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("suma_vectores_result");
+
+    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.LIST, (short)0);
+
+    private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new suma_vectores_resultStandardSchemeFactory();
+    private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new suma_vectores_resultTupleSchemeFactory();
+
+    public @org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> success; // required
+
+    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+      SUCCESS((short)0, "success");
+
+      private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
+
+      static {
+        for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
+          byName.put(field.getFieldName(), field);
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, or null if its not found.
+       */
+      @org.apache.thrift.annotation.Nullable
+      public static _Fields findByThriftId(int fieldId) {
+        switch(fieldId) {
+          case 0: // SUCCESS
+            return SUCCESS;
+          default:
+            return null;
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, throwing an exception
+       * if it is not found.
+       */
+      public static _Fields findByThriftIdOrThrow(int fieldId) {
+        _Fields fields = findByThriftId(fieldId);
+        if (fields == null) throw new java.lang.IllegalArgumentException("Field " + fieldId + " doesn't exist!");
+        return fields;
+      }
+
+      /**
+       * Find the _Fields constant that matches name, or null if its not found.
+       */
+      @org.apache.thrift.annotation.Nullable
+      public static _Fields findByName(java.lang.String name) {
+        return byName.get(name);
+      }
+
+      private final short _thriftId;
+      private final java.lang.String _fieldName;
+
+      _Fields(short thriftId, java.lang.String fieldName) {
+        _thriftId = thriftId;
+        _fieldName = fieldName;
+      }
+
+      public short getThriftFieldId() {
+        return _thriftId;
+      }
+
+      public java.lang.String getFieldName() {
+        return _fieldName;
+      }
+    }
+
+    // isset id assignments
+    public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    static {
+      java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
+      tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
+              new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE))));
+      metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
+      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(suma_vectores_result.class, metaDataMap);
+    }
+
+    public suma_vectores_result() {
+    }
+
+    public suma_vectores_result(
+      java.util.List<java.lang.Double> success)
+    {
+      this();
+      this.success = success;
+    }
+
+    /**
+     * Performs a deep copy on <i>other</i>.
+     */
+    public suma_vectores_result(suma_vectores_result other) {
+      if (other.isSetSuccess()) {
+        java.util.List<java.lang.Double> __this__success = new java.util.ArrayList<java.lang.Double>(other.success);
+        this.success = __this__success;
+      }
+    }
+
+    public suma_vectores_result deepCopy() {
+      return new suma_vectores_result(this);
+    }
+
+    @Override
+    public void clear() {
+      this.success = null;
+    }
+
+    public int getSuccessSize() {
+      return (this.success == null) ? 0 : this.success.size();
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.Iterator<java.lang.Double> getSuccessIterator() {
+      return (this.success == null) ? null : this.success.iterator();
+    }
+
+    public void addToSuccess(double elem) {
+      if (this.success == null) {
+        this.success = new java.util.ArrayList<java.lang.Double>();
+      }
+      this.success.add(elem);
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.List<java.lang.Double> getSuccess() {
+      return this.success;
+    }
+
+    public suma_vectores_result setSuccess(@org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> success) {
+      this.success = success;
+      return this;
+    }
+
+    public void unsetSuccess() {
+      this.success = null;
+    }
+
+    /** Returns true if field success is set (has been assigned a value) and false otherwise */
+    public boolean isSetSuccess() {
+      return this.success != null;
+    }
+
+    public void setSuccessIsSet(boolean value) {
+      if (!value) {
+        this.success = null;
+      }
+    }
+
+    public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable java.lang.Object value) {
+      switch (field) {
+      case SUCCESS:
+        if (value == null) {
+          unsetSuccess();
+        } else {
+          setSuccess((java.util.List<java.lang.Double>)value);
+        }
+        break;
+
+      }
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.lang.Object getFieldValue(_Fields field) {
+      switch (field) {
+      case SUCCESS:
+        return getSuccess();
+
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    public boolean isSet(_Fields field) {
+      if (field == null) {
+        throw new java.lang.IllegalArgumentException();
+      }
+
+      switch (field) {
+      case SUCCESS:
+        return isSetSuccess();
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    @Override
+    public boolean equals(java.lang.Object that) {
+      if (that instanceof suma_vectores_result)
+        return this.equals((suma_vectores_result)that);
+      return false;
+    }
+
+    public boolean equals(suma_vectores_result that) {
+      if (that == null)
+        return false;
+      if (this == that)
+        return true;
+
+      boolean this_present_success = true && this.isSetSuccess();
+      boolean that_present_success = true && that.isSetSuccess();
+      if (this_present_success || that_present_success) {
+        if (!(this_present_success && that_present_success))
+          return false;
+        if (!this.success.equals(that.success))
+          return false;
+      }
+
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      int hashCode = 1;
+
+      hashCode = hashCode * 8191 + ((isSetSuccess()) ? 131071 : 524287);
+      if (isSetSuccess())
+        hashCode = hashCode * 8191 + success.hashCode();
+
+      return hashCode;
+    }
+
+    @Override
+    public int compareTo(suma_vectores_result other) {
+      if (!getClass().equals(other.getClass())) {
+        return getClass().getName().compareTo(other.getClass().getName());
+      }
+
+      int lastComparison = 0;
+
+      lastComparison = java.lang.Boolean.compare(isSetSuccess(), other.isSetSuccess());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetSuccess()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.success, other.success);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      return 0;
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public _Fields fieldForId(int fieldId) {
+      return _Fields.findByThriftId(fieldId);
+    }
+
+    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
+      scheme(iprot).read(iprot, this);
+    }
+
+    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+      scheme(oprot).write(oprot, this);
+      }
+
+    @Override
+    public java.lang.String toString() {
+      java.lang.StringBuilder sb = new java.lang.StringBuilder("suma_vectores_result(");
+      boolean first = true;
+
+      sb.append("success:");
+      if (this.success == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.success);
+      }
+      first = false;
+      sb.append(")");
+      return sb.toString();
+    }
+
+    public void validate() throws org.apache.thrift.TException {
+      // check for required fields
+      // check for sub-struct validity
+    }
+
+    private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
+      try {
+        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
+      try {
+        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private static class suma_vectores_resultStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public suma_vectores_resultStandardScheme getScheme() {
+        return new suma_vectores_resultStandardScheme();
+      }
+    }
+
+    private static class suma_vectores_resultStandardScheme extends org.apache.thrift.scheme.StandardScheme<suma_vectores_result> {
+
+      public void read(org.apache.thrift.protocol.TProtocol iprot, suma_vectores_result struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TField schemeField;
+        iprot.readStructBegin();
+        while (true)
+        {
+          schemeField = iprot.readFieldBegin();
+          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) { 
+            break;
+          }
+          switch (schemeField.id) {
+            case 0: // SUCCESS
+              if (schemeField.type == org.apache.thrift.protocol.TType.LIST) {
+                {
+                  org.apache.thrift.protocol.TList _list16 = iprot.readListBegin();
+                  struct.success = new java.util.ArrayList<java.lang.Double>(_list16.size);
+                  double _elem17;
+                  for (int _i18 = 0; _i18 < _list16.size; ++_i18)
+                  {
+                    _elem17 = iprot.readDouble();
+                    struct.success.add(_elem17);
+                  }
+                  iprot.readListEnd();
+                }
+                struct.setSuccessIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            default:
+              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+          }
+          iprot.readFieldEnd();
+        }
+        iprot.readStructEnd();
+
+        // check for required fields of primitive type, which can't be checked in the validate method
+        struct.validate();
+      }
+
+      public void write(org.apache.thrift.protocol.TProtocol oprot, suma_vectores_result struct) throws org.apache.thrift.TException {
+        struct.validate();
+
+        oprot.writeStructBegin(STRUCT_DESC);
+        if (struct.success != null) {
+          oprot.writeFieldBegin(SUCCESS_FIELD_DESC);
+          {
+            oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.DOUBLE, struct.success.size()));
+            for (double _iter19 : struct.success)
+            {
+              oprot.writeDouble(_iter19);
+            }
+            oprot.writeListEnd();
+          }
+          oprot.writeFieldEnd();
+        }
+        oprot.writeFieldStop();
+        oprot.writeStructEnd();
+      }
+
+    }
+
+    private static class suma_vectores_resultTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public suma_vectores_resultTupleScheme getScheme() {
+        return new suma_vectores_resultTupleScheme();
+      }
+    }
+
+    private static class suma_vectores_resultTupleScheme extends org.apache.thrift.scheme.TupleScheme<suma_vectores_result> {
+
+      @Override
+      public void write(org.apache.thrift.protocol.TProtocol prot, suma_vectores_result struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet optionals = new java.util.BitSet();
+        if (struct.isSetSuccess()) {
+          optionals.set(0);
+        }
+        oprot.writeBitSet(optionals, 1);
+        if (struct.isSetSuccess()) {
+          {
+            oprot.writeI32(struct.success.size());
+            for (double _iter20 : struct.success)
+            {
+              oprot.writeDouble(_iter20);
+            }
+          }
+        }
+      }
+
+      @Override
+      public void read(org.apache.thrift.protocol.TProtocol prot, suma_vectores_result struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet incoming = iprot.readBitSet(1);
+        if (incoming.get(0)) {
+          {
+            org.apache.thrift.protocol.TList _list21 = iprot.readListBegin(org.apache.thrift.protocol.TType.DOUBLE);
+            struct.success = new java.util.ArrayList<java.lang.Double>(_list21.size);
+            double _elem22;
+            for (int _i23 = 0; _i23 < _list21.size; ++_i23)
+            {
+              _elem22 = iprot.readDouble();
+              struct.success.add(_elem22);
+            }
+          }
+          struct.setSuccessIsSet(true);
+        }
+      }
+    }
+
+    private static <S extends org.apache.thrift.scheme.IScheme> S scheme(org.apache.thrift.protocol.TProtocol proto) {
+      return (org.apache.thrift.scheme.StandardScheme.class.equals(proto.getScheme()) ? STANDARD_SCHEME_FACTORY : TUPLE_SCHEME_FACTORY).getScheme();
+    }
+  }
+
+  public static class resta_vectores_args implements org.apache.thrift.TBase<resta_vectores_args, resta_vectores_args._Fields>, java.io.Serializable, Cloneable, Comparable<resta_vectores_args>   {
+    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("resta_vectores_args");
+
+    private static final org.apache.thrift.protocol.TField VECTOR1_FIELD_DESC = new org.apache.thrift.protocol.TField("vector1", org.apache.thrift.protocol.TType.LIST, (short)1);
+    private static final org.apache.thrift.protocol.TField VECTOR2_FIELD_DESC = new org.apache.thrift.protocol.TField("vector2", org.apache.thrift.protocol.TType.LIST, (short)2);
+
+    private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new resta_vectores_argsStandardSchemeFactory();
+    private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new resta_vectores_argsTupleSchemeFactory();
+
+    public @org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> vector1; // required
+    public @org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> vector2; // required
+
+    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+      VECTOR1((short)1, "vector1"),
+      VECTOR2((short)2, "vector2");
+
+      private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
+
+      static {
+        for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
+          byName.put(field.getFieldName(), field);
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, or null if its not found.
+       */
+      @org.apache.thrift.annotation.Nullable
+      public static _Fields findByThriftId(int fieldId) {
+        switch(fieldId) {
+          case 1: // VECTOR1
+            return VECTOR1;
+          case 2: // VECTOR2
+            return VECTOR2;
+          default:
+            return null;
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, throwing an exception
+       * if it is not found.
+       */
+      public static _Fields findByThriftIdOrThrow(int fieldId) {
+        _Fields fields = findByThriftId(fieldId);
+        if (fields == null) throw new java.lang.IllegalArgumentException("Field " + fieldId + " doesn't exist!");
+        return fields;
+      }
+
+      /**
+       * Find the _Fields constant that matches name, or null if its not found.
+       */
+      @org.apache.thrift.annotation.Nullable
+      public static _Fields findByName(java.lang.String name) {
+        return byName.get(name);
+      }
+
+      private final short _thriftId;
+      private final java.lang.String _fieldName;
+
+      _Fields(short thriftId, java.lang.String fieldName) {
+        _thriftId = thriftId;
+        _fieldName = fieldName;
+      }
+
+      public short getThriftFieldId() {
+        return _thriftId;
+      }
+
+      public java.lang.String getFieldName() {
+        return _fieldName;
+      }
+    }
+
+    // isset id assignments
+    public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    static {
+      java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
+      tmpMap.put(_Fields.VECTOR1, new org.apache.thrift.meta_data.FieldMetaData("vector1", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
+              new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE))));
+      tmpMap.put(_Fields.VECTOR2, new org.apache.thrift.meta_data.FieldMetaData("vector2", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
+              new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE))));
+      metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
+      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(resta_vectores_args.class, metaDataMap);
+    }
+
+    public resta_vectores_args() {
+    }
+
+    public resta_vectores_args(
+      java.util.List<java.lang.Double> vector1,
+      java.util.List<java.lang.Double> vector2)
+    {
+      this();
+      this.vector1 = vector1;
+      this.vector2 = vector2;
+    }
+
+    /**
+     * Performs a deep copy on <i>other</i>.
+     */
+    public resta_vectores_args(resta_vectores_args other) {
+      if (other.isSetVector1()) {
+        java.util.List<java.lang.Double> __this__vector1 = new java.util.ArrayList<java.lang.Double>(other.vector1);
+        this.vector1 = __this__vector1;
+      }
+      if (other.isSetVector2()) {
+        java.util.List<java.lang.Double> __this__vector2 = new java.util.ArrayList<java.lang.Double>(other.vector2);
+        this.vector2 = __this__vector2;
+      }
+    }
+
+    public resta_vectores_args deepCopy() {
+      return new resta_vectores_args(this);
+    }
+
+    @Override
+    public void clear() {
+      this.vector1 = null;
+      this.vector2 = null;
+    }
+
+    public int getVector1Size() {
+      return (this.vector1 == null) ? 0 : this.vector1.size();
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.Iterator<java.lang.Double> getVector1Iterator() {
+      return (this.vector1 == null) ? null : this.vector1.iterator();
+    }
+
+    public void addToVector1(double elem) {
+      if (this.vector1 == null) {
+        this.vector1 = new java.util.ArrayList<java.lang.Double>();
+      }
+      this.vector1.add(elem);
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.List<java.lang.Double> getVector1() {
+      return this.vector1;
+    }
+
+    public resta_vectores_args setVector1(@org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> vector1) {
+      this.vector1 = vector1;
+      return this;
+    }
+
+    public void unsetVector1() {
+      this.vector1 = null;
+    }
+
+    /** Returns true if field vector1 is set (has been assigned a value) and false otherwise */
+    public boolean isSetVector1() {
+      return this.vector1 != null;
+    }
+
+    public void setVector1IsSet(boolean value) {
+      if (!value) {
+        this.vector1 = null;
+      }
+    }
+
+    public int getVector2Size() {
+      return (this.vector2 == null) ? 0 : this.vector2.size();
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.Iterator<java.lang.Double> getVector2Iterator() {
+      return (this.vector2 == null) ? null : this.vector2.iterator();
+    }
+
+    public void addToVector2(double elem) {
+      if (this.vector2 == null) {
+        this.vector2 = new java.util.ArrayList<java.lang.Double>();
+      }
+      this.vector2.add(elem);
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.List<java.lang.Double> getVector2() {
+      return this.vector2;
+    }
+
+    public resta_vectores_args setVector2(@org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> vector2) {
+      this.vector2 = vector2;
+      return this;
+    }
+
+    public void unsetVector2() {
+      this.vector2 = null;
+    }
+
+    /** Returns true if field vector2 is set (has been assigned a value) and false otherwise */
+    public boolean isSetVector2() {
+      return this.vector2 != null;
+    }
+
+    public void setVector2IsSet(boolean value) {
+      if (!value) {
+        this.vector2 = null;
+      }
+    }
+
+    public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable java.lang.Object value) {
+      switch (field) {
+      case VECTOR1:
+        if (value == null) {
+          unsetVector1();
+        } else {
+          setVector1((java.util.List<java.lang.Double>)value);
+        }
+        break;
+
+      case VECTOR2:
+        if (value == null) {
+          unsetVector2();
+        } else {
+          setVector2((java.util.List<java.lang.Double>)value);
+        }
+        break;
+
+      }
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.lang.Object getFieldValue(_Fields field) {
+      switch (field) {
+      case VECTOR1:
+        return getVector1();
+
+      case VECTOR2:
+        return getVector2();
+
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    public boolean isSet(_Fields field) {
+      if (field == null) {
+        throw new java.lang.IllegalArgumentException();
+      }
+
+      switch (field) {
+      case VECTOR1:
+        return isSetVector1();
+      case VECTOR2:
+        return isSetVector2();
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    @Override
+    public boolean equals(java.lang.Object that) {
+      if (that instanceof resta_vectores_args)
+        return this.equals((resta_vectores_args)that);
+      return false;
+    }
+
+    public boolean equals(resta_vectores_args that) {
+      if (that == null)
+        return false;
+      if (this == that)
+        return true;
+
+      boolean this_present_vector1 = true && this.isSetVector1();
+      boolean that_present_vector1 = true && that.isSetVector1();
+      if (this_present_vector1 || that_present_vector1) {
+        if (!(this_present_vector1 && that_present_vector1))
+          return false;
+        if (!this.vector1.equals(that.vector1))
+          return false;
+      }
+
+      boolean this_present_vector2 = true && this.isSetVector2();
+      boolean that_present_vector2 = true && that.isSetVector2();
+      if (this_present_vector2 || that_present_vector2) {
+        if (!(this_present_vector2 && that_present_vector2))
+          return false;
+        if (!this.vector2.equals(that.vector2))
+          return false;
+      }
+
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      int hashCode = 1;
+
+      hashCode = hashCode * 8191 + ((isSetVector1()) ? 131071 : 524287);
+      if (isSetVector1())
+        hashCode = hashCode * 8191 + vector1.hashCode();
+
+      hashCode = hashCode * 8191 + ((isSetVector2()) ? 131071 : 524287);
+      if (isSetVector2())
+        hashCode = hashCode * 8191 + vector2.hashCode();
+
+      return hashCode;
+    }
+
+    @Override
+    public int compareTo(resta_vectores_args other) {
+      if (!getClass().equals(other.getClass())) {
+        return getClass().getName().compareTo(other.getClass().getName());
+      }
+
+      int lastComparison = 0;
+
+      lastComparison = java.lang.Boolean.compare(isSetVector1(), other.isSetVector1());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetVector1()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.vector1, other.vector1);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      lastComparison = java.lang.Boolean.compare(isSetVector2(), other.isSetVector2());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetVector2()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.vector2, other.vector2);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      return 0;
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public _Fields fieldForId(int fieldId) {
+      return _Fields.findByThriftId(fieldId);
+    }
+
+    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
+      scheme(iprot).read(iprot, this);
+    }
+
+    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+      scheme(oprot).write(oprot, this);
+    }
+
+    @Override
+    public java.lang.String toString() {
+      java.lang.StringBuilder sb = new java.lang.StringBuilder("resta_vectores_args(");
+      boolean first = true;
+
+      sb.append("vector1:");
+      if (this.vector1 == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.vector1);
+      }
+      first = false;
+      if (!first) sb.append(", ");
+      sb.append("vector2:");
+      if (this.vector2 == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.vector2);
+      }
+      first = false;
+      sb.append(")");
+      return sb.toString();
+    }
+
+    public void validate() throws org.apache.thrift.TException {
+      // check for required fields
+      // check for sub-struct validity
+    }
+
+    private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
+      try {
+        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
+      try {
+        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private static class resta_vectores_argsStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public resta_vectores_argsStandardScheme getScheme() {
+        return new resta_vectores_argsStandardScheme();
+      }
+    }
+
+    private static class resta_vectores_argsStandardScheme extends org.apache.thrift.scheme.StandardScheme<resta_vectores_args> {
+
+      public void read(org.apache.thrift.protocol.TProtocol iprot, resta_vectores_args struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TField schemeField;
+        iprot.readStructBegin();
+        while (true)
+        {
+          schemeField = iprot.readFieldBegin();
+          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) { 
+            break;
+          }
+          switch (schemeField.id) {
+            case 1: // VECTOR1
+              if (schemeField.type == org.apache.thrift.protocol.TType.LIST) {
+                {
+                  org.apache.thrift.protocol.TList _list24 = iprot.readListBegin();
+                  struct.vector1 = new java.util.ArrayList<java.lang.Double>(_list24.size);
+                  double _elem25;
+                  for (int _i26 = 0; _i26 < _list24.size; ++_i26)
+                  {
+                    _elem25 = iprot.readDouble();
+                    struct.vector1.add(_elem25);
+                  }
+                  iprot.readListEnd();
+                }
+                struct.setVector1IsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            case 2: // VECTOR2
+              if (schemeField.type == org.apache.thrift.protocol.TType.LIST) {
+                {
+                  org.apache.thrift.protocol.TList _list27 = iprot.readListBegin();
+                  struct.vector2 = new java.util.ArrayList<java.lang.Double>(_list27.size);
+                  double _elem28;
+                  for (int _i29 = 0; _i29 < _list27.size; ++_i29)
+                  {
+                    _elem28 = iprot.readDouble();
+                    struct.vector2.add(_elem28);
+                  }
+                  iprot.readListEnd();
+                }
+                struct.setVector2IsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            default:
+              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+          }
+          iprot.readFieldEnd();
+        }
+        iprot.readStructEnd();
+
+        // check for required fields of primitive type, which can't be checked in the validate method
+        struct.validate();
+      }
+
+      public void write(org.apache.thrift.protocol.TProtocol oprot, resta_vectores_args struct) throws org.apache.thrift.TException {
+        struct.validate();
+
+        oprot.writeStructBegin(STRUCT_DESC);
+        if (struct.vector1 != null) {
+          oprot.writeFieldBegin(VECTOR1_FIELD_DESC);
+          {
+            oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.DOUBLE, struct.vector1.size()));
+            for (double _iter30 : struct.vector1)
+            {
+              oprot.writeDouble(_iter30);
+            }
+            oprot.writeListEnd();
+          }
+          oprot.writeFieldEnd();
+        }
+        if (struct.vector2 != null) {
+          oprot.writeFieldBegin(VECTOR2_FIELD_DESC);
+          {
+            oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.DOUBLE, struct.vector2.size()));
+            for (double _iter31 : struct.vector2)
+            {
+              oprot.writeDouble(_iter31);
+            }
+            oprot.writeListEnd();
+          }
+          oprot.writeFieldEnd();
+        }
+        oprot.writeFieldStop();
+        oprot.writeStructEnd();
+      }
+
+    }
+
+    private static class resta_vectores_argsTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public resta_vectores_argsTupleScheme getScheme() {
+        return new resta_vectores_argsTupleScheme();
+      }
+    }
+
+    private static class resta_vectores_argsTupleScheme extends org.apache.thrift.scheme.TupleScheme<resta_vectores_args> {
+
+      @Override
+      public void write(org.apache.thrift.protocol.TProtocol prot, resta_vectores_args struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet optionals = new java.util.BitSet();
+        if (struct.isSetVector1()) {
+          optionals.set(0);
+        }
+        if (struct.isSetVector2()) {
+          optionals.set(1);
+        }
+        oprot.writeBitSet(optionals, 2);
+        if (struct.isSetVector1()) {
+          {
+            oprot.writeI32(struct.vector1.size());
+            for (double _iter32 : struct.vector1)
+            {
+              oprot.writeDouble(_iter32);
+            }
+          }
+        }
+        if (struct.isSetVector2()) {
+          {
+            oprot.writeI32(struct.vector2.size());
+            for (double _iter33 : struct.vector2)
+            {
+              oprot.writeDouble(_iter33);
+            }
+          }
+        }
+      }
+
+      @Override
+      public void read(org.apache.thrift.protocol.TProtocol prot, resta_vectores_args struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet incoming = iprot.readBitSet(2);
+        if (incoming.get(0)) {
+          {
+            org.apache.thrift.protocol.TList _list34 = iprot.readListBegin(org.apache.thrift.protocol.TType.DOUBLE);
+            struct.vector1 = new java.util.ArrayList<java.lang.Double>(_list34.size);
+            double _elem35;
+            for (int _i36 = 0; _i36 < _list34.size; ++_i36)
+            {
+              _elem35 = iprot.readDouble();
+              struct.vector1.add(_elem35);
+            }
+          }
+          struct.setVector1IsSet(true);
+        }
+        if (incoming.get(1)) {
+          {
+            org.apache.thrift.protocol.TList _list37 = iprot.readListBegin(org.apache.thrift.protocol.TType.DOUBLE);
+            struct.vector2 = new java.util.ArrayList<java.lang.Double>(_list37.size);
+            double _elem38;
+            for (int _i39 = 0; _i39 < _list37.size; ++_i39)
+            {
+              _elem38 = iprot.readDouble();
+              struct.vector2.add(_elem38);
+            }
+          }
+          struct.setVector2IsSet(true);
+        }
+      }
+    }
+
+    private static <S extends org.apache.thrift.scheme.IScheme> S scheme(org.apache.thrift.protocol.TProtocol proto) {
+      return (org.apache.thrift.scheme.StandardScheme.class.equals(proto.getScheme()) ? STANDARD_SCHEME_FACTORY : TUPLE_SCHEME_FACTORY).getScheme();
+    }
+  }
+
+  public static class resta_vectores_result implements org.apache.thrift.TBase<resta_vectores_result, resta_vectores_result._Fields>, java.io.Serializable, Cloneable, Comparable<resta_vectores_result>   {
+    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("resta_vectores_result");
+
+    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.LIST, (short)0);
+
+    private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new resta_vectores_resultStandardSchemeFactory();
+    private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new resta_vectores_resultTupleSchemeFactory();
+
+    public @org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> success; // required
+
+    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+      SUCCESS((short)0, "success");
+
+      private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
+
+      static {
+        for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
+          byName.put(field.getFieldName(), field);
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, or null if its not found.
+       */
+      @org.apache.thrift.annotation.Nullable
+      public static _Fields findByThriftId(int fieldId) {
+        switch(fieldId) {
+          case 0: // SUCCESS
+            return SUCCESS;
+          default:
+            return null;
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, throwing an exception
+       * if it is not found.
+       */
+      public static _Fields findByThriftIdOrThrow(int fieldId) {
+        _Fields fields = findByThriftId(fieldId);
+        if (fields == null) throw new java.lang.IllegalArgumentException("Field " + fieldId + " doesn't exist!");
+        return fields;
+      }
+
+      /**
+       * Find the _Fields constant that matches name, or null if its not found.
+       */
+      @org.apache.thrift.annotation.Nullable
+      public static _Fields findByName(java.lang.String name) {
+        return byName.get(name);
+      }
+
+      private final short _thriftId;
+      private final java.lang.String _fieldName;
+
+      _Fields(short thriftId, java.lang.String fieldName) {
+        _thriftId = thriftId;
+        _fieldName = fieldName;
+      }
+
+      public short getThriftFieldId() {
+        return _thriftId;
+      }
+
+      public java.lang.String getFieldName() {
+        return _fieldName;
+      }
+    }
+
+    // isset id assignments
+    public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    static {
+      java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
+      tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
+              new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE))));
+      metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
+      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(resta_vectores_result.class, metaDataMap);
+    }
+
+    public resta_vectores_result() {
+    }
+
+    public resta_vectores_result(
+      java.util.List<java.lang.Double> success)
+    {
+      this();
+      this.success = success;
+    }
+
+    /**
+     * Performs a deep copy on <i>other</i>.
+     */
+    public resta_vectores_result(resta_vectores_result other) {
+      if (other.isSetSuccess()) {
+        java.util.List<java.lang.Double> __this__success = new java.util.ArrayList<java.lang.Double>(other.success);
+        this.success = __this__success;
+      }
+    }
+
+    public resta_vectores_result deepCopy() {
+      return new resta_vectores_result(this);
+    }
+
+    @Override
+    public void clear() {
+      this.success = null;
+    }
+
+    public int getSuccessSize() {
+      return (this.success == null) ? 0 : this.success.size();
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.Iterator<java.lang.Double> getSuccessIterator() {
+      return (this.success == null) ? null : this.success.iterator();
+    }
+
+    public void addToSuccess(double elem) {
+      if (this.success == null) {
+        this.success = new java.util.ArrayList<java.lang.Double>();
+      }
+      this.success.add(elem);
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.List<java.lang.Double> getSuccess() {
+      return this.success;
+    }
+
+    public resta_vectores_result setSuccess(@org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> success) {
+      this.success = success;
+      return this;
+    }
+
+    public void unsetSuccess() {
+      this.success = null;
+    }
+
+    /** Returns true if field success is set (has been assigned a value) and false otherwise */
+    public boolean isSetSuccess() {
+      return this.success != null;
+    }
+
+    public void setSuccessIsSet(boolean value) {
+      if (!value) {
+        this.success = null;
+      }
+    }
+
+    public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable java.lang.Object value) {
+      switch (field) {
+      case SUCCESS:
+        if (value == null) {
+          unsetSuccess();
+        } else {
+          setSuccess((java.util.List<java.lang.Double>)value);
+        }
+        break;
+
+      }
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.lang.Object getFieldValue(_Fields field) {
+      switch (field) {
+      case SUCCESS:
+        return getSuccess();
+
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    public boolean isSet(_Fields field) {
+      if (field == null) {
+        throw new java.lang.IllegalArgumentException();
+      }
+
+      switch (field) {
+      case SUCCESS:
+        return isSetSuccess();
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    @Override
+    public boolean equals(java.lang.Object that) {
+      if (that instanceof resta_vectores_result)
+        return this.equals((resta_vectores_result)that);
+      return false;
+    }
+
+    public boolean equals(resta_vectores_result that) {
+      if (that == null)
+        return false;
+      if (this == that)
+        return true;
+
+      boolean this_present_success = true && this.isSetSuccess();
+      boolean that_present_success = true && that.isSetSuccess();
+      if (this_present_success || that_present_success) {
+        if (!(this_present_success && that_present_success))
+          return false;
+        if (!this.success.equals(that.success))
+          return false;
+      }
+
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      int hashCode = 1;
+
+      hashCode = hashCode * 8191 + ((isSetSuccess()) ? 131071 : 524287);
+      if (isSetSuccess())
+        hashCode = hashCode * 8191 + success.hashCode();
+
+      return hashCode;
+    }
+
+    @Override
+    public int compareTo(resta_vectores_result other) {
+      if (!getClass().equals(other.getClass())) {
+        return getClass().getName().compareTo(other.getClass().getName());
+      }
+
+      int lastComparison = 0;
+
+      lastComparison = java.lang.Boolean.compare(isSetSuccess(), other.isSetSuccess());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetSuccess()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.success, other.success);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      return 0;
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public _Fields fieldForId(int fieldId) {
+      return _Fields.findByThriftId(fieldId);
+    }
+
+    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
+      scheme(iprot).read(iprot, this);
+    }
+
+    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+      scheme(oprot).write(oprot, this);
+      }
+
+    @Override
+    public java.lang.String toString() {
+      java.lang.StringBuilder sb = new java.lang.StringBuilder("resta_vectores_result(");
+      boolean first = true;
+
+      sb.append("success:");
+      if (this.success == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.success);
+      }
+      first = false;
+      sb.append(")");
+      return sb.toString();
+    }
+
+    public void validate() throws org.apache.thrift.TException {
+      // check for required fields
+      // check for sub-struct validity
+    }
+
+    private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
+      try {
+        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
+      try {
+        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private static class resta_vectores_resultStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public resta_vectores_resultStandardScheme getScheme() {
+        return new resta_vectores_resultStandardScheme();
+      }
+    }
+
+    private static class resta_vectores_resultStandardScheme extends org.apache.thrift.scheme.StandardScheme<resta_vectores_result> {
+
+      public void read(org.apache.thrift.protocol.TProtocol iprot, resta_vectores_result struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TField schemeField;
+        iprot.readStructBegin();
+        while (true)
+        {
+          schemeField = iprot.readFieldBegin();
+          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) { 
+            break;
+          }
+          switch (schemeField.id) {
+            case 0: // SUCCESS
+              if (schemeField.type == org.apache.thrift.protocol.TType.LIST) {
+                {
+                  org.apache.thrift.protocol.TList _list40 = iprot.readListBegin();
+                  struct.success = new java.util.ArrayList<java.lang.Double>(_list40.size);
+                  double _elem41;
+                  for (int _i42 = 0; _i42 < _list40.size; ++_i42)
+                  {
+                    _elem41 = iprot.readDouble();
+                    struct.success.add(_elem41);
+                  }
+                  iprot.readListEnd();
+                }
+                struct.setSuccessIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            default:
+              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+          }
+          iprot.readFieldEnd();
+        }
+        iprot.readStructEnd();
+
+        // check for required fields of primitive type, which can't be checked in the validate method
+        struct.validate();
+      }
+
+      public void write(org.apache.thrift.protocol.TProtocol oprot, resta_vectores_result struct) throws org.apache.thrift.TException {
+        struct.validate();
+
+        oprot.writeStructBegin(STRUCT_DESC);
+        if (struct.success != null) {
+          oprot.writeFieldBegin(SUCCESS_FIELD_DESC);
+          {
+            oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.DOUBLE, struct.success.size()));
+            for (double _iter43 : struct.success)
+            {
+              oprot.writeDouble(_iter43);
+            }
+            oprot.writeListEnd();
+          }
+          oprot.writeFieldEnd();
+        }
+        oprot.writeFieldStop();
+        oprot.writeStructEnd();
+      }
+
+    }
+
+    private static class resta_vectores_resultTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public resta_vectores_resultTupleScheme getScheme() {
+        return new resta_vectores_resultTupleScheme();
+      }
+    }
+
+    private static class resta_vectores_resultTupleScheme extends org.apache.thrift.scheme.TupleScheme<resta_vectores_result> {
+
+      @Override
+      public void write(org.apache.thrift.protocol.TProtocol prot, resta_vectores_result struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet optionals = new java.util.BitSet();
+        if (struct.isSetSuccess()) {
+          optionals.set(0);
+        }
+        oprot.writeBitSet(optionals, 1);
+        if (struct.isSetSuccess()) {
+          {
+            oprot.writeI32(struct.success.size());
+            for (double _iter44 : struct.success)
+            {
+              oprot.writeDouble(_iter44);
+            }
+          }
+        }
+      }
+
+      @Override
+      public void read(org.apache.thrift.protocol.TProtocol prot, resta_vectores_result struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet incoming = iprot.readBitSet(1);
+        if (incoming.get(0)) {
+          {
+            org.apache.thrift.protocol.TList _list45 = iprot.readListBegin(org.apache.thrift.protocol.TType.DOUBLE);
+            struct.success = new java.util.ArrayList<java.lang.Double>(_list45.size);
+            double _elem46;
+            for (int _i47 = 0; _i47 < _list45.size; ++_i47)
+            {
+              _elem46 = iprot.readDouble();
+              struct.success.add(_elem46);
+            }
+          }
+          struct.setSuccessIsSet(true);
+        }
+      }
+    }
+
+    private static <S extends org.apache.thrift.scheme.IScheme> S scheme(org.apache.thrift.protocol.TProtocol proto) {
+      return (org.apache.thrift.scheme.StandardScheme.class.equals(proto.getScheme()) ? STANDARD_SCHEME_FACTORY : TUPLE_SCHEME_FACTORY).getScheme();
+    }
+  }
+
+  public static class producto_escalar_args implements org.apache.thrift.TBase<producto_escalar_args, producto_escalar_args._Fields>, java.io.Serializable, Cloneable, Comparable<producto_escalar_args>   {
+    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("producto_escalar_args");
+
+    private static final org.apache.thrift.protocol.TField VECTOR1_FIELD_DESC = new org.apache.thrift.protocol.TField("vector1", org.apache.thrift.protocol.TType.LIST, (short)1);
+    private static final org.apache.thrift.protocol.TField VECTOR2_FIELD_DESC = new org.apache.thrift.protocol.TField("vector2", org.apache.thrift.protocol.TType.LIST, (short)2);
+
+    private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new producto_escalar_argsStandardSchemeFactory();
+    private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new producto_escalar_argsTupleSchemeFactory();
+
+    public @org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> vector1; // required
+    public @org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> vector2; // required
+
+    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+      VECTOR1((short)1, "vector1"),
+      VECTOR2((short)2, "vector2");
+
+      private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
+
+      static {
+        for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
+          byName.put(field.getFieldName(), field);
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, or null if its not found.
+       */
+      @org.apache.thrift.annotation.Nullable
+      public static _Fields findByThriftId(int fieldId) {
+        switch(fieldId) {
+          case 1: // VECTOR1
+            return VECTOR1;
+          case 2: // VECTOR2
+            return VECTOR2;
+          default:
+            return null;
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, throwing an exception
+       * if it is not found.
+       */
+      public static _Fields findByThriftIdOrThrow(int fieldId) {
+        _Fields fields = findByThriftId(fieldId);
+        if (fields == null) throw new java.lang.IllegalArgumentException("Field " + fieldId + " doesn't exist!");
+        return fields;
+      }
+
+      /**
+       * Find the _Fields constant that matches name, or null if its not found.
+       */
+      @org.apache.thrift.annotation.Nullable
+      public static _Fields findByName(java.lang.String name) {
+        return byName.get(name);
+      }
+
+      private final short _thriftId;
+      private final java.lang.String _fieldName;
+
+      _Fields(short thriftId, java.lang.String fieldName) {
+        _thriftId = thriftId;
+        _fieldName = fieldName;
+      }
+
+      public short getThriftFieldId() {
+        return _thriftId;
+      }
+
+      public java.lang.String getFieldName() {
+        return _fieldName;
+      }
+    }
+
+    // isset id assignments
+    public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    static {
+      java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
+      tmpMap.put(_Fields.VECTOR1, new org.apache.thrift.meta_data.FieldMetaData("vector1", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
+              new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE))));
+      tmpMap.put(_Fields.VECTOR2, new org.apache.thrift.meta_data.FieldMetaData("vector2", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
+              new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE))));
+      metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
+      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(producto_escalar_args.class, metaDataMap);
+    }
+
+    public producto_escalar_args() {
+    }
+
+    public producto_escalar_args(
+      java.util.List<java.lang.Double> vector1,
+      java.util.List<java.lang.Double> vector2)
+    {
+      this();
+      this.vector1 = vector1;
+      this.vector2 = vector2;
+    }
+
+    /**
+     * Performs a deep copy on <i>other</i>.
+     */
+    public producto_escalar_args(producto_escalar_args other) {
+      if (other.isSetVector1()) {
+        java.util.List<java.lang.Double> __this__vector1 = new java.util.ArrayList<java.lang.Double>(other.vector1);
+        this.vector1 = __this__vector1;
+      }
+      if (other.isSetVector2()) {
+        java.util.List<java.lang.Double> __this__vector2 = new java.util.ArrayList<java.lang.Double>(other.vector2);
+        this.vector2 = __this__vector2;
+      }
+    }
+
+    public producto_escalar_args deepCopy() {
+      return new producto_escalar_args(this);
+    }
+
+    @Override
+    public void clear() {
+      this.vector1 = null;
+      this.vector2 = null;
+    }
+
+    public int getVector1Size() {
+      return (this.vector1 == null) ? 0 : this.vector1.size();
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.Iterator<java.lang.Double> getVector1Iterator() {
+      return (this.vector1 == null) ? null : this.vector1.iterator();
+    }
+
+    public void addToVector1(double elem) {
+      if (this.vector1 == null) {
+        this.vector1 = new java.util.ArrayList<java.lang.Double>();
+      }
+      this.vector1.add(elem);
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.List<java.lang.Double> getVector1() {
+      return this.vector1;
+    }
+
+    public producto_escalar_args setVector1(@org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> vector1) {
+      this.vector1 = vector1;
+      return this;
+    }
+
+    public void unsetVector1() {
+      this.vector1 = null;
+    }
+
+    /** Returns true if field vector1 is set (has been assigned a value) and false otherwise */
+    public boolean isSetVector1() {
+      return this.vector1 != null;
+    }
+
+    public void setVector1IsSet(boolean value) {
+      if (!value) {
+        this.vector1 = null;
+      }
+    }
+
+    public int getVector2Size() {
+      return (this.vector2 == null) ? 0 : this.vector2.size();
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.Iterator<java.lang.Double> getVector2Iterator() {
+      return (this.vector2 == null) ? null : this.vector2.iterator();
+    }
+
+    public void addToVector2(double elem) {
+      if (this.vector2 == null) {
+        this.vector2 = new java.util.ArrayList<java.lang.Double>();
+      }
+      this.vector2.add(elem);
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.List<java.lang.Double> getVector2() {
+      return this.vector2;
+    }
+
+    public producto_escalar_args setVector2(@org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> vector2) {
+      this.vector2 = vector2;
+      return this;
+    }
+
+    public void unsetVector2() {
+      this.vector2 = null;
+    }
+
+    /** Returns true if field vector2 is set (has been assigned a value) and false otherwise */
+    public boolean isSetVector2() {
+      return this.vector2 != null;
+    }
+
+    public void setVector2IsSet(boolean value) {
+      if (!value) {
+        this.vector2 = null;
+      }
+    }
+
+    public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable java.lang.Object value) {
+      switch (field) {
+      case VECTOR1:
+        if (value == null) {
+          unsetVector1();
+        } else {
+          setVector1((java.util.List<java.lang.Double>)value);
+        }
+        break;
+
+      case VECTOR2:
+        if (value == null) {
+          unsetVector2();
+        } else {
+          setVector2((java.util.List<java.lang.Double>)value);
+        }
+        break;
+
+      }
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.lang.Object getFieldValue(_Fields field) {
+      switch (field) {
+      case VECTOR1:
+        return getVector1();
+
+      case VECTOR2:
+        return getVector2();
+
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    public boolean isSet(_Fields field) {
+      if (field == null) {
+        throw new java.lang.IllegalArgumentException();
+      }
+
+      switch (field) {
+      case VECTOR1:
+        return isSetVector1();
+      case VECTOR2:
+        return isSetVector2();
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    @Override
+    public boolean equals(java.lang.Object that) {
+      if (that instanceof producto_escalar_args)
+        return this.equals((producto_escalar_args)that);
+      return false;
+    }
+
+    public boolean equals(producto_escalar_args that) {
+      if (that == null)
+        return false;
+      if (this == that)
+        return true;
+
+      boolean this_present_vector1 = true && this.isSetVector1();
+      boolean that_present_vector1 = true && that.isSetVector1();
+      if (this_present_vector1 || that_present_vector1) {
+        if (!(this_present_vector1 && that_present_vector1))
+          return false;
+        if (!this.vector1.equals(that.vector1))
+          return false;
+      }
+
+      boolean this_present_vector2 = true && this.isSetVector2();
+      boolean that_present_vector2 = true && that.isSetVector2();
+      if (this_present_vector2 || that_present_vector2) {
+        if (!(this_present_vector2 && that_present_vector2))
+          return false;
+        if (!this.vector2.equals(that.vector2))
+          return false;
+      }
+
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      int hashCode = 1;
+
+      hashCode = hashCode * 8191 + ((isSetVector1()) ? 131071 : 524287);
+      if (isSetVector1())
+        hashCode = hashCode * 8191 + vector1.hashCode();
+
+      hashCode = hashCode * 8191 + ((isSetVector2()) ? 131071 : 524287);
+      if (isSetVector2())
+        hashCode = hashCode * 8191 + vector2.hashCode();
+
+      return hashCode;
+    }
+
+    @Override
+    public int compareTo(producto_escalar_args other) {
+      if (!getClass().equals(other.getClass())) {
+        return getClass().getName().compareTo(other.getClass().getName());
+      }
+
+      int lastComparison = 0;
+
+      lastComparison = java.lang.Boolean.compare(isSetVector1(), other.isSetVector1());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetVector1()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.vector1, other.vector1);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      lastComparison = java.lang.Boolean.compare(isSetVector2(), other.isSetVector2());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetVector2()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.vector2, other.vector2);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      return 0;
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public _Fields fieldForId(int fieldId) {
+      return _Fields.findByThriftId(fieldId);
+    }
+
+    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
+      scheme(iprot).read(iprot, this);
+    }
+
+    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+      scheme(oprot).write(oprot, this);
+    }
+
+    @Override
+    public java.lang.String toString() {
+      java.lang.StringBuilder sb = new java.lang.StringBuilder("producto_escalar_args(");
+      boolean first = true;
+
+      sb.append("vector1:");
+      if (this.vector1 == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.vector1);
+      }
+      first = false;
+      if (!first) sb.append(", ");
+      sb.append("vector2:");
+      if (this.vector2 == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.vector2);
+      }
+      first = false;
+      sb.append(")");
+      return sb.toString();
+    }
+
+    public void validate() throws org.apache.thrift.TException {
+      // check for required fields
+      // check for sub-struct validity
+    }
+
+    private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
+      try {
+        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
+      try {
+        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private static class producto_escalar_argsStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public producto_escalar_argsStandardScheme getScheme() {
+        return new producto_escalar_argsStandardScheme();
+      }
+    }
+
+    private static class producto_escalar_argsStandardScheme extends org.apache.thrift.scheme.StandardScheme<producto_escalar_args> {
+
+      public void read(org.apache.thrift.protocol.TProtocol iprot, producto_escalar_args struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TField schemeField;
+        iprot.readStructBegin();
+        while (true)
+        {
+          schemeField = iprot.readFieldBegin();
+          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) { 
+            break;
+          }
+          switch (schemeField.id) {
+            case 1: // VECTOR1
+              if (schemeField.type == org.apache.thrift.protocol.TType.LIST) {
+                {
+                  org.apache.thrift.protocol.TList _list48 = iprot.readListBegin();
+                  struct.vector1 = new java.util.ArrayList<java.lang.Double>(_list48.size);
+                  double _elem49;
+                  for (int _i50 = 0; _i50 < _list48.size; ++_i50)
+                  {
+                    _elem49 = iprot.readDouble();
+                    struct.vector1.add(_elem49);
+                  }
+                  iprot.readListEnd();
+                }
+                struct.setVector1IsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            case 2: // VECTOR2
+              if (schemeField.type == org.apache.thrift.protocol.TType.LIST) {
+                {
+                  org.apache.thrift.protocol.TList _list51 = iprot.readListBegin();
+                  struct.vector2 = new java.util.ArrayList<java.lang.Double>(_list51.size);
+                  double _elem52;
+                  for (int _i53 = 0; _i53 < _list51.size; ++_i53)
+                  {
+                    _elem52 = iprot.readDouble();
+                    struct.vector2.add(_elem52);
+                  }
+                  iprot.readListEnd();
+                }
+                struct.setVector2IsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            default:
+              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+          }
+          iprot.readFieldEnd();
+        }
+        iprot.readStructEnd();
+
+        // check for required fields of primitive type, which can't be checked in the validate method
+        struct.validate();
+      }
+
+      public void write(org.apache.thrift.protocol.TProtocol oprot, producto_escalar_args struct) throws org.apache.thrift.TException {
+        struct.validate();
+
+        oprot.writeStructBegin(STRUCT_DESC);
+        if (struct.vector1 != null) {
+          oprot.writeFieldBegin(VECTOR1_FIELD_DESC);
+          {
+            oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.DOUBLE, struct.vector1.size()));
+            for (double _iter54 : struct.vector1)
+            {
+              oprot.writeDouble(_iter54);
+            }
+            oprot.writeListEnd();
+          }
+          oprot.writeFieldEnd();
+        }
+        if (struct.vector2 != null) {
+          oprot.writeFieldBegin(VECTOR2_FIELD_DESC);
+          {
+            oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.DOUBLE, struct.vector2.size()));
+            for (double _iter55 : struct.vector2)
+            {
+              oprot.writeDouble(_iter55);
+            }
+            oprot.writeListEnd();
+          }
+          oprot.writeFieldEnd();
+        }
+        oprot.writeFieldStop();
+        oprot.writeStructEnd();
+      }
+
+    }
+
+    private static class producto_escalar_argsTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public producto_escalar_argsTupleScheme getScheme() {
+        return new producto_escalar_argsTupleScheme();
+      }
+    }
+
+    private static class producto_escalar_argsTupleScheme extends org.apache.thrift.scheme.TupleScheme<producto_escalar_args> {
+
+      @Override
+      public void write(org.apache.thrift.protocol.TProtocol prot, producto_escalar_args struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet optionals = new java.util.BitSet();
+        if (struct.isSetVector1()) {
+          optionals.set(0);
+        }
+        if (struct.isSetVector2()) {
+          optionals.set(1);
+        }
+        oprot.writeBitSet(optionals, 2);
+        if (struct.isSetVector1()) {
+          {
+            oprot.writeI32(struct.vector1.size());
+            for (double _iter56 : struct.vector1)
+            {
+              oprot.writeDouble(_iter56);
+            }
+          }
+        }
+        if (struct.isSetVector2()) {
+          {
+            oprot.writeI32(struct.vector2.size());
+            for (double _iter57 : struct.vector2)
+            {
+              oprot.writeDouble(_iter57);
+            }
+          }
+        }
+      }
+
+      @Override
+      public void read(org.apache.thrift.protocol.TProtocol prot, producto_escalar_args struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet incoming = iprot.readBitSet(2);
+        if (incoming.get(0)) {
+          {
+            org.apache.thrift.protocol.TList _list58 = iprot.readListBegin(org.apache.thrift.protocol.TType.DOUBLE);
+            struct.vector1 = new java.util.ArrayList<java.lang.Double>(_list58.size);
+            double _elem59;
+            for (int _i60 = 0; _i60 < _list58.size; ++_i60)
+            {
+              _elem59 = iprot.readDouble();
+              struct.vector1.add(_elem59);
+            }
+          }
+          struct.setVector1IsSet(true);
+        }
+        if (incoming.get(1)) {
+          {
+            org.apache.thrift.protocol.TList _list61 = iprot.readListBegin(org.apache.thrift.protocol.TType.DOUBLE);
+            struct.vector2 = new java.util.ArrayList<java.lang.Double>(_list61.size);
+            double _elem62;
+            for (int _i63 = 0; _i63 < _list61.size; ++_i63)
+            {
+              _elem62 = iprot.readDouble();
+              struct.vector2.add(_elem62);
+            }
+          }
+          struct.setVector2IsSet(true);
+        }
+      }
+    }
+
+    private static <S extends org.apache.thrift.scheme.IScheme> S scheme(org.apache.thrift.protocol.TProtocol proto) {
+      return (org.apache.thrift.scheme.StandardScheme.class.equals(proto.getScheme()) ? STANDARD_SCHEME_FACTORY : TUPLE_SCHEME_FACTORY).getScheme();
+    }
+  }
+
+  public static class producto_escalar_result implements org.apache.thrift.TBase<producto_escalar_result, producto_escalar_result._Fields>, java.io.Serializable, Cloneable, Comparable<producto_escalar_result>   {
+    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("producto_escalar_result");
+
+    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.DOUBLE, (short)0);
+
+    private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new producto_escalar_resultStandardSchemeFactory();
+    private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new producto_escalar_resultTupleSchemeFactory();
+
+    public double success; // required
+
+    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+      SUCCESS((short)0, "success");
+
+      private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
+
+      static {
+        for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
+          byName.put(field.getFieldName(), field);
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, or null if its not found.
+       */
+      @org.apache.thrift.annotation.Nullable
+      public static _Fields findByThriftId(int fieldId) {
+        switch(fieldId) {
+          case 0: // SUCCESS
+            return SUCCESS;
+          default:
+            return null;
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, throwing an exception
+       * if it is not found.
+       */
+      public static _Fields findByThriftIdOrThrow(int fieldId) {
+        _Fields fields = findByThriftId(fieldId);
+        if (fields == null) throw new java.lang.IllegalArgumentException("Field " + fieldId + " doesn't exist!");
+        return fields;
+      }
+
+      /**
+       * Find the _Fields constant that matches name, or null if its not found.
+       */
+      @org.apache.thrift.annotation.Nullable
+      public static _Fields findByName(java.lang.String name) {
+        return byName.get(name);
+      }
+
+      private final short _thriftId;
+      private final java.lang.String _fieldName;
+
+      _Fields(short thriftId, java.lang.String fieldName) {
+        _thriftId = thriftId;
+        _fieldName = fieldName;
+      }
+
+      public short getThriftFieldId() {
+        return _thriftId;
+      }
+
+      public java.lang.String getFieldName() {
+        return _fieldName;
+      }
+    }
+
+    // isset id assignments
+    private static final int __SUCCESS_ISSET_ID = 0;
+    private byte __isset_bitfield = 0;
+    public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    static {
+      java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
+      tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE)));
+      metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
+      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(producto_escalar_result.class, metaDataMap);
+    }
+
+    public producto_escalar_result() {
+    }
+
+    public producto_escalar_result(
+      double success)
+    {
+      this();
+      this.success = success;
+      setSuccessIsSet(true);
+    }
+
+    /**
+     * Performs a deep copy on <i>other</i>.
+     */
+    public producto_escalar_result(producto_escalar_result other) {
+      __isset_bitfield = other.__isset_bitfield;
+      this.success = other.success;
+    }
+
+    public producto_escalar_result deepCopy() {
+      return new producto_escalar_result(this);
+    }
+
+    @Override
+    public void clear() {
+      setSuccessIsSet(false);
+      this.success = 0.0;
+    }
+
+    public double getSuccess() {
+      return this.success;
+    }
+
+    public producto_escalar_result setSuccess(double success) {
+      this.success = success;
+      setSuccessIsSet(true);
+      return this;
+    }
+
+    public void unsetSuccess() {
+      __isset_bitfield = org.apache.thrift.EncodingUtils.clearBit(__isset_bitfield, __SUCCESS_ISSET_ID);
+    }
+
+    /** Returns true if field success is set (has been assigned a value) and false otherwise */
+    public boolean isSetSuccess() {
+      return org.apache.thrift.EncodingUtils.testBit(__isset_bitfield, __SUCCESS_ISSET_ID);
+    }
+
+    public void setSuccessIsSet(boolean value) {
+      __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __SUCCESS_ISSET_ID, value);
+    }
+
+    public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable java.lang.Object value) {
+      switch (field) {
+      case SUCCESS:
+        if (value == null) {
+          unsetSuccess();
+        } else {
+          setSuccess((java.lang.Double)value);
+        }
+        break;
+
+      }
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.lang.Object getFieldValue(_Fields field) {
+      switch (field) {
+      case SUCCESS:
+        return getSuccess();
+
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    public boolean isSet(_Fields field) {
+      if (field == null) {
+        throw new java.lang.IllegalArgumentException();
+      }
+
+      switch (field) {
+      case SUCCESS:
+        return isSetSuccess();
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    @Override
+    public boolean equals(java.lang.Object that) {
+      if (that instanceof producto_escalar_result)
+        return this.equals((producto_escalar_result)that);
+      return false;
+    }
+
+    public boolean equals(producto_escalar_result that) {
+      if (that == null)
+        return false;
+      if (this == that)
+        return true;
+
+      boolean this_present_success = true;
+      boolean that_present_success = true;
+      if (this_present_success || that_present_success) {
+        if (!(this_present_success && that_present_success))
+          return false;
+        if (this.success != that.success)
+          return false;
+      }
+
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      int hashCode = 1;
+
+      hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(success);
+
+      return hashCode;
+    }
+
+    @Override
+    public int compareTo(producto_escalar_result other) {
+      if (!getClass().equals(other.getClass())) {
+        return getClass().getName().compareTo(other.getClass().getName());
+      }
+
+      int lastComparison = 0;
+
+      lastComparison = java.lang.Boolean.compare(isSetSuccess(), other.isSetSuccess());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetSuccess()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.success, other.success);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      return 0;
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public _Fields fieldForId(int fieldId) {
+      return _Fields.findByThriftId(fieldId);
+    }
+
+    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
+      scheme(iprot).read(iprot, this);
+    }
+
+    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+      scheme(oprot).write(oprot, this);
+      }
+
+    @Override
+    public java.lang.String toString() {
+      java.lang.StringBuilder sb = new java.lang.StringBuilder("producto_escalar_result(");
+      boolean first = true;
+
+      sb.append("success:");
+      sb.append(this.success);
+      first = false;
+      sb.append(")");
+      return sb.toString();
+    }
+
+    public void validate() throws org.apache.thrift.TException {
+      // check for required fields
+      // check for sub-struct validity
+    }
+
+    private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
+      try {
+        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
+      try {
+        // it doesn't seem like you should have to do this, but java serialization is wacky, and doesn't call the default constructor.
+        __isset_bitfield = 0;
+        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private static class producto_escalar_resultStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public producto_escalar_resultStandardScheme getScheme() {
+        return new producto_escalar_resultStandardScheme();
+      }
+    }
+
+    private static class producto_escalar_resultStandardScheme extends org.apache.thrift.scheme.StandardScheme<producto_escalar_result> {
+
+      public void read(org.apache.thrift.protocol.TProtocol iprot, producto_escalar_result struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TField schemeField;
+        iprot.readStructBegin();
+        while (true)
+        {
+          schemeField = iprot.readFieldBegin();
+          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) { 
+            break;
+          }
+          switch (schemeField.id) {
+            case 0: // SUCCESS
+              if (schemeField.type == org.apache.thrift.protocol.TType.DOUBLE) {
+                struct.success = iprot.readDouble();
+                struct.setSuccessIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            default:
+              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+          }
+          iprot.readFieldEnd();
+        }
+        iprot.readStructEnd();
+
+        // check for required fields of primitive type, which can't be checked in the validate method
+        struct.validate();
+      }
+
+      public void write(org.apache.thrift.protocol.TProtocol oprot, producto_escalar_result struct) throws org.apache.thrift.TException {
+        struct.validate();
+
+        oprot.writeStructBegin(STRUCT_DESC);
+        if (struct.isSetSuccess()) {
+          oprot.writeFieldBegin(SUCCESS_FIELD_DESC);
+          oprot.writeDouble(struct.success);
+          oprot.writeFieldEnd();
+        }
+        oprot.writeFieldStop();
+        oprot.writeStructEnd();
+      }
+
+    }
+
+    private static class producto_escalar_resultTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public producto_escalar_resultTupleScheme getScheme() {
+        return new producto_escalar_resultTupleScheme();
+      }
+    }
+
+    private static class producto_escalar_resultTupleScheme extends org.apache.thrift.scheme.TupleScheme<producto_escalar_result> {
+
+      @Override
+      public void write(org.apache.thrift.protocol.TProtocol prot, producto_escalar_result struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet optionals = new java.util.BitSet();
+        if (struct.isSetSuccess()) {
+          optionals.set(0);
+        }
+        oprot.writeBitSet(optionals, 1);
+        if (struct.isSetSuccess()) {
+          oprot.writeDouble(struct.success);
+        }
+      }
+
+      @Override
+      public void read(org.apache.thrift.protocol.TProtocol prot, producto_escalar_result struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet incoming = iprot.readBitSet(1);
+        if (incoming.get(0)) {
+          struct.success = iprot.readDouble();
+          struct.setSuccessIsSet(true);
+        }
+      }
+    }
+
+    private static <S extends org.apache.thrift.scheme.IScheme> S scheme(org.apache.thrift.protocol.TProtocol proto) {
+      return (org.apache.thrift.scheme.StandardScheme.class.equals(proto.getScheme()) ? STANDARD_SCHEME_FACTORY : TUPLE_SCHEME_FACTORY).getScheme();
+    }
+  }
+
+  public static class multi_vector_escalar_args implements org.apache.thrift.TBase<multi_vector_escalar_args, multi_vector_escalar_args._Fields>, java.io.Serializable, Cloneable, Comparable<multi_vector_escalar_args>   {
+    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("multi_vector_escalar_args");
+
+    private static final org.apache.thrift.protocol.TField VECTOR1_FIELD_DESC = new org.apache.thrift.protocol.TField("vector1", org.apache.thrift.protocol.TType.LIST, (short)1);
+    private static final org.apache.thrift.protocol.TField ESCALAR_FIELD_DESC = new org.apache.thrift.protocol.TField("escalar", org.apache.thrift.protocol.TType.DOUBLE, (short)2);
+
+    private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new multi_vector_escalar_argsStandardSchemeFactory();
+    private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new multi_vector_escalar_argsTupleSchemeFactory();
+
+    public @org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> vector1; // required
+    public double escalar; // required
+
+    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+      VECTOR1((short)1, "vector1"),
+      ESCALAR((short)2, "escalar");
+
+      private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
+
+      static {
+        for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
+          byName.put(field.getFieldName(), field);
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, or null if its not found.
+       */
+      @org.apache.thrift.annotation.Nullable
+      public static _Fields findByThriftId(int fieldId) {
+        switch(fieldId) {
+          case 1: // VECTOR1
+            return VECTOR1;
+          case 2: // ESCALAR
+            return ESCALAR;
+          default:
+            return null;
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, throwing an exception
+       * if it is not found.
+       */
+      public static _Fields findByThriftIdOrThrow(int fieldId) {
+        _Fields fields = findByThriftId(fieldId);
+        if (fields == null) throw new java.lang.IllegalArgumentException("Field " + fieldId + " doesn't exist!");
+        return fields;
+      }
+
+      /**
+       * Find the _Fields constant that matches name, or null if its not found.
+       */
+      @org.apache.thrift.annotation.Nullable
+      public static _Fields findByName(java.lang.String name) {
+        return byName.get(name);
+      }
+
+      private final short _thriftId;
+      private final java.lang.String _fieldName;
+
+      _Fields(short thriftId, java.lang.String fieldName) {
+        _thriftId = thriftId;
+        _fieldName = fieldName;
+      }
+
+      public short getThriftFieldId() {
+        return _thriftId;
+      }
+
+      public java.lang.String getFieldName() {
+        return _fieldName;
+      }
+    }
+
+    // isset id assignments
+    private static final int __ESCALAR_ISSET_ID = 0;
+    private byte __isset_bitfield = 0;
+    public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    static {
+      java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
+      tmpMap.put(_Fields.VECTOR1, new org.apache.thrift.meta_data.FieldMetaData("vector1", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
+              new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE))));
+      tmpMap.put(_Fields.ESCALAR, new org.apache.thrift.meta_data.FieldMetaData("escalar", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE)));
+      metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
+      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(multi_vector_escalar_args.class, metaDataMap);
+    }
+
+    public multi_vector_escalar_args() {
+    }
+
+    public multi_vector_escalar_args(
+      java.util.List<java.lang.Double> vector1,
+      double escalar)
+    {
+      this();
+      this.vector1 = vector1;
+      this.escalar = escalar;
+      setEscalarIsSet(true);
+    }
+
+    /**
+     * Performs a deep copy on <i>other</i>.
+     */
+    public multi_vector_escalar_args(multi_vector_escalar_args other) {
+      __isset_bitfield = other.__isset_bitfield;
+      if (other.isSetVector1()) {
+        java.util.List<java.lang.Double> __this__vector1 = new java.util.ArrayList<java.lang.Double>(other.vector1);
+        this.vector1 = __this__vector1;
+      }
+      this.escalar = other.escalar;
+    }
+
+    public multi_vector_escalar_args deepCopy() {
+      return new multi_vector_escalar_args(this);
+    }
+
+    @Override
+    public void clear() {
+      this.vector1 = null;
+      setEscalarIsSet(false);
+      this.escalar = 0.0;
+    }
+
+    public int getVector1Size() {
+      return (this.vector1 == null) ? 0 : this.vector1.size();
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.Iterator<java.lang.Double> getVector1Iterator() {
+      return (this.vector1 == null) ? null : this.vector1.iterator();
+    }
+
+    public void addToVector1(double elem) {
+      if (this.vector1 == null) {
+        this.vector1 = new java.util.ArrayList<java.lang.Double>();
+      }
+      this.vector1.add(elem);
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.List<java.lang.Double> getVector1() {
+      return this.vector1;
+    }
+
+    public multi_vector_escalar_args setVector1(@org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> vector1) {
+      this.vector1 = vector1;
+      return this;
+    }
+
+    public void unsetVector1() {
+      this.vector1 = null;
+    }
+
+    /** Returns true if field vector1 is set (has been assigned a value) and false otherwise */
+    public boolean isSetVector1() {
+      return this.vector1 != null;
+    }
+
+    public void setVector1IsSet(boolean value) {
+      if (!value) {
+        this.vector1 = null;
+      }
+    }
+
+    public double getEscalar() {
+      return this.escalar;
+    }
+
+    public multi_vector_escalar_args setEscalar(double escalar) {
+      this.escalar = escalar;
+      setEscalarIsSet(true);
+      return this;
+    }
+
+    public void unsetEscalar() {
+      __isset_bitfield = org.apache.thrift.EncodingUtils.clearBit(__isset_bitfield, __ESCALAR_ISSET_ID);
+    }
+
+    /** Returns true if field escalar is set (has been assigned a value) and false otherwise */
+    public boolean isSetEscalar() {
+      return org.apache.thrift.EncodingUtils.testBit(__isset_bitfield, __ESCALAR_ISSET_ID);
+    }
+
+    public void setEscalarIsSet(boolean value) {
+      __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __ESCALAR_ISSET_ID, value);
+    }
+
+    public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable java.lang.Object value) {
+      switch (field) {
+      case VECTOR1:
+        if (value == null) {
+          unsetVector1();
+        } else {
+          setVector1((java.util.List<java.lang.Double>)value);
+        }
+        break;
+
+      case ESCALAR:
+        if (value == null) {
+          unsetEscalar();
+        } else {
+          setEscalar((java.lang.Double)value);
+        }
+        break;
+
+      }
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.lang.Object getFieldValue(_Fields field) {
+      switch (field) {
+      case VECTOR1:
+        return getVector1();
+
+      case ESCALAR:
+        return getEscalar();
+
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    public boolean isSet(_Fields field) {
+      if (field == null) {
+        throw new java.lang.IllegalArgumentException();
+      }
+
+      switch (field) {
+      case VECTOR1:
+        return isSetVector1();
+      case ESCALAR:
+        return isSetEscalar();
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    @Override
+    public boolean equals(java.lang.Object that) {
+      if (that instanceof multi_vector_escalar_args)
+        return this.equals((multi_vector_escalar_args)that);
+      return false;
+    }
+
+    public boolean equals(multi_vector_escalar_args that) {
+      if (that == null)
+        return false;
+      if (this == that)
+        return true;
+
+      boolean this_present_vector1 = true && this.isSetVector1();
+      boolean that_present_vector1 = true && that.isSetVector1();
+      if (this_present_vector1 || that_present_vector1) {
+        if (!(this_present_vector1 && that_present_vector1))
+          return false;
+        if (!this.vector1.equals(that.vector1))
+          return false;
+      }
+
+      boolean this_present_escalar = true;
+      boolean that_present_escalar = true;
+      if (this_present_escalar || that_present_escalar) {
+        if (!(this_present_escalar && that_present_escalar))
+          return false;
+        if (this.escalar != that.escalar)
+          return false;
+      }
+
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      int hashCode = 1;
+
+      hashCode = hashCode * 8191 + ((isSetVector1()) ? 131071 : 524287);
+      if (isSetVector1())
+        hashCode = hashCode * 8191 + vector1.hashCode();
+
+      hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(escalar);
+
+      return hashCode;
+    }
+
+    @Override
+    public int compareTo(multi_vector_escalar_args other) {
+      if (!getClass().equals(other.getClass())) {
+        return getClass().getName().compareTo(other.getClass().getName());
+      }
+
+      int lastComparison = 0;
+
+      lastComparison = java.lang.Boolean.compare(isSetVector1(), other.isSetVector1());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetVector1()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.vector1, other.vector1);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      lastComparison = java.lang.Boolean.compare(isSetEscalar(), other.isSetEscalar());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetEscalar()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.escalar, other.escalar);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      return 0;
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public _Fields fieldForId(int fieldId) {
+      return _Fields.findByThriftId(fieldId);
+    }
+
+    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
+      scheme(iprot).read(iprot, this);
+    }
+
+    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+      scheme(oprot).write(oprot, this);
+    }
+
+    @Override
+    public java.lang.String toString() {
+      java.lang.StringBuilder sb = new java.lang.StringBuilder("multi_vector_escalar_args(");
+      boolean first = true;
+
+      sb.append("vector1:");
+      if (this.vector1 == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.vector1);
+      }
+      first = false;
+      if (!first) sb.append(", ");
+      sb.append("escalar:");
+      sb.append(this.escalar);
+      first = false;
+      sb.append(")");
+      return sb.toString();
+    }
+
+    public void validate() throws org.apache.thrift.TException {
+      // check for required fields
+      // check for sub-struct validity
+    }
+
+    private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
+      try {
+        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
+      try {
+        // it doesn't seem like you should have to do this, but java serialization is wacky, and doesn't call the default constructor.
+        __isset_bitfield = 0;
+        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private static class multi_vector_escalar_argsStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public multi_vector_escalar_argsStandardScheme getScheme() {
+        return new multi_vector_escalar_argsStandardScheme();
+      }
+    }
+
+    private static class multi_vector_escalar_argsStandardScheme extends org.apache.thrift.scheme.StandardScheme<multi_vector_escalar_args> {
+
+      public void read(org.apache.thrift.protocol.TProtocol iprot, multi_vector_escalar_args struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TField schemeField;
+        iprot.readStructBegin();
+        while (true)
+        {
+          schemeField = iprot.readFieldBegin();
+          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) { 
+            break;
+          }
+          switch (schemeField.id) {
+            case 1: // VECTOR1
+              if (schemeField.type == org.apache.thrift.protocol.TType.LIST) {
+                {
+                  org.apache.thrift.protocol.TList _list64 = iprot.readListBegin();
+                  struct.vector1 = new java.util.ArrayList<java.lang.Double>(_list64.size);
+                  double _elem65;
+                  for (int _i66 = 0; _i66 < _list64.size; ++_i66)
+                  {
+                    _elem65 = iprot.readDouble();
+                    struct.vector1.add(_elem65);
+                  }
+                  iprot.readListEnd();
+                }
+                struct.setVector1IsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            case 2: // ESCALAR
+              if (schemeField.type == org.apache.thrift.protocol.TType.DOUBLE) {
+                struct.escalar = iprot.readDouble();
+                struct.setEscalarIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            default:
+              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+          }
+          iprot.readFieldEnd();
+        }
+        iprot.readStructEnd();
+
+        // check for required fields of primitive type, which can't be checked in the validate method
+        struct.validate();
+      }
+
+      public void write(org.apache.thrift.protocol.TProtocol oprot, multi_vector_escalar_args struct) throws org.apache.thrift.TException {
+        struct.validate();
+
+        oprot.writeStructBegin(STRUCT_DESC);
+        if (struct.vector1 != null) {
+          oprot.writeFieldBegin(VECTOR1_FIELD_DESC);
+          {
+            oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.DOUBLE, struct.vector1.size()));
+            for (double _iter67 : struct.vector1)
+            {
+              oprot.writeDouble(_iter67);
+            }
+            oprot.writeListEnd();
+          }
+          oprot.writeFieldEnd();
+        }
+        oprot.writeFieldBegin(ESCALAR_FIELD_DESC);
+        oprot.writeDouble(struct.escalar);
+        oprot.writeFieldEnd();
+        oprot.writeFieldStop();
+        oprot.writeStructEnd();
+      }
+
+    }
+
+    private static class multi_vector_escalar_argsTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public multi_vector_escalar_argsTupleScheme getScheme() {
+        return new multi_vector_escalar_argsTupleScheme();
+      }
+    }
+
+    private static class multi_vector_escalar_argsTupleScheme extends org.apache.thrift.scheme.TupleScheme<multi_vector_escalar_args> {
+
+      @Override
+      public void write(org.apache.thrift.protocol.TProtocol prot, multi_vector_escalar_args struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet optionals = new java.util.BitSet();
+        if (struct.isSetVector1()) {
+          optionals.set(0);
+        }
+        if (struct.isSetEscalar()) {
+          optionals.set(1);
+        }
+        oprot.writeBitSet(optionals, 2);
+        if (struct.isSetVector1()) {
+          {
+            oprot.writeI32(struct.vector1.size());
+            for (double _iter68 : struct.vector1)
+            {
+              oprot.writeDouble(_iter68);
+            }
+          }
+        }
+        if (struct.isSetEscalar()) {
+          oprot.writeDouble(struct.escalar);
+        }
+      }
+
+      @Override
+      public void read(org.apache.thrift.protocol.TProtocol prot, multi_vector_escalar_args struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet incoming = iprot.readBitSet(2);
+        if (incoming.get(0)) {
+          {
+            org.apache.thrift.protocol.TList _list69 = iprot.readListBegin(org.apache.thrift.protocol.TType.DOUBLE);
+            struct.vector1 = new java.util.ArrayList<java.lang.Double>(_list69.size);
+            double _elem70;
+            for (int _i71 = 0; _i71 < _list69.size; ++_i71)
+            {
+              _elem70 = iprot.readDouble();
+              struct.vector1.add(_elem70);
+            }
+          }
+          struct.setVector1IsSet(true);
+        }
+        if (incoming.get(1)) {
+          struct.escalar = iprot.readDouble();
+          struct.setEscalarIsSet(true);
+        }
+      }
+    }
+
+    private static <S extends org.apache.thrift.scheme.IScheme> S scheme(org.apache.thrift.protocol.TProtocol proto) {
+      return (org.apache.thrift.scheme.StandardScheme.class.equals(proto.getScheme()) ? STANDARD_SCHEME_FACTORY : TUPLE_SCHEME_FACTORY).getScheme();
+    }
+  }
+
+  public static class multi_vector_escalar_result implements org.apache.thrift.TBase<multi_vector_escalar_result, multi_vector_escalar_result._Fields>, java.io.Serializable, Cloneable, Comparable<multi_vector_escalar_result>   {
+    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("multi_vector_escalar_result");
+
+    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.LIST, (short)0);
+
+    private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new multi_vector_escalar_resultStandardSchemeFactory();
+    private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new multi_vector_escalar_resultTupleSchemeFactory();
+
+    public @org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> success; // required
+
+    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+      SUCCESS((short)0, "success");
+
+      private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
+
+      static {
+        for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
+          byName.put(field.getFieldName(), field);
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, or null if its not found.
+       */
+      @org.apache.thrift.annotation.Nullable
+      public static _Fields findByThriftId(int fieldId) {
+        switch(fieldId) {
+          case 0: // SUCCESS
+            return SUCCESS;
+          default:
+            return null;
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, throwing an exception
+       * if it is not found.
+       */
+      public static _Fields findByThriftIdOrThrow(int fieldId) {
+        _Fields fields = findByThriftId(fieldId);
+        if (fields == null) throw new java.lang.IllegalArgumentException("Field " + fieldId + " doesn't exist!");
+        return fields;
+      }
+
+      /**
+       * Find the _Fields constant that matches name, or null if its not found.
+       */
+      @org.apache.thrift.annotation.Nullable
+      public static _Fields findByName(java.lang.String name) {
+        return byName.get(name);
+      }
+
+      private final short _thriftId;
+      private final java.lang.String _fieldName;
+
+      _Fields(short thriftId, java.lang.String fieldName) {
+        _thriftId = thriftId;
+        _fieldName = fieldName;
+      }
+
+      public short getThriftFieldId() {
+        return _thriftId;
+      }
+
+      public java.lang.String getFieldName() {
+        return _fieldName;
+      }
+    }
+
+    // isset id assignments
+    public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    static {
+      java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
+      tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
+              new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE))));
+      metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
+      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(multi_vector_escalar_result.class, metaDataMap);
+    }
+
+    public multi_vector_escalar_result() {
+    }
+
+    public multi_vector_escalar_result(
+      java.util.List<java.lang.Double> success)
+    {
+      this();
+      this.success = success;
+    }
+
+    /**
+     * Performs a deep copy on <i>other</i>.
+     */
+    public multi_vector_escalar_result(multi_vector_escalar_result other) {
+      if (other.isSetSuccess()) {
+        java.util.List<java.lang.Double> __this__success = new java.util.ArrayList<java.lang.Double>(other.success);
+        this.success = __this__success;
+      }
+    }
+
+    public multi_vector_escalar_result deepCopy() {
+      return new multi_vector_escalar_result(this);
+    }
+
+    @Override
+    public void clear() {
+      this.success = null;
+    }
+
+    public int getSuccessSize() {
+      return (this.success == null) ? 0 : this.success.size();
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.Iterator<java.lang.Double> getSuccessIterator() {
+      return (this.success == null) ? null : this.success.iterator();
+    }
+
+    public void addToSuccess(double elem) {
+      if (this.success == null) {
+        this.success = new java.util.ArrayList<java.lang.Double>();
+      }
+      this.success.add(elem);
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.List<java.lang.Double> getSuccess() {
+      return this.success;
+    }
+
+    public multi_vector_escalar_result setSuccess(@org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> success) {
+      this.success = success;
+      return this;
+    }
+
+    public void unsetSuccess() {
+      this.success = null;
+    }
+
+    /** Returns true if field success is set (has been assigned a value) and false otherwise */
+    public boolean isSetSuccess() {
+      return this.success != null;
+    }
+
+    public void setSuccessIsSet(boolean value) {
+      if (!value) {
+        this.success = null;
+      }
+    }
+
+    public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable java.lang.Object value) {
+      switch (field) {
+      case SUCCESS:
+        if (value == null) {
+          unsetSuccess();
+        } else {
+          setSuccess((java.util.List<java.lang.Double>)value);
+        }
+        break;
+
+      }
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.lang.Object getFieldValue(_Fields field) {
+      switch (field) {
+      case SUCCESS:
+        return getSuccess();
+
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    public boolean isSet(_Fields field) {
+      if (field == null) {
+        throw new java.lang.IllegalArgumentException();
+      }
+
+      switch (field) {
+      case SUCCESS:
+        return isSetSuccess();
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    @Override
+    public boolean equals(java.lang.Object that) {
+      if (that instanceof multi_vector_escalar_result)
+        return this.equals((multi_vector_escalar_result)that);
+      return false;
+    }
+
+    public boolean equals(multi_vector_escalar_result that) {
+      if (that == null)
+        return false;
+      if (this == that)
+        return true;
+
+      boolean this_present_success = true && this.isSetSuccess();
+      boolean that_present_success = true && that.isSetSuccess();
+      if (this_present_success || that_present_success) {
+        if (!(this_present_success && that_present_success))
+          return false;
+        if (!this.success.equals(that.success))
+          return false;
+      }
+
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      int hashCode = 1;
+
+      hashCode = hashCode * 8191 + ((isSetSuccess()) ? 131071 : 524287);
+      if (isSetSuccess())
+        hashCode = hashCode * 8191 + success.hashCode();
+
+      return hashCode;
+    }
+
+    @Override
+    public int compareTo(multi_vector_escalar_result other) {
+      if (!getClass().equals(other.getClass())) {
+        return getClass().getName().compareTo(other.getClass().getName());
+      }
+
+      int lastComparison = 0;
+
+      lastComparison = java.lang.Boolean.compare(isSetSuccess(), other.isSetSuccess());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetSuccess()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.success, other.success);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      return 0;
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public _Fields fieldForId(int fieldId) {
+      return _Fields.findByThriftId(fieldId);
+    }
+
+    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
+      scheme(iprot).read(iprot, this);
+    }
+
+    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+      scheme(oprot).write(oprot, this);
+      }
+
+    @Override
+    public java.lang.String toString() {
+      java.lang.StringBuilder sb = new java.lang.StringBuilder("multi_vector_escalar_result(");
+      boolean first = true;
+
+      sb.append("success:");
+      if (this.success == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.success);
+      }
+      first = false;
+      sb.append(")");
+      return sb.toString();
+    }
+
+    public void validate() throws org.apache.thrift.TException {
+      // check for required fields
+      // check for sub-struct validity
+    }
+
+    private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
+      try {
+        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
+      try {
+        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private static class multi_vector_escalar_resultStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public multi_vector_escalar_resultStandardScheme getScheme() {
+        return new multi_vector_escalar_resultStandardScheme();
+      }
+    }
+
+    private static class multi_vector_escalar_resultStandardScheme extends org.apache.thrift.scheme.StandardScheme<multi_vector_escalar_result> {
+
+      public void read(org.apache.thrift.protocol.TProtocol iprot, multi_vector_escalar_result struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TField schemeField;
+        iprot.readStructBegin();
+        while (true)
+        {
+          schemeField = iprot.readFieldBegin();
+          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) { 
+            break;
+          }
+          switch (schemeField.id) {
+            case 0: // SUCCESS
+              if (schemeField.type == org.apache.thrift.protocol.TType.LIST) {
+                {
+                  org.apache.thrift.protocol.TList _list72 = iprot.readListBegin();
+                  struct.success = new java.util.ArrayList<java.lang.Double>(_list72.size);
+                  double _elem73;
+                  for (int _i74 = 0; _i74 < _list72.size; ++_i74)
+                  {
+                    _elem73 = iprot.readDouble();
+                    struct.success.add(_elem73);
+                  }
+                  iprot.readListEnd();
+                }
+                struct.setSuccessIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            default:
+              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+          }
+          iprot.readFieldEnd();
+        }
+        iprot.readStructEnd();
+
+        // check for required fields of primitive type, which can't be checked in the validate method
+        struct.validate();
+      }
+
+      public void write(org.apache.thrift.protocol.TProtocol oprot, multi_vector_escalar_result struct) throws org.apache.thrift.TException {
+        struct.validate();
+
+        oprot.writeStructBegin(STRUCT_DESC);
+        if (struct.success != null) {
+          oprot.writeFieldBegin(SUCCESS_FIELD_DESC);
+          {
+            oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.DOUBLE, struct.success.size()));
+            for (double _iter75 : struct.success)
+            {
+              oprot.writeDouble(_iter75);
+            }
+            oprot.writeListEnd();
+          }
+          oprot.writeFieldEnd();
+        }
+        oprot.writeFieldStop();
+        oprot.writeStructEnd();
+      }
+
+    }
+
+    private static class multi_vector_escalar_resultTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public multi_vector_escalar_resultTupleScheme getScheme() {
+        return new multi_vector_escalar_resultTupleScheme();
+      }
+    }
+
+    private static class multi_vector_escalar_resultTupleScheme extends org.apache.thrift.scheme.TupleScheme<multi_vector_escalar_result> {
+
+      @Override
+      public void write(org.apache.thrift.protocol.TProtocol prot, multi_vector_escalar_result struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet optionals = new java.util.BitSet();
+        if (struct.isSetSuccess()) {
+          optionals.set(0);
+        }
+        oprot.writeBitSet(optionals, 1);
+        if (struct.isSetSuccess()) {
+          {
+            oprot.writeI32(struct.success.size());
+            for (double _iter76 : struct.success)
+            {
+              oprot.writeDouble(_iter76);
+            }
+          }
+        }
+      }
+
+      @Override
+      public void read(org.apache.thrift.protocol.TProtocol prot, multi_vector_escalar_result struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet incoming = iprot.readBitSet(1);
+        if (incoming.get(0)) {
+          {
+            org.apache.thrift.protocol.TList _list77 = iprot.readListBegin(org.apache.thrift.protocol.TType.DOUBLE);
+            struct.success = new java.util.ArrayList<java.lang.Double>(_list77.size);
+            double _elem78;
+            for (int _i79 = 0; _i79 < _list77.size; ++_i79)
+            {
+              _elem78 = iprot.readDouble();
+              struct.success.add(_elem78);
+            }
+          }
+          struct.setSuccessIsSet(true);
+        }
+      }
+    }
+
+    private static <S extends org.apache.thrift.scheme.IScheme> S scheme(org.apache.thrift.protocol.TProtocol proto) {
+      return (org.apache.thrift.scheme.StandardScheme.class.equals(proto.getScheme()) ? STANDARD_SCHEME_FACTORY : TUPLE_SCHEME_FACTORY).getScheme();
+    }
+  }
+
+  public static class division_vector_escalar_args implements org.apache.thrift.TBase<division_vector_escalar_args, division_vector_escalar_args._Fields>, java.io.Serializable, Cloneable, Comparable<division_vector_escalar_args>   {
+    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("division_vector_escalar_args");
+
+    private static final org.apache.thrift.protocol.TField VECTOR1_FIELD_DESC = new org.apache.thrift.protocol.TField("vector1", org.apache.thrift.protocol.TType.LIST, (short)1);
+    private static final org.apache.thrift.protocol.TField ESCALAR_FIELD_DESC = new org.apache.thrift.protocol.TField("escalar", org.apache.thrift.protocol.TType.DOUBLE, (short)2);
+
+    private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new division_vector_escalar_argsStandardSchemeFactory();
+    private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new division_vector_escalar_argsTupleSchemeFactory();
+
+    public @org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> vector1; // required
+    public double escalar; // required
+
+    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+      VECTOR1((short)1, "vector1"),
+      ESCALAR((short)2, "escalar");
+
+      private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
+
+      static {
+        for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
+          byName.put(field.getFieldName(), field);
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, or null if its not found.
+       */
+      @org.apache.thrift.annotation.Nullable
+      public static _Fields findByThriftId(int fieldId) {
+        switch(fieldId) {
+          case 1: // VECTOR1
+            return VECTOR1;
+          case 2: // ESCALAR
+            return ESCALAR;
+          default:
+            return null;
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, throwing an exception
+       * if it is not found.
+       */
+      public static _Fields findByThriftIdOrThrow(int fieldId) {
+        _Fields fields = findByThriftId(fieldId);
+        if (fields == null) throw new java.lang.IllegalArgumentException("Field " + fieldId + " doesn't exist!");
+        return fields;
+      }
+
+      /**
+       * Find the _Fields constant that matches name, or null if its not found.
+       */
+      @org.apache.thrift.annotation.Nullable
+      public static _Fields findByName(java.lang.String name) {
+        return byName.get(name);
+      }
+
+      private final short _thriftId;
+      private final java.lang.String _fieldName;
+
+      _Fields(short thriftId, java.lang.String fieldName) {
+        _thriftId = thriftId;
+        _fieldName = fieldName;
+      }
+
+      public short getThriftFieldId() {
+        return _thriftId;
+      }
+
+      public java.lang.String getFieldName() {
+        return _fieldName;
+      }
+    }
+
+    // isset id assignments
+    private static final int __ESCALAR_ISSET_ID = 0;
+    private byte __isset_bitfield = 0;
+    public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    static {
+      java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
+      tmpMap.put(_Fields.VECTOR1, new org.apache.thrift.meta_data.FieldMetaData("vector1", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
+              new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE))));
+      tmpMap.put(_Fields.ESCALAR, new org.apache.thrift.meta_data.FieldMetaData("escalar", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE)));
+      metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
+      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(division_vector_escalar_args.class, metaDataMap);
+    }
+
+    public division_vector_escalar_args() {
+    }
+
+    public division_vector_escalar_args(
+      java.util.List<java.lang.Double> vector1,
+      double escalar)
+    {
+      this();
+      this.vector1 = vector1;
+      this.escalar = escalar;
+      setEscalarIsSet(true);
+    }
+
+    /**
+     * Performs a deep copy on <i>other</i>.
+     */
+    public division_vector_escalar_args(division_vector_escalar_args other) {
+      __isset_bitfield = other.__isset_bitfield;
+      if (other.isSetVector1()) {
+        java.util.List<java.lang.Double> __this__vector1 = new java.util.ArrayList<java.lang.Double>(other.vector1);
+        this.vector1 = __this__vector1;
+      }
+      this.escalar = other.escalar;
+    }
+
+    public division_vector_escalar_args deepCopy() {
+      return new division_vector_escalar_args(this);
+    }
+
+    @Override
+    public void clear() {
+      this.vector1 = null;
+      setEscalarIsSet(false);
+      this.escalar = 0.0;
+    }
+
+    public int getVector1Size() {
+      return (this.vector1 == null) ? 0 : this.vector1.size();
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.Iterator<java.lang.Double> getVector1Iterator() {
+      return (this.vector1 == null) ? null : this.vector1.iterator();
+    }
+
+    public void addToVector1(double elem) {
+      if (this.vector1 == null) {
+        this.vector1 = new java.util.ArrayList<java.lang.Double>();
+      }
+      this.vector1.add(elem);
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.List<java.lang.Double> getVector1() {
+      return this.vector1;
+    }
+
+    public division_vector_escalar_args setVector1(@org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> vector1) {
+      this.vector1 = vector1;
+      return this;
+    }
+
+    public void unsetVector1() {
+      this.vector1 = null;
+    }
+
+    /** Returns true if field vector1 is set (has been assigned a value) and false otherwise */
+    public boolean isSetVector1() {
+      return this.vector1 != null;
+    }
+
+    public void setVector1IsSet(boolean value) {
+      if (!value) {
+        this.vector1 = null;
+      }
+    }
+
+    public double getEscalar() {
+      return this.escalar;
+    }
+
+    public division_vector_escalar_args setEscalar(double escalar) {
+      this.escalar = escalar;
+      setEscalarIsSet(true);
+      return this;
+    }
+
+    public void unsetEscalar() {
+      __isset_bitfield = org.apache.thrift.EncodingUtils.clearBit(__isset_bitfield, __ESCALAR_ISSET_ID);
+    }
+
+    /** Returns true if field escalar is set (has been assigned a value) and false otherwise */
+    public boolean isSetEscalar() {
+      return org.apache.thrift.EncodingUtils.testBit(__isset_bitfield, __ESCALAR_ISSET_ID);
+    }
+
+    public void setEscalarIsSet(boolean value) {
+      __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __ESCALAR_ISSET_ID, value);
+    }
+
+    public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable java.lang.Object value) {
+      switch (field) {
+      case VECTOR1:
+        if (value == null) {
+          unsetVector1();
+        } else {
+          setVector1((java.util.List<java.lang.Double>)value);
+        }
+        break;
+
+      case ESCALAR:
+        if (value == null) {
+          unsetEscalar();
+        } else {
+          setEscalar((java.lang.Double)value);
+        }
+        break;
+
+      }
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.lang.Object getFieldValue(_Fields field) {
+      switch (field) {
+      case VECTOR1:
+        return getVector1();
+
+      case ESCALAR:
+        return getEscalar();
+
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    public boolean isSet(_Fields field) {
+      if (field == null) {
+        throw new java.lang.IllegalArgumentException();
+      }
+
+      switch (field) {
+      case VECTOR1:
+        return isSetVector1();
+      case ESCALAR:
+        return isSetEscalar();
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    @Override
+    public boolean equals(java.lang.Object that) {
+      if (that instanceof division_vector_escalar_args)
+        return this.equals((division_vector_escalar_args)that);
+      return false;
+    }
+
+    public boolean equals(division_vector_escalar_args that) {
+      if (that == null)
+        return false;
+      if (this == that)
+        return true;
+
+      boolean this_present_vector1 = true && this.isSetVector1();
+      boolean that_present_vector1 = true && that.isSetVector1();
+      if (this_present_vector1 || that_present_vector1) {
+        if (!(this_present_vector1 && that_present_vector1))
+          return false;
+        if (!this.vector1.equals(that.vector1))
+          return false;
+      }
+
+      boolean this_present_escalar = true;
+      boolean that_present_escalar = true;
+      if (this_present_escalar || that_present_escalar) {
+        if (!(this_present_escalar && that_present_escalar))
+          return false;
+        if (this.escalar != that.escalar)
+          return false;
+      }
+
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      int hashCode = 1;
+
+      hashCode = hashCode * 8191 + ((isSetVector1()) ? 131071 : 524287);
+      if (isSetVector1())
+        hashCode = hashCode * 8191 + vector1.hashCode();
+
+      hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(escalar);
+
+      return hashCode;
+    }
+
+    @Override
+    public int compareTo(division_vector_escalar_args other) {
+      if (!getClass().equals(other.getClass())) {
+        return getClass().getName().compareTo(other.getClass().getName());
+      }
+
+      int lastComparison = 0;
+
+      lastComparison = java.lang.Boolean.compare(isSetVector1(), other.isSetVector1());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetVector1()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.vector1, other.vector1);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      lastComparison = java.lang.Boolean.compare(isSetEscalar(), other.isSetEscalar());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetEscalar()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.escalar, other.escalar);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      return 0;
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public _Fields fieldForId(int fieldId) {
+      return _Fields.findByThriftId(fieldId);
+    }
+
+    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
+      scheme(iprot).read(iprot, this);
+    }
+
+    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+      scheme(oprot).write(oprot, this);
+    }
+
+    @Override
+    public java.lang.String toString() {
+      java.lang.StringBuilder sb = new java.lang.StringBuilder("division_vector_escalar_args(");
+      boolean first = true;
+
+      sb.append("vector1:");
+      if (this.vector1 == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.vector1);
+      }
+      first = false;
+      if (!first) sb.append(", ");
+      sb.append("escalar:");
+      sb.append(this.escalar);
+      first = false;
+      sb.append(")");
+      return sb.toString();
+    }
+
+    public void validate() throws org.apache.thrift.TException {
+      // check for required fields
+      // check for sub-struct validity
+    }
+
+    private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
+      try {
+        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
+      try {
+        // it doesn't seem like you should have to do this, but java serialization is wacky, and doesn't call the default constructor.
+        __isset_bitfield = 0;
+        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private static class division_vector_escalar_argsStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public division_vector_escalar_argsStandardScheme getScheme() {
+        return new division_vector_escalar_argsStandardScheme();
+      }
+    }
+
+    private static class division_vector_escalar_argsStandardScheme extends org.apache.thrift.scheme.StandardScheme<division_vector_escalar_args> {
+
+      public void read(org.apache.thrift.protocol.TProtocol iprot, division_vector_escalar_args struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TField schemeField;
+        iprot.readStructBegin();
+        while (true)
+        {
+          schemeField = iprot.readFieldBegin();
+          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) { 
+            break;
+          }
+          switch (schemeField.id) {
+            case 1: // VECTOR1
+              if (schemeField.type == org.apache.thrift.protocol.TType.LIST) {
+                {
+                  org.apache.thrift.protocol.TList _list80 = iprot.readListBegin();
+                  struct.vector1 = new java.util.ArrayList<java.lang.Double>(_list80.size);
+                  double _elem81;
+                  for (int _i82 = 0; _i82 < _list80.size; ++_i82)
+                  {
+                    _elem81 = iprot.readDouble();
+                    struct.vector1.add(_elem81);
+                  }
+                  iprot.readListEnd();
+                }
+                struct.setVector1IsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            case 2: // ESCALAR
+              if (schemeField.type == org.apache.thrift.protocol.TType.DOUBLE) {
+                struct.escalar = iprot.readDouble();
+                struct.setEscalarIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            default:
+              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+          }
+          iprot.readFieldEnd();
+        }
+        iprot.readStructEnd();
+
+        // check for required fields of primitive type, which can't be checked in the validate method
+        struct.validate();
+      }
+
+      public void write(org.apache.thrift.protocol.TProtocol oprot, division_vector_escalar_args struct) throws org.apache.thrift.TException {
+        struct.validate();
+
+        oprot.writeStructBegin(STRUCT_DESC);
+        if (struct.vector1 != null) {
+          oprot.writeFieldBegin(VECTOR1_FIELD_DESC);
+          {
+            oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.DOUBLE, struct.vector1.size()));
+            for (double _iter83 : struct.vector1)
+            {
+              oprot.writeDouble(_iter83);
+            }
+            oprot.writeListEnd();
+          }
+          oprot.writeFieldEnd();
+        }
+        oprot.writeFieldBegin(ESCALAR_FIELD_DESC);
+        oprot.writeDouble(struct.escalar);
+        oprot.writeFieldEnd();
+        oprot.writeFieldStop();
+        oprot.writeStructEnd();
+      }
+
+    }
+
+    private static class division_vector_escalar_argsTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public division_vector_escalar_argsTupleScheme getScheme() {
+        return new division_vector_escalar_argsTupleScheme();
+      }
+    }
+
+    private static class division_vector_escalar_argsTupleScheme extends org.apache.thrift.scheme.TupleScheme<division_vector_escalar_args> {
+
+      @Override
+      public void write(org.apache.thrift.protocol.TProtocol prot, division_vector_escalar_args struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet optionals = new java.util.BitSet();
+        if (struct.isSetVector1()) {
+          optionals.set(0);
+        }
+        if (struct.isSetEscalar()) {
+          optionals.set(1);
+        }
+        oprot.writeBitSet(optionals, 2);
+        if (struct.isSetVector1()) {
+          {
+            oprot.writeI32(struct.vector1.size());
+            for (double _iter84 : struct.vector1)
+            {
+              oprot.writeDouble(_iter84);
+            }
+          }
+        }
+        if (struct.isSetEscalar()) {
+          oprot.writeDouble(struct.escalar);
+        }
+      }
+
+      @Override
+      public void read(org.apache.thrift.protocol.TProtocol prot, division_vector_escalar_args struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet incoming = iprot.readBitSet(2);
+        if (incoming.get(0)) {
+          {
+            org.apache.thrift.protocol.TList _list85 = iprot.readListBegin(org.apache.thrift.protocol.TType.DOUBLE);
+            struct.vector1 = new java.util.ArrayList<java.lang.Double>(_list85.size);
+            double _elem86;
+            for (int _i87 = 0; _i87 < _list85.size; ++_i87)
+            {
+              _elem86 = iprot.readDouble();
+              struct.vector1.add(_elem86);
+            }
+          }
+          struct.setVector1IsSet(true);
+        }
+        if (incoming.get(1)) {
+          struct.escalar = iprot.readDouble();
+          struct.setEscalarIsSet(true);
+        }
+      }
+    }
+
+    private static <S extends org.apache.thrift.scheme.IScheme> S scheme(org.apache.thrift.protocol.TProtocol proto) {
+      return (org.apache.thrift.scheme.StandardScheme.class.equals(proto.getScheme()) ? STANDARD_SCHEME_FACTORY : TUPLE_SCHEME_FACTORY).getScheme();
+    }
+  }
+
+  public static class division_vector_escalar_result implements org.apache.thrift.TBase<division_vector_escalar_result, division_vector_escalar_result._Fields>, java.io.Serializable, Cloneable, Comparable<division_vector_escalar_result>   {
+    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("division_vector_escalar_result");
+
+    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.LIST, (short)0);
+
+    private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new division_vector_escalar_resultStandardSchemeFactory();
+    private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new division_vector_escalar_resultTupleSchemeFactory();
+
+    public @org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> success; // required
+
+    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+      SUCCESS((short)0, "success");
+
+      private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
+
+      static {
+        for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
+          byName.put(field.getFieldName(), field);
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, or null if its not found.
+       */
+      @org.apache.thrift.annotation.Nullable
+      public static _Fields findByThriftId(int fieldId) {
+        switch(fieldId) {
+          case 0: // SUCCESS
+            return SUCCESS;
+          default:
+            return null;
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, throwing an exception
+       * if it is not found.
+       */
+      public static _Fields findByThriftIdOrThrow(int fieldId) {
+        _Fields fields = findByThriftId(fieldId);
+        if (fields == null) throw new java.lang.IllegalArgumentException("Field " + fieldId + " doesn't exist!");
+        return fields;
+      }
+
+      /**
+       * Find the _Fields constant that matches name, or null if its not found.
+       */
+      @org.apache.thrift.annotation.Nullable
+      public static _Fields findByName(java.lang.String name) {
+        return byName.get(name);
+      }
+
+      private final short _thriftId;
+      private final java.lang.String _fieldName;
+
+      _Fields(short thriftId, java.lang.String fieldName) {
+        _thriftId = thriftId;
+        _fieldName = fieldName;
+      }
+
+      public short getThriftFieldId() {
+        return _thriftId;
+      }
+
+      public java.lang.String getFieldName() {
+        return _fieldName;
+      }
+    }
+
+    // isset id assignments
+    public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    static {
+      java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
+      tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
+              new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE))));
+      metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
+      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(division_vector_escalar_result.class, metaDataMap);
+    }
+
+    public division_vector_escalar_result() {
+    }
+
+    public division_vector_escalar_result(
+      java.util.List<java.lang.Double> success)
+    {
+      this();
+      this.success = success;
+    }
+
+    /**
+     * Performs a deep copy on <i>other</i>.
+     */
+    public division_vector_escalar_result(division_vector_escalar_result other) {
+      if (other.isSetSuccess()) {
+        java.util.List<java.lang.Double> __this__success = new java.util.ArrayList<java.lang.Double>(other.success);
+        this.success = __this__success;
+      }
+    }
+
+    public division_vector_escalar_result deepCopy() {
+      return new division_vector_escalar_result(this);
+    }
+
+    @Override
+    public void clear() {
+      this.success = null;
+    }
+
+    public int getSuccessSize() {
+      return (this.success == null) ? 0 : this.success.size();
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.Iterator<java.lang.Double> getSuccessIterator() {
+      return (this.success == null) ? null : this.success.iterator();
+    }
+
+    public void addToSuccess(double elem) {
+      if (this.success == null) {
+        this.success = new java.util.ArrayList<java.lang.Double>();
+      }
+      this.success.add(elem);
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.List<java.lang.Double> getSuccess() {
+      return this.success;
+    }
+
+    public division_vector_escalar_result setSuccess(@org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> success) {
+      this.success = success;
+      return this;
+    }
+
+    public void unsetSuccess() {
+      this.success = null;
+    }
+
+    /** Returns true if field success is set (has been assigned a value) and false otherwise */
+    public boolean isSetSuccess() {
+      return this.success != null;
+    }
+
+    public void setSuccessIsSet(boolean value) {
+      if (!value) {
+        this.success = null;
+      }
+    }
+
+    public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable java.lang.Object value) {
+      switch (field) {
+      case SUCCESS:
+        if (value == null) {
+          unsetSuccess();
+        } else {
+          setSuccess((java.util.List<java.lang.Double>)value);
+        }
+        break;
+
+      }
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.lang.Object getFieldValue(_Fields field) {
+      switch (field) {
+      case SUCCESS:
+        return getSuccess();
+
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    public boolean isSet(_Fields field) {
+      if (field == null) {
+        throw new java.lang.IllegalArgumentException();
+      }
+
+      switch (field) {
+      case SUCCESS:
+        return isSetSuccess();
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    @Override
+    public boolean equals(java.lang.Object that) {
+      if (that instanceof division_vector_escalar_result)
+        return this.equals((division_vector_escalar_result)that);
+      return false;
+    }
+
+    public boolean equals(division_vector_escalar_result that) {
+      if (that == null)
+        return false;
+      if (this == that)
+        return true;
+
+      boolean this_present_success = true && this.isSetSuccess();
+      boolean that_present_success = true && that.isSetSuccess();
+      if (this_present_success || that_present_success) {
+        if (!(this_present_success && that_present_success))
+          return false;
+        if (!this.success.equals(that.success))
+          return false;
+      }
+
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      int hashCode = 1;
+
+      hashCode = hashCode * 8191 + ((isSetSuccess()) ? 131071 : 524287);
+      if (isSetSuccess())
+        hashCode = hashCode * 8191 + success.hashCode();
+
+      return hashCode;
+    }
+
+    @Override
+    public int compareTo(division_vector_escalar_result other) {
+      if (!getClass().equals(other.getClass())) {
+        return getClass().getName().compareTo(other.getClass().getName());
+      }
+
+      int lastComparison = 0;
+
+      lastComparison = java.lang.Boolean.compare(isSetSuccess(), other.isSetSuccess());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetSuccess()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.success, other.success);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      return 0;
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public _Fields fieldForId(int fieldId) {
+      return _Fields.findByThriftId(fieldId);
+    }
+
+    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
+      scheme(iprot).read(iprot, this);
+    }
+
+    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+      scheme(oprot).write(oprot, this);
+      }
+
+    @Override
+    public java.lang.String toString() {
+      java.lang.StringBuilder sb = new java.lang.StringBuilder("division_vector_escalar_result(");
+      boolean first = true;
+
+      sb.append("success:");
+      if (this.success == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.success);
+      }
+      first = false;
+      sb.append(")");
+      return sb.toString();
+    }
+
+    public void validate() throws org.apache.thrift.TException {
+      // check for required fields
+      // check for sub-struct validity
+    }
+
+    private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
+      try {
+        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
+      try {
+        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private static class division_vector_escalar_resultStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public division_vector_escalar_resultStandardScheme getScheme() {
+        return new division_vector_escalar_resultStandardScheme();
+      }
+    }
+
+    private static class division_vector_escalar_resultStandardScheme extends org.apache.thrift.scheme.StandardScheme<division_vector_escalar_result> {
+
+      public void read(org.apache.thrift.protocol.TProtocol iprot, division_vector_escalar_result struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TField schemeField;
+        iprot.readStructBegin();
+        while (true)
+        {
+          schemeField = iprot.readFieldBegin();
+          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) { 
+            break;
+          }
+          switch (schemeField.id) {
+            case 0: // SUCCESS
+              if (schemeField.type == org.apache.thrift.protocol.TType.LIST) {
+                {
+                  org.apache.thrift.protocol.TList _list88 = iprot.readListBegin();
+                  struct.success = new java.util.ArrayList<java.lang.Double>(_list88.size);
+                  double _elem89;
+                  for (int _i90 = 0; _i90 < _list88.size; ++_i90)
+                  {
+                    _elem89 = iprot.readDouble();
+                    struct.success.add(_elem89);
+                  }
+                  iprot.readListEnd();
+                }
+                struct.setSuccessIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            default:
+              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+          }
+          iprot.readFieldEnd();
+        }
+        iprot.readStructEnd();
+
+        // check for required fields of primitive type, which can't be checked in the validate method
+        struct.validate();
+      }
+
+      public void write(org.apache.thrift.protocol.TProtocol oprot, division_vector_escalar_result struct) throws org.apache.thrift.TException {
+        struct.validate();
+
+        oprot.writeStructBegin(STRUCT_DESC);
+        if (struct.success != null) {
+          oprot.writeFieldBegin(SUCCESS_FIELD_DESC);
+          {
+            oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.DOUBLE, struct.success.size()));
+            for (double _iter91 : struct.success)
+            {
+              oprot.writeDouble(_iter91);
+            }
+            oprot.writeListEnd();
+          }
+          oprot.writeFieldEnd();
+        }
+        oprot.writeFieldStop();
+        oprot.writeStructEnd();
+      }
+
+    }
+
+    private static class division_vector_escalar_resultTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public division_vector_escalar_resultTupleScheme getScheme() {
+        return new division_vector_escalar_resultTupleScheme();
+      }
+    }
+
+    private static class division_vector_escalar_resultTupleScheme extends org.apache.thrift.scheme.TupleScheme<division_vector_escalar_result> {
+
+      @Override
+      public void write(org.apache.thrift.protocol.TProtocol prot, division_vector_escalar_result struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet optionals = new java.util.BitSet();
+        if (struct.isSetSuccess()) {
+          optionals.set(0);
+        }
+        oprot.writeBitSet(optionals, 1);
+        if (struct.isSetSuccess()) {
+          {
+            oprot.writeI32(struct.success.size());
+            for (double _iter92 : struct.success)
+            {
+              oprot.writeDouble(_iter92);
+            }
+          }
+        }
+      }
+
+      @Override
+      public void read(org.apache.thrift.protocol.TProtocol prot, division_vector_escalar_result struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet incoming = iprot.readBitSet(1);
+        if (incoming.get(0)) {
+          {
+            org.apache.thrift.protocol.TList _list93 = iprot.readListBegin(org.apache.thrift.protocol.TType.DOUBLE);
+            struct.success = new java.util.ArrayList<java.lang.Double>(_list93.size);
+            double _elem94;
+            for (int _i95 = 0; _i95 < _list93.size; ++_i95)
+            {
+              _elem94 = iprot.readDouble();
+              struct.success.add(_elem94);
+            }
+          }
+          struct.setSuccessIsSet(true);
+        }
+      }
+    }
+
+    private static <S extends org.apache.thrift.scheme.IScheme> S scheme(org.apache.thrift.protocol.TProtocol proto) {
+      return (org.apache.thrift.scheme.StandardScheme.class.equals(proto.getScheme()) ? STANDARD_SCHEME_FACTORY : TUPLE_SCHEME_FACTORY).getScheme();
+    }
+  }
+
+  public static class suma_matrices_args implements org.apache.thrift.TBase<suma_matrices_args, suma_matrices_args._Fields>, java.io.Serializable, Cloneable, Comparable<suma_matrices_args>   {
+    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("suma_matrices_args");
+
+    private static final org.apache.thrift.protocol.TField MATRIZ1_FIELD_DESC = new org.apache.thrift.protocol.TField("matriz1", org.apache.thrift.protocol.TType.LIST, (short)1);
+    private static final org.apache.thrift.protocol.TField MATRIZ2_FIELD_DESC = new org.apache.thrift.protocol.TField("matriz2", org.apache.thrift.protocol.TType.LIST, (short)2);
+
+    private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new suma_matrices_argsStandardSchemeFactory();
+    private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new suma_matrices_argsTupleSchemeFactory();
+
+    public @org.apache.thrift.annotation.Nullable java.util.List<java.util.List<java.lang.Double>> matriz1; // required
+    public @org.apache.thrift.annotation.Nullable java.util.List<java.util.List<java.lang.Double>> matriz2; // required
+
+    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+      MATRIZ1((short)1, "matriz1"),
+      MATRIZ2((short)2, "matriz2");
+
+      private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
+
+      static {
+        for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
+          byName.put(field.getFieldName(), field);
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, or null if its not found.
+       */
+      @org.apache.thrift.annotation.Nullable
+      public static _Fields findByThriftId(int fieldId) {
+        switch(fieldId) {
+          case 1: // MATRIZ1
+            return MATRIZ1;
+          case 2: // MATRIZ2
+            return MATRIZ2;
+          default:
+            return null;
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, throwing an exception
+       * if it is not found.
+       */
+      public static _Fields findByThriftIdOrThrow(int fieldId) {
+        _Fields fields = findByThriftId(fieldId);
+        if (fields == null) throw new java.lang.IllegalArgumentException("Field " + fieldId + " doesn't exist!");
+        return fields;
+      }
+
+      /**
+       * Find the _Fields constant that matches name, or null if its not found.
+       */
+      @org.apache.thrift.annotation.Nullable
+      public static _Fields findByName(java.lang.String name) {
+        return byName.get(name);
+      }
+
+      private final short _thriftId;
+      private final java.lang.String _fieldName;
+
+      _Fields(short thriftId, java.lang.String fieldName) {
+        _thriftId = thriftId;
+        _fieldName = fieldName;
+      }
+
+      public short getThriftFieldId() {
+        return _thriftId;
+      }
+
+      public java.lang.String getFieldName() {
+        return _fieldName;
+      }
+    }
+
+    // isset id assignments
+    public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    static {
+      java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
+      tmpMap.put(_Fields.MATRIZ1, new org.apache.thrift.meta_data.FieldMetaData("matriz1", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
+              new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
+                  new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE)))));
+      tmpMap.put(_Fields.MATRIZ2, new org.apache.thrift.meta_data.FieldMetaData("matriz2", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
+              new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
+                  new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE)))));
+      metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
+      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(suma_matrices_args.class, metaDataMap);
+    }
+
+    public suma_matrices_args() {
+    }
+
+    public suma_matrices_args(
+      java.util.List<java.util.List<java.lang.Double>> matriz1,
+      java.util.List<java.util.List<java.lang.Double>> matriz2)
+    {
+      this();
+      this.matriz1 = matriz1;
+      this.matriz2 = matriz2;
+    }
+
+    /**
+     * Performs a deep copy on <i>other</i>.
+     */
+    public suma_matrices_args(suma_matrices_args other) {
+      if (other.isSetMatriz1()) {
+        java.util.List<java.util.List<java.lang.Double>> __this__matriz1 = new java.util.ArrayList<java.util.List<java.lang.Double>>(other.matriz1.size());
+        for (java.util.List<java.lang.Double> other_element : other.matriz1) {
+          java.util.List<java.lang.Double> __this__matriz1_copy = new java.util.ArrayList<java.lang.Double>(other_element);
+          __this__matriz1.add(__this__matriz1_copy);
+        }
+        this.matriz1 = __this__matriz1;
+      }
+      if (other.isSetMatriz2()) {
+        java.util.List<java.util.List<java.lang.Double>> __this__matriz2 = new java.util.ArrayList<java.util.List<java.lang.Double>>(other.matriz2.size());
+        for (java.util.List<java.lang.Double> other_element : other.matriz2) {
+          java.util.List<java.lang.Double> __this__matriz2_copy = new java.util.ArrayList<java.lang.Double>(other_element);
+          __this__matriz2.add(__this__matriz2_copy);
+        }
+        this.matriz2 = __this__matriz2;
+      }
+    }
+
+    public suma_matrices_args deepCopy() {
+      return new suma_matrices_args(this);
+    }
+
+    @Override
+    public void clear() {
+      this.matriz1 = null;
+      this.matriz2 = null;
+    }
+
+    public int getMatriz1Size() {
+      return (this.matriz1 == null) ? 0 : this.matriz1.size();
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.Iterator<java.util.List<java.lang.Double>> getMatriz1Iterator() {
+      return (this.matriz1 == null) ? null : this.matriz1.iterator();
+    }
+
+    public void addToMatriz1(java.util.List<java.lang.Double> elem) {
+      if (this.matriz1 == null) {
+        this.matriz1 = new java.util.ArrayList<java.util.List<java.lang.Double>>();
+      }
+      this.matriz1.add(elem);
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.List<java.util.List<java.lang.Double>> getMatriz1() {
+      return this.matriz1;
+    }
+
+    public suma_matrices_args setMatriz1(@org.apache.thrift.annotation.Nullable java.util.List<java.util.List<java.lang.Double>> matriz1) {
+      this.matriz1 = matriz1;
+      return this;
+    }
+
+    public void unsetMatriz1() {
+      this.matriz1 = null;
+    }
+
+    /** Returns true if field matriz1 is set (has been assigned a value) and false otherwise */
+    public boolean isSetMatriz1() {
+      return this.matriz1 != null;
+    }
+
+    public void setMatriz1IsSet(boolean value) {
+      if (!value) {
+        this.matriz1 = null;
+      }
+    }
+
+    public int getMatriz2Size() {
+      return (this.matriz2 == null) ? 0 : this.matriz2.size();
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.Iterator<java.util.List<java.lang.Double>> getMatriz2Iterator() {
+      return (this.matriz2 == null) ? null : this.matriz2.iterator();
+    }
+
+    public void addToMatriz2(java.util.List<java.lang.Double> elem) {
+      if (this.matriz2 == null) {
+        this.matriz2 = new java.util.ArrayList<java.util.List<java.lang.Double>>();
+      }
+      this.matriz2.add(elem);
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.List<java.util.List<java.lang.Double>> getMatriz2() {
+      return this.matriz2;
+    }
+
+    public suma_matrices_args setMatriz2(@org.apache.thrift.annotation.Nullable java.util.List<java.util.List<java.lang.Double>> matriz2) {
+      this.matriz2 = matriz2;
+      return this;
+    }
+
+    public void unsetMatriz2() {
+      this.matriz2 = null;
+    }
+
+    /** Returns true if field matriz2 is set (has been assigned a value) and false otherwise */
+    public boolean isSetMatriz2() {
+      return this.matriz2 != null;
+    }
+
+    public void setMatriz2IsSet(boolean value) {
+      if (!value) {
+        this.matriz2 = null;
+      }
+    }
+
+    public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable java.lang.Object value) {
+      switch (field) {
+      case MATRIZ1:
+        if (value == null) {
+          unsetMatriz1();
+        } else {
+          setMatriz1((java.util.List<java.util.List<java.lang.Double>>)value);
+        }
+        break;
+
+      case MATRIZ2:
+        if (value == null) {
+          unsetMatriz2();
+        } else {
+          setMatriz2((java.util.List<java.util.List<java.lang.Double>>)value);
+        }
+        break;
+
+      }
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.lang.Object getFieldValue(_Fields field) {
+      switch (field) {
+      case MATRIZ1:
+        return getMatriz1();
+
+      case MATRIZ2:
+        return getMatriz2();
+
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    public boolean isSet(_Fields field) {
+      if (field == null) {
+        throw new java.lang.IllegalArgumentException();
+      }
+
+      switch (field) {
+      case MATRIZ1:
+        return isSetMatriz1();
+      case MATRIZ2:
+        return isSetMatriz2();
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    @Override
+    public boolean equals(java.lang.Object that) {
+      if (that instanceof suma_matrices_args)
+        return this.equals((suma_matrices_args)that);
+      return false;
+    }
+
+    public boolean equals(suma_matrices_args that) {
+      if (that == null)
+        return false;
+      if (this == that)
+        return true;
+
+      boolean this_present_matriz1 = true && this.isSetMatriz1();
+      boolean that_present_matriz1 = true && that.isSetMatriz1();
+      if (this_present_matriz1 || that_present_matriz1) {
+        if (!(this_present_matriz1 && that_present_matriz1))
+          return false;
+        if (!this.matriz1.equals(that.matriz1))
+          return false;
+      }
+
+      boolean this_present_matriz2 = true && this.isSetMatriz2();
+      boolean that_present_matriz2 = true && that.isSetMatriz2();
+      if (this_present_matriz2 || that_present_matriz2) {
+        if (!(this_present_matriz2 && that_present_matriz2))
+          return false;
+        if (!this.matriz2.equals(that.matriz2))
+          return false;
+      }
+
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      int hashCode = 1;
+
+      hashCode = hashCode * 8191 + ((isSetMatriz1()) ? 131071 : 524287);
+      if (isSetMatriz1())
+        hashCode = hashCode * 8191 + matriz1.hashCode();
+
+      hashCode = hashCode * 8191 + ((isSetMatriz2()) ? 131071 : 524287);
+      if (isSetMatriz2())
+        hashCode = hashCode * 8191 + matriz2.hashCode();
+
+      return hashCode;
+    }
+
+    @Override
+    public int compareTo(suma_matrices_args other) {
+      if (!getClass().equals(other.getClass())) {
+        return getClass().getName().compareTo(other.getClass().getName());
+      }
+
+      int lastComparison = 0;
+
+      lastComparison = java.lang.Boolean.compare(isSetMatriz1(), other.isSetMatriz1());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetMatriz1()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.matriz1, other.matriz1);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      lastComparison = java.lang.Boolean.compare(isSetMatriz2(), other.isSetMatriz2());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetMatriz2()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.matriz2, other.matriz2);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      return 0;
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public _Fields fieldForId(int fieldId) {
+      return _Fields.findByThriftId(fieldId);
+    }
+
+    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
+      scheme(iprot).read(iprot, this);
+    }
+
+    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+      scheme(oprot).write(oprot, this);
+    }
+
+    @Override
+    public java.lang.String toString() {
+      java.lang.StringBuilder sb = new java.lang.StringBuilder("suma_matrices_args(");
+      boolean first = true;
+
+      sb.append("matriz1:");
+      if (this.matriz1 == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.matriz1);
+      }
+      first = false;
+      if (!first) sb.append(", ");
+      sb.append("matriz2:");
+      if (this.matriz2 == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.matriz2);
+      }
+      first = false;
+      sb.append(")");
+      return sb.toString();
+    }
+
+    public void validate() throws org.apache.thrift.TException {
+      // check for required fields
+      // check for sub-struct validity
+    }
+
+    private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
+      try {
+        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
+      try {
+        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private static class suma_matrices_argsStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public suma_matrices_argsStandardScheme getScheme() {
+        return new suma_matrices_argsStandardScheme();
+      }
+    }
+
+    private static class suma_matrices_argsStandardScheme extends org.apache.thrift.scheme.StandardScheme<suma_matrices_args> {
+
+      public void read(org.apache.thrift.protocol.TProtocol iprot, suma_matrices_args struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TField schemeField;
+        iprot.readStructBegin();
+        while (true)
+        {
+          schemeField = iprot.readFieldBegin();
+          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) { 
+            break;
+          }
+          switch (schemeField.id) {
+            case 1: // MATRIZ1
+              if (schemeField.type == org.apache.thrift.protocol.TType.LIST) {
+                {
+                  org.apache.thrift.protocol.TList _list96 = iprot.readListBegin();
+                  struct.matriz1 = new java.util.ArrayList<java.util.List<java.lang.Double>>(_list96.size);
+                  @org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> _elem97;
+                  for (int _i98 = 0; _i98 < _list96.size; ++_i98)
+                  {
+                    {
+                      org.apache.thrift.protocol.TList _list99 = iprot.readListBegin();
+                      _elem97 = new java.util.ArrayList<java.lang.Double>(_list99.size);
+                      double _elem100;
+                      for (int _i101 = 0; _i101 < _list99.size; ++_i101)
+                      {
+                        _elem100 = iprot.readDouble();
+                        _elem97.add(_elem100);
+                      }
+                      iprot.readListEnd();
+                    }
+                    struct.matriz1.add(_elem97);
+                  }
+                  iprot.readListEnd();
+                }
+                struct.setMatriz1IsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            case 2: // MATRIZ2
+              if (schemeField.type == org.apache.thrift.protocol.TType.LIST) {
+                {
+                  org.apache.thrift.protocol.TList _list102 = iprot.readListBegin();
+                  struct.matriz2 = new java.util.ArrayList<java.util.List<java.lang.Double>>(_list102.size);
+                  @org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> _elem103;
+                  for (int _i104 = 0; _i104 < _list102.size; ++_i104)
+                  {
+                    {
+                      org.apache.thrift.protocol.TList _list105 = iprot.readListBegin();
+                      _elem103 = new java.util.ArrayList<java.lang.Double>(_list105.size);
+                      double _elem106;
+                      for (int _i107 = 0; _i107 < _list105.size; ++_i107)
+                      {
+                        _elem106 = iprot.readDouble();
+                        _elem103.add(_elem106);
+                      }
+                      iprot.readListEnd();
+                    }
+                    struct.matriz2.add(_elem103);
+                  }
+                  iprot.readListEnd();
+                }
+                struct.setMatriz2IsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            default:
+              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+          }
+          iprot.readFieldEnd();
+        }
+        iprot.readStructEnd();
+
+        // check for required fields of primitive type, which can't be checked in the validate method
+        struct.validate();
+      }
+
+      public void write(org.apache.thrift.protocol.TProtocol oprot, suma_matrices_args struct) throws org.apache.thrift.TException {
+        struct.validate();
+
+        oprot.writeStructBegin(STRUCT_DESC);
+        if (struct.matriz1 != null) {
+          oprot.writeFieldBegin(MATRIZ1_FIELD_DESC);
+          {
+            oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.LIST, struct.matriz1.size()));
+            for (java.util.List<java.lang.Double> _iter108 : struct.matriz1)
+            {
+              {
+                oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.DOUBLE, _iter108.size()));
+                for (double _iter109 : _iter108)
+                {
+                  oprot.writeDouble(_iter109);
+                }
+                oprot.writeListEnd();
+              }
+            }
+            oprot.writeListEnd();
+          }
+          oprot.writeFieldEnd();
+        }
+        if (struct.matriz2 != null) {
+          oprot.writeFieldBegin(MATRIZ2_FIELD_DESC);
+          {
+            oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.LIST, struct.matriz2.size()));
+            for (java.util.List<java.lang.Double> _iter110 : struct.matriz2)
+            {
+              {
+                oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.DOUBLE, _iter110.size()));
+                for (double _iter111 : _iter110)
+                {
+                  oprot.writeDouble(_iter111);
+                }
+                oprot.writeListEnd();
+              }
+            }
+            oprot.writeListEnd();
+          }
+          oprot.writeFieldEnd();
+        }
+        oprot.writeFieldStop();
+        oprot.writeStructEnd();
+      }
+
+    }
+
+    private static class suma_matrices_argsTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public suma_matrices_argsTupleScheme getScheme() {
+        return new suma_matrices_argsTupleScheme();
+      }
+    }
+
+    private static class suma_matrices_argsTupleScheme extends org.apache.thrift.scheme.TupleScheme<suma_matrices_args> {
+
+      @Override
+      public void write(org.apache.thrift.protocol.TProtocol prot, suma_matrices_args struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet optionals = new java.util.BitSet();
+        if (struct.isSetMatriz1()) {
+          optionals.set(0);
+        }
+        if (struct.isSetMatriz2()) {
+          optionals.set(1);
+        }
+        oprot.writeBitSet(optionals, 2);
+        if (struct.isSetMatriz1()) {
+          {
+            oprot.writeI32(struct.matriz1.size());
+            for (java.util.List<java.lang.Double> _iter112 : struct.matriz1)
+            {
+              {
+                oprot.writeI32(_iter112.size());
+                for (double _iter113 : _iter112)
+                {
+                  oprot.writeDouble(_iter113);
+                }
+              }
+            }
+          }
+        }
+        if (struct.isSetMatriz2()) {
+          {
+            oprot.writeI32(struct.matriz2.size());
+            for (java.util.List<java.lang.Double> _iter114 : struct.matriz2)
+            {
+              {
+                oprot.writeI32(_iter114.size());
+                for (double _iter115 : _iter114)
+                {
+                  oprot.writeDouble(_iter115);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      @Override
+      public void read(org.apache.thrift.protocol.TProtocol prot, suma_matrices_args struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet incoming = iprot.readBitSet(2);
+        if (incoming.get(0)) {
+          {
+            org.apache.thrift.protocol.TList _list116 = iprot.readListBegin(org.apache.thrift.protocol.TType.LIST);
+            struct.matriz1 = new java.util.ArrayList<java.util.List<java.lang.Double>>(_list116.size);
+            @org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> _elem117;
+            for (int _i118 = 0; _i118 < _list116.size; ++_i118)
+            {
+              {
+                org.apache.thrift.protocol.TList _list119 = iprot.readListBegin(org.apache.thrift.protocol.TType.DOUBLE);
+                _elem117 = new java.util.ArrayList<java.lang.Double>(_list119.size);
+                double _elem120;
+                for (int _i121 = 0; _i121 < _list119.size; ++_i121)
+                {
+                  _elem120 = iprot.readDouble();
+                  _elem117.add(_elem120);
+                }
+              }
+              struct.matriz1.add(_elem117);
+            }
+          }
+          struct.setMatriz1IsSet(true);
+        }
+        if (incoming.get(1)) {
+          {
+            org.apache.thrift.protocol.TList _list122 = iprot.readListBegin(org.apache.thrift.protocol.TType.LIST);
+            struct.matriz2 = new java.util.ArrayList<java.util.List<java.lang.Double>>(_list122.size);
+            @org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> _elem123;
+            for (int _i124 = 0; _i124 < _list122.size; ++_i124)
+            {
+              {
+                org.apache.thrift.protocol.TList _list125 = iprot.readListBegin(org.apache.thrift.protocol.TType.DOUBLE);
+                _elem123 = new java.util.ArrayList<java.lang.Double>(_list125.size);
+                double _elem126;
+                for (int _i127 = 0; _i127 < _list125.size; ++_i127)
+                {
+                  _elem126 = iprot.readDouble();
+                  _elem123.add(_elem126);
+                }
+              }
+              struct.matriz2.add(_elem123);
+            }
+          }
+          struct.setMatriz2IsSet(true);
+        }
+      }
+    }
+
+    private static <S extends org.apache.thrift.scheme.IScheme> S scheme(org.apache.thrift.protocol.TProtocol proto) {
+      return (org.apache.thrift.scheme.StandardScheme.class.equals(proto.getScheme()) ? STANDARD_SCHEME_FACTORY : TUPLE_SCHEME_FACTORY).getScheme();
+    }
+  }
+
+  public static class suma_matrices_result implements org.apache.thrift.TBase<suma_matrices_result, suma_matrices_result._Fields>, java.io.Serializable, Cloneable, Comparable<suma_matrices_result>   {
+    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("suma_matrices_result");
+
+    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.LIST, (short)0);
+
+    private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new suma_matrices_resultStandardSchemeFactory();
+    private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new suma_matrices_resultTupleSchemeFactory();
+
+    public @org.apache.thrift.annotation.Nullable java.util.List<java.util.List<java.lang.Double>> success; // required
+
+    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+      SUCCESS((short)0, "success");
+
+      private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
+
+      static {
+        for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
+          byName.put(field.getFieldName(), field);
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, or null if its not found.
+       */
+      @org.apache.thrift.annotation.Nullable
+      public static _Fields findByThriftId(int fieldId) {
+        switch(fieldId) {
+          case 0: // SUCCESS
+            return SUCCESS;
+          default:
+            return null;
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, throwing an exception
+       * if it is not found.
+       */
+      public static _Fields findByThriftIdOrThrow(int fieldId) {
+        _Fields fields = findByThriftId(fieldId);
+        if (fields == null) throw new java.lang.IllegalArgumentException("Field " + fieldId + " doesn't exist!");
+        return fields;
+      }
+
+      /**
+       * Find the _Fields constant that matches name, or null if its not found.
+       */
+      @org.apache.thrift.annotation.Nullable
+      public static _Fields findByName(java.lang.String name) {
+        return byName.get(name);
+      }
+
+      private final short _thriftId;
+      private final java.lang.String _fieldName;
+
+      _Fields(short thriftId, java.lang.String fieldName) {
+        _thriftId = thriftId;
+        _fieldName = fieldName;
+      }
+
+      public short getThriftFieldId() {
+        return _thriftId;
+      }
+
+      public java.lang.String getFieldName() {
+        return _fieldName;
+      }
+    }
+
+    // isset id assignments
+    public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    static {
+      java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
+      tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
+              new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
+                  new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE)))));
+      metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
+      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(suma_matrices_result.class, metaDataMap);
+    }
+
+    public suma_matrices_result() {
+    }
+
+    public suma_matrices_result(
+      java.util.List<java.util.List<java.lang.Double>> success)
+    {
+      this();
+      this.success = success;
+    }
+
+    /**
+     * Performs a deep copy on <i>other</i>.
+     */
+    public suma_matrices_result(suma_matrices_result other) {
+      if (other.isSetSuccess()) {
+        java.util.List<java.util.List<java.lang.Double>> __this__success = new java.util.ArrayList<java.util.List<java.lang.Double>>(other.success.size());
+        for (java.util.List<java.lang.Double> other_element : other.success) {
+          java.util.List<java.lang.Double> __this__success_copy = new java.util.ArrayList<java.lang.Double>(other_element);
+          __this__success.add(__this__success_copy);
+        }
+        this.success = __this__success;
+      }
+    }
+
+    public suma_matrices_result deepCopy() {
+      return new suma_matrices_result(this);
+    }
+
+    @Override
+    public void clear() {
+      this.success = null;
+    }
+
+    public int getSuccessSize() {
+      return (this.success == null) ? 0 : this.success.size();
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.Iterator<java.util.List<java.lang.Double>> getSuccessIterator() {
+      return (this.success == null) ? null : this.success.iterator();
+    }
+
+    public void addToSuccess(java.util.List<java.lang.Double> elem) {
+      if (this.success == null) {
+        this.success = new java.util.ArrayList<java.util.List<java.lang.Double>>();
+      }
+      this.success.add(elem);
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.List<java.util.List<java.lang.Double>> getSuccess() {
+      return this.success;
+    }
+
+    public suma_matrices_result setSuccess(@org.apache.thrift.annotation.Nullable java.util.List<java.util.List<java.lang.Double>> success) {
+      this.success = success;
+      return this;
+    }
+
+    public void unsetSuccess() {
+      this.success = null;
+    }
+
+    /** Returns true if field success is set (has been assigned a value) and false otherwise */
+    public boolean isSetSuccess() {
+      return this.success != null;
+    }
+
+    public void setSuccessIsSet(boolean value) {
+      if (!value) {
+        this.success = null;
+      }
+    }
+
+    public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable java.lang.Object value) {
+      switch (field) {
+      case SUCCESS:
+        if (value == null) {
+          unsetSuccess();
+        } else {
+          setSuccess((java.util.List<java.util.List<java.lang.Double>>)value);
+        }
+        break;
+
+      }
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.lang.Object getFieldValue(_Fields field) {
+      switch (field) {
+      case SUCCESS:
+        return getSuccess();
+
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    public boolean isSet(_Fields field) {
+      if (field == null) {
+        throw new java.lang.IllegalArgumentException();
+      }
+
+      switch (field) {
+      case SUCCESS:
+        return isSetSuccess();
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    @Override
+    public boolean equals(java.lang.Object that) {
+      if (that instanceof suma_matrices_result)
+        return this.equals((suma_matrices_result)that);
+      return false;
+    }
+
+    public boolean equals(suma_matrices_result that) {
+      if (that == null)
+        return false;
+      if (this == that)
+        return true;
+
+      boolean this_present_success = true && this.isSetSuccess();
+      boolean that_present_success = true && that.isSetSuccess();
+      if (this_present_success || that_present_success) {
+        if (!(this_present_success && that_present_success))
+          return false;
+        if (!this.success.equals(that.success))
+          return false;
+      }
+
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      int hashCode = 1;
+
+      hashCode = hashCode * 8191 + ((isSetSuccess()) ? 131071 : 524287);
+      if (isSetSuccess())
+        hashCode = hashCode * 8191 + success.hashCode();
+
+      return hashCode;
+    }
+
+    @Override
+    public int compareTo(suma_matrices_result other) {
+      if (!getClass().equals(other.getClass())) {
+        return getClass().getName().compareTo(other.getClass().getName());
+      }
+
+      int lastComparison = 0;
+
+      lastComparison = java.lang.Boolean.compare(isSetSuccess(), other.isSetSuccess());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetSuccess()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.success, other.success);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      return 0;
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public _Fields fieldForId(int fieldId) {
+      return _Fields.findByThriftId(fieldId);
+    }
+
+    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
+      scheme(iprot).read(iprot, this);
+    }
+
+    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+      scheme(oprot).write(oprot, this);
+      }
+
+    @Override
+    public java.lang.String toString() {
+      java.lang.StringBuilder sb = new java.lang.StringBuilder("suma_matrices_result(");
+      boolean first = true;
+
+      sb.append("success:");
+      if (this.success == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.success);
+      }
+      first = false;
+      sb.append(")");
+      return sb.toString();
+    }
+
+    public void validate() throws org.apache.thrift.TException {
+      // check for required fields
+      // check for sub-struct validity
+    }
+
+    private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
+      try {
+        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
+      try {
+        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private static class suma_matrices_resultStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public suma_matrices_resultStandardScheme getScheme() {
+        return new suma_matrices_resultStandardScheme();
+      }
+    }
+
+    private static class suma_matrices_resultStandardScheme extends org.apache.thrift.scheme.StandardScheme<suma_matrices_result> {
+
+      public void read(org.apache.thrift.protocol.TProtocol iprot, suma_matrices_result struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TField schemeField;
+        iprot.readStructBegin();
+        while (true)
+        {
+          schemeField = iprot.readFieldBegin();
+          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) { 
+            break;
+          }
+          switch (schemeField.id) {
+            case 0: // SUCCESS
+              if (schemeField.type == org.apache.thrift.protocol.TType.LIST) {
+                {
+                  org.apache.thrift.protocol.TList _list128 = iprot.readListBegin();
+                  struct.success = new java.util.ArrayList<java.util.List<java.lang.Double>>(_list128.size);
+                  @org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> _elem129;
+                  for (int _i130 = 0; _i130 < _list128.size; ++_i130)
+                  {
+                    {
+                      org.apache.thrift.protocol.TList _list131 = iprot.readListBegin();
+                      _elem129 = new java.util.ArrayList<java.lang.Double>(_list131.size);
+                      double _elem132;
+                      for (int _i133 = 0; _i133 < _list131.size; ++_i133)
+                      {
+                        _elem132 = iprot.readDouble();
+                        _elem129.add(_elem132);
+                      }
+                      iprot.readListEnd();
+                    }
+                    struct.success.add(_elem129);
+                  }
+                  iprot.readListEnd();
+                }
+                struct.setSuccessIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            default:
+              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+          }
+          iprot.readFieldEnd();
+        }
+        iprot.readStructEnd();
+
+        // check for required fields of primitive type, which can't be checked in the validate method
+        struct.validate();
+      }
+
+      public void write(org.apache.thrift.protocol.TProtocol oprot, suma_matrices_result struct) throws org.apache.thrift.TException {
+        struct.validate();
+
+        oprot.writeStructBegin(STRUCT_DESC);
+        if (struct.success != null) {
+          oprot.writeFieldBegin(SUCCESS_FIELD_DESC);
+          {
+            oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.LIST, struct.success.size()));
+            for (java.util.List<java.lang.Double> _iter134 : struct.success)
+            {
+              {
+                oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.DOUBLE, _iter134.size()));
+                for (double _iter135 : _iter134)
+                {
+                  oprot.writeDouble(_iter135);
+                }
+                oprot.writeListEnd();
+              }
+            }
+            oprot.writeListEnd();
+          }
+          oprot.writeFieldEnd();
+        }
+        oprot.writeFieldStop();
+        oprot.writeStructEnd();
+      }
+
+    }
+
+    private static class suma_matrices_resultTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public suma_matrices_resultTupleScheme getScheme() {
+        return new suma_matrices_resultTupleScheme();
+      }
+    }
+
+    private static class suma_matrices_resultTupleScheme extends org.apache.thrift.scheme.TupleScheme<suma_matrices_result> {
+
+      @Override
+      public void write(org.apache.thrift.protocol.TProtocol prot, suma_matrices_result struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet optionals = new java.util.BitSet();
+        if (struct.isSetSuccess()) {
+          optionals.set(0);
+        }
+        oprot.writeBitSet(optionals, 1);
+        if (struct.isSetSuccess()) {
+          {
+            oprot.writeI32(struct.success.size());
+            for (java.util.List<java.lang.Double> _iter136 : struct.success)
+            {
+              {
+                oprot.writeI32(_iter136.size());
+                for (double _iter137 : _iter136)
+                {
+                  oprot.writeDouble(_iter137);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      @Override
+      public void read(org.apache.thrift.protocol.TProtocol prot, suma_matrices_result struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet incoming = iprot.readBitSet(1);
+        if (incoming.get(0)) {
+          {
+            org.apache.thrift.protocol.TList _list138 = iprot.readListBegin(org.apache.thrift.protocol.TType.LIST);
+            struct.success = new java.util.ArrayList<java.util.List<java.lang.Double>>(_list138.size);
+            @org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> _elem139;
+            for (int _i140 = 0; _i140 < _list138.size; ++_i140)
+            {
+              {
+                org.apache.thrift.protocol.TList _list141 = iprot.readListBegin(org.apache.thrift.protocol.TType.DOUBLE);
+                _elem139 = new java.util.ArrayList<java.lang.Double>(_list141.size);
+                double _elem142;
+                for (int _i143 = 0; _i143 < _list141.size; ++_i143)
+                {
+                  _elem142 = iprot.readDouble();
+                  _elem139.add(_elem142);
+                }
+              }
+              struct.success.add(_elem139);
+            }
+          }
+          struct.setSuccessIsSet(true);
+        }
+      }
+    }
+
+    private static <S extends org.apache.thrift.scheme.IScheme> S scheme(org.apache.thrift.protocol.TProtocol proto) {
+      return (org.apache.thrift.scheme.StandardScheme.class.equals(proto.getScheme()) ? STANDARD_SCHEME_FACTORY : TUPLE_SCHEME_FACTORY).getScheme();
+    }
+  }
+
+  public static class resta_matrices_args implements org.apache.thrift.TBase<resta_matrices_args, resta_matrices_args._Fields>, java.io.Serializable, Cloneable, Comparable<resta_matrices_args>   {
+    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("resta_matrices_args");
+
+    private static final org.apache.thrift.protocol.TField MATRIZ1_FIELD_DESC = new org.apache.thrift.protocol.TField("matriz1", org.apache.thrift.protocol.TType.LIST, (short)1);
+    private static final org.apache.thrift.protocol.TField MATRIZ2_FIELD_DESC = new org.apache.thrift.protocol.TField("matriz2", org.apache.thrift.protocol.TType.LIST, (short)2);
+
+    private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new resta_matrices_argsStandardSchemeFactory();
+    private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new resta_matrices_argsTupleSchemeFactory();
+
+    public @org.apache.thrift.annotation.Nullable java.util.List<java.util.List<java.lang.Double>> matriz1; // required
+    public @org.apache.thrift.annotation.Nullable java.util.List<java.util.List<java.lang.Double>> matriz2; // required
+
+    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+      MATRIZ1((short)1, "matriz1"),
+      MATRIZ2((short)2, "matriz2");
+
+      private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
+
+      static {
+        for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
+          byName.put(field.getFieldName(), field);
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, or null if its not found.
+       */
+      @org.apache.thrift.annotation.Nullable
+      public static _Fields findByThriftId(int fieldId) {
+        switch(fieldId) {
+          case 1: // MATRIZ1
+            return MATRIZ1;
+          case 2: // MATRIZ2
+            return MATRIZ2;
+          default:
+            return null;
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, throwing an exception
+       * if it is not found.
+       */
+      public static _Fields findByThriftIdOrThrow(int fieldId) {
+        _Fields fields = findByThriftId(fieldId);
+        if (fields == null) throw new java.lang.IllegalArgumentException("Field " + fieldId + " doesn't exist!");
+        return fields;
+      }
+
+      /**
+       * Find the _Fields constant that matches name, or null if its not found.
+       */
+      @org.apache.thrift.annotation.Nullable
+      public static _Fields findByName(java.lang.String name) {
+        return byName.get(name);
+      }
+
+      private final short _thriftId;
+      private final java.lang.String _fieldName;
+
+      _Fields(short thriftId, java.lang.String fieldName) {
+        _thriftId = thriftId;
+        _fieldName = fieldName;
+      }
+
+      public short getThriftFieldId() {
+        return _thriftId;
+      }
+
+      public java.lang.String getFieldName() {
+        return _fieldName;
+      }
+    }
+
+    // isset id assignments
+    public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    static {
+      java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
+      tmpMap.put(_Fields.MATRIZ1, new org.apache.thrift.meta_data.FieldMetaData("matriz1", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
+              new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
+                  new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE)))));
+      tmpMap.put(_Fields.MATRIZ2, new org.apache.thrift.meta_data.FieldMetaData("matriz2", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
+              new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
+                  new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE)))));
+      metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
+      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(resta_matrices_args.class, metaDataMap);
+    }
+
+    public resta_matrices_args() {
+    }
+
+    public resta_matrices_args(
+      java.util.List<java.util.List<java.lang.Double>> matriz1,
+      java.util.List<java.util.List<java.lang.Double>> matriz2)
+    {
+      this();
+      this.matriz1 = matriz1;
+      this.matriz2 = matriz2;
+    }
+
+    /**
+     * Performs a deep copy on <i>other</i>.
+     */
+    public resta_matrices_args(resta_matrices_args other) {
+      if (other.isSetMatriz1()) {
+        java.util.List<java.util.List<java.lang.Double>> __this__matriz1 = new java.util.ArrayList<java.util.List<java.lang.Double>>(other.matriz1.size());
+        for (java.util.List<java.lang.Double> other_element : other.matriz1) {
+          java.util.List<java.lang.Double> __this__matriz1_copy = new java.util.ArrayList<java.lang.Double>(other_element);
+          __this__matriz1.add(__this__matriz1_copy);
+        }
+        this.matriz1 = __this__matriz1;
+      }
+      if (other.isSetMatriz2()) {
+        java.util.List<java.util.List<java.lang.Double>> __this__matriz2 = new java.util.ArrayList<java.util.List<java.lang.Double>>(other.matriz2.size());
+        for (java.util.List<java.lang.Double> other_element : other.matriz2) {
+          java.util.List<java.lang.Double> __this__matriz2_copy = new java.util.ArrayList<java.lang.Double>(other_element);
+          __this__matriz2.add(__this__matriz2_copy);
+        }
+        this.matriz2 = __this__matriz2;
+      }
+    }
+
+    public resta_matrices_args deepCopy() {
+      return new resta_matrices_args(this);
+    }
+
+    @Override
+    public void clear() {
+      this.matriz1 = null;
+      this.matriz2 = null;
+    }
+
+    public int getMatriz1Size() {
+      return (this.matriz1 == null) ? 0 : this.matriz1.size();
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.Iterator<java.util.List<java.lang.Double>> getMatriz1Iterator() {
+      return (this.matriz1 == null) ? null : this.matriz1.iterator();
+    }
+
+    public void addToMatriz1(java.util.List<java.lang.Double> elem) {
+      if (this.matriz1 == null) {
+        this.matriz1 = new java.util.ArrayList<java.util.List<java.lang.Double>>();
+      }
+      this.matriz1.add(elem);
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.List<java.util.List<java.lang.Double>> getMatriz1() {
+      return this.matriz1;
+    }
+
+    public resta_matrices_args setMatriz1(@org.apache.thrift.annotation.Nullable java.util.List<java.util.List<java.lang.Double>> matriz1) {
+      this.matriz1 = matriz1;
+      return this;
+    }
+
+    public void unsetMatriz1() {
+      this.matriz1 = null;
+    }
+
+    /** Returns true if field matriz1 is set (has been assigned a value) and false otherwise */
+    public boolean isSetMatriz1() {
+      return this.matriz1 != null;
+    }
+
+    public void setMatriz1IsSet(boolean value) {
+      if (!value) {
+        this.matriz1 = null;
+      }
+    }
+
+    public int getMatriz2Size() {
+      return (this.matriz2 == null) ? 0 : this.matriz2.size();
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.Iterator<java.util.List<java.lang.Double>> getMatriz2Iterator() {
+      return (this.matriz2 == null) ? null : this.matriz2.iterator();
+    }
+
+    public void addToMatriz2(java.util.List<java.lang.Double> elem) {
+      if (this.matriz2 == null) {
+        this.matriz2 = new java.util.ArrayList<java.util.List<java.lang.Double>>();
+      }
+      this.matriz2.add(elem);
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.List<java.util.List<java.lang.Double>> getMatriz2() {
+      return this.matriz2;
+    }
+
+    public resta_matrices_args setMatriz2(@org.apache.thrift.annotation.Nullable java.util.List<java.util.List<java.lang.Double>> matriz2) {
+      this.matriz2 = matriz2;
+      return this;
+    }
+
+    public void unsetMatriz2() {
+      this.matriz2 = null;
+    }
+
+    /** Returns true if field matriz2 is set (has been assigned a value) and false otherwise */
+    public boolean isSetMatriz2() {
+      return this.matriz2 != null;
+    }
+
+    public void setMatriz2IsSet(boolean value) {
+      if (!value) {
+        this.matriz2 = null;
+      }
+    }
+
+    public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable java.lang.Object value) {
+      switch (field) {
+      case MATRIZ1:
+        if (value == null) {
+          unsetMatriz1();
+        } else {
+          setMatriz1((java.util.List<java.util.List<java.lang.Double>>)value);
+        }
+        break;
+
+      case MATRIZ2:
+        if (value == null) {
+          unsetMatriz2();
+        } else {
+          setMatriz2((java.util.List<java.util.List<java.lang.Double>>)value);
+        }
+        break;
+
+      }
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.lang.Object getFieldValue(_Fields field) {
+      switch (field) {
+      case MATRIZ1:
+        return getMatriz1();
+
+      case MATRIZ2:
+        return getMatriz2();
+
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    public boolean isSet(_Fields field) {
+      if (field == null) {
+        throw new java.lang.IllegalArgumentException();
+      }
+
+      switch (field) {
+      case MATRIZ1:
+        return isSetMatriz1();
+      case MATRIZ2:
+        return isSetMatriz2();
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    @Override
+    public boolean equals(java.lang.Object that) {
+      if (that instanceof resta_matrices_args)
+        return this.equals((resta_matrices_args)that);
+      return false;
+    }
+
+    public boolean equals(resta_matrices_args that) {
+      if (that == null)
+        return false;
+      if (this == that)
+        return true;
+
+      boolean this_present_matriz1 = true && this.isSetMatriz1();
+      boolean that_present_matriz1 = true && that.isSetMatriz1();
+      if (this_present_matriz1 || that_present_matriz1) {
+        if (!(this_present_matriz1 && that_present_matriz1))
+          return false;
+        if (!this.matriz1.equals(that.matriz1))
+          return false;
+      }
+
+      boolean this_present_matriz2 = true && this.isSetMatriz2();
+      boolean that_present_matriz2 = true && that.isSetMatriz2();
+      if (this_present_matriz2 || that_present_matriz2) {
+        if (!(this_present_matriz2 && that_present_matriz2))
+          return false;
+        if (!this.matriz2.equals(that.matriz2))
+          return false;
+      }
+
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      int hashCode = 1;
+
+      hashCode = hashCode * 8191 + ((isSetMatriz1()) ? 131071 : 524287);
+      if (isSetMatriz1())
+        hashCode = hashCode * 8191 + matriz1.hashCode();
+
+      hashCode = hashCode * 8191 + ((isSetMatriz2()) ? 131071 : 524287);
+      if (isSetMatriz2())
+        hashCode = hashCode * 8191 + matriz2.hashCode();
+
+      return hashCode;
+    }
+
+    @Override
+    public int compareTo(resta_matrices_args other) {
+      if (!getClass().equals(other.getClass())) {
+        return getClass().getName().compareTo(other.getClass().getName());
+      }
+
+      int lastComparison = 0;
+
+      lastComparison = java.lang.Boolean.compare(isSetMatriz1(), other.isSetMatriz1());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetMatriz1()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.matriz1, other.matriz1);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      lastComparison = java.lang.Boolean.compare(isSetMatriz2(), other.isSetMatriz2());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetMatriz2()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.matriz2, other.matriz2);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      return 0;
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public _Fields fieldForId(int fieldId) {
+      return _Fields.findByThriftId(fieldId);
+    }
+
+    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
+      scheme(iprot).read(iprot, this);
+    }
+
+    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+      scheme(oprot).write(oprot, this);
+    }
+
+    @Override
+    public java.lang.String toString() {
+      java.lang.StringBuilder sb = new java.lang.StringBuilder("resta_matrices_args(");
+      boolean first = true;
+
+      sb.append("matriz1:");
+      if (this.matriz1 == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.matriz1);
+      }
+      first = false;
+      if (!first) sb.append(", ");
+      sb.append("matriz2:");
+      if (this.matriz2 == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.matriz2);
+      }
+      first = false;
+      sb.append(")");
+      return sb.toString();
+    }
+
+    public void validate() throws org.apache.thrift.TException {
+      // check for required fields
+      // check for sub-struct validity
+    }
+
+    private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
+      try {
+        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
+      try {
+        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private static class resta_matrices_argsStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public resta_matrices_argsStandardScheme getScheme() {
+        return new resta_matrices_argsStandardScheme();
+      }
+    }
+
+    private static class resta_matrices_argsStandardScheme extends org.apache.thrift.scheme.StandardScheme<resta_matrices_args> {
+
+      public void read(org.apache.thrift.protocol.TProtocol iprot, resta_matrices_args struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TField schemeField;
+        iprot.readStructBegin();
+        while (true)
+        {
+          schemeField = iprot.readFieldBegin();
+          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) { 
+            break;
+          }
+          switch (schemeField.id) {
+            case 1: // MATRIZ1
+              if (schemeField.type == org.apache.thrift.protocol.TType.LIST) {
+                {
+                  org.apache.thrift.protocol.TList _list144 = iprot.readListBegin();
+                  struct.matriz1 = new java.util.ArrayList<java.util.List<java.lang.Double>>(_list144.size);
+                  @org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> _elem145;
+                  for (int _i146 = 0; _i146 < _list144.size; ++_i146)
+                  {
+                    {
+                      org.apache.thrift.protocol.TList _list147 = iprot.readListBegin();
+                      _elem145 = new java.util.ArrayList<java.lang.Double>(_list147.size);
+                      double _elem148;
+                      for (int _i149 = 0; _i149 < _list147.size; ++_i149)
+                      {
+                        _elem148 = iprot.readDouble();
+                        _elem145.add(_elem148);
+                      }
+                      iprot.readListEnd();
+                    }
+                    struct.matriz1.add(_elem145);
+                  }
+                  iprot.readListEnd();
+                }
+                struct.setMatriz1IsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            case 2: // MATRIZ2
+              if (schemeField.type == org.apache.thrift.protocol.TType.LIST) {
+                {
+                  org.apache.thrift.protocol.TList _list150 = iprot.readListBegin();
+                  struct.matriz2 = new java.util.ArrayList<java.util.List<java.lang.Double>>(_list150.size);
+                  @org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> _elem151;
+                  for (int _i152 = 0; _i152 < _list150.size; ++_i152)
+                  {
+                    {
+                      org.apache.thrift.protocol.TList _list153 = iprot.readListBegin();
+                      _elem151 = new java.util.ArrayList<java.lang.Double>(_list153.size);
+                      double _elem154;
+                      for (int _i155 = 0; _i155 < _list153.size; ++_i155)
+                      {
+                        _elem154 = iprot.readDouble();
+                        _elem151.add(_elem154);
+                      }
+                      iprot.readListEnd();
+                    }
+                    struct.matriz2.add(_elem151);
+                  }
+                  iprot.readListEnd();
+                }
+                struct.setMatriz2IsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            default:
+              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+          }
+          iprot.readFieldEnd();
+        }
+        iprot.readStructEnd();
+
+        // check for required fields of primitive type, which can't be checked in the validate method
+        struct.validate();
+      }
+
+      public void write(org.apache.thrift.protocol.TProtocol oprot, resta_matrices_args struct) throws org.apache.thrift.TException {
+        struct.validate();
+
+        oprot.writeStructBegin(STRUCT_DESC);
+        if (struct.matriz1 != null) {
+          oprot.writeFieldBegin(MATRIZ1_FIELD_DESC);
+          {
+            oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.LIST, struct.matriz1.size()));
+            for (java.util.List<java.lang.Double> _iter156 : struct.matriz1)
+            {
+              {
+                oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.DOUBLE, _iter156.size()));
+                for (double _iter157 : _iter156)
+                {
+                  oprot.writeDouble(_iter157);
+                }
+                oprot.writeListEnd();
+              }
+            }
+            oprot.writeListEnd();
+          }
+          oprot.writeFieldEnd();
+        }
+        if (struct.matriz2 != null) {
+          oprot.writeFieldBegin(MATRIZ2_FIELD_DESC);
+          {
+            oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.LIST, struct.matriz2.size()));
+            for (java.util.List<java.lang.Double> _iter158 : struct.matriz2)
+            {
+              {
+                oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.DOUBLE, _iter158.size()));
+                for (double _iter159 : _iter158)
+                {
+                  oprot.writeDouble(_iter159);
+                }
+                oprot.writeListEnd();
+              }
+            }
+            oprot.writeListEnd();
+          }
+          oprot.writeFieldEnd();
+        }
+        oprot.writeFieldStop();
+        oprot.writeStructEnd();
+      }
+
+    }
+
+    private static class resta_matrices_argsTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public resta_matrices_argsTupleScheme getScheme() {
+        return new resta_matrices_argsTupleScheme();
+      }
+    }
+
+    private static class resta_matrices_argsTupleScheme extends org.apache.thrift.scheme.TupleScheme<resta_matrices_args> {
+
+      @Override
+      public void write(org.apache.thrift.protocol.TProtocol prot, resta_matrices_args struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet optionals = new java.util.BitSet();
+        if (struct.isSetMatriz1()) {
+          optionals.set(0);
+        }
+        if (struct.isSetMatriz2()) {
+          optionals.set(1);
+        }
+        oprot.writeBitSet(optionals, 2);
+        if (struct.isSetMatriz1()) {
+          {
+            oprot.writeI32(struct.matriz1.size());
+            for (java.util.List<java.lang.Double> _iter160 : struct.matriz1)
+            {
+              {
+                oprot.writeI32(_iter160.size());
+                for (double _iter161 : _iter160)
+                {
+                  oprot.writeDouble(_iter161);
+                }
+              }
+            }
+          }
+        }
+        if (struct.isSetMatriz2()) {
+          {
+            oprot.writeI32(struct.matriz2.size());
+            for (java.util.List<java.lang.Double> _iter162 : struct.matriz2)
+            {
+              {
+                oprot.writeI32(_iter162.size());
+                for (double _iter163 : _iter162)
+                {
+                  oprot.writeDouble(_iter163);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      @Override
+      public void read(org.apache.thrift.protocol.TProtocol prot, resta_matrices_args struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet incoming = iprot.readBitSet(2);
+        if (incoming.get(0)) {
+          {
+            org.apache.thrift.protocol.TList _list164 = iprot.readListBegin(org.apache.thrift.protocol.TType.LIST);
+            struct.matriz1 = new java.util.ArrayList<java.util.List<java.lang.Double>>(_list164.size);
+            @org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> _elem165;
+            for (int _i166 = 0; _i166 < _list164.size; ++_i166)
+            {
+              {
+                org.apache.thrift.protocol.TList _list167 = iprot.readListBegin(org.apache.thrift.protocol.TType.DOUBLE);
+                _elem165 = new java.util.ArrayList<java.lang.Double>(_list167.size);
+                double _elem168;
+                for (int _i169 = 0; _i169 < _list167.size; ++_i169)
+                {
+                  _elem168 = iprot.readDouble();
+                  _elem165.add(_elem168);
+                }
+              }
+              struct.matriz1.add(_elem165);
+            }
+          }
+          struct.setMatriz1IsSet(true);
+        }
+        if (incoming.get(1)) {
+          {
+            org.apache.thrift.protocol.TList _list170 = iprot.readListBegin(org.apache.thrift.protocol.TType.LIST);
+            struct.matriz2 = new java.util.ArrayList<java.util.List<java.lang.Double>>(_list170.size);
+            @org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> _elem171;
+            for (int _i172 = 0; _i172 < _list170.size; ++_i172)
+            {
+              {
+                org.apache.thrift.protocol.TList _list173 = iprot.readListBegin(org.apache.thrift.protocol.TType.DOUBLE);
+                _elem171 = new java.util.ArrayList<java.lang.Double>(_list173.size);
+                double _elem174;
+                for (int _i175 = 0; _i175 < _list173.size; ++_i175)
+                {
+                  _elem174 = iprot.readDouble();
+                  _elem171.add(_elem174);
+                }
+              }
+              struct.matriz2.add(_elem171);
+            }
+          }
+          struct.setMatriz2IsSet(true);
+        }
+      }
+    }
+
+    private static <S extends org.apache.thrift.scheme.IScheme> S scheme(org.apache.thrift.protocol.TProtocol proto) {
+      return (org.apache.thrift.scheme.StandardScheme.class.equals(proto.getScheme()) ? STANDARD_SCHEME_FACTORY : TUPLE_SCHEME_FACTORY).getScheme();
+    }
+  }
+
+  public static class resta_matrices_result implements org.apache.thrift.TBase<resta_matrices_result, resta_matrices_result._Fields>, java.io.Serializable, Cloneable, Comparable<resta_matrices_result>   {
+    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("resta_matrices_result");
+
+    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.LIST, (short)0);
+
+    private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new resta_matrices_resultStandardSchemeFactory();
+    private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new resta_matrices_resultTupleSchemeFactory();
+
+    public @org.apache.thrift.annotation.Nullable java.util.List<java.util.List<java.lang.Double>> success; // required
+
+    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+      SUCCESS((short)0, "success");
+
+      private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
+
+      static {
+        for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
+          byName.put(field.getFieldName(), field);
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, or null if its not found.
+       */
+      @org.apache.thrift.annotation.Nullable
+      public static _Fields findByThriftId(int fieldId) {
+        switch(fieldId) {
+          case 0: // SUCCESS
+            return SUCCESS;
+          default:
+            return null;
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, throwing an exception
+       * if it is not found.
+       */
+      public static _Fields findByThriftIdOrThrow(int fieldId) {
+        _Fields fields = findByThriftId(fieldId);
+        if (fields == null) throw new java.lang.IllegalArgumentException("Field " + fieldId + " doesn't exist!");
+        return fields;
+      }
+
+      /**
+       * Find the _Fields constant that matches name, or null if its not found.
+       */
+      @org.apache.thrift.annotation.Nullable
+      public static _Fields findByName(java.lang.String name) {
+        return byName.get(name);
+      }
+
+      private final short _thriftId;
+      private final java.lang.String _fieldName;
+
+      _Fields(short thriftId, java.lang.String fieldName) {
+        _thriftId = thriftId;
+        _fieldName = fieldName;
+      }
+
+      public short getThriftFieldId() {
+        return _thriftId;
+      }
+
+      public java.lang.String getFieldName() {
+        return _fieldName;
+      }
+    }
+
+    // isset id assignments
+    public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    static {
+      java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
+      tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
+              new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
+                  new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE)))));
+      metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
+      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(resta_matrices_result.class, metaDataMap);
+    }
+
+    public resta_matrices_result() {
+    }
+
+    public resta_matrices_result(
+      java.util.List<java.util.List<java.lang.Double>> success)
+    {
+      this();
+      this.success = success;
+    }
+
+    /**
+     * Performs a deep copy on <i>other</i>.
+     */
+    public resta_matrices_result(resta_matrices_result other) {
+      if (other.isSetSuccess()) {
+        java.util.List<java.util.List<java.lang.Double>> __this__success = new java.util.ArrayList<java.util.List<java.lang.Double>>(other.success.size());
+        for (java.util.List<java.lang.Double> other_element : other.success) {
+          java.util.List<java.lang.Double> __this__success_copy = new java.util.ArrayList<java.lang.Double>(other_element);
+          __this__success.add(__this__success_copy);
+        }
+        this.success = __this__success;
+      }
+    }
+
+    public resta_matrices_result deepCopy() {
+      return new resta_matrices_result(this);
+    }
+
+    @Override
+    public void clear() {
+      this.success = null;
+    }
+
+    public int getSuccessSize() {
+      return (this.success == null) ? 0 : this.success.size();
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.Iterator<java.util.List<java.lang.Double>> getSuccessIterator() {
+      return (this.success == null) ? null : this.success.iterator();
+    }
+
+    public void addToSuccess(java.util.List<java.lang.Double> elem) {
+      if (this.success == null) {
+        this.success = new java.util.ArrayList<java.util.List<java.lang.Double>>();
+      }
+      this.success.add(elem);
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.List<java.util.List<java.lang.Double>> getSuccess() {
+      return this.success;
+    }
+
+    public resta_matrices_result setSuccess(@org.apache.thrift.annotation.Nullable java.util.List<java.util.List<java.lang.Double>> success) {
+      this.success = success;
+      return this;
+    }
+
+    public void unsetSuccess() {
+      this.success = null;
+    }
+
+    /** Returns true if field success is set (has been assigned a value) and false otherwise */
+    public boolean isSetSuccess() {
+      return this.success != null;
+    }
+
+    public void setSuccessIsSet(boolean value) {
+      if (!value) {
+        this.success = null;
+      }
+    }
+
+    public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable java.lang.Object value) {
+      switch (field) {
+      case SUCCESS:
+        if (value == null) {
+          unsetSuccess();
+        } else {
+          setSuccess((java.util.List<java.util.List<java.lang.Double>>)value);
+        }
+        break;
+
+      }
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.lang.Object getFieldValue(_Fields field) {
+      switch (field) {
+      case SUCCESS:
+        return getSuccess();
+
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    public boolean isSet(_Fields field) {
+      if (field == null) {
+        throw new java.lang.IllegalArgumentException();
+      }
+
+      switch (field) {
+      case SUCCESS:
+        return isSetSuccess();
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    @Override
+    public boolean equals(java.lang.Object that) {
+      if (that instanceof resta_matrices_result)
+        return this.equals((resta_matrices_result)that);
+      return false;
+    }
+
+    public boolean equals(resta_matrices_result that) {
+      if (that == null)
+        return false;
+      if (this == that)
+        return true;
+
+      boolean this_present_success = true && this.isSetSuccess();
+      boolean that_present_success = true && that.isSetSuccess();
+      if (this_present_success || that_present_success) {
+        if (!(this_present_success && that_present_success))
+          return false;
+        if (!this.success.equals(that.success))
+          return false;
+      }
+
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      int hashCode = 1;
+
+      hashCode = hashCode * 8191 + ((isSetSuccess()) ? 131071 : 524287);
+      if (isSetSuccess())
+        hashCode = hashCode * 8191 + success.hashCode();
+
+      return hashCode;
+    }
+
+    @Override
+    public int compareTo(resta_matrices_result other) {
+      if (!getClass().equals(other.getClass())) {
+        return getClass().getName().compareTo(other.getClass().getName());
+      }
+
+      int lastComparison = 0;
+
+      lastComparison = java.lang.Boolean.compare(isSetSuccess(), other.isSetSuccess());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetSuccess()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.success, other.success);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      return 0;
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public _Fields fieldForId(int fieldId) {
+      return _Fields.findByThriftId(fieldId);
+    }
+
+    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
+      scheme(iprot).read(iprot, this);
+    }
+
+    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+      scheme(oprot).write(oprot, this);
+      }
+
+    @Override
+    public java.lang.String toString() {
+      java.lang.StringBuilder sb = new java.lang.StringBuilder("resta_matrices_result(");
+      boolean first = true;
+
+      sb.append("success:");
+      if (this.success == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.success);
+      }
+      first = false;
+      sb.append(")");
+      return sb.toString();
+    }
+
+    public void validate() throws org.apache.thrift.TException {
+      // check for required fields
+      // check for sub-struct validity
+    }
+
+    private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
+      try {
+        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
+      try {
+        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private static class resta_matrices_resultStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public resta_matrices_resultStandardScheme getScheme() {
+        return new resta_matrices_resultStandardScheme();
+      }
+    }
+
+    private static class resta_matrices_resultStandardScheme extends org.apache.thrift.scheme.StandardScheme<resta_matrices_result> {
+
+      public void read(org.apache.thrift.protocol.TProtocol iprot, resta_matrices_result struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TField schemeField;
+        iprot.readStructBegin();
+        while (true)
+        {
+          schemeField = iprot.readFieldBegin();
+          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) { 
+            break;
+          }
+          switch (schemeField.id) {
+            case 0: // SUCCESS
+              if (schemeField.type == org.apache.thrift.protocol.TType.LIST) {
+                {
+                  org.apache.thrift.protocol.TList _list176 = iprot.readListBegin();
+                  struct.success = new java.util.ArrayList<java.util.List<java.lang.Double>>(_list176.size);
+                  @org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> _elem177;
+                  for (int _i178 = 0; _i178 < _list176.size; ++_i178)
+                  {
+                    {
+                      org.apache.thrift.protocol.TList _list179 = iprot.readListBegin();
+                      _elem177 = new java.util.ArrayList<java.lang.Double>(_list179.size);
+                      double _elem180;
+                      for (int _i181 = 0; _i181 < _list179.size; ++_i181)
+                      {
+                        _elem180 = iprot.readDouble();
+                        _elem177.add(_elem180);
+                      }
+                      iprot.readListEnd();
+                    }
+                    struct.success.add(_elem177);
+                  }
+                  iprot.readListEnd();
+                }
+                struct.setSuccessIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            default:
+              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+          }
+          iprot.readFieldEnd();
+        }
+        iprot.readStructEnd();
+
+        // check for required fields of primitive type, which can't be checked in the validate method
+        struct.validate();
+      }
+
+      public void write(org.apache.thrift.protocol.TProtocol oprot, resta_matrices_result struct) throws org.apache.thrift.TException {
+        struct.validate();
+
+        oprot.writeStructBegin(STRUCT_DESC);
+        if (struct.success != null) {
+          oprot.writeFieldBegin(SUCCESS_FIELD_DESC);
+          {
+            oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.LIST, struct.success.size()));
+            for (java.util.List<java.lang.Double> _iter182 : struct.success)
+            {
+              {
+                oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.DOUBLE, _iter182.size()));
+                for (double _iter183 : _iter182)
+                {
+                  oprot.writeDouble(_iter183);
+                }
+                oprot.writeListEnd();
+              }
+            }
+            oprot.writeListEnd();
+          }
+          oprot.writeFieldEnd();
+        }
+        oprot.writeFieldStop();
+        oprot.writeStructEnd();
+      }
+
+    }
+
+    private static class resta_matrices_resultTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public resta_matrices_resultTupleScheme getScheme() {
+        return new resta_matrices_resultTupleScheme();
+      }
+    }
+
+    private static class resta_matrices_resultTupleScheme extends org.apache.thrift.scheme.TupleScheme<resta_matrices_result> {
+
+      @Override
+      public void write(org.apache.thrift.protocol.TProtocol prot, resta_matrices_result struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet optionals = new java.util.BitSet();
+        if (struct.isSetSuccess()) {
+          optionals.set(0);
+        }
+        oprot.writeBitSet(optionals, 1);
+        if (struct.isSetSuccess()) {
+          {
+            oprot.writeI32(struct.success.size());
+            for (java.util.List<java.lang.Double> _iter184 : struct.success)
+            {
+              {
+                oprot.writeI32(_iter184.size());
+                for (double _iter185 : _iter184)
+                {
+                  oprot.writeDouble(_iter185);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      @Override
+      public void read(org.apache.thrift.protocol.TProtocol prot, resta_matrices_result struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet incoming = iprot.readBitSet(1);
+        if (incoming.get(0)) {
+          {
+            org.apache.thrift.protocol.TList _list186 = iprot.readListBegin(org.apache.thrift.protocol.TType.LIST);
+            struct.success = new java.util.ArrayList<java.util.List<java.lang.Double>>(_list186.size);
+            @org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> _elem187;
+            for (int _i188 = 0; _i188 < _list186.size; ++_i188)
+            {
+              {
+                org.apache.thrift.protocol.TList _list189 = iprot.readListBegin(org.apache.thrift.protocol.TType.DOUBLE);
+                _elem187 = new java.util.ArrayList<java.lang.Double>(_list189.size);
+                double _elem190;
+                for (int _i191 = 0; _i191 < _list189.size; ++_i191)
+                {
+                  _elem190 = iprot.readDouble();
+                  _elem187.add(_elem190);
+                }
+              }
+              struct.success.add(_elem187);
+            }
+          }
+          struct.setSuccessIsSet(true);
+        }
+      }
+    }
+
+    private static <S extends org.apache.thrift.scheme.IScheme> S scheme(org.apache.thrift.protocol.TProtocol proto) {
+      return (org.apache.thrift.scheme.StandardScheme.class.equals(proto.getScheme()) ? STANDARD_SCHEME_FACTORY : TUPLE_SCHEME_FACTORY).getScheme();
+    }
+  }
+
+  public static class producto_matrices_args implements org.apache.thrift.TBase<producto_matrices_args, producto_matrices_args._Fields>, java.io.Serializable, Cloneable, Comparable<producto_matrices_args>   {
+    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("producto_matrices_args");
+
+    private static final org.apache.thrift.protocol.TField MATRIZ1_FIELD_DESC = new org.apache.thrift.protocol.TField("matriz1", org.apache.thrift.protocol.TType.LIST, (short)1);
+    private static final org.apache.thrift.protocol.TField MATRIZ2_FIELD_DESC = new org.apache.thrift.protocol.TField("matriz2", org.apache.thrift.protocol.TType.LIST, (short)2);
+
+    private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new producto_matrices_argsStandardSchemeFactory();
+    private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new producto_matrices_argsTupleSchemeFactory();
+
+    public @org.apache.thrift.annotation.Nullable java.util.List<java.util.List<java.lang.Double>> matriz1; // required
+    public @org.apache.thrift.annotation.Nullable java.util.List<java.util.List<java.lang.Double>> matriz2; // required
+
+    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+      MATRIZ1((short)1, "matriz1"),
+      MATRIZ2((short)2, "matriz2");
+
+      private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
+
+      static {
+        for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
+          byName.put(field.getFieldName(), field);
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, or null if its not found.
+       */
+      @org.apache.thrift.annotation.Nullable
+      public static _Fields findByThriftId(int fieldId) {
+        switch(fieldId) {
+          case 1: // MATRIZ1
+            return MATRIZ1;
+          case 2: // MATRIZ2
+            return MATRIZ2;
+          default:
+            return null;
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, throwing an exception
+       * if it is not found.
+       */
+      public static _Fields findByThriftIdOrThrow(int fieldId) {
+        _Fields fields = findByThriftId(fieldId);
+        if (fields == null) throw new java.lang.IllegalArgumentException("Field " + fieldId + " doesn't exist!");
+        return fields;
+      }
+
+      /**
+       * Find the _Fields constant that matches name, or null if its not found.
+       */
+      @org.apache.thrift.annotation.Nullable
+      public static _Fields findByName(java.lang.String name) {
+        return byName.get(name);
+      }
+
+      private final short _thriftId;
+      private final java.lang.String _fieldName;
+
+      _Fields(short thriftId, java.lang.String fieldName) {
+        _thriftId = thriftId;
+        _fieldName = fieldName;
+      }
+
+      public short getThriftFieldId() {
+        return _thriftId;
+      }
+
+      public java.lang.String getFieldName() {
+        return _fieldName;
+      }
+    }
+
+    // isset id assignments
+    public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    static {
+      java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
+      tmpMap.put(_Fields.MATRIZ1, new org.apache.thrift.meta_data.FieldMetaData("matriz1", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
+              new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
+                  new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE)))));
+      tmpMap.put(_Fields.MATRIZ2, new org.apache.thrift.meta_data.FieldMetaData("matriz2", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
+              new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
+                  new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE)))));
+      metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
+      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(producto_matrices_args.class, metaDataMap);
+    }
+
+    public producto_matrices_args() {
+    }
+
+    public producto_matrices_args(
+      java.util.List<java.util.List<java.lang.Double>> matriz1,
+      java.util.List<java.util.List<java.lang.Double>> matriz2)
+    {
+      this();
+      this.matriz1 = matriz1;
+      this.matriz2 = matriz2;
+    }
+
+    /**
+     * Performs a deep copy on <i>other</i>.
+     */
+    public producto_matrices_args(producto_matrices_args other) {
+      if (other.isSetMatriz1()) {
+        java.util.List<java.util.List<java.lang.Double>> __this__matriz1 = new java.util.ArrayList<java.util.List<java.lang.Double>>(other.matriz1.size());
+        for (java.util.List<java.lang.Double> other_element : other.matriz1) {
+          java.util.List<java.lang.Double> __this__matriz1_copy = new java.util.ArrayList<java.lang.Double>(other_element);
+          __this__matriz1.add(__this__matriz1_copy);
+        }
+        this.matriz1 = __this__matriz1;
+      }
+      if (other.isSetMatriz2()) {
+        java.util.List<java.util.List<java.lang.Double>> __this__matriz2 = new java.util.ArrayList<java.util.List<java.lang.Double>>(other.matriz2.size());
+        for (java.util.List<java.lang.Double> other_element : other.matriz2) {
+          java.util.List<java.lang.Double> __this__matriz2_copy = new java.util.ArrayList<java.lang.Double>(other_element);
+          __this__matriz2.add(__this__matriz2_copy);
+        }
+        this.matriz2 = __this__matriz2;
+      }
+    }
+
+    public producto_matrices_args deepCopy() {
+      return new producto_matrices_args(this);
+    }
+
+    @Override
+    public void clear() {
+      this.matriz1 = null;
+      this.matriz2 = null;
+    }
+
+    public int getMatriz1Size() {
+      return (this.matriz1 == null) ? 0 : this.matriz1.size();
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.Iterator<java.util.List<java.lang.Double>> getMatriz1Iterator() {
+      return (this.matriz1 == null) ? null : this.matriz1.iterator();
+    }
+
+    public void addToMatriz1(java.util.List<java.lang.Double> elem) {
+      if (this.matriz1 == null) {
+        this.matriz1 = new java.util.ArrayList<java.util.List<java.lang.Double>>();
+      }
+      this.matriz1.add(elem);
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.List<java.util.List<java.lang.Double>> getMatriz1() {
+      return this.matriz1;
+    }
+
+    public producto_matrices_args setMatriz1(@org.apache.thrift.annotation.Nullable java.util.List<java.util.List<java.lang.Double>> matriz1) {
+      this.matriz1 = matriz1;
+      return this;
+    }
+
+    public void unsetMatriz1() {
+      this.matriz1 = null;
+    }
+
+    /** Returns true if field matriz1 is set (has been assigned a value) and false otherwise */
+    public boolean isSetMatriz1() {
+      return this.matriz1 != null;
+    }
+
+    public void setMatriz1IsSet(boolean value) {
+      if (!value) {
+        this.matriz1 = null;
+      }
+    }
+
+    public int getMatriz2Size() {
+      return (this.matriz2 == null) ? 0 : this.matriz2.size();
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.Iterator<java.util.List<java.lang.Double>> getMatriz2Iterator() {
+      return (this.matriz2 == null) ? null : this.matriz2.iterator();
+    }
+
+    public void addToMatriz2(java.util.List<java.lang.Double> elem) {
+      if (this.matriz2 == null) {
+        this.matriz2 = new java.util.ArrayList<java.util.List<java.lang.Double>>();
+      }
+      this.matriz2.add(elem);
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.List<java.util.List<java.lang.Double>> getMatriz2() {
+      return this.matriz2;
+    }
+
+    public producto_matrices_args setMatriz2(@org.apache.thrift.annotation.Nullable java.util.List<java.util.List<java.lang.Double>> matriz2) {
+      this.matriz2 = matriz2;
+      return this;
+    }
+
+    public void unsetMatriz2() {
+      this.matriz2 = null;
+    }
+
+    /** Returns true if field matriz2 is set (has been assigned a value) and false otherwise */
+    public boolean isSetMatriz2() {
+      return this.matriz2 != null;
+    }
+
+    public void setMatriz2IsSet(boolean value) {
+      if (!value) {
+        this.matriz2 = null;
+      }
+    }
+
+    public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable java.lang.Object value) {
+      switch (field) {
+      case MATRIZ1:
+        if (value == null) {
+          unsetMatriz1();
+        } else {
+          setMatriz1((java.util.List<java.util.List<java.lang.Double>>)value);
+        }
+        break;
+
+      case MATRIZ2:
+        if (value == null) {
+          unsetMatriz2();
+        } else {
+          setMatriz2((java.util.List<java.util.List<java.lang.Double>>)value);
+        }
+        break;
+
+      }
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.lang.Object getFieldValue(_Fields field) {
+      switch (field) {
+      case MATRIZ1:
+        return getMatriz1();
+
+      case MATRIZ2:
+        return getMatriz2();
+
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    public boolean isSet(_Fields field) {
+      if (field == null) {
+        throw new java.lang.IllegalArgumentException();
+      }
+
+      switch (field) {
+      case MATRIZ1:
+        return isSetMatriz1();
+      case MATRIZ2:
+        return isSetMatriz2();
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    @Override
+    public boolean equals(java.lang.Object that) {
+      if (that instanceof producto_matrices_args)
+        return this.equals((producto_matrices_args)that);
+      return false;
+    }
+
+    public boolean equals(producto_matrices_args that) {
+      if (that == null)
+        return false;
+      if (this == that)
+        return true;
+
+      boolean this_present_matriz1 = true && this.isSetMatriz1();
+      boolean that_present_matriz1 = true && that.isSetMatriz1();
+      if (this_present_matriz1 || that_present_matriz1) {
+        if (!(this_present_matriz1 && that_present_matriz1))
+          return false;
+        if (!this.matriz1.equals(that.matriz1))
+          return false;
+      }
+
+      boolean this_present_matriz2 = true && this.isSetMatriz2();
+      boolean that_present_matriz2 = true && that.isSetMatriz2();
+      if (this_present_matriz2 || that_present_matriz2) {
+        if (!(this_present_matriz2 && that_present_matriz2))
+          return false;
+        if (!this.matriz2.equals(that.matriz2))
+          return false;
+      }
+
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      int hashCode = 1;
+
+      hashCode = hashCode * 8191 + ((isSetMatriz1()) ? 131071 : 524287);
+      if (isSetMatriz1())
+        hashCode = hashCode * 8191 + matriz1.hashCode();
+
+      hashCode = hashCode * 8191 + ((isSetMatriz2()) ? 131071 : 524287);
+      if (isSetMatriz2())
+        hashCode = hashCode * 8191 + matriz2.hashCode();
+
+      return hashCode;
+    }
+
+    @Override
+    public int compareTo(producto_matrices_args other) {
+      if (!getClass().equals(other.getClass())) {
+        return getClass().getName().compareTo(other.getClass().getName());
+      }
+
+      int lastComparison = 0;
+
+      lastComparison = java.lang.Boolean.compare(isSetMatriz1(), other.isSetMatriz1());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetMatriz1()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.matriz1, other.matriz1);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      lastComparison = java.lang.Boolean.compare(isSetMatriz2(), other.isSetMatriz2());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetMatriz2()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.matriz2, other.matriz2);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      return 0;
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public _Fields fieldForId(int fieldId) {
+      return _Fields.findByThriftId(fieldId);
+    }
+
+    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
+      scheme(iprot).read(iprot, this);
+    }
+
+    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+      scheme(oprot).write(oprot, this);
+    }
+
+    @Override
+    public java.lang.String toString() {
+      java.lang.StringBuilder sb = new java.lang.StringBuilder("producto_matrices_args(");
+      boolean first = true;
+
+      sb.append("matriz1:");
+      if (this.matriz1 == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.matriz1);
+      }
+      first = false;
+      if (!first) sb.append(", ");
+      sb.append("matriz2:");
+      if (this.matriz2 == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.matriz2);
+      }
+      first = false;
+      sb.append(")");
+      return sb.toString();
+    }
+
+    public void validate() throws org.apache.thrift.TException {
+      // check for required fields
+      // check for sub-struct validity
+    }
+
+    private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
+      try {
+        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
+      try {
+        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private static class producto_matrices_argsStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public producto_matrices_argsStandardScheme getScheme() {
+        return new producto_matrices_argsStandardScheme();
+      }
+    }
+
+    private static class producto_matrices_argsStandardScheme extends org.apache.thrift.scheme.StandardScheme<producto_matrices_args> {
+
+      public void read(org.apache.thrift.protocol.TProtocol iprot, producto_matrices_args struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TField schemeField;
+        iprot.readStructBegin();
+        while (true)
+        {
+          schemeField = iprot.readFieldBegin();
+          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) { 
+            break;
+          }
+          switch (schemeField.id) {
+            case 1: // MATRIZ1
+              if (schemeField.type == org.apache.thrift.protocol.TType.LIST) {
+                {
+                  org.apache.thrift.protocol.TList _list192 = iprot.readListBegin();
+                  struct.matriz1 = new java.util.ArrayList<java.util.List<java.lang.Double>>(_list192.size);
+                  @org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> _elem193;
+                  for (int _i194 = 0; _i194 < _list192.size; ++_i194)
+                  {
+                    {
+                      org.apache.thrift.protocol.TList _list195 = iprot.readListBegin();
+                      _elem193 = new java.util.ArrayList<java.lang.Double>(_list195.size);
+                      double _elem196;
+                      for (int _i197 = 0; _i197 < _list195.size; ++_i197)
+                      {
+                        _elem196 = iprot.readDouble();
+                        _elem193.add(_elem196);
+                      }
+                      iprot.readListEnd();
+                    }
+                    struct.matriz1.add(_elem193);
+                  }
+                  iprot.readListEnd();
+                }
+                struct.setMatriz1IsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            case 2: // MATRIZ2
+              if (schemeField.type == org.apache.thrift.protocol.TType.LIST) {
+                {
+                  org.apache.thrift.protocol.TList _list198 = iprot.readListBegin();
+                  struct.matriz2 = new java.util.ArrayList<java.util.List<java.lang.Double>>(_list198.size);
+                  @org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> _elem199;
+                  for (int _i200 = 0; _i200 < _list198.size; ++_i200)
+                  {
+                    {
+                      org.apache.thrift.protocol.TList _list201 = iprot.readListBegin();
+                      _elem199 = new java.util.ArrayList<java.lang.Double>(_list201.size);
+                      double _elem202;
+                      for (int _i203 = 0; _i203 < _list201.size; ++_i203)
+                      {
+                        _elem202 = iprot.readDouble();
+                        _elem199.add(_elem202);
+                      }
+                      iprot.readListEnd();
+                    }
+                    struct.matriz2.add(_elem199);
+                  }
+                  iprot.readListEnd();
+                }
+                struct.setMatriz2IsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            default:
+              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+          }
+          iprot.readFieldEnd();
+        }
+        iprot.readStructEnd();
+
+        // check for required fields of primitive type, which can't be checked in the validate method
+        struct.validate();
+      }
+
+      public void write(org.apache.thrift.protocol.TProtocol oprot, producto_matrices_args struct) throws org.apache.thrift.TException {
+        struct.validate();
+
+        oprot.writeStructBegin(STRUCT_DESC);
+        if (struct.matriz1 != null) {
+          oprot.writeFieldBegin(MATRIZ1_FIELD_DESC);
+          {
+            oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.LIST, struct.matriz1.size()));
+            for (java.util.List<java.lang.Double> _iter204 : struct.matriz1)
+            {
+              {
+                oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.DOUBLE, _iter204.size()));
+                for (double _iter205 : _iter204)
+                {
+                  oprot.writeDouble(_iter205);
+                }
+                oprot.writeListEnd();
+              }
+            }
+            oprot.writeListEnd();
+          }
+          oprot.writeFieldEnd();
+        }
+        if (struct.matriz2 != null) {
+          oprot.writeFieldBegin(MATRIZ2_FIELD_DESC);
+          {
+            oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.LIST, struct.matriz2.size()));
+            for (java.util.List<java.lang.Double> _iter206 : struct.matriz2)
+            {
+              {
+                oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.DOUBLE, _iter206.size()));
+                for (double _iter207 : _iter206)
+                {
+                  oprot.writeDouble(_iter207);
+                }
+                oprot.writeListEnd();
+              }
+            }
+            oprot.writeListEnd();
+          }
+          oprot.writeFieldEnd();
+        }
+        oprot.writeFieldStop();
+        oprot.writeStructEnd();
+      }
+
+    }
+
+    private static class producto_matrices_argsTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public producto_matrices_argsTupleScheme getScheme() {
+        return new producto_matrices_argsTupleScheme();
+      }
+    }
+
+    private static class producto_matrices_argsTupleScheme extends org.apache.thrift.scheme.TupleScheme<producto_matrices_args> {
+
+      @Override
+      public void write(org.apache.thrift.protocol.TProtocol prot, producto_matrices_args struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet optionals = new java.util.BitSet();
+        if (struct.isSetMatriz1()) {
+          optionals.set(0);
+        }
+        if (struct.isSetMatriz2()) {
+          optionals.set(1);
+        }
+        oprot.writeBitSet(optionals, 2);
+        if (struct.isSetMatriz1()) {
+          {
+            oprot.writeI32(struct.matriz1.size());
+            for (java.util.List<java.lang.Double> _iter208 : struct.matriz1)
+            {
+              {
+                oprot.writeI32(_iter208.size());
+                for (double _iter209 : _iter208)
+                {
+                  oprot.writeDouble(_iter209);
+                }
+              }
+            }
+          }
+        }
+        if (struct.isSetMatriz2()) {
+          {
+            oprot.writeI32(struct.matriz2.size());
+            for (java.util.List<java.lang.Double> _iter210 : struct.matriz2)
+            {
+              {
+                oprot.writeI32(_iter210.size());
+                for (double _iter211 : _iter210)
+                {
+                  oprot.writeDouble(_iter211);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      @Override
+      public void read(org.apache.thrift.protocol.TProtocol prot, producto_matrices_args struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet incoming = iprot.readBitSet(2);
+        if (incoming.get(0)) {
+          {
+            org.apache.thrift.protocol.TList _list212 = iprot.readListBegin(org.apache.thrift.protocol.TType.LIST);
+            struct.matriz1 = new java.util.ArrayList<java.util.List<java.lang.Double>>(_list212.size);
+            @org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> _elem213;
+            for (int _i214 = 0; _i214 < _list212.size; ++_i214)
+            {
+              {
+                org.apache.thrift.protocol.TList _list215 = iprot.readListBegin(org.apache.thrift.protocol.TType.DOUBLE);
+                _elem213 = new java.util.ArrayList<java.lang.Double>(_list215.size);
+                double _elem216;
+                for (int _i217 = 0; _i217 < _list215.size; ++_i217)
+                {
+                  _elem216 = iprot.readDouble();
+                  _elem213.add(_elem216);
+                }
+              }
+              struct.matriz1.add(_elem213);
+            }
+          }
+          struct.setMatriz1IsSet(true);
+        }
+        if (incoming.get(1)) {
+          {
+            org.apache.thrift.protocol.TList _list218 = iprot.readListBegin(org.apache.thrift.protocol.TType.LIST);
+            struct.matriz2 = new java.util.ArrayList<java.util.List<java.lang.Double>>(_list218.size);
+            @org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> _elem219;
+            for (int _i220 = 0; _i220 < _list218.size; ++_i220)
+            {
+              {
+                org.apache.thrift.protocol.TList _list221 = iprot.readListBegin(org.apache.thrift.protocol.TType.DOUBLE);
+                _elem219 = new java.util.ArrayList<java.lang.Double>(_list221.size);
+                double _elem222;
+                for (int _i223 = 0; _i223 < _list221.size; ++_i223)
+                {
+                  _elem222 = iprot.readDouble();
+                  _elem219.add(_elem222);
+                }
+              }
+              struct.matriz2.add(_elem219);
+            }
+          }
+          struct.setMatriz2IsSet(true);
+        }
+      }
+    }
+
+    private static <S extends org.apache.thrift.scheme.IScheme> S scheme(org.apache.thrift.protocol.TProtocol proto) {
+      return (org.apache.thrift.scheme.StandardScheme.class.equals(proto.getScheme()) ? STANDARD_SCHEME_FACTORY : TUPLE_SCHEME_FACTORY).getScheme();
+    }
+  }
+
+  public static class producto_matrices_result implements org.apache.thrift.TBase<producto_matrices_result, producto_matrices_result._Fields>, java.io.Serializable, Cloneable, Comparable<producto_matrices_result>   {
+    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("producto_matrices_result");
+
+    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.LIST, (short)0);
+
+    private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new producto_matrices_resultStandardSchemeFactory();
+    private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new producto_matrices_resultTupleSchemeFactory();
+
+    public @org.apache.thrift.annotation.Nullable java.util.List<java.util.List<java.lang.Double>> success; // required
+
+    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+      SUCCESS((short)0, "success");
+
+      private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
+
+      static {
+        for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
+          byName.put(field.getFieldName(), field);
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, or null if its not found.
+       */
+      @org.apache.thrift.annotation.Nullable
+      public static _Fields findByThriftId(int fieldId) {
+        switch(fieldId) {
+          case 0: // SUCCESS
+            return SUCCESS;
+          default:
+            return null;
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, throwing an exception
+       * if it is not found.
+       */
+      public static _Fields findByThriftIdOrThrow(int fieldId) {
+        _Fields fields = findByThriftId(fieldId);
+        if (fields == null) throw new java.lang.IllegalArgumentException("Field " + fieldId + " doesn't exist!");
+        return fields;
+      }
+
+      /**
+       * Find the _Fields constant that matches name, or null if its not found.
+       */
+      @org.apache.thrift.annotation.Nullable
+      public static _Fields findByName(java.lang.String name) {
+        return byName.get(name);
+      }
+
+      private final short _thriftId;
+      private final java.lang.String _fieldName;
+
+      _Fields(short thriftId, java.lang.String fieldName) {
+        _thriftId = thriftId;
+        _fieldName = fieldName;
+      }
+
+      public short getThriftFieldId() {
+        return _thriftId;
+      }
+
+      public java.lang.String getFieldName() {
+        return _fieldName;
+      }
+    }
+
+    // isset id assignments
+    public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    static {
+      java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
+      tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
+              new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
+                  new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE)))));
+      metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
+      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(producto_matrices_result.class, metaDataMap);
+    }
+
+    public producto_matrices_result() {
+    }
+
+    public producto_matrices_result(
+      java.util.List<java.util.List<java.lang.Double>> success)
+    {
+      this();
+      this.success = success;
+    }
+
+    /**
+     * Performs a deep copy on <i>other</i>.
+     */
+    public producto_matrices_result(producto_matrices_result other) {
+      if (other.isSetSuccess()) {
+        java.util.List<java.util.List<java.lang.Double>> __this__success = new java.util.ArrayList<java.util.List<java.lang.Double>>(other.success.size());
+        for (java.util.List<java.lang.Double> other_element : other.success) {
+          java.util.List<java.lang.Double> __this__success_copy = new java.util.ArrayList<java.lang.Double>(other_element);
+          __this__success.add(__this__success_copy);
+        }
+        this.success = __this__success;
+      }
+    }
+
+    public producto_matrices_result deepCopy() {
+      return new producto_matrices_result(this);
+    }
+
+    @Override
+    public void clear() {
+      this.success = null;
+    }
+
+    public int getSuccessSize() {
+      return (this.success == null) ? 0 : this.success.size();
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.Iterator<java.util.List<java.lang.Double>> getSuccessIterator() {
+      return (this.success == null) ? null : this.success.iterator();
+    }
+
+    public void addToSuccess(java.util.List<java.lang.Double> elem) {
+      if (this.success == null) {
+        this.success = new java.util.ArrayList<java.util.List<java.lang.Double>>();
+      }
+      this.success.add(elem);
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.List<java.util.List<java.lang.Double>> getSuccess() {
+      return this.success;
+    }
+
+    public producto_matrices_result setSuccess(@org.apache.thrift.annotation.Nullable java.util.List<java.util.List<java.lang.Double>> success) {
+      this.success = success;
+      return this;
+    }
+
+    public void unsetSuccess() {
+      this.success = null;
+    }
+
+    /** Returns true if field success is set (has been assigned a value) and false otherwise */
+    public boolean isSetSuccess() {
+      return this.success != null;
+    }
+
+    public void setSuccessIsSet(boolean value) {
+      if (!value) {
+        this.success = null;
+      }
+    }
+
+    public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable java.lang.Object value) {
+      switch (field) {
+      case SUCCESS:
+        if (value == null) {
+          unsetSuccess();
+        } else {
+          setSuccess((java.util.List<java.util.List<java.lang.Double>>)value);
+        }
+        break;
+
+      }
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.lang.Object getFieldValue(_Fields field) {
+      switch (field) {
+      case SUCCESS:
+        return getSuccess();
+
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    public boolean isSet(_Fields field) {
+      if (field == null) {
+        throw new java.lang.IllegalArgumentException();
+      }
+
+      switch (field) {
+      case SUCCESS:
+        return isSetSuccess();
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    @Override
+    public boolean equals(java.lang.Object that) {
+      if (that instanceof producto_matrices_result)
+        return this.equals((producto_matrices_result)that);
+      return false;
+    }
+
+    public boolean equals(producto_matrices_result that) {
+      if (that == null)
+        return false;
+      if (this == that)
+        return true;
+
+      boolean this_present_success = true && this.isSetSuccess();
+      boolean that_present_success = true && that.isSetSuccess();
+      if (this_present_success || that_present_success) {
+        if (!(this_present_success && that_present_success))
+          return false;
+        if (!this.success.equals(that.success))
+          return false;
+      }
+
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      int hashCode = 1;
+
+      hashCode = hashCode * 8191 + ((isSetSuccess()) ? 131071 : 524287);
+      if (isSetSuccess())
+        hashCode = hashCode * 8191 + success.hashCode();
+
+      return hashCode;
+    }
+
+    @Override
+    public int compareTo(producto_matrices_result other) {
+      if (!getClass().equals(other.getClass())) {
+        return getClass().getName().compareTo(other.getClass().getName());
+      }
+
+      int lastComparison = 0;
+
+      lastComparison = java.lang.Boolean.compare(isSetSuccess(), other.isSetSuccess());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetSuccess()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.success, other.success);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      return 0;
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public _Fields fieldForId(int fieldId) {
+      return _Fields.findByThriftId(fieldId);
+    }
+
+    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
+      scheme(iprot).read(iprot, this);
+    }
+
+    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+      scheme(oprot).write(oprot, this);
+      }
+
+    @Override
+    public java.lang.String toString() {
+      java.lang.StringBuilder sb = new java.lang.StringBuilder("producto_matrices_result(");
+      boolean first = true;
+
+      sb.append("success:");
+      if (this.success == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.success);
+      }
+      first = false;
+      sb.append(")");
+      return sb.toString();
+    }
+
+    public void validate() throws org.apache.thrift.TException {
+      // check for required fields
+      // check for sub-struct validity
+    }
+
+    private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
+      try {
+        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
+      try {
+        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private static class producto_matrices_resultStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public producto_matrices_resultStandardScheme getScheme() {
+        return new producto_matrices_resultStandardScheme();
+      }
+    }
+
+    private static class producto_matrices_resultStandardScheme extends org.apache.thrift.scheme.StandardScheme<producto_matrices_result> {
+
+      public void read(org.apache.thrift.protocol.TProtocol iprot, producto_matrices_result struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TField schemeField;
+        iprot.readStructBegin();
+        while (true)
+        {
+          schemeField = iprot.readFieldBegin();
+          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) { 
+            break;
+          }
+          switch (schemeField.id) {
+            case 0: // SUCCESS
+              if (schemeField.type == org.apache.thrift.protocol.TType.LIST) {
+                {
+                  org.apache.thrift.protocol.TList _list224 = iprot.readListBegin();
+                  struct.success = new java.util.ArrayList<java.util.List<java.lang.Double>>(_list224.size);
+                  @org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> _elem225;
+                  for (int _i226 = 0; _i226 < _list224.size; ++_i226)
+                  {
+                    {
+                      org.apache.thrift.protocol.TList _list227 = iprot.readListBegin();
+                      _elem225 = new java.util.ArrayList<java.lang.Double>(_list227.size);
+                      double _elem228;
+                      for (int _i229 = 0; _i229 < _list227.size; ++_i229)
+                      {
+                        _elem228 = iprot.readDouble();
+                        _elem225.add(_elem228);
+                      }
+                      iprot.readListEnd();
+                    }
+                    struct.success.add(_elem225);
+                  }
+                  iprot.readListEnd();
+                }
+                struct.setSuccessIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            default:
+              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+          }
+          iprot.readFieldEnd();
+        }
+        iprot.readStructEnd();
+
+        // check for required fields of primitive type, which can't be checked in the validate method
+        struct.validate();
+      }
+
+      public void write(org.apache.thrift.protocol.TProtocol oprot, producto_matrices_result struct) throws org.apache.thrift.TException {
+        struct.validate();
+
+        oprot.writeStructBegin(STRUCT_DESC);
+        if (struct.success != null) {
+          oprot.writeFieldBegin(SUCCESS_FIELD_DESC);
+          {
+            oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.LIST, struct.success.size()));
+            for (java.util.List<java.lang.Double> _iter230 : struct.success)
+            {
+              {
+                oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.DOUBLE, _iter230.size()));
+                for (double _iter231 : _iter230)
+                {
+                  oprot.writeDouble(_iter231);
+                }
+                oprot.writeListEnd();
+              }
+            }
+            oprot.writeListEnd();
+          }
+          oprot.writeFieldEnd();
+        }
+        oprot.writeFieldStop();
+        oprot.writeStructEnd();
+      }
+
+    }
+
+    private static class producto_matrices_resultTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public producto_matrices_resultTupleScheme getScheme() {
+        return new producto_matrices_resultTupleScheme();
+      }
+    }
+
+    private static class producto_matrices_resultTupleScheme extends org.apache.thrift.scheme.TupleScheme<producto_matrices_result> {
+
+      @Override
+      public void write(org.apache.thrift.protocol.TProtocol prot, producto_matrices_result struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet optionals = new java.util.BitSet();
+        if (struct.isSetSuccess()) {
+          optionals.set(0);
+        }
+        oprot.writeBitSet(optionals, 1);
+        if (struct.isSetSuccess()) {
+          {
+            oprot.writeI32(struct.success.size());
+            for (java.util.List<java.lang.Double> _iter232 : struct.success)
+            {
+              {
+                oprot.writeI32(_iter232.size());
+                for (double _iter233 : _iter232)
+                {
+                  oprot.writeDouble(_iter233);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      @Override
+      public void read(org.apache.thrift.protocol.TProtocol prot, producto_matrices_result struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet incoming = iprot.readBitSet(1);
+        if (incoming.get(0)) {
+          {
+            org.apache.thrift.protocol.TList _list234 = iprot.readListBegin(org.apache.thrift.protocol.TType.LIST);
+            struct.success = new java.util.ArrayList<java.util.List<java.lang.Double>>(_list234.size);
+            @org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> _elem235;
+            for (int _i236 = 0; _i236 < _list234.size; ++_i236)
+            {
+              {
+                org.apache.thrift.protocol.TList _list237 = iprot.readListBegin(org.apache.thrift.protocol.TType.DOUBLE);
+                _elem235 = new java.util.ArrayList<java.lang.Double>(_list237.size);
+                double _elem238;
+                for (int _i239 = 0; _i239 < _list237.size; ++_i239)
+                {
+                  _elem238 = iprot.readDouble();
+                  _elem235.add(_elem238);
+                }
+              }
+              struct.success.add(_elem235);
+            }
+          }
+          struct.setSuccessIsSet(true);
+        }
+      }
+    }
+
+    private static <S extends org.apache.thrift.scheme.IScheme> S scheme(org.apache.thrift.protocol.TProtocol proto) {
+      return (org.apache.thrift.scheme.StandardScheme.class.equals(proto.getScheme()) ? STANDARD_SCHEME_FACTORY : TUPLE_SCHEME_FACTORY).getScheme();
+    }
+  }
+
+  public static class multi_matriz_escalar_args implements org.apache.thrift.TBase<multi_matriz_escalar_args, multi_matriz_escalar_args._Fields>, java.io.Serializable, Cloneable, Comparable<multi_matriz_escalar_args>   {
+    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("multi_matriz_escalar_args");
+
+    private static final org.apache.thrift.protocol.TField MATRIZ1_FIELD_DESC = new org.apache.thrift.protocol.TField("matriz1", org.apache.thrift.protocol.TType.LIST, (short)1);
+    private static final org.apache.thrift.protocol.TField ESCALAR_FIELD_DESC = new org.apache.thrift.protocol.TField("escalar", org.apache.thrift.protocol.TType.DOUBLE, (short)2);
+
+    private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new multi_matriz_escalar_argsStandardSchemeFactory();
+    private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new multi_matriz_escalar_argsTupleSchemeFactory();
+
+    public @org.apache.thrift.annotation.Nullable java.util.List<java.util.List<java.lang.Double>> matriz1; // required
+    public double escalar; // required
+
+    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+      MATRIZ1((short)1, "matriz1"),
+      ESCALAR((short)2, "escalar");
+
+      private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
+
+      static {
+        for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
+          byName.put(field.getFieldName(), field);
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, or null if its not found.
+       */
+      @org.apache.thrift.annotation.Nullable
+      public static _Fields findByThriftId(int fieldId) {
+        switch(fieldId) {
+          case 1: // MATRIZ1
+            return MATRIZ1;
+          case 2: // ESCALAR
+            return ESCALAR;
+          default:
+            return null;
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, throwing an exception
+       * if it is not found.
+       */
+      public static _Fields findByThriftIdOrThrow(int fieldId) {
+        _Fields fields = findByThriftId(fieldId);
+        if (fields == null) throw new java.lang.IllegalArgumentException("Field " + fieldId + " doesn't exist!");
+        return fields;
+      }
+
+      /**
+       * Find the _Fields constant that matches name, or null if its not found.
+       */
+      @org.apache.thrift.annotation.Nullable
+      public static _Fields findByName(java.lang.String name) {
+        return byName.get(name);
+      }
+
+      private final short _thriftId;
+      private final java.lang.String _fieldName;
+
+      _Fields(short thriftId, java.lang.String fieldName) {
+        _thriftId = thriftId;
+        _fieldName = fieldName;
+      }
+
+      public short getThriftFieldId() {
+        return _thriftId;
+      }
+
+      public java.lang.String getFieldName() {
+        return _fieldName;
+      }
+    }
+
+    // isset id assignments
+    private static final int __ESCALAR_ISSET_ID = 0;
+    private byte __isset_bitfield = 0;
+    public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    static {
+      java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
+      tmpMap.put(_Fields.MATRIZ1, new org.apache.thrift.meta_data.FieldMetaData("matriz1", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
+              new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
+                  new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE)))));
+      tmpMap.put(_Fields.ESCALAR, new org.apache.thrift.meta_data.FieldMetaData("escalar", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE)));
+      metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
+      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(multi_matriz_escalar_args.class, metaDataMap);
+    }
+
+    public multi_matriz_escalar_args() {
+    }
+
+    public multi_matriz_escalar_args(
+      java.util.List<java.util.List<java.lang.Double>> matriz1,
+      double escalar)
+    {
+      this();
+      this.matriz1 = matriz1;
+      this.escalar = escalar;
+      setEscalarIsSet(true);
+    }
+
+    /**
+     * Performs a deep copy on <i>other</i>.
+     */
+    public multi_matriz_escalar_args(multi_matriz_escalar_args other) {
+      __isset_bitfield = other.__isset_bitfield;
+      if (other.isSetMatriz1()) {
+        java.util.List<java.util.List<java.lang.Double>> __this__matriz1 = new java.util.ArrayList<java.util.List<java.lang.Double>>(other.matriz1.size());
+        for (java.util.List<java.lang.Double> other_element : other.matriz1) {
+          java.util.List<java.lang.Double> __this__matriz1_copy = new java.util.ArrayList<java.lang.Double>(other_element);
+          __this__matriz1.add(__this__matriz1_copy);
+        }
+        this.matriz1 = __this__matriz1;
+      }
+      this.escalar = other.escalar;
+    }
+
+    public multi_matriz_escalar_args deepCopy() {
+      return new multi_matriz_escalar_args(this);
+    }
+
+    @Override
+    public void clear() {
+      this.matriz1 = null;
+      setEscalarIsSet(false);
+      this.escalar = 0.0;
+    }
+
+    public int getMatriz1Size() {
+      return (this.matriz1 == null) ? 0 : this.matriz1.size();
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.Iterator<java.util.List<java.lang.Double>> getMatriz1Iterator() {
+      return (this.matriz1 == null) ? null : this.matriz1.iterator();
+    }
+
+    public void addToMatriz1(java.util.List<java.lang.Double> elem) {
+      if (this.matriz1 == null) {
+        this.matriz1 = new java.util.ArrayList<java.util.List<java.lang.Double>>();
+      }
+      this.matriz1.add(elem);
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.List<java.util.List<java.lang.Double>> getMatriz1() {
+      return this.matriz1;
+    }
+
+    public multi_matriz_escalar_args setMatriz1(@org.apache.thrift.annotation.Nullable java.util.List<java.util.List<java.lang.Double>> matriz1) {
+      this.matriz1 = matriz1;
+      return this;
+    }
+
+    public void unsetMatriz1() {
+      this.matriz1 = null;
+    }
+
+    /** Returns true if field matriz1 is set (has been assigned a value) and false otherwise */
+    public boolean isSetMatriz1() {
+      return this.matriz1 != null;
+    }
+
+    public void setMatriz1IsSet(boolean value) {
+      if (!value) {
+        this.matriz1 = null;
+      }
+    }
+
+    public double getEscalar() {
+      return this.escalar;
+    }
+
+    public multi_matriz_escalar_args setEscalar(double escalar) {
+      this.escalar = escalar;
+      setEscalarIsSet(true);
+      return this;
+    }
+
+    public void unsetEscalar() {
+      __isset_bitfield = org.apache.thrift.EncodingUtils.clearBit(__isset_bitfield, __ESCALAR_ISSET_ID);
+    }
+
+    /** Returns true if field escalar is set (has been assigned a value) and false otherwise */
+    public boolean isSetEscalar() {
+      return org.apache.thrift.EncodingUtils.testBit(__isset_bitfield, __ESCALAR_ISSET_ID);
+    }
+
+    public void setEscalarIsSet(boolean value) {
+      __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __ESCALAR_ISSET_ID, value);
+    }
+
+    public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable java.lang.Object value) {
+      switch (field) {
+      case MATRIZ1:
+        if (value == null) {
+          unsetMatriz1();
+        } else {
+          setMatriz1((java.util.List<java.util.List<java.lang.Double>>)value);
+        }
+        break;
+
+      case ESCALAR:
+        if (value == null) {
+          unsetEscalar();
+        } else {
+          setEscalar((java.lang.Double)value);
+        }
+        break;
+
+      }
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.lang.Object getFieldValue(_Fields field) {
+      switch (field) {
+      case MATRIZ1:
+        return getMatriz1();
+
+      case ESCALAR:
+        return getEscalar();
+
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    public boolean isSet(_Fields field) {
+      if (field == null) {
+        throw new java.lang.IllegalArgumentException();
+      }
+
+      switch (field) {
+      case MATRIZ1:
+        return isSetMatriz1();
+      case ESCALAR:
+        return isSetEscalar();
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    @Override
+    public boolean equals(java.lang.Object that) {
+      if (that instanceof multi_matriz_escalar_args)
+        return this.equals((multi_matriz_escalar_args)that);
+      return false;
+    }
+
+    public boolean equals(multi_matriz_escalar_args that) {
+      if (that == null)
+        return false;
+      if (this == that)
+        return true;
+
+      boolean this_present_matriz1 = true && this.isSetMatriz1();
+      boolean that_present_matriz1 = true && that.isSetMatriz1();
+      if (this_present_matriz1 || that_present_matriz1) {
+        if (!(this_present_matriz1 && that_present_matriz1))
+          return false;
+        if (!this.matriz1.equals(that.matriz1))
+          return false;
+      }
+
+      boolean this_present_escalar = true;
+      boolean that_present_escalar = true;
+      if (this_present_escalar || that_present_escalar) {
+        if (!(this_present_escalar && that_present_escalar))
+          return false;
+        if (this.escalar != that.escalar)
+          return false;
+      }
+
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      int hashCode = 1;
+
+      hashCode = hashCode * 8191 + ((isSetMatriz1()) ? 131071 : 524287);
+      if (isSetMatriz1())
+        hashCode = hashCode * 8191 + matriz1.hashCode();
+
+      hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(escalar);
+
+      return hashCode;
+    }
+
+    @Override
+    public int compareTo(multi_matriz_escalar_args other) {
+      if (!getClass().equals(other.getClass())) {
+        return getClass().getName().compareTo(other.getClass().getName());
+      }
+
+      int lastComparison = 0;
+
+      lastComparison = java.lang.Boolean.compare(isSetMatriz1(), other.isSetMatriz1());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetMatriz1()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.matriz1, other.matriz1);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      lastComparison = java.lang.Boolean.compare(isSetEscalar(), other.isSetEscalar());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetEscalar()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.escalar, other.escalar);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      return 0;
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public _Fields fieldForId(int fieldId) {
+      return _Fields.findByThriftId(fieldId);
+    }
+
+    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
+      scheme(iprot).read(iprot, this);
+    }
+
+    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+      scheme(oprot).write(oprot, this);
+    }
+
+    @Override
+    public java.lang.String toString() {
+      java.lang.StringBuilder sb = new java.lang.StringBuilder("multi_matriz_escalar_args(");
+      boolean first = true;
+
+      sb.append("matriz1:");
+      if (this.matriz1 == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.matriz1);
+      }
+      first = false;
+      if (!first) sb.append(", ");
+      sb.append("escalar:");
+      sb.append(this.escalar);
+      first = false;
+      sb.append(")");
+      return sb.toString();
+    }
+
+    public void validate() throws org.apache.thrift.TException {
+      // check for required fields
+      // check for sub-struct validity
+    }
+
+    private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
+      try {
+        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
+      try {
+        // it doesn't seem like you should have to do this, but java serialization is wacky, and doesn't call the default constructor.
+        __isset_bitfield = 0;
+        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private static class multi_matriz_escalar_argsStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public multi_matriz_escalar_argsStandardScheme getScheme() {
+        return new multi_matriz_escalar_argsStandardScheme();
+      }
+    }
+
+    private static class multi_matriz_escalar_argsStandardScheme extends org.apache.thrift.scheme.StandardScheme<multi_matriz_escalar_args> {
+
+      public void read(org.apache.thrift.protocol.TProtocol iprot, multi_matriz_escalar_args struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TField schemeField;
+        iprot.readStructBegin();
+        while (true)
+        {
+          schemeField = iprot.readFieldBegin();
+          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) { 
+            break;
+          }
+          switch (schemeField.id) {
+            case 1: // MATRIZ1
+              if (schemeField.type == org.apache.thrift.protocol.TType.LIST) {
+                {
+                  org.apache.thrift.protocol.TList _list240 = iprot.readListBegin();
+                  struct.matriz1 = new java.util.ArrayList<java.util.List<java.lang.Double>>(_list240.size);
+                  @org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> _elem241;
+                  for (int _i242 = 0; _i242 < _list240.size; ++_i242)
+                  {
+                    {
+                      org.apache.thrift.protocol.TList _list243 = iprot.readListBegin();
+                      _elem241 = new java.util.ArrayList<java.lang.Double>(_list243.size);
+                      double _elem244;
+                      for (int _i245 = 0; _i245 < _list243.size; ++_i245)
+                      {
+                        _elem244 = iprot.readDouble();
+                        _elem241.add(_elem244);
+                      }
+                      iprot.readListEnd();
+                    }
+                    struct.matriz1.add(_elem241);
+                  }
+                  iprot.readListEnd();
+                }
+                struct.setMatriz1IsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            case 2: // ESCALAR
+              if (schemeField.type == org.apache.thrift.protocol.TType.DOUBLE) {
+                struct.escalar = iprot.readDouble();
+                struct.setEscalarIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            default:
+              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+          }
+          iprot.readFieldEnd();
+        }
+        iprot.readStructEnd();
+
+        // check for required fields of primitive type, which can't be checked in the validate method
+        struct.validate();
+      }
+
+      public void write(org.apache.thrift.protocol.TProtocol oprot, multi_matriz_escalar_args struct) throws org.apache.thrift.TException {
+        struct.validate();
+
+        oprot.writeStructBegin(STRUCT_DESC);
+        if (struct.matriz1 != null) {
+          oprot.writeFieldBegin(MATRIZ1_FIELD_DESC);
+          {
+            oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.LIST, struct.matriz1.size()));
+            for (java.util.List<java.lang.Double> _iter246 : struct.matriz1)
+            {
+              {
+                oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.DOUBLE, _iter246.size()));
+                for (double _iter247 : _iter246)
+                {
+                  oprot.writeDouble(_iter247);
+                }
+                oprot.writeListEnd();
+              }
+            }
+            oprot.writeListEnd();
+          }
+          oprot.writeFieldEnd();
+        }
+        oprot.writeFieldBegin(ESCALAR_FIELD_DESC);
+        oprot.writeDouble(struct.escalar);
+        oprot.writeFieldEnd();
+        oprot.writeFieldStop();
+        oprot.writeStructEnd();
+      }
+
+    }
+
+    private static class multi_matriz_escalar_argsTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public multi_matriz_escalar_argsTupleScheme getScheme() {
+        return new multi_matriz_escalar_argsTupleScheme();
+      }
+    }
+
+    private static class multi_matriz_escalar_argsTupleScheme extends org.apache.thrift.scheme.TupleScheme<multi_matriz_escalar_args> {
+
+      @Override
+      public void write(org.apache.thrift.protocol.TProtocol prot, multi_matriz_escalar_args struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet optionals = new java.util.BitSet();
+        if (struct.isSetMatriz1()) {
+          optionals.set(0);
+        }
+        if (struct.isSetEscalar()) {
+          optionals.set(1);
+        }
+        oprot.writeBitSet(optionals, 2);
+        if (struct.isSetMatriz1()) {
+          {
+            oprot.writeI32(struct.matriz1.size());
+            for (java.util.List<java.lang.Double> _iter248 : struct.matriz1)
+            {
+              {
+                oprot.writeI32(_iter248.size());
+                for (double _iter249 : _iter248)
+                {
+                  oprot.writeDouble(_iter249);
+                }
+              }
+            }
+          }
+        }
+        if (struct.isSetEscalar()) {
+          oprot.writeDouble(struct.escalar);
+        }
+      }
+
+      @Override
+      public void read(org.apache.thrift.protocol.TProtocol prot, multi_matriz_escalar_args struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet incoming = iprot.readBitSet(2);
+        if (incoming.get(0)) {
+          {
+            org.apache.thrift.protocol.TList _list250 = iprot.readListBegin(org.apache.thrift.protocol.TType.LIST);
+            struct.matriz1 = new java.util.ArrayList<java.util.List<java.lang.Double>>(_list250.size);
+            @org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> _elem251;
+            for (int _i252 = 0; _i252 < _list250.size; ++_i252)
+            {
+              {
+                org.apache.thrift.protocol.TList _list253 = iprot.readListBegin(org.apache.thrift.protocol.TType.DOUBLE);
+                _elem251 = new java.util.ArrayList<java.lang.Double>(_list253.size);
+                double _elem254;
+                for (int _i255 = 0; _i255 < _list253.size; ++_i255)
+                {
+                  _elem254 = iprot.readDouble();
+                  _elem251.add(_elem254);
+                }
+              }
+              struct.matriz1.add(_elem251);
+            }
+          }
+          struct.setMatriz1IsSet(true);
+        }
+        if (incoming.get(1)) {
+          struct.escalar = iprot.readDouble();
+          struct.setEscalarIsSet(true);
+        }
+      }
+    }
+
+    private static <S extends org.apache.thrift.scheme.IScheme> S scheme(org.apache.thrift.protocol.TProtocol proto) {
+      return (org.apache.thrift.scheme.StandardScheme.class.equals(proto.getScheme()) ? STANDARD_SCHEME_FACTORY : TUPLE_SCHEME_FACTORY).getScheme();
+    }
+  }
+
+  public static class multi_matriz_escalar_result implements org.apache.thrift.TBase<multi_matriz_escalar_result, multi_matriz_escalar_result._Fields>, java.io.Serializable, Cloneable, Comparable<multi_matriz_escalar_result>   {
+    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("multi_matriz_escalar_result");
+
+    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.LIST, (short)0);
+
+    private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new multi_matriz_escalar_resultStandardSchemeFactory();
+    private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new multi_matriz_escalar_resultTupleSchemeFactory();
+
+    public @org.apache.thrift.annotation.Nullable java.util.List<java.util.List<java.lang.Double>> success; // required
+
+    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+      SUCCESS((short)0, "success");
+
+      private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
+
+      static {
+        for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
+          byName.put(field.getFieldName(), field);
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, or null if its not found.
+       */
+      @org.apache.thrift.annotation.Nullable
+      public static _Fields findByThriftId(int fieldId) {
+        switch(fieldId) {
+          case 0: // SUCCESS
+            return SUCCESS;
+          default:
+            return null;
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, throwing an exception
+       * if it is not found.
+       */
+      public static _Fields findByThriftIdOrThrow(int fieldId) {
+        _Fields fields = findByThriftId(fieldId);
+        if (fields == null) throw new java.lang.IllegalArgumentException("Field " + fieldId + " doesn't exist!");
+        return fields;
+      }
+
+      /**
+       * Find the _Fields constant that matches name, or null if its not found.
+       */
+      @org.apache.thrift.annotation.Nullable
+      public static _Fields findByName(java.lang.String name) {
+        return byName.get(name);
+      }
+
+      private final short _thriftId;
+      private final java.lang.String _fieldName;
+
+      _Fields(short thriftId, java.lang.String fieldName) {
+        _thriftId = thriftId;
+        _fieldName = fieldName;
+      }
+
+      public short getThriftFieldId() {
+        return _thriftId;
+      }
+
+      public java.lang.String getFieldName() {
+        return _fieldName;
+      }
+    }
+
+    // isset id assignments
+    public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    static {
+      java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
+      tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
+              new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
+                  new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE)))));
+      metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
+      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(multi_matriz_escalar_result.class, metaDataMap);
+    }
+
+    public multi_matriz_escalar_result() {
+    }
+
+    public multi_matriz_escalar_result(
+      java.util.List<java.util.List<java.lang.Double>> success)
+    {
+      this();
+      this.success = success;
+    }
+
+    /**
+     * Performs a deep copy on <i>other</i>.
+     */
+    public multi_matriz_escalar_result(multi_matriz_escalar_result other) {
+      if (other.isSetSuccess()) {
+        java.util.List<java.util.List<java.lang.Double>> __this__success = new java.util.ArrayList<java.util.List<java.lang.Double>>(other.success.size());
+        for (java.util.List<java.lang.Double> other_element : other.success) {
+          java.util.List<java.lang.Double> __this__success_copy = new java.util.ArrayList<java.lang.Double>(other_element);
+          __this__success.add(__this__success_copy);
+        }
+        this.success = __this__success;
+      }
+    }
+
+    public multi_matriz_escalar_result deepCopy() {
+      return new multi_matriz_escalar_result(this);
+    }
+
+    @Override
+    public void clear() {
+      this.success = null;
+    }
+
+    public int getSuccessSize() {
+      return (this.success == null) ? 0 : this.success.size();
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.Iterator<java.util.List<java.lang.Double>> getSuccessIterator() {
+      return (this.success == null) ? null : this.success.iterator();
+    }
+
+    public void addToSuccess(java.util.List<java.lang.Double> elem) {
+      if (this.success == null) {
+        this.success = new java.util.ArrayList<java.util.List<java.lang.Double>>();
+      }
+      this.success.add(elem);
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.List<java.util.List<java.lang.Double>> getSuccess() {
+      return this.success;
+    }
+
+    public multi_matriz_escalar_result setSuccess(@org.apache.thrift.annotation.Nullable java.util.List<java.util.List<java.lang.Double>> success) {
+      this.success = success;
+      return this;
+    }
+
+    public void unsetSuccess() {
+      this.success = null;
+    }
+
+    /** Returns true if field success is set (has been assigned a value) and false otherwise */
+    public boolean isSetSuccess() {
+      return this.success != null;
+    }
+
+    public void setSuccessIsSet(boolean value) {
+      if (!value) {
+        this.success = null;
+      }
+    }
+
+    public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable java.lang.Object value) {
+      switch (field) {
+      case SUCCESS:
+        if (value == null) {
+          unsetSuccess();
+        } else {
+          setSuccess((java.util.List<java.util.List<java.lang.Double>>)value);
+        }
+        break;
+
+      }
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.lang.Object getFieldValue(_Fields field) {
+      switch (field) {
+      case SUCCESS:
+        return getSuccess();
+
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    public boolean isSet(_Fields field) {
+      if (field == null) {
+        throw new java.lang.IllegalArgumentException();
+      }
+
+      switch (field) {
+      case SUCCESS:
+        return isSetSuccess();
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    @Override
+    public boolean equals(java.lang.Object that) {
+      if (that instanceof multi_matriz_escalar_result)
+        return this.equals((multi_matriz_escalar_result)that);
+      return false;
+    }
+
+    public boolean equals(multi_matriz_escalar_result that) {
+      if (that == null)
+        return false;
+      if (this == that)
+        return true;
+
+      boolean this_present_success = true && this.isSetSuccess();
+      boolean that_present_success = true && that.isSetSuccess();
+      if (this_present_success || that_present_success) {
+        if (!(this_present_success && that_present_success))
+          return false;
+        if (!this.success.equals(that.success))
+          return false;
+      }
+
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      int hashCode = 1;
+
+      hashCode = hashCode * 8191 + ((isSetSuccess()) ? 131071 : 524287);
+      if (isSetSuccess())
+        hashCode = hashCode * 8191 + success.hashCode();
+
+      return hashCode;
+    }
+
+    @Override
+    public int compareTo(multi_matriz_escalar_result other) {
+      if (!getClass().equals(other.getClass())) {
+        return getClass().getName().compareTo(other.getClass().getName());
+      }
+
+      int lastComparison = 0;
+
+      lastComparison = java.lang.Boolean.compare(isSetSuccess(), other.isSetSuccess());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetSuccess()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.success, other.success);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      return 0;
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public _Fields fieldForId(int fieldId) {
+      return _Fields.findByThriftId(fieldId);
+    }
+
+    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
+      scheme(iprot).read(iprot, this);
+    }
+
+    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+      scheme(oprot).write(oprot, this);
+      }
+
+    @Override
+    public java.lang.String toString() {
+      java.lang.StringBuilder sb = new java.lang.StringBuilder("multi_matriz_escalar_result(");
+      boolean first = true;
+
+      sb.append("success:");
+      if (this.success == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.success);
+      }
+      first = false;
+      sb.append(")");
+      return sb.toString();
+    }
+
+    public void validate() throws org.apache.thrift.TException {
+      // check for required fields
+      // check for sub-struct validity
+    }
+
+    private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
+      try {
+        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
+      try {
+        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private static class multi_matriz_escalar_resultStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public multi_matriz_escalar_resultStandardScheme getScheme() {
+        return new multi_matriz_escalar_resultStandardScheme();
+      }
+    }
+
+    private static class multi_matriz_escalar_resultStandardScheme extends org.apache.thrift.scheme.StandardScheme<multi_matriz_escalar_result> {
+
+      public void read(org.apache.thrift.protocol.TProtocol iprot, multi_matriz_escalar_result struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TField schemeField;
+        iprot.readStructBegin();
+        while (true)
+        {
+          schemeField = iprot.readFieldBegin();
+          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) { 
+            break;
+          }
+          switch (schemeField.id) {
+            case 0: // SUCCESS
+              if (schemeField.type == org.apache.thrift.protocol.TType.LIST) {
+                {
+                  org.apache.thrift.protocol.TList _list256 = iprot.readListBegin();
+                  struct.success = new java.util.ArrayList<java.util.List<java.lang.Double>>(_list256.size);
+                  @org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> _elem257;
+                  for (int _i258 = 0; _i258 < _list256.size; ++_i258)
+                  {
+                    {
+                      org.apache.thrift.protocol.TList _list259 = iprot.readListBegin();
+                      _elem257 = new java.util.ArrayList<java.lang.Double>(_list259.size);
+                      double _elem260;
+                      for (int _i261 = 0; _i261 < _list259.size; ++_i261)
+                      {
+                        _elem260 = iprot.readDouble();
+                        _elem257.add(_elem260);
+                      }
+                      iprot.readListEnd();
+                    }
+                    struct.success.add(_elem257);
+                  }
+                  iprot.readListEnd();
+                }
+                struct.setSuccessIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            default:
+              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+          }
+          iprot.readFieldEnd();
+        }
+        iprot.readStructEnd();
+
+        // check for required fields of primitive type, which can't be checked in the validate method
+        struct.validate();
+      }
+
+      public void write(org.apache.thrift.protocol.TProtocol oprot, multi_matriz_escalar_result struct) throws org.apache.thrift.TException {
+        struct.validate();
+
+        oprot.writeStructBegin(STRUCT_DESC);
+        if (struct.success != null) {
+          oprot.writeFieldBegin(SUCCESS_FIELD_DESC);
+          {
+            oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.LIST, struct.success.size()));
+            for (java.util.List<java.lang.Double> _iter262 : struct.success)
+            {
+              {
+                oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.DOUBLE, _iter262.size()));
+                for (double _iter263 : _iter262)
+                {
+                  oprot.writeDouble(_iter263);
+                }
+                oprot.writeListEnd();
+              }
+            }
+            oprot.writeListEnd();
+          }
+          oprot.writeFieldEnd();
+        }
+        oprot.writeFieldStop();
+        oprot.writeStructEnd();
+      }
+
+    }
+
+    private static class multi_matriz_escalar_resultTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public multi_matriz_escalar_resultTupleScheme getScheme() {
+        return new multi_matriz_escalar_resultTupleScheme();
+      }
+    }
+
+    private static class multi_matriz_escalar_resultTupleScheme extends org.apache.thrift.scheme.TupleScheme<multi_matriz_escalar_result> {
+
+      @Override
+      public void write(org.apache.thrift.protocol.TProtocol prot, multi_matriz_escalar_result struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet optionals = new java.util.BitSet();
+        if (struct.isSetSuccess()) {
+          optionals.set(0);
+        }
+        oprot.writeBitSet(optionals, 1);
+        if (struct.isSetSuccess()) {
+          {
+            oprot.writeI32(struct.success.size());
+            for (java.util.List<java.lang.Double> _iter264 : struct.success)
+            {
+              {
+                oprot.writeI32(_iter264.size());
+                for (double _iter265 : _iter264)
+                {
+                  oprot.writeDouble(_iter265);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      @Override
+      public void read(org.apache.thrift.protocol.TProtocol prot, multi_matriz_escalar_result struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet incoming = iprot.readBitSet(1);
+        if (incoming.get(0)) {
+          {
+            org.apache.thrift.protocol.TList _list266 = iprot.readListBegin(org.apache.thrift.protocol.TType.LIST);
+            struct.success = new java.util.ArrayList<java.util.List<java.lang.Double>>(_list266.size);
+            @org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> _elem267;
+            for (int _i268 = 0; _i268 < _list266.size; ++_i268)
+            {
+              {
+                org.apache.thrift.protocol.TList _list269 = iprot.readListBegin(org.apache.thrift.protocol.TType.DOUBLE);
+                _elem267 = new java.util.ArrayList<java.lang.Double>(_list269.size);
+                double _elem270;
+                for (int _i271 = 0; _i271 < _list269.size; ++_i271)
+                {
+                  _elem270 = iprot.readDouble();
+                  _elem267.add(_elem270);
+                }
+              }
+              struct.success.add(_elem267);
+            }
+          }
+          struct.setSuccessIsSet(true);
+        }
+      }
+    }
+
+    private static <S extends org.apache.thrift.scheme.IScheme> S scheme(org.apache.thrift.protocol.TProtocol proto) {
+      return (org.apache.thrift.scheme.StandardScheme.class.equals(proto.getScheme()) ? STANDARD_SCHEME_FACTORY : TUPLE_SCHEME_FACTORY).getScheme();
+    }
+  }
+
+  public static class division_matriz_escalar_args implements org.apache.thrift.TBase<division_matriz_escalar_args, division_matriz_escalar_args._Fields>, java.io.Serializable, Cloneable, Comparable<division_matriz_escalar_args>   {
+    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("division_matriz_escalar_args");
+
+    private static final org.apache.thrift.protocol.TField MATRIZ1_FIELD_DESC = new org.apache.thrift.protocol.TField("matriz1", org.apache.thrift.protocol.TType.LIST, (short)1);
+    private static final org.apache.thrift.protocol.TField ESCALAR_FIELD_DESC = new org.apache.thrift.protocol.TField("escalar", org.apache.thrift.protocol.TType.DOUBLE, (short)2);
+
+    private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new division_matriz_escalar_argsStandardSchemeFactory();
+    private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new division_matriz_escalar_argsTupleSchemeFactory();
+
+    public @org.apache.thrift.annotation.Nullable java.util.List<java.util.List<java.lang.Double>> matriz1; // required
+    public double escalar; // required
+
+    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+      MATRIZ1((short)1, "matriz1"),
+      ESCALAR((short)2, "escalar");
+
+      private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
+
+      static {
+        for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
+          byName.put(field.getFieldName(), field);
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, or null if its not found.
+       */
+      @org.apache.thrift.annotation.Nullable
+      public static _Fields findByThriftId(int fieldId) {
+        switch(fieldId) {
+          case 1: // MATRIZ1
+            return MATRIZ1;
+          case 2: // ESCALAR
+            return ESCALAR;
+          default:
+            return null;
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, throwing an exception
+       * if it is not found.
+       */
+      public static _Fields findByThriftIdOrThrow(int fieldId) {
+        _Fields fields = findByThriftId(fieldId);
+        if (fields == null) throw new java.lang.IllegalArgumentException("Field " + fieldId + " doesn't exist!");
+        return fields;
+      }
+
+      /**
+       * Find the _Fields constant that matches name, or null if its not found.
+       */
+      @org.apache.thrift.annotation.Nullable
+      public static _Fields findByName(java.lang.String name) {
+        return byName.get(name);
+      }
+
+      private final short _thriftId;
+      private final java.lang.String _fieldName;
+
+      _Fields(short thriftId, java.lang.String fieldName) {
+        _thriftId = thriftId;
+        _fieldName = fieldName;
+      }
+
+      public short getThriftFieldId() {
+        return _thriftId;
+      }
+
+      public java.lang.String getFieldName() {
+        return _fieldName;
+      }
+    }
+
+    // isset id assignments
+    private static final int __ESCALAR_ISSET_ID = 0;
+    private byte __isset_bitfield = 0;
+    public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    static {
+      java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
+      tmpMap.put(_Fields.MATRIZ1, new org.apache.thrift.meta_data.FieldMetaData("matriz1", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
+              new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
+                  new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE)))));
+      tmpMap.put(_Fields.ESCALAR, new org.apache.thrift.meta_data.FieldMetaData("escalar", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE)));
+      metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
+      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(division_matriz_escalar_args.class, metaDataMap);
+    }
+
+    public division_matriz_escalar_args() {
+    }
+
+    public division_matriz_escalar_args(
+      java.util.List<java.util.List<java.lang.Double>> matriz1,
+      double escalar)
+    {
+      this();
+      this.matriz1 = matriz1;
+      this.escalar = escalar;
+      setEscalarIsSet(true);
+    }
+
+    /**
+     * Performs a deep copy on <i>other</i>.
+     */
+    public division_matriz_escalar_args(division_matriz_escalar_args other) {
+      __isset_bitfield = other.__isset_bitfield;
+      if (other.isSetMatriz1()) {
+        java.util.List<java.util.List<java.lang.Double>> __this__matriz1 = new java.util.ArrayList<java.util.List<java.lang.Double>>(other.matriz1.size());
+        for (java.util.List<java.lang.Double> other_element : other.matriz1) {
+          java.util.List<java.lang.Double> __this__matriz1_copy = new java.util.ArrayList<java.lang.Double>(other_element);
+          __this__matriz1.add(__this__matriz1_copy);
+        }
+        this.matriz1 = __this__matriz1;
+      }
+      this.escalar = other.escalar;
+    }
+
+    public division_matriz_escalar_args deepCopy() {
+      return new division_matriz_escalar_args(this);
+    }
+
+    @Override
+    public void clear() {
+      this.matriz1 = null;
+      setEscalarIsSet(false);
+      this.escalar = 0.0;
+    }
+
+    public int getMatriz1Size() {
+      return (this.matriz1 == null) ? 0 : this.matriz1.size();
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.Iterator<java.util.List<java.lang.Double>> getMatriz1Iterator() {
+      return (this.matriz1 == null) ? null : this.matriz1.iterator();
+    }
+
+    public void addToMatriz1(java.util.List<java.lang.Double> elem) {
+      if (this.matriz1 == null) {
+        this.matriz1 = new java.util.ArrayList<java.util.List<java.lang.Double>>();
+      }
+      this.matriz1.add(elem);
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.List<java.util.List<java.lang.Double>> getMatriz1() {
+      return this.matriz1;
+    }
+
+    public division_matriz_escalar_args setMatriz1(@org.apache.thrift.annotation.Nullable java.util.List<java.util.List<java.lang.Double>> matriz1) {
+      this.matriz1 = matriz1;
+      return this;
+    }
+
+    public void unsetMatriz1() {
+      this.matriz1 = null;
+    }
+
+    /** Returns true if field matriz1 is set (has been assigned a value) and false otherwise */
+    public boolean isSetMatriz1() {
+      return this.matriz1 != null;
+    }
+
+    public void setMatriz1IsSet(boolean value) {
+      if (!value) {
+        this.matriz1 = null;
+      }
+    }
+
+    public double getEscalar() {
+      return this.escalar;
+    }
+
+    public division_matriz_escalar_args setEscalar(double escalar) {
+      this.escalar = escalar;
+      setEscalarIsSet(true);
+      return this;
+    }
+
+    public void unsetEscalar() {
+      __isset_bitfield = org.apache.thrift.EncodingUtils.clearBit(__isset_bitfield, __ESCALAR_ISSET_ID);
+    }
+
+    /** Returns true if field escalar is set (has been assigned a value) and false otherwise */
+    public boolean isSetEscalar() {
+      return org.apache.thrift.EncodingUtils.testBit(__isset_bitfield, __ESCALAR_ISSET_ID);
+    }
+
+    public void setEscalarIsSet(boolean value) {
+      __isset_bitfield = org.apache.thrift.EncodingUtils.setBit(__isset_bitfield, __ESCALAR_ISSET_ID, value);
+    }
+
+    public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable java.lang.Object value) {
+      switch (field) {
+      case MATRIZ1:
+        if (value == null) {
+          unsetMatriz1();
+        } else {
+          setMatriz1((java.util.List<java.util.List<java.lang.Double>>)value);
+        }
+        break;
+
+      case ESCALAR:
+        if (value == null) {
+          unsetEscalar();
+        } else {
+          setEscalar((java.lang.Double)value);
+        }
+        break;
+
+      }
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.lang.Object getFieldValue(_Fields field) {
+      switch (field) {
+      case MATRIZ1:
+        return getMatriz1();
+
+      case ESCALAR:
+        return getEscalar();
+
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    public boolean isSet(_Fields field) {
+      if (field == null) {
+        throw new java.lang.IllegalArgumentException();
+      }
+
+      switch (field) {
+      case MATRIZ1:
+        return isSetMatriz1();
+      case ESCALAR:
+        return isSetEscalar();
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    @Override
+    public boolean equals(java.lang.Object that) {
+      if (that instanceof division_matriz_escalar_args)
+        return this.equals((division_matriz_escalar_args)that);
+      return false;
+    }
+
+    public boolean equals(division_matriz_escalar_args that) {
+      if (that == null)
+        return false;
+      if (this == that)
+        return true;
+
+      boolean this_present_matriz1 = true && this.isSetMatriz1();
+      boolean that_present_matriz1 = true && that.isSetMatriz1();
+      if (this_present_matriz1 || that_present_matriz1) {
+        if (!(this_present_matriz1 && that_present_matriz1))
+          return false;
+        if (!this.matriz1.equals(that.matriz1))
+          return false;
+      }
+
+      boolean this_present_escalar = true;
+      boolean that_present_escalar = true;
+      if (this_present_escalar || that_present_escalar) {
+        if (!(this_present_escalar && that_present_escalar))
+          return false;
+        if (this.escalar != that.escalar)
+          return false;
+      }
+
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      int hashCode = 1;
+
+      hashCode = hashCode * 8191 + ((isSetMatriz1()) ? 131071 : 524287);
+      if (isSetMatriz1())
+        hashCode = hashCode * 8191 + matriz1.hashCode();
+
+      hashCode = hashCode * 8191 + org.apache.thrift.TBaseHelper.hashCode(escalar);
+
+      return hashCode;
+    }
+
+    @Override
+    public int compareTo(division_matriz_escalar_args other) {
+      if (!getClass().equals(other.getClass())) {
+        return getClass().getName().compareTo(other.getClass().getName());
+      }
+
+      int lastComparison = 0;
+
+      lastComparison = java.lang.Boolean.compare(isSetMatriz1(), other.isSetMatriz1());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetMatriz1()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.matriz1, other.matriz1);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      lastComparison = java.lang.Boolean.compare(isSetEscalar(), other.isSetEscalar());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetEscalar()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.escalar, other.escalar);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      return 0;
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public _Fields fieldForId(int fieldId) {
+      return _Fields.findByThriftId(fieldId);
+    }
+
+    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
+      scheme(iprot).read(iprot, this);
+    }
+
+    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+      scheme(oprot).write(oprot, this);
+    }
+
+    @Override
+    public java.lang.String toString() {
+      java.lang.StringBuilder sb = new java.lang.StringBuilder("division_matriz_escalar_args(");
+      boolean first = true;
+
+      sb.append("matriz1:");
+      if (this.matriz1 == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.matriz1);
+      }
+      first = false;
+      if (!first) sb.append(", ");
+      sb.append("escalar:");
+      sb.append(this.escalar);
+      first = false;
+      sb.append(")");
+      return sb.toString();
+    }
+
+    public void validate() throws org.apache.thrift.TException {
+      // check for required fields
+      // check for sub-struct validity
+    }
+
+    private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
+      try {
+        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
+      try {
+        // it doesn't seem like you should have to do this, but java serialization is wacky, and doesn't call the default constructor.
+        __isset_bitfield = 0;
+        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private static class division_matriz_escalar_argsStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public division_matriz_escalar_argsStandardScheme getScheme() {
+        return new division_matriz_escalar_argsStandardScheme();
+      }
+    }
+
+    private static class division_matriz_escalar_argsStandardScheme extends org.apache.thrift.scheme.StandardScheme<division_matriz_escalar_args> {
+
+      public void read(org.apache.thrift.protocol.TProtocol iprot, division_matriz_escalar_args struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TField schemeField;
+        iprot.readStructBegin();
+        while (true)
+        {
+          schemeField = iprot.readFieldBegin();
+          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) { 
+            break;
+          }
+          switch (schemeField.id) {
+            case 1: // MATRIZ1
+              if (schemeField.type == org.apache.thrift.protocol.TType.LIST) {
+                {
+                  org.apache.thrift.protocol.TList _list272 = iprot.readListBegin();
+                  struct.matriz1 = new java.util.ArrayList<java.util.List<java.lang.Double>>(_list272.size);
+                  @org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> _elem273;
+                  for (int _i274 = 0; _i274 < _list272.size; ++_i274)
+                  {
+                    {
+                      org.apache.thrift.protocol.TList _list275 = iprot.readListBegin();
+                      _elem273 = new java.util.ArrayList<java.lang.Double>(_list275.size);
+                      double _elem276;
+                      for (int _i277 = 0; _i277 < _list275.size; ++_i277)
+                      {
+                        _elem276 = iprot.readDouble();
+                        _elem273.add(_elem276);
+                      }
+                      iprot.readListEnd();
+                    }
+                    struct.matriz1.add(_elem273);
+                  }
+                  iprot.readListEnd();
+                }
+                struct.setMatriz1IsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            case 2: // ESCALAR
+              if (schemeField.type == org.apache.thrift.protocol.TType.DOUBLE) {
+                struct.escalar = iprot.readDouble();
+                struct.setEscalarIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            default:
+              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+          }
+          iprot.readFieldEnd();
+        }
+        iprot.readStructEnd();
+
+        // check for required fields of primitive type, which can't be checked in the validate method
+        struct.validate();
+      }
+
+      public void write(org.apache.thrift.protocol.TProtocol oprot, division_matriz_escalar_args struct) throws org.apache.thrift.TException {
+        struct.validate();
+
+        oprot.writeStructBegin(STRUCT_DESC);
+        if (struct.matriz1 != null) {
+          oprot.writeFieldBegin(MATRIZ1_FIELD_DESC);
+          {
+            oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.LIST, struct.matriz1.size()));
+            for (java.util.List<java.lang.Double> _iter278 : struct.matriz1)
+            {
+              {
+                oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.DOUBLE, _iter278.size()));
+                for (double _iter279 : _iter278)
+                {
+                  oprot.writeDouble(_iter279);
+                }
+                oprot.writeListEnd();
+              }
+            }
+            oprot.writeListEnd();
+          }
+          oprot.writeFieldEnd();
+        }
+        oprot.writeFieldBegin(ESCALAR_FIELD_DESC);
+        oprot.writeDouble(struct.escalar);
+        oprot.writeFieldEnd();
+        oprot.writeFieldStop();
+        oprot.writeStructEnd();
+      }
+
+    }
+
+    private static class division_matriz_escalar_argsTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public division_matriz_escalar_argsTupleScheme getScheme() {
+        return new division_matriz_escalar_argsTupleScheme();
+      }
+    }
+
+    private static class division_matriz_escalar_argsTupleScheme extends org.apache.thrift.scheme.TupleScheme<division_matriz_escalar_args> {
+
+      @Override
+      public void write(org.apache.thrift.protocol.TProtocol prot, division_matriz_escalar_args struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet optionals = new java.util.BitSet();
+        if (struct.isSetMatriz1()) {
+          optionals.set(0);
+        }
+        if (struct.isSetEscalar()) {
+          optionals.set(1);
+        }
+        oprot.writeBitSet(optionals, 2);
+        if (struct.isSetMatriz1()) {
+          {
+            oprot.writeI32(struct.matriz1.size());
+            for (java.util.List<java.lang.Double> _iter280 : struct.matriz1)
+            {
+              {
+                oprot.writeI32(_iter280.size());
+                for (double _iter281 : _iter280)
+                {
+                  oprot.writeDouble(_iter281);
+                }
+              }
+            }
+          }
+        }
+        if (struct.isSetEscalar()) {
+          oprot.writeDouble(struct.escalar);
+        }
+      }
+
+      @Override
+      public void read(org.apache.thrift.protocol.TProtocol prot, division_matriz_escalar_args struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet incoming = iprot.readBitSet(2);
+        if (incoming.get(0)) {
+          {
+            org.apache.thrift.protocol.TList _list282 = iprot.readListBegin(org.apache.thrift.protocol.TType.LIST);
+            struct.matriz1 = new java.util.ArrayList<java.util.List<java.lang.Double>>(_list282.size);
+            @org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> _elem283;
+            for (int _i284 = 0; _i284 < _list282.size; ++_i284)
+            {
+              {
+                org.apache.thrift.protocol.TList _list285 = iprot.readListBegin(org.apache.thrift.protocol.TType.DOUBLE);
+                _elem283 = new java.util.ArrayList<java.lang.Double>(_list285.size);
+                double _elem286;
+                for (int _i287 = 0; _i287 < _list285.size; ++_i287)
+                {
+                  _elem286 = iprot.readDouble();
+                  _elem283.add(_elem286);
+                }
+              }
+              struct.matriz1.add(_elem283);
+            }
+          }
+          struct.setMatriz1IsSet(true);
+        }
+        if (incoming.get(1)) {
+          struct.escalar = iprot.readDouble();
+          struct.setEscalarIsSet(true);
+        }
+      }
+    }
+
+    private static <S extends org.apache.thrift.scheme.IScheme> S scheme(org.apache.thrift.protocol.TProtocol proto) {
+      return (org.apache.thrift.scheme.StandardScheme.class.equals(proto.getScheme()) ? STANDARD_SCHEME_FACTORY : TUPLE_SCHEME_FACTORY).getScheme();
+    }
+  }
+
+  public static class division_matriz_escalar_result implements org.apache.thrift.TBase<division_matriz_escalar_result, division_matriz_escalar_result._Fields>, java.io.Serializable, Cloneable, Comparable<division_matriz_escalar_result>   {
+    private static final org.apache.thrift.protocol.TStruct STRUCT_DESC = new org.apache.thrift.protocol.TStruct("division_matriz_escalar_result");
+
+    private static final org.apache.thrift.protocol.TField SUCCESS_FIELD_DESC = new org.apache.thrift.protocol.TField("success", org.apache.thrift.protocol.TType.LIST, (short)0);
+
+    private static final org.apache.thrift.scheme.SchemeFactory STANDARD_SCHEME_FACTORY = new division_matriz_escalar_resultStandardSchemeFactory();
+    private static final org.apache.thrift.scheme.SchemeFactory TUPLE_SCHEME_FACTORY = new division_matriz_escalar_resultTupleSchemeFactory();
+
+    public @org.apache.thrift.annotation.Nullable java.util.List<java.util.List<java.lang.Double>> success; // required
+
+    /** The set of fields this struct contains, along with convenience methods for finding and manipulating them. */
+    public enum _Fields implements org.apache.thrift.TFieldIdEnum {
+      SUCCESS((short)0, "success");
+
+      private static final java.util.Map<java.lang.String, _Fields> byName = new java.util.HashMap<java.lang.String, _Fields>();
+
+      static {
+        for (_Fields field : java.util.EnumSet.allOf(_Fields.class)) {
+          byName.put(field.getFieldName(), field);
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, or null if its not found.
+       */
+      @org.apache.thrift.annotation.Nullable
+      public static _Fields findByThriftId(int fieldId) {
+        switch(fieldId) {
+          case 0: // SUCCESS
+            return SUCCESS;
+          default:
+            return null;
+        }
+      }
+
+      /**
+       * Find the _Fields constant that matches fieldId, throwing an exception
+       * if it is not found.
+       */
+      public static _Fields findByThriftIdOrThrow(int fieldId) {
+        _Fields fields = findByThriftId(fieldId);
+        if (fields == null) throw new java.lang.IllegalArgumentException("Field " + fieldId + " doesn't exist!");
+        return fields;
+      }
+
+      /**
+       * Find the _Fields constant that matches name, or null if its not found.
+       */
+      @org.apache.thrift.annotation.Nullable
+      public static _Fields findByName(java.lang.String name) {
+        return byName.get(name);
+      }
+
+      private final short _thriftId;
+      private final java.lang.String _fieldName;
+
+      _Fields(short thriftId, java.lang.String fieldName) {
+        _thriftId = thriftId;
+        _fieldName = fieldName;
+      }
+
+      public short getThriftFieldId() {
+        return _thriftId;
+      }
+
+      public java.lang.String getFieldName() {
+        return _fieldName;
+      }
+    }
+
+    // isset id assignments
+    public static final java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> metaDataMap;
+    static {
+      java.util.Map<_Fields, org.apache.thrift.meta_data.FieldMetaData> tmpMap = new java.util.EnumMap<_Fields, org.apache.thrift.meta_data.FieldMetaData>(_Fields.class);
+      tmpMap.put(_Fields.SUCCESS, new org.apache.thrift.meta_data.FieldMetaData("success", org.apache.thrift.TFieldRequirementType.DEFAULT, 
+          new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
+              new org.apache.thrift.meta_data.ListMetaData(org.apache.thrift.protocol.TType.LIST, 
+                  new org.apache.thrift.meta_data.FieldValueMetaData(org.apache.thrift.protocol.TType.DOUBLE)))));
+      metaDataMap = java.util.Collections.unmodifiableMap(tmpMap);
+      org.apache.thrift.meta_data.FieldMetaData.addStructMetaDataMap(division_matriz_escalar_result.class, metaDataMap);
+    }
+
+    public division_matriz_escalar_result() {
+    }
+
+    public division_matriz_escalar_result(
+      java.util.List<java.util.List<java.lang.Double>> success)
+    {
+      this();
+      this.success = success;
+    }
+
+    /**
+     * Performs a deep copy on <i>other</i>.
+     */
+    public division_matriz_escalar_result(division_matriz_escalar_result other) {
+      if (other.isSetSuccess()) {
+        java.util.List<java.util.List<java.lang.Double>> __this__success = new java.util.ArrayList<java.util.List<java.lang.Double>>(other.success.size());
+        for (java.util.List<java.lang.Double> other_element : other.success) {
+          java.util.List<java.lang.Double> __this__success_copy = new java.util.ArrayList<java.lang.Double>(other_element);
+          __this__success.add(__this__success_copy);
+        }
+        this.success = __this__success;
+      }
+    }
+
+    public division_matriz_escalar_result deepCopy() {
+      return new division_matriz_escalar_result(this);
+    }
+
+    @Override
+    public void clear() {
+      this.success = null;
+    }
+
+    public int getSuccessSize() {
+      return (this.success == null) ? 0 : this.success.size();
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.Iterator<java.util.List<java.lang.Double>> getSuccessIterator() {
+      return (this.success == null) ? null : this.success.iterator();
+    }
+
+    public void addToSuccess(java.util.List<java.lang.Double> elem) {
+      if (this.success == null) {
+        this.success = new java.util.ArrayList<java.util.List<java.lang.Double>>();
+      }
+      this.success.add(elem);
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.util.List<java.util.List<java.lang.Double>> getSuccess() {
+      return this.success;
+    }
+
+    public division_matriz_escalar_result setSuccess(@org.apache.thrift.annotation.Nullable java.util.List<java.util.List<java.lang.Double>> success) {
+      this.success = success;
+      return this;
+    }
+
+    public void unsetSuccess() {
+      this.success = null;
+    }
+
+    /** Returns true if field success is set (has been assigned a value) and false otherwise */
+    public boolean isSetSuccess() {
+      return this.success != null;
+    }
+
+    public void setSuccessIsSet(boolean value) {
+      if (!value) {
+        this.success = null;
+      }
+    }
+
+    public void setFieldValue(_Fields field, @org.apache.thrift.annotation.Nullable java.lang.Object value) {
+      switch (field) {
+      case SUCCESS:
+        if (value == null) {
+          unsetSuccess();
+        } else {
+          setSuccess((java.util.List<java.util.List<java.lang.Double>>)value);
+        }
+        break;
+
+      }
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public java.lang.Object getFieldValue(_Fields field) {
+      switch (field) {
+      case SUCCESS:
+        return getSuccess();
+
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    /** Returns true if field corresponding to fieldID is set (has been assigned a value) and false otherwise */
+    public boolean isSet(_Fields field) {
+      if (field == null) {
+        throw new java.lang.IllegalArgumentException();
+      }
+
+      switch (field) {
+      case SUCCESS:
+        return isSetSuccess();
+      }
+      throw new java.lang.IllegalStateException();
+    }
+
+    @Override
+    public boolean equals(java.lang.Object that) {
+      if (that instanceof division_matriz_escalar_result)
+        return this.equals((division_matriz_escalar_result)that);
+      return false;
+    }
+
+    public boolean equals(division_matriz_escalar_result that) {
+      if (that == null)
+        return false;
+      if (this == that)
+        return true;
+
+      boolean this_present_success = true && this.isSetSuccess();
+      boolean that_present_success = true && that.isSetSuccess();
+      if (this_present_success || that_present_success) {
+        if (!(this_present_success && that_present_success))
+          return false;
+        if (!this.success.equals(that.success))
+          return false;
+      }
+
+      return true;
+    }
+
+    @Override
+    public int hashCode() {
+      int hashCode = 1;
+
+      hashCode = hashCode * 8191 + ((isSetSuccess()) ? 131071 : 524287);
+      if (isSetSuccess())
+        hashCode = hashCode * 8191 + success.hashCode();
+
+      return hashCode;
+    }
+
+    @Override
+    public int compareTo(division_matriz_escalar_result other) {
+      if (!getClass().equals(other.getClass())) {
+        return getClass().getName().compareTo(other.getClass().getName());
+      }
+
+      int lastComparison = 0;
+
+      lastComparison = java.lang.Boolean.compare(isSetSuccess(), other.isSetSuccess());
+      if (lastComparison != 0) {
+        return lastComparison;
+      }
+      if (isSetSuccess()) {
+        lastComparison = org.apache.thrift.TBaseHelper.compareTo(this.success, other.success);
+        if (lastComparison != 0) {
+          return lastComparison;
+        }
+      }
+      return 0;
+    }
+
+    @org.apache.thrift.annotation.Nullable
+    public _Fields fieldForId(int fieldId) {
+      return _Fields.findByThriftId(fieldId);
+    }
+
+    public void read(org.apache.thrift.protocol.TProtocol iprot) throws org.apache.thrift.TException {
+      scheme(iprot).read(iprot, this);
+    }
+
+    public void write(org.apache.thrift.protocol.TProtocol oprot) throws org.apache.thrift.TException {
+      scheme(oprot).write(oprot, this);
+      }
+
+    @Override
+    public java.lang.String toString() {
+      java.lang.StringBuilder sb = new java.lang.StringBuilder("division_matriz_escalar_result(");
+      boolean first = true;
+
+      sb.append("success:");
+      if (this.success == null) {
+        sb.append("null");
+      } else {
+        sb.append(this.success);
+      }
+      first = false;
+      sb.append(")");
+      return sb.toString();
+    }
+
+    public void validate() throws org.apache.thrift.TException {
+      // check for required fields
+      // check for sub-struct validity
+    }
+
+    private void writeObject(java.io.ObjectOutputStream out) throws java.io.IOException {
+      try {
+        write(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(out)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private void readObject(java.io.ObjectInputStream in) throws java.io.IOException, java.lang.ClassNotFoundException {
+      try {
+        read(new org.apache.thrift.protocol.TCompactProtocol(new org.apache.thrift.transport.TIOStreamTransport(in)));
+      } catch (org.apache.thrift.TException te) {
+        throw new java.io.IOException(te);
+      }
+    }
+
+    private static class division_matriz_escalar_resultStandardSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public division_matriz_escalar_resultStandardScheme getScheme() {
+        return new division_matriz_escalar_resultStandardScheme();
+      }
+    }
+
+    private static class division_matriz_escalar_resultStandardScheme extends org.apache.thrift.scheme.StandardScheme<division_matriz_escalar_result> {
+
+      public void read(org.apache.thrift.protocol.TProtocol iprot, division_matriz_escalar_result struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TField schemeField;
+        iprot.readStructBegin();
+        while (true)
+        {
+          schemeField = iprot.readFieldBegin();
+          if (schemeField.type == org.apache.thrift.protocol.TType.STOP) { 
+            break;
+          }
+          switch (schemeField.id) {
+            case 0: // SUCCESS
+              if (schemeField.type == org.apache.thrift.protocol.TType.LIST) {
+                {
+                  org.apache.thrift.protocol.TList _list288 = iprot.readListBegin();
+                  struct.success = new java.util.ArrayList<java.util.List<java.lang.Double>>(_list288.size);
+                  @org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> _elem289;
+                  for (int _i290 = 0; _i290 < _list288.size; ++_i290)
+                  {
+                    {
+                      org.apache.thrift.protocol.TList _list291 = iprot.readListBegin();
+                      _elem289 = new java.util.ArrayList<java.lang.Double>(_list291.size);
+                      double _elem292;
+                      for (int _i293 = 0; _i293 < _list291.size; ++_i293)
+                      {
+                        _elem292 = iprot.readDouble();
+                        _elem289.add(_elem292);
+                      }
+                      iprot.readListEnd();
+                    }
+                    struct.success.add(_elem289);
+                  }
+                  iprot.readListEnd();
+                }
+                struct.setSuccessIsSet(true);
+              } else { 
+                org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+              }
+              break;
+            default:
+              org.apache.thrift.protocol.TProtocolUtil.skip(iprot, schemeField.type);
+          }
+          iprot.readFieldEnd();
+        }
+        iprot.readStructEnd();
+
+        // check for required fields of primitive type, which can't be checked in the validate method
+        struct.validate();
+      }
+
+      public void write(org.apache.thrift.protocol.TProtocol oprot, division_matriz_escalar_result struct) throws org.apache.thrift.TException {
+        struct.validate();
+
+        oprot.writeStructBegin(STRUCT_DESC);
+        if (struct.success != null) {
+          oprot.writeFieldBegin(SUCCESS_FIELD_DESC);
+          {
+            oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.LIST, struct.success.size()));
+            for (java.util.List<java.lang.Double> _iter294 : struct.success)
+            {
+              {
+                oprot.writeListBegin(new org.apache.thrift.protocol.TList(org.apache.thrift.protocol.TType.DOUBLE, _iter294.size()));
+                for (double _iter295 : _iter294)
+                {
+                  oprot.writeDouble(_iter295);
+                }
+                oprot.writeListEnd();
+              }
+            }
+            oprot.writeListEnd();
+          }
+          oprot.writeFieldEnd();
+        }
+        oprot.writeFieldStop();
+        oprot.writeStructEnd();
+      }
+
+    }
+
+    private static class division_matriz_escalar_resultTupleSchemeFactory implements org.apache.thrift.scheme.SchemeFactory {
+      public division_matriz_escalar_resultTupleScheme getScheme() {
+        return new division_matriz_escalar_resultTupleScheme();
+      }
+    }
+
+    private static class division_matriz_escalar_resultTupleScheme extends org.apache.thrift.scheme.TupleScheme<division_matriz_escalar_result> {
+
+      @Override
+      public void write(org.apache.thrift.protocol.TProtocol prot, division_matriz_escalar_result struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol oprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet optionals = new java.util.BitSet();
+        if (struct.isSetSuccess()) {
+          optionals.set(0);
+        }
+        oprot.writeBitSet(optionals, 1);
+        if (struct.isSetSuccess()) {
+          {
+            oprot.writeI32(struct.success.size());
+            for (java.util.List<java.lang.Double> _iter296 : struct.success)
+            {
+              {
+                oprot.writeI32(_iter296.size());
+                for (double _iter297 : _iter296)
+                {
+                  oprot.writeDouble(_iter297);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      @Override
+      public void read(org.apache.thrift.protocol.TProtocol prot, division_matriz_escalar_result struct) throws org.apache.thrift.TException {
+        org.apache.thrift.protocol.TTupleProtocol iprot = (org.apache.thrift.protocol.TTupleProtocol) prot;
+        java.util.BitSet incoming = iprot.readBitSet(1);
+        if (incoming.get(0)) {
+          {
+            org.apache.thrift.protocol.TList _list298 = iprot.readListBegin(org.apache.thrift.protocol.TType.LIST);
+            struct.success = new java.util.ArrayList<java.util.List<java.lang.Double>>(_list298.size);
+            @org.apache.thrift.annotation.Nullable java.util.List<java.lang.Double> _elem299;
+            for (int _i300 = 0; _i300 < _list298.size; ++_i300)
+            {
+              {
+                org.apache.thrift.protocol.TList _list301 = iprot.readListBegin(org.apache.thrift.protocol.TType.DOUBLE);
+                _elem299 = new java.util.ArrayList<java.lang.Double>(_list301.size);
+                double _elem302;
+                for (int _i303 = 0; _i303 < _list301.size; ++_i303)
+                {
+                  _elem302 = iprot.readDouble();
+                  _elem299.add(_elem302);
+                }
+              }
+              struct.success.add(_elem299);
+            }
+          }
           struct.setSuccessIsSet(true);
         }
       }

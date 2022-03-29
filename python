@@ -1,0 +1,183 @@
+def operacionesSimples():
+        resultado = 0
+        continuo = 's'
+        primeravez = 1
+        while (continuo != 'n'):
+            if (primeravez != 1):
+                operando1 = resultado
+                print(operando1)
+
+            if (primeravez):
+                print("Introduzca la operacion (ej: '4 + 5'):\n");
+                operando1 = int(input())
+                primeravez = 0
+
+            operacion =input()
+
+            operando2 = int(input())
+            if (operacion == "+"):
+                resultado = client.suma(operando1, operando2)
+            elif (operacion == "-"):
+                resultado = client.resta(operando1, operando2)
+            elif (operacion == "*"):
+                resultado = client.multiplicacion(operando1, operando2)
+            elif (operacion == "/"):
+                resultado = client.division(operando1, operando2)
+
+            print(f"{operando1} {operacion} {operando2} = {resultado}")
+
+            print("\n¿Desea continuar?: ('s' para si | 'n' para no)\n");
+            continuo = input()
+            while(continuo != 's' and continuo != 'n'):
+                print("\n¿Desea continuar?: ('s' para si | 'n' para no)\n");
+                continuo = input()
+
+
+def operacionesVectores():
+	print("Introduzca la operación que desea realizar:");
+	printf("> Suma: +");
+	printf("> Resta: -");
+	printf("> Producto escalar: *");
+	printf("> Multiplicación por escalar: m");
+	printf("> División por escalar: d");
+	operacion = input()
+	while ((operacion != "+") and (operacion != "-") and (operacion != "*") and (operacion != "m") and (operacion != "d")):
+		print("Introduzca una operacion correcta: ")
+		operacion = input()
+		
+	if (operacion != "m" && operacion != "d"):
+		print("Introduzca el tamaño de los vectores:");
+	else:
+		print("Introduzca el tamaño del vector:");
+
+	tam = input();
+	while (tam <= 0):
+		print("Tamaño incorrecto, debe ser mayor que 0. Vuelva a intentarlo")
+		tam = input()
+
+	if(operacion != 'm' && operacion != 'd'):
+		print("Introduzca los elementos del primer vector:");
+	else:
+		print("Introduzca los elementos del vector:\n");
+
+	for (int k = 0; k < tam; k++):
+		vector1[k] = input()
+
+
+	if (operacion != 'm' && operacion != 'd'):
+		printf("Introduzca los elementos del segundo vector:\n");
+		for (int k = 0; k < tam; k++):
+			vector2[k] = input()
+
+	else:
+		printf("Introduzca un número: \n");
+		escalar = input()
+
+
+	if (operacion == "+"):
+		resultado = clnt.suma_vectores(vector1, vector2);
+	elif(operacion == "-"):
+		resultado = clnt.resta_vectores(vector1, vector2);
+	elif(operacion == "*"):
+		resultado = clnt.producto_escalar(vector1, vector2);
+	elif(operacion == "m"):
+		resultado = clnt.multi_vector_escalar(vector1, escalar);
+	elif(operacion == "d"):
+		resultado = clnt.division_vector_escalar(vector1, escalar);
+	}
+
+
+
+operacionesMatrices(){
+	print("Introduzca la operación que desea realizar:");
+	printf("> Suma: +");
+	printf("> Resta: -");
+	printf("> Producto: *");
+	printf("> Multiplicación por escalar: m");
+	printf("> División por escalar: d");
+	operacion = input()
+	while ((operacion != "+") and (operacion != "-") and (operacion != "*") and (operacion != "m") and (operacion != "d")):
+		print("Introduzca una operacion correcta: ")
+		operacion = input()
+	
+	if (operacion == "+" && operacion == "-"):
+		prinT("Introduzca el tamaño por filas de las matrices:");
+	else if (operacion == "*"):
+		print("Introduzca el tamaño por filas de la primera matriz:");
+	else:
+		print("Introduzca el tamaño por filas de la matriz:");
+		
+	tamfilas1 = int(input());
+	while (tamfilas1 <= 0):
+		print("Tamaño incorrecto, debe ser mayor que 0. Vuelva a intentarlo")
+		tamfilas1 = int(input());
+
+	if (operacion == "+" && operacion == "-"):
+		print("Introduzca el tamaño por columnas de las matrices:");
+	else if (operacion == "*"):
+		print("Introduzca el tamaño por columnas de la primera matriz:");
+	else:
+		print("Introduzca el tamaño por columnas de la matriz:");
+
+	tamcolumnas1 = int(input())
+	while (tamcolumnas1 <= 0):
+		print("Tamaño incorrecto, debe ser mayor que 0. Vuelva a intentarlo")
+		tamcolumnas1 = int(input())
+
+	if (operacion == "*"):
+		printf("Introduzca el tamaño por filas de la segunda matriz:");
+		tamfilas2 = int(input());
+		while (tamfilas2 <= 0):
+			print("Tamaño incorrecto, debe ser mayor que 0. Vuelva a intentarlo")
+			tamfilas2 = int(input());
+		printf("Introduzca el tamaño por columnas de la segunda matriz:");
+		tamcolumnas2 = int(input())
+		while (tamcolumnas2 <= 0):
+			print("Tamaño incorrecto, debe ser mayor que 0. Vuelva a intentarlo")
+			tamcolumnas2 = int(input())
+	elif (operacion == "+" || operacion == "-"):
+		tamfilas2 = tamfilas1
+		tamcolumnas2 = tamcolumnas1
+
+	if (operacion != "m" && operacion != "d"):
+		print("Introduzca los elementos de la primera matriz:");
+	else:
+		print("Introduzca los elementos de la matriz:\n");
+		
+	print("(Fila por fila)");
+	for (int f = 0; f < tamfilas1; f++):
+		for (int c = 0; c < tamcolumnas1; c++):
+			matriz1[f][c] = double(input())
+
+
+	if (operacion == "*" or operacion == "+" or operacion == "-"):
+		printf("Introduzca los elementos de la segunda matriz:");
+		printf("(Fila por fila)");
+
+		for (int f = 0; f < tamfilas2; f++):
+			for (int c = 0; c < tamcolumnas2; c++):
+				matriz2[f][c] = double(input())
+
+	elif(operacion == "m" or operacion == "d"):
+		printf("Introduzca un número: \n");
+		escalar = double(input())
+
+	if(operacion=="+"):
+		resultado = suma_matrices(matriz1, matriz2);
+	elif(operacion=="-"):
+		resultado = resta_matrices(matriz1, matriz2);
+	elif(operacion=="*"):
+		resultado = multiplicacion_matrices(matriz1, matriz2);
+	elif(operacion=="m"):
+		resultado = multiplicacion_matriz_escalar(matriz1, escalar);
+	elif(operacion=="d"):
+		resultado = division_matriz_escalar(matriz1, escalar);
+
+
+
+
+
+
+
+operacionesSimples()
+operacionesVectores()
