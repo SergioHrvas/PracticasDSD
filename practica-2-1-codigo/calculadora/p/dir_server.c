@@ -170,23 +170,35 @@ resta_matrices_1_svc(matrices arg1,  struct svc_req *rqstp)
 
 tipo_matriz *
 producto_matrices_1_svc(matrices arg1,  struct svc_req *rqstp)
-{
-	static tipo_matriz  *result_3;
+{	
+	static tipo_matriz  result;
+	tipo_matriz_ult * result_3;
 	CLIENT * clnt = clnt_create ("localhost", DIRPROG_ULT, DIRVER, "udp");
 	if (clnt == NULL) {
 		clnt_pcreateerror ("localhost");
 		exit (1);
 	}
-	result_3 = producto_matrices_ult_1(arg1, clnt);
-	if (result_3 == (tipo_matriz *) NULL) {
-		clnt_perror (clnt, "call failed");
+	static matrices_ult mu;
+	mu.v1.v1_len = arg1.v1.v1_len;
+	mu.v2.v2_len = arg1.v2.v2_len;
+	mu.v1.v1_val = arg1.v1.v1_val;
+	mu.v2.v2_val = arg1.v2.v2_val;
+	mu.v1_c = arg1.v1_c;
+	mu.v1_f = arg1.v1_f;
+	mu.v2_c = arg1.v2_c;
+	mu.v2_f = arg1.v2_f;
+	result_3 = producto_matrices_ult_1(mu, clnt);
+
+	if (result_3 == (tipo_matriz_ult *) NULL) {
+		clnt_perror (clnt, "call faisdled");
 	}
+	result.tipo_matriz_u.m.v1.v1_len = result_3->tipo_matriz_ult_u.m.v1.v1_len;
+	result.tipo_matriz_u.m.v1.v1_val = result_3->tipo_matriz_ult_u.m.v1.v1_val;
+	result.tipo_matriz_u.m.v1_c = result_3->tipo_matriz_ult_u.m.v1_c;
+	result.tipo_matriz_u.m.v1_f = result_3->tipo_matriz_ult_u.m.v1_f;
 
-	/*
-	 * insert server code here
-	 */
-
-	return result_3;
+	
+	return & result;
 }
 tipo_matriz *
 multi_matriz_escalar_1_svc(matrizyescalar arg1,  struct svc_req *rqstp)

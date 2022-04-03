@@ -18,6 +18,18 @@ xdr_operacion (XDR *xdrs, operacion *objp)
 }
 
 bool_t
+xdr_operacion_2 (XDR *xdrs, operacion_2 *objp)
+{
+	register int32_t *buf;
+
+	 if (!xdr_float (xdrs, &objp->firstparam))
+		 return FALSE;
+	 if (!xdr_int (xdrs, &objp->secondparam))
+		 return FALSE;
+	return TRUE;
+}
+
+bool_t
 xdr_vectores (XDR *xdrs, vectores *objp)
 {
 	register int32_t *buf;
@@ -40,6 +52,30 @@ xdr_vectoryescalar (XDR *xdrs, vectoryescalar *objp)
 		sizeof (float), (xdrproc_t) xdr_float))
 		 return FALSE;
 	 if (!xdr_float (xdrs, &objp->num))
+		 return FALSE;
+	return TRUE;
+}
+
+bool_t
+xdr_fraccion (XDR *xdrs, fraccion *objp)
+{
+	register int32_t *buf;
+
+	 if (!xdr_int (xdrs, &objp->num))
+		 return FALSE;
+	 if (!xdr_int (xdrs, &objp->den))
+		 return FALSE;
+	return TRUE;
+}
+
+bool_t
+xdr_fracciones (XDR *xdrs, fracciones *objp)
+{
+	register int32_t *buf;
+
+	 if (!xdr_fraccion (xdrs, &objp->f1))
+		 return FALSE;
+	 if (!xdr_fraccion (xdrs, &objp->f2))
 		 return FALSE;
 	return TRUE;
 }
@@ -145,6 +181,24 @@ xdr_tipo_matriz (XDR *xdrs, tipo_matriz *objp)
 	switch (objp->errno) {
 	case 0:
 		 if (!xdr_matriz (xdrs, &objp->tipo_matriz_u.m))
+			 return FALSE;
+		break;
+	default:
+		break;
+	}
+	return TRUE;
+}
+
+bool_t
+xdr_tipo_fraccion (XDR *xdrs, tipo_fraccion *objp)
+{
+	register int32_t *buf;
+
+	 if (!xdr_int (xdrs, &objp->errno))
+		 return FALSE;
+	switch (objp->errno) {
+	case 0:
+		 if (!xdr_fraccion (xdrs, &objp->tipo_fraccion_u.f))
 			 return FALSE;
 		break;
 	default:

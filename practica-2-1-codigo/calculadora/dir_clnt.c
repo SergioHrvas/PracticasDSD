@@ -69,6 +69,51 @@ division_1(operacion arg1,  CLIENT *clnt)
 	return (&clnt_res);
 }
 
+tipo_simple *
+potencia_1(operacion_2 arg1,  CLIENT *clnt)
+{
+	static tipo_simple clnt_res;
+
+	memset((char *)&clnt_res, 0, sizeof(clnt_res));
+	if (clnt_call (clnt, POTENCIA,
+		(xdrproc_t) xdr_operacion_2, (caddr_t) &arg1,
+		(xdrproc_t) xdr_tipo_simple, (caddr_t) &clnt_res,
+		TIMEOUT) != RPC_SUCCESS) {
+		return (NULL);
+	}
+	return (&clnt_res);
+}
+
+tipo_simple *
+raiz_1(operacion_2 arg1,  CLIENT *clnt)
+{
+	static tipo_simple clnt_res;
+
+	memset((char *)&clnt_res, 0, sizeof(clnt_res));
+	if (clnt_call (clnt, RAIZ,
+		(xdrproc_t) xdr_operacion_2, (caddr_t) &arg1,
+		(xdrproc_t) xdr_tipo_simple, (caddr_t) &clnt_res,
+		TIMEOUT) != RPC_SUCCESS) {
+		return (NULL);
+	}
+	return (&clnt_res);
+}
+
+tipo_simple *
+logaritmo_1(operacion_2 arg1,  CLIENT *clnt)
+{
+	static tipo_simple clnt_res;
+
+	memset((char *)&clnt_res, 0, sizeof(clnt_res));
+	if (clnt_call (clnt, LOGARITMO,
+		(xdrproc_t) xdr_operacion_2, (caddr_t) &arg1,
+		(xdrproc_t) xdr_tipo_simple, (caddr_t) &clnt_res,
+		TIMEOUT) != RPC_SUCCESS) {
+		return (NULL);
+	}
+	return (&clnt_res);
+}
+
 tipo_vector *
 suma_vectores_1(vectores arg1,  CLIENT *clnt)
 {
@@ -213,6 +258,66 @@ divi_matriz_escalar_1(matrizyescalar arg1,  CLIENT *clnt)
 	if (clnt_call (clnt, DIVI_MATRIZ_ESCALAR,
 		(xdrproc_t) xdr_matrizyescalar, (caddr_t) &arg1,
 		(xdrproc_t) xdr_tipo_matriz, (caddr_t) &clnt_res,
+		TIMEOUT) != RPC_SUCCESS) {
+		return (NULL);
+	}
+	return (&clnt_res);
+}
+
+tipo_fraccion *
+suma_fracciones_1(fracciones arg1,  CLIENT *clnt)
+{
+	static tipo_fraccion clnt_res;
+
+	memset((char *)&clnt_res, 0, sizeof(clnt_res));
+	if (clnt_call (clnt, SUMA_FRACCIONES,
+		(xdrproc_t) xdr_fracciones, (caddr_t) &arg1,
+		(xdrproc_t) xdr_tipo_fraccion, (caddr_t) &clnt_res,
+		TIMEOUT) != RPC_SUCCESS) {
+		return (NULL);
+	}
+	return (&clnt_res);
+}
+
+tipo_fraccion *
+resta_fracciones_1(fracciones arg1,  CLIENT *clnt)
+{
+	static tipo_fraccion clnt_res;
+
+	memset((char *)&clnt_res, 0, sizeof(clnt_res));
+	if (clnt_call (clnt, RESTA_FRACCIONES,
+		(xdrproc_t) xdr_fracciones, (caddr_t) &arg1,
+		(xdrproc_t) xdr_tipo_fraccion, (caddr_t) &clnt_res,
+		TIMEOUT) != RPC_SUCCESS) {
+		return (NULL);
+	}
+	return (&clnt_res);
+}
+
+tipo_fraccion *
+multi_fracciones_1(fracciones arg1,  CLIENT *clnt)
+{
+	static tipo_fraccion clnt_res;
+
+	memset((char *)&clnt_res, 0, sizeof(clnt_res));
+	if (clnt_call (clnt, MULTI_FRACCIONES,
+		(xdrproc_t) xdr_fracciones, (caddr_t) &arg1,
+		(xdrproc_t) xdr_tipo_fraccion, (caddr_t) &clnt_res,
+		TIMEOUT) != RPC_SUCCESS) {
+		return (NULL);
+	}
+	return (&clnt_res);
+}
+
+tipo_fraccion *
+divi_fracciones_1(fracciones arg1,  CLIENT *clnt)
+{
+	static tipo_fraccion clnt_res;
+
+	memset((char *)&clnt_res, 0, sizeof(clnt_res));
+	if (clnt_call (clnt, DIVI_FRACCIONES,
+		(xdrproc_t) xdr_fracciones, (caddr_t) &arg1,
+		(xdrproc_t) xdr_tipo_fraccion, (caddr_t) &clnt_res,
 		TIMEOUT) != RPC_SUCCESS) {
 		return (NULL);
 	}

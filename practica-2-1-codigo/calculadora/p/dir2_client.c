@@ -11,16 +11,16 @@ void
 dirprog_ult_1(char *host)
 {
 	CLIENT *clnt;
-	tipo_matriz  *result_1;
-	matrices suma_matrices_ult_1_arg1;
-	tipo_matriz  *result_2;
-	matrices resta_matrices_ult_1_arg1;
-	tipo_matriz  *result_3;
-	matrices producto_matrices_ult_1_arg1;
-	tipo_matriz  *result_4;
-	matrizyescalar multi_matriz_escalar_ult_1_arg1;
-	tipo_matriz  *result_5;
-	matrizyescalar divi_matriz_escalar_ult_1_arg1;
+	tipo_matriz_ult  *result_1;
+	matrices_ult suma_matrices_ult_1_arg1;
+	tipo_matriz_ult  *result_2;
+	matrices_ult resta_matrices_ult_1_arg1;
+	tipo_matriz_ult  *result_3;
+	matrices_ult producto_matrices_ult_1_arg1;
+	tipo_matriz_ult  *result_4;
+	matrizyescalar_ult multi_matriz_escalar_ult_1_arg1;
+	tipo_matriz_ult  *result_5;
+	matrizyescalar_ult divi_matriz_escalar_ult_1_arg1;
 
 #ifndef	DEBUG
 	clnt = clnt_create (host, DIRPROG_ULT, DIRVER, "udp");
@@ -31,23 +31,23 @@ dirprog_ult_1(char *host)
 #endif	/* DEBUG */
 
 	result_1 = suma_matrices_ult_1(suma_matrices_ult_1_arg1, clnt);
-	if (result_1 == (tipo_matriz *) NULL) {
+	if (result_1 == (tipo_matriz_ult *) NULL) {
 		clnt_perror (clnt, "call failed");
 	}
 	result_2 = resta_matrices_ult_1(resta_matrices_ult_1_arg1, clnt);
-	if (result_2 == (tipo_matriz *) NULL) {
+	if (result_2 == (tipo_matriz_ult *) NULL) {
 		clnt_perror (clnt, "call failed");
 	}
 	result_3 = producto_matrices_ult_1(producto_matrices_ult_1_arg1, clnt);
-	if (result_3 == (tipo_matriz *) NULL) {
+	if (result_3 == (tipo_matriz_ult *) NULL) {
 		clnt_perror (clnt, "call failed");
 	}
 	result_4 = multi_matriz_escalar_ult_1(multi_matriz_escalar_ult_1_arg1, clnt);
-	if (result_4 == (tipo_matriz *) NULL) {
+	if (result_4 == (tipo_matriz_ult *) NULL) {
 		clnt_perror (clnt, "call failed");
 	}
 	result_5 = divi_matriz_escalar_ult_1(divi_matriz_escalar_ult_1_arg1, clnt);
-	if (result_5 == (tipo_matriz *) NULL) {
+	if (result_5 == (tipo_matriz_ult *) NULL) {
 		clnt_perror (clnt, "call failed");
 	}
 #ifndef	DEBUG

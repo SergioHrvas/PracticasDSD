@@ -40,6 +40,24 @@ _division_1 (operacion  *argp, struct svc_req *rqstp)
 	return (division_1_svc(*argp, rqstp));
 }
 
+static tipo_simple *
+_potencia_1 (operacion_2  *argp, struct svc_req *rqstp)
+{
+	return (potencia_1_svc(*argp, rqstp));
+}
+
+static tipo_simple *
+_raiz_1 (operacion_2  *argp, struct svc_req *rqstp)
+{
+	return (raiz_1_svc(*argp, rqstp));
+}
+
+static tipo_simple *
+_logaritmo_1 (operacion_2  *argp, struct svc_req *rqstp)
+{
+	return (logaritmo_1_svc(*argp, rqstp));
+}
+
 static tipo_vector *
 _suma_vectores_1 (vectores  *argp, struct svc_req *rqstp)
 {
@@ -100,6 +118,30 @@ _divi_matriz_escalar_1 (matrizyescalar  *argp, struct svc_req *rqstp)
 	return (divi_matriz_escalar_1_svc(*argp, rqstp));
 }
 
+static tipo_fraccion *
+_suma_fracciones_1 (fracciones  *argp, struct svc_req *rqstp)
+{
+	return (suma_fracciones_1_svc(*argp, rqstp));
+}
+
+static tipo_fraccion *
+_resta_fracciones_1 (fracciones  *argp, struct svc_req *rqstp)
+{
+	return (resta_fracciones_1_svc(*argp, rqstp));
+}
+
+static tipo_fraccion *
+_multi_fracciones_1 (fracciones  *argp, struct svc_req *rqstp)
+{
+	return (multi_fracciones_1_svc(*argp, rqstp));
+}
+
+static tipo_fraccion *
+_divi_fracciones_1 (fracciones  *argp, struct svc_req *rqstp)
+{
+	return (divi_fracciones_1_svc(*argp, rqstp));
+}
+
 static void
 dirprog_1(struct svc_req *rqstp, register SVCXPRT *transp)
 {
@@ -108,6 +150,9 @@ dirprog_1(struct svc_req *rqstp, register SVCXPRT *transp)
 		operacion resta_1_arg;
 		operacion multiplicacion_1_arg;
 		operacion division_1_arg;
+		operacion_2 potencia_1_arg;
+		operacion_2 raiz_1_arg;
+		operacion_2 logaritmo_1_arg;
 		vectores suma_vectores_1_arg;
 		vectores resta_vectores_1_arg;
 		vectores producto_escalar_1_arg;
@@ -118,6 +163,10 @@ dirprog_1(struct svc_req *rqstp, register SVCXPRT *transp)
 		matrices producto_matrices_1_arg;
 		matrizyescalar multi_matriz_escalar_1_arg;
 		matrizyescalar divi_matriz_escalar_1_arg;
+		fracciones suma_fracciones_1_arg;
+		fracciones resta_fracciones_1_arg;
+		fracciones multi_fracciones_1_arg;
+		fracciones divi_fracciones_1_arg;
 	} argument;
 	char *result;
 	xdrproc_t _xdr_argument, _xdr_result;
@@ -150,6 +199,24 @@ dirprog_1(struct svc_req *rqstp, register SVCXPRT *transp)
 		_xdr_argument = (xdrproc_t) xdr_operacion;
 		_xdr_result = (xdrproc_t) xdr_tipo_simple;
 		local = (char *(*)(char *, struct svc_req *)) _division_1;
+		break;
+
+	case POTENCIA:
+		_xdr_argument = (xdrproc_t) xdr_operacion_2;
+		_xdr_result = (xdrproc_t) xdr_tipo_simple;
+		local = (char *(*)(char *, struct svc_req *)) _potencia_1;
+		break;
+
+	case RAIZ:
+		_xdr_argument = (xdrproc_t) xdr_operacion_2;
+		_xdr_result = (xdrproc_t) xdr_tipo_simple;
+		local = (char *(*)(char *, struct svc_req *)) _raiz_1;
+		break;
+
+	case LOGARITMO:
+		_xdr_argument = (xdrproc_t) xdr_operacion_2;
+		_xdr_result = (xdrproc_t) xdr_tipo_simple;
+		local = (char *(*)(char *, struct svc_req *)) _logaritmo_1;
 		break;
 
 	case SUMA_VECTORES:
@@ -210,6 +277,30 @@ dirprog_1(struct svc_req *rqstp, register SVCXPRT *transp)
 		_xdr_argument = (xdrproc_t) xdr_matrizyescalar;
 		_xdr_result = (xdrproc_t) xdr_tipo_matriz;
 		local = (char *(*)(char *, struct svc_req *)) _divi_matriz_escalar_1;
+		break;
+
+	case SUMA_FRACCIONES:
+		_xdr_argument = (xdrproc_t) xdr_fracciones;
+		_xdr_result = (xdrproc_t) xdr_tipo_fraccion;
+		local = (char *(*)(char *, struct svc_req *)) _suma_fracciones_1;
+		break;
+
+	case RESTA_FRACCIONES:
+		_xdr_argument = (xdrproc_t) xdr_fracciones;
+		_xdr_result = (xdrproc_t) xdr_tipo_fraccion;
+		local = (char *(*)(char *, struct svc_req *)) _resta_fracciones_1;
+		break;
+
+	case MULTI_FRACCIONES:
+		_xdr_argument = (xdrproc_t) xdr_fracciones;
+		_xdr_result = (xdrproc_t) xdr_tipo_fraccion;
+		local = (char *(*)(char *, struct svc_req *)) _multi_fracciones_1;
+		break;
+
+	case DIVI_FRACCIONES:
+		_xdr_argument = (xdrproc_t) xdr_fracciones;
+		_xdr_result = (xdrproc_t) xdr_tipo_fraccion;
+		local = (char *(*)(char *, struct svc_req *)) _divi_fracciones_1;
 		break;
 
 	default:
