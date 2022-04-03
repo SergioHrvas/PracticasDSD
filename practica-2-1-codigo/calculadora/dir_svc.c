@@ -142,6 +142,12 @@ _divi_fracciones_1 (fracciones  *argp, struct svc_req *rqstp)
 	return (divi_fracciones_1_svc(*argp, rqstp));
 }
 
+static tipo_fraccion *
+_simplificar_fraccion_1 (fraccion  *argp, struct svc_req *rqstp)
+{
+	return (simplificar_fraccion_1_svc(*argp, rqstp));
+}
+
 static void
 dirprog_1(struct svc_req *rqstp, register SVCXPRT *transp)
 {
@@ -167,6 +173,7 @@ dirprog_1(struct svc_req *rqstp, register SVCXPRT *transp)
 		fracciones resta_fracciones_1_arg;
 		fracciones multi_fracciones_1_arg;
 		fracciones divi_fracciones_1_arg;
+		fraccion simplificar_fraccion_1_arg;
 	} argument;
 	char *result;
 	xdrproc_t _xdr_argument, _xdr_result;
@@ -301,6 +308,12 @@ dirprog_1(struct svc_req *rqstp, register SVCXPRT *transp)
 		_xdr_argument = (xdrproc_t) xdr_fracciones;
 		_xdr_result = (xdrproc_t) xdr_tipo_fraccion;
 		local = (char *(*)(char *, struct svc_req *)) _divi_fracciones_1;
+		break;
+
+	case SIMPLIFICAR_FRACCION:
+		_xdr_argument = (xdrproc_t) xdr_fraccion;
+		_xdr_result = (xdrproc_t) xdr_tipo_fraccion;
+		local = (char *(*)(char *, struct svc_req *)) _simplificar_fraccion_1;
 		break;
 
 	default:

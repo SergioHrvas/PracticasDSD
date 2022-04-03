@@ -105,6 +105,7 @@ program DIRPROG {
 		tipo_fraccion RESTA_FRACCIONES(fracciones) = 19;
 		tipo_fraccion MULTI_FRACCIONES(fracciones) = 20;
 		tipo_fraccion DIVI_FRACCIONES(fracciones) = 21;
+		tipo_fraccion SIMPLIFICAR_FRACCION(fraccion) = 22;
 	} =1;
 } = 0x20000155;
 

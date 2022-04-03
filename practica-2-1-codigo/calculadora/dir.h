@@ -198,6 +198,9 @@ extern  tipo_fraccion * multi_fracciones_1_svc(fracciones , struct svc_req *);
 #define DIVI_FRACCIONES 21
 extern  tipo_fraccion * divi_fracciones_1(fracciones , CLIENT *);
 extern  tipo_fraccion * divi_fracciones_1_svc(fracciones , struct svc_req *);
+#define SIMPLIFICAR_FRACCION 22
+extern  tipo_fraccion * simplificar_fraccion_1(fraccion , CLIENT *);
+extern  tipo_fraccion * simplificar_fraccion_1_svc(fraccion , struct svc_req *);
 extern int dirprog_1_freeresult (SVCXPRT *, xdrproc_t, caddr_t);
 
 #else /* K&R C */
@@ -264,6 +267,9 @@ extern  tipo_fraccion * multi_fracciones_1_svc();
 #define DIVI_FRACCIONES 21
 extern  tipo_fraccion * divi_fracciones_1();
 extern  tipo_fraccion * divi_fracciones_1_svc();
+#define SIMPLIFICAR_FRACCION 22
+extern  tipo_fraccion * simplificar_fraccion_1();
+extern  tipo_fraccion * simplificar_fraccion_1_svc();
 extern int dirprog_1_freeresult ();
 #endif /* K&R C */
 
