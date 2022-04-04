@@ -45,7 +45,7 @@ class CalculadoraHandler
             resultado[i] = Array.new(n1[0].length())
         end
 
-        tamfilas = n1.size();
+        tamfilas = n1.size();v
         tamcolumnas = n1[0].size();
 
         for f in (0..tamfilas-1)
@@ -59,20 +59,26 @@ class CalculadoraHandler
     end
 
     def producto_matrices(n1, n2)
-        puts "Servidor de ruby suma las matrices"
+        puts "Servidor de ruby multiplica las matrices"
 
-        resultado = Array.new(n1.length())
+		if (n1[0].size() == n2.size())
+			tamcolumnas = n2[0].length()
+			tamfilas = n1.length()
 
-        for i in (0..n1.size()-1)
-            resultado[i] = Array.new(n1[0].length())
-        end
+            resultado = Array.new(tamfilas)
 
-        tamfilas = n1.size();
-        tamcolumnas = n1[0].size();
+            for i in (0..tamfilas-1)
+                resultado[i] = Array.new(tamcolumnas)
+            end
 
-        for f in (0..tamfilas-1)
-            for c in (0..tamcolumnas-1) 
-                resultado[f][c] = n1[f][c] + n2[f][c]
+            for f in (0..tamfilas-1)
+                for c in (0..tamcolumnas-1) 
+                    suma = 0
+                    for k in (0..n1[0].length()-1)
+                        suma += n1[f][k] + n2[k][c]
+                    end
+                    resultado[f][c] = suma
+                end
             end
         end
 
@@ -80,8 +86,8 @@ class CalculadoraHandler
 
     end
 
-    def matriz_por_escalar(n1, n2)
-        puts "Servidor de ruby suma las matrices"
+    def multi_matriz_escalar(n1, n2)
+        puts "Servidor de ruby multiplica matriz por escalar"
 
         resultado = Array.new(n1.length())
 
@@ -102,8 +108,8 @@ class CalculadoraHandler
 
     end
 
-    def matriz_entre_escalar(n1, n2)
-        puts "Servidor de ruby suma las matrices"
+    def division_matriz_escalar(n1, n2)
+        puts "Servidor de ruby divide matriz por escalar"
 
         resultado = Array.new(n1.length())
 

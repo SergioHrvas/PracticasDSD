@@ -123,97 +123,48 @@ class CalculadoraHandler implements Calculadora.Iface {
 		return resultado;
 	}
 
-	public List<List<Double>> resta_matrices(List<List<Double>> matriz1, List<List<Double>> matriz2) {
-		System.out.println("He hecho la resta de matrices");
+	public List<List<Double>> resta_matrices(List<List<Double>> matriz1, List<List<Double>> matriz2) throws TException  {
+		System.out.println("Llamo a la resta de matrices");
+		this.transport.open();
 
-		List<List<Double>> resultado = new ArrayList<List<Double>>();
-		for (int i = 0; i < matriz1.size(); i++) {
-			resultado.add(new ArrayList<Double>());
-		}
+		List <List<Double>> resultado = this.client.resta_matrices(matriz1, matriz2);
+		
+		this.transport.close();
 
-		int tamfilas = matriz1.size();
-		int tamcolumnas = matriz1.get(0).size();
-
-		for (int f = 0; f < tamfilas; f++) {
-			for (int c = 0; c < tamcolumnas; c++) {
-				resultado.get(f).add(matriz1.get(f).get(c) - matriz2.get(f).get(c));
-			}
-		}
 		return resultado;
 	}
 
-	public List<List<Double>> producto_matrices(List<List<Double>> matriz1, List<List<Double>> matriz2) {
-		System.out.println("He hecho el producto de matrices");
-		List<List<Double>> resultado = new ArrayList<List<Double>>();
-		int tamfilas = 0, tamcolumnas = 0;
+	public List<List<Double>> producto_matrices(List<List<Double>> matriz1, List<List<Double>> matriz2) throws TException {
+		System.out.println("Llamo al producto de matrices");
+		this.transport.open();
 
-		if (matriz1.get(0).size() == matriz2.size()) {
-			tamcolumnas = matriz2.get(0).size();
-			tamfilas = matriz1.size();
-		}
-		System.out.println("f" + tamfilas);
-		System.out.println("c" + tamcolumnas);
-		for (int i = 0; i < tamfilas; i++) {
-			resultado.add(new ArrayList<Double>());
-		}
+		List <List<Double>> resultado = this.client.producto_matrices(matriz1, matriz2);
+		
+		this.transport.close();
 
-		double suma = 0;
-
-		for (int f = 0; f < tamfilas; f++) {
-			for (int c = 0; c < tamcolumnas; c++) {
-				suma = 0;
-				for (int k = 0; k < matriz1.get(0).size(); k++) {
-					suma += matriz1.get(f).get(k) * matriz2.get(k).get(c);
-				}
-				resultado.get(f).add(suma);
-			}
-		}
-		/*
-		 * for(int f = 0; f < matriz1.size(); f++){
-		 * for(int c = 0; c < matriz2.get(0).size(); c++){
-		 * System.out.println(resultado.get(f).get(c) + " ");
-		 * }
-		 * System.out.println("\n");
-		 * }
-		 */
 		return resultado;
 	}
 
-	public List<List<Double>> multi_matriz_escalar(List<List<Double>> matriz1, double matriz2) {
-		System.out.println("He hecho el producto escalar");
+	public List<List<Double>> multi_matriz_escalar(List<List<Double>> matriz1, double escalar) throws TException {
+		System.out.println("Llamo al producto de matriz por escalar");
+		this.transport.open();
 
-		List<List<Double>> resultado = new ArrayList<List<Double>>();
-		for (int i = 0; i < matriz1.size(); i++) {
-			resultado.add(new ArrayList<Double>());
-		}
+		List <List<Double>> resultado = this.client.multi_matriz_escalar(matriz1, escalar);
+		
+		this.transport.close();
 
-		int tamfilas = matriz1.size();
-		int tamcolumnas = matriz1.get(0).size();
-
-		for (int f = 0; f < tamfilas; f++) {
-			for (int c = 0; c < tamcolumnas; c++) {
-				resultado.get(c).add(matriz1.get(f).get(c));
-			}
-		}
 		return resultado;
 	}
 
-	public List<List<Double>> division_matriz_escalar(List<List<Double>> matriz1, double matriz2) {
-		System.out.println("He hecho el producto escalar");
+	public List<List<Double>> division_matriz_escalar(List<List<Double>> matriz1, double escalar) throws TException {
+		System.out.println("Llamo a la divisón de matriz por escalar");
+		
+		this.transport.open();
 
-		List<List<Double>> resultado = new ArrayList<List<Double>>();
-		for (int i = 0; i < matriz1.size(); i++) {
-			resultado.add(new ArrayList<Double>());
-		}
+		List <List<Double>> resultado = this.client.division_matriz_escalar(matriz1, escalar);
+		
+		this.transport.close();
 
-		int tamfilas = matriz1.size();
-		int tamcolumnas = matriz1.get(0).size();
-
-		for (int f = 0; f < tamfilas; f++) {
-			for (int c = 0; c < tamcolumnas; c++) {
-				resultado.get(c).add(matriz1.get(f).get(c));
-			}
-		}
 		return resultado;
 	}
 }

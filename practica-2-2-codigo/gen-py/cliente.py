@@ -9,17 +9,24 @@ def operacionesSimples():
         resultado = 0
         continuo = "s"
         primeravez = 1
+        interactivo = 0
+        if (opcion == 's'):
+            interactivo = 0
+        else:
+            interactivo = 1
+
         while (continuo != "n"):
-            if (primeravez != 1):
+
+            if (primeravez != 1 and interactivo == 1):
                 operando1 = resultado
                 print(operando1)
 
-            if (primeravez):
+            if (primeravez or interactivo == 0):
                 print("Introduzca la operacion (ej: '4 + 5'):")
                 operando1 = int(input())
                 primeravez = 0
 
-            operacion =input()
+            operacion = input()
 
             operando2 = int(input())
             if (operacion == "+"):
@@ -178,10 +185,35 @@ def operacionesMatrices():
             for c in range(tamcolumnas2):
                 fila.append(float(input()))
             matriz2.append(fila)
+        
+        for f in range(tamfilasres):
+            for c in range(tamcolumnasres):
+                print(f"{matriz1[f][c]}", end = ' ')
+            print("\n")   
+
+        print("\toperacion")
+        
+        for f in range(tamfilasres):
+            for c in range(tamcolumnasres):
+                print(f"{matriz2[f][c]}", end = ' ')
+            print("\n")    
+ 
 
     elif(operacion == "m" or operacion == "d"):
         print("Introduzca un número: ")
         escalar = float(input())
+
+        for f in range(tamfilasres):
+            for c in range(tamcolumnasres):
+                print(f"{matriz1[f][c]}", end = ' ')
+            print("\n")    
+
+        print(f"\t{operacion}")
+
+        print(f"{escalar}")
+
+
+
 
             
     tamfilasres=tamfilas1
@@ -198,11 +230,11 @@ def operacionesMatrices():
         resultado = client.multi_matriz_escalar(matriz1, escalar)
     elif(operacion=="d"):
         resultado = client.division_matriz_escalar(matriz1, escalar)
-    print(f"f: {tamfilasres}")
-    print(f"c: {tamcolumnasres}")
+    print("=============")
     for f in range(tamfilasres):
         for c in range(tamcolumnasres):
-            print(f"{resultado[f][c]}")
+            print(f"{resultado[f][c]}", end = ' ')
+        print("\n")    
 
 
 
@@ -225,22 +257,24 @@ opcion = ''
 while (opcion != 'q'):
     print("=======CALCULADORA========")
     print("Operaciones simples: s")
-    print("Operaciones con polinomios: p")
+    print("Operaciones simples (interactivo): i")
+    print("Operaciones con fracciones: p")
     print("Operaciones con vectores: v")
     print("Operaciones con matrices: m")
     print("Salir: q\n")
     opcion = input()
-    while(opcion != 's' and opcion != 'p' and opcion!= 'v' and opcion != 'm' and opcion != 'q'):
+    while(opcion != 'i' and opcion != 's' and opcion != 'p' and opcion!= 'v' and opcion != 'm' and opcion != 'q'):
         print("Introduzca una opción correcta:")
         print("Operaciones simples: s")
-        print("Operaciones con polinomios: p")
+        print("Operaciones simples (interactivo): i")
+        print("Operaciones con fracciones: p")
         print("Operaciones con vectores: v")
         print("Operaciones con matrices: m")
         print("Salir: q\n")
         opcion = input()
     
         
-    if(opcion == 's'):
+    if(opcion == 's' or opcion == 'i'):
         operacionesSimples()        
     elif(opcion == 'v'):
         operacionesVectores()
