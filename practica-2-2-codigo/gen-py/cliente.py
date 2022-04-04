@@ -205,6 +205,11 @@ def operacionesMatrices():
             print(f"{resultado[f][c]}")
 
 
+
+
+
+
+
 transport = TSocket.TSocket("localhost", 9090)
 transport = TTransport.TBufferedTransport(transport)
 protocol = TBinaryProtocol.TBinaryProtocol(transport)

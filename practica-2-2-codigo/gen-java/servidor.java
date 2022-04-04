@@ -2,12 +2,41 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.apache.thrift.TException;
+import org.apache.thrift.transport.TSSLTransportFactory;
+import org.apache.thrift.transport.TTransport;
+import org.apache.thrift.transport.TTransportException;
+import org.apache.thrift.transport.TSocket;
+import org.apache.thrift.transport.TSSLTransportFactory.TSSLTransportParameters;
+import org.apache.thrift.protocol.TBinaryProtocol;
+import org.apache.thrift.protocol.TProtocol;
+
 // Importar cosas
 
 // Implementar clase handler ( en este u en otro fichero )
 class CalculadoraHandler implements Calculadora.Iface {
-	public void ping() {
-		System.out.println("Me han hecho ping");
+	TTransport transport;
+	TProtocol protocol;
+	Calculadora.Client client;
+
+
+	CalculadoraHandler(){
+		try {
+			  this.transport = new TSocket("localhost", 9092);
+
+			TProtocol protocol = new  TBinaryProtocol(transport);
+			this.client = new Calculadora.Client(protocol);
+	  	  
+		  } catch (TException x) {
+			x.printStackTrace();
+		  } 
+	}
+
+	public void ping() throws TException {
+		System.out.println("Me han hecho ping (Java)");
+		this.transport.open();
+		this.client.ping();
+		this.transport.close();
 	}
 
 	public double resta(double a, double b) {
@@ -83,22 +112,13 @@ class CalculadoraHandler implements Calculadora.Iface {
 		return resultado;
 	}
 
-	public List<List<Double>> suma_matrices(List<List<Double>> matriz1, List<List<Double>> matriz2) {
-		System.out.println("He hecho la suma de matrices");
+	public List<List<Double>> suma_matrices(List<List<Double>> matriz1, List<List<Double>> matriz2) throws TException {
+		System.out.println("Llamo a la suma de matrices");
+		this.transport.open();
 
-		List<List<Double>> resultado = new ArrayList<List<Double>>();
-		for (int i = 0; i < matriz1.size(); i++) {
-			resultado.add(new ArrayList<Double>());
-		}
-
-		int tamfilas = matriz1.size();
-		int tamcolumnas = matriz1.get(0).size();
-
-		for (int f = 0; f < tamfilas; f++) {
-			for (int c = 0; c < tamcolumnas; c++) {
-				resultado.get(f).add(matriz1.get(f).get(c) + matriz2.get(f).get(c));
-			}
-		}
+		List <List<Double>> resultado = this.client.suma_matrices(matriz1, matriz2);
+		
+		this.transport.close();
 
 		return resultado;
 	}
