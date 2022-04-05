@@ -1,8 +1,6 @@
 require 'thrift'
 
 require './calculadora'
-require './calculadora_types'
-require './calculadora_constants'
 
 class CalculadoraHandler
   def initialize()
@@ -134,7 +132,7 @@ end
 
 handler = CalculadoraHandler.new()
 processor = Calculadora::Processor.new(handler)
-transport = Thrift::ServerSocket.new(9092)
+transport = Thrift::ServerSocket.new(9093)
 transportFactory = Thrift::BufferedTransportFactory.new()
 server = Thrift::SimpleServer.new(processor, transport, transportFactory)
 

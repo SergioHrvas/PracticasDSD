@@ -58,6 +58,33 @@ class Iface(object):
         """
         pass
 
+    def raices(self, num1, num2):
+        """
+        Parameters:
+         - num1
+         - num2
+
+        """
+        pass
+
+    def potencia(self, num1, num2):
+        """
+        Parameters:
+         - num1
+         - num2
+
+        """
+        pass
+
+    def logaritmo(self, num1, num2):
+        """
+        Parameters:
+         - num1
+         - num2
+
+        """
+        pass
+
     def suma_vectores(self, vector1, vector2):
         """
         Parameters:
@@ -144,6 +171,50 @@ class Iface(object):
         Parameters:
          - matriz1
          - escalar
+
+        """
+        pass
+
+    def suma_fracciones(self, f1, f2):
+        """
+        Parameters:
+         - f1
+         - f2
+
+        """
+        pass
+
+    def resta_fracciones(self, f1, f2):
+        """
+        Parameters:
+         - f1
+         - f2
+
+        """
+        pass
+
+    def multiplicacion_fracciones(self, f1, f2):
+        """
+        Parameters:
+         - f1
+         - f2
+
+        """
+        pass
+
+    def division_fracciones(self, f1, f2):
+        """
+        Parameters:
+         - f1
+         - f2
+
+        """
+        pass
+
+    def simplificacion_fracciones(self, f1):
+        """
+        Parameters:
+         - f1
 
         """
         pass
@@ -315,6 +386,108 @@ class Client(Iface):
         if result.success is not None:
             return result.success
         raise TApplicationException(TApplicationException.MISSING_RESULT, "division failed: unknown result")
+
+    def raices(self, num1, num2):
+        """
+        Parameters:
+         - num1
+         - num2
+
+        """
+        self.send_raices(num1, num2)
+        return self.recv_raices()
+
+    def send_raices(self, num1, num2):
+        self._oprot.writeMessageBegin('raices', TMessageType.CALL, self._seqid)
+        args = raices_args()
+        args.num1 = num1
+        args.num2 = num2
+        args.write(self._oprot)
+        self._oprot.writeMessageEnd()
+        self._oprot.trans.flush()
+
+    def recv_raices(self):
+        iprot = self._iprot
+        (fname, mtype, rseqid) = iprot.readMessageBegin()
+        if mtype == TMessageType.EXCEPTION:
+            x = TApplicationException()
+            x.read(iprot)
+            iprot.readMessageEnd()
+            raise x
+        result = raices_result()
+        result.read(iprot)
+        iprot.readMessageEnd()
+        if result.success is not None:
+            return result.success
+        raise TApplicationException(TApplicationException.MISSING_RESULT, "raices failed: unknown result")
+
+    def potencia(self, num1, num2):
+        """
+        Parameters:
+         - num1
+         - num2
+
+        """
+        self.send_potencia(num1, num2)
+        return self.recv_potencia()
+
+    def send_potencia(self, num1, num2):
+        self._oprot.writeMessageBegin('potencia', TMessageType.CALL, self._seqid)
+        args = potencia_args()
+        args.num1 = num1
+        args.num2 = num2
+        args.write(self._oprot)
+        self._oprot.writeMessageEnd()
+        self._oprot.trans.flush()
+
+    def recv_potencia(self):
+        iprot = self._iprot
+        (fname, mtype, rseqid) = iprot.readMessageBegin()
+        if mtype == TMessageType.EXCEPTION:
+            x = TApplicationException()
+            x.read(iprot)
+            iprot.readMessageEnd()
+            raise x
+        result = potencia_result()
+        result.read(iprot)
+        iprot.readMessageEnd()
+        if result.success is not None:
+            return result.success
+        raise TApplicationException(TApplicationException.MISSING_RESULT, "potencia failed: unknown result")
+
+    def logaritmo(self, num1, num2):
+        """
+        Parameters:
+         - num1
+         - num2
+
+        """
+        self.send_logaritmo(num1, num2)
+        return self.recv_logaritmo()
+
+    def send_logaritmo(self, num1, num2):
+        self._oprot.writeMessageBegin('logaritmo', TMessageType.CALL, self._seqid)
+        args = logaritmo_args()
+        args.num1 = num1
+        args.num2 = num2
+        args.write(self._oprot)
+        self._oprot.writeMessageEnd()
+        self._oprot.trans.flush()
+
+    def recv_logaritmo(self):
+        iprot = self._iprot
+        (fname, mtype, rseqid) = iprot.readMessageBegin()
+        if mtype == TMessageType.EXCEPTION:
+            x = TApplicationException()
+            x.read(iprot)
+            iprot.readMessageEnd()
+            raise x
+        result = logaritmo_result()
+        result.read(iprot)
+        iprot.readMessageEnd()
+        if result.success is not None:
+            return result.success
+        raise TApplicationException(TApplicationException.MISSING_RESULT, "logaritmo failed: unknown result")
 
     def suma_vectores(self, vector1, vector2):
         """
@@ -656,6 +829,174 @@ class Client(Iface):
             return result.success
         raise TApplicationException(TApplicationException.MISSING_RESULT, "division_matriz_escalar failed: unknown result")
 
+    def suma_fracciones(self, f1, f2):
+        """
+        Parameters:
+         - f1
+         - f2
+
+        """
+        self.send_suma_fracciones(f1, f2)
+        return self.recv_suma_fracciones()
+
+    def send_suma_fracciones(self, f1, f2):
+        self._oprot.writeMessageBegin('suma_fracciones', TMessageType.CALL, self._seqid)
+        args = suma_fracciones_args()
+        args.f1 = f1
+        args.f2 = f2
+        args.write(self._oprot)
+        self._oprot.writeMessageEnd()
+        self._oprot.trans.flush()
+
+    def recv_suma_fracciones(self):
+        iprot = self._iprot
+        (fname, mtype, rseqid) = iprot.readMessageBegin()
+        if mtype == TMessageType.EXCEPTION:
+            x = TApplicationException()
+            x.read(iprot)
+            iprot.readMessageEnd()
+            raise x
+        result = suma_fracciones_result()
+        result.read(iprot)
+        iprot.readMessageEnd()
+        if result.success is not None:
+            return result.success
+        raise TApplicationException(TApplicationException.MISSING_RESULT, "suma_fracciones failed: unknown result")
+
+    def resta_fracciones(self, f1, f2):
+        """
+        Parameters:
+         - f1
+         - f2
+
+        """
+        self.send_resta_fracciones(f1, f2)
+        return self.recv_resta_fracciones()
+
+    def send_resta_fracciones(self, f1, f2):
+        self._oprot.writeMessageBegin('resta_fracciones', TMessageType.CALL, self._seqid)
+        args = resta_fracciones_args()
+        args.f1 = f1
+        args.f2 = f2
+        args.write(self._oprot)
+        self._oprot.writeMessageEnd()
+        self._oprot.trans.flush()
+
+    def recv_resta_fracciones(self):
+        iprot = self._iprot
+        (fname, mtype, rseqid) = iprot.readMessageBegin()
+        if mtype == TMessageType.EXCEPTION:
+            x = TApplicationException()
+            x.read(iprot)
+            iprot.readMessageEnd()
+            raise x
+        result = resta_fracciones_result()
+        result.read(iprot)
+        iprot.readMessageEnd()
+        if result.success is not None:
+            return result.success
+        raise TApplicationException(TApplicationException.MISSING_RESULT, "resta_fracciones failed: unknown result")
+
+    def multiplicacion_fracciones(self, f1, f2):
+        """
+        Parameters:
+         - f1
+         - f2
+
+        """
+        self.send_multiplicacion_fracciones(f1, f2)
+        return self.recv_multiplicacion_fracciones()
+
+    def send_multiplicacion_fracciones(self, f1, f2):
+        self._oprot.writeMessageBegin('multiplicacion_fracciones', TMessageType.CALL, self._seqid)
+        args = multiplicacion_fracciones_args()
+        args.f1 = f1
+        args.f2 = f2
+        args.write(self._oprot)
+        self._oprot.writeMessageEnd()
+        self._oprot.trans.flush()
+
+    def recv_multiplicacion_fracciones(self):
+        iprot = self._iprot
+        (fname, mtype, rseqid) = iprot.readMessageBegin()
+        if mtype == TMessageType.EXCEPTION:
+            x = TApplicationException()
+            x.read(iprot)
+            iprot.readMessageEnd()
+            raise x
+        result = multiplicacion_fracciones_result()
+        result.read(iprot)
+        iprot.readMessageEnd()
+        if result.success is not None:
+            return result.success
+        raise TApplicationException(TApplicationException.MISSING_RESULT, "multiplicacion_fracciones failed: unknown result")
+
+    def division_fracciones(self, f1, f2):
+        """
+        Parameters:
+         - f1
+         - f2
+
+        """
+        self.send_division_fracciones(f1, f2)
+        return self.recv_division_fracciones()
+
+    def send_division_fracciones(self, f1, f2):
+        self._oprot.writeMessageBegin('division_fracciones', TMessageType.CALL, self._seqid)
+        args = division_fracciones_args()
+        args.f1 = f1
+        args.f2 = f2
+        args.write(self._oprot)
+        self._oprot.writeMessageEnd()
+        self._oprot.trans.flush()
+
+    def recv_division_fracciones(self):
+        iprot = self._iprot
+        (fname, mtype, rseqid) = iprot.readMessageBegin()
+        if mtype == TMessageType.EXCEPTION:
+            x = TApplicationException()
+            x.read(iprot)
+            iprot.readMessageEnd()
+            raise x
+        result = division_fracciones_result()
+        result.read(iprot)
+        iprot.readMessageEnd()
+        if result.success is not None:
+            return result.success
+        raise TApplicationException(TApplicationException.MISSING_RESULT, "division_fracciones failed: unknown result")
+
+    def simplificacion_fracciones(self, f1):
+        """
+        Parameters:
+         - f1
+
+        """
+        self.send_simplificacion_fracciones(f1)
+        return self.recv_simplificacion_fracciones()
+
+    def send_simplificacion_fracciones(self, f1):
+        self._oprot.writeMessageBegin('simplificacion_fracciones', TMessageType.CALL, self._seqid)
+        args = simplificacion_fracciones_args()
+        args.f1 = f1
+        args.write(self._oprot)
+        self._oprot.writeMessageEnd()
+        self._oprot.trans.flush()
+
+    def recv_simplificacion_fracciones(self):
+        iprot = self._iprot
+        (fname, mtype, rseqid) = iprot.readMessageBegin()
+        if mtype == TMessageType.EXCEPTION:
+            x = TApplicationException()
+            x.read(iprot)
+            iprot.readMessageEnd()
+            raise x
+        result = simplificacion_fracciones_result()
+        result.read(iprot)
+        iprot.readMessageEnd()
+        if result.success is not None:
+            return result.success
+        raise TApplicationException(TApplicationException.MISSING_RESULT, "simplificacion_fracciones failed: unknown result")
+
 
 class Processor(Iface, TProcessor):
     def __init__(self, handler):
@@ -666,6 +1007,9 @@ class Processor(Iface, TProcessor):
         self._processMap["resta"] = Processor.process_resta
         self._processMap["multiplicacion"] = Processor.process_multiplicacion
         self._processMap["division"] = Processor.process_division
+        self._processMap["raices"] = Processor.process_raices
+        self._processMap["potencia"] = Processor.process_potencia
+        self._processMap["logaritmo"] = Processor.process_logaritmo
         self._processMap["suma_vectores"] = Processor.process_suma_vectores
         self._processMap["resta_vectores"] = Processor.process_resta_vectores
         self._processMap["producto_escalar"] = Processor.process_producto_escalar
@@ -676,6 +1020,11 @@ class Processor(Iface, TProcessor):
         self._processMap["producto_matrices"] = Processor.process_producto_matrices
         self._processMap["multi_matriz_escalar"] = Processor.process_multi_matriz_escalar
         self._processMap["division_matriz_escalar"] = Processor.process_division_matriz_escalar
+        self._processMap["suma_fracciones"] = Processor.process_suma_fracciones
+        self._processMap["resta_fracciones"] = Processor.process_resta_fracciones
+        self._processMap["multiplicacion_fracciones"] = Processor.process_multiplicacion_fracciones
+        self._processMap["division_fracciones"] = Processor.process_division_fracciones
+        self._processMap["simplificacion_fracciones"] = Processor.process_simplificacion_fracciones
         self._on_message_begin = None
 
     def on_message_begin(self, func):
@@ -809,6 +1158,75 @@ class Processor(Iface, TProcessor):
             msg_type = TMessageType.EXCEPTION
             result = TApplicationException(TApplicationException.INTERNAL_ERROR, 'Internal error')
         oprot.writeMessageBegin("division", msg_type, seqid)
+        result.write(oprot)
+        oprot.writeMessageEnd()
+        oprot.trans.flush()
+
+    def process_raices(self, seqid, iprot, oprot):
+        args = raices_args()
+        args.read(iprot)
+        iprot.readMessageEnd()
+        result = raices_result()
+        try:
+            result.success = self._handler.raices(args.num1, args.num2)
+            msg_type = TMessageType.REPLY
+        except TTransport.TTransportException:
+            raise
+        except TApplicationException as ex:
+            logging.exception('TApplication exception in handler')
+            msg_type = TMessageType.EXCEPTION
+            result = ex
+        except Exception:
+            logging.exception('Unexpected exception in handler')
+            msg_type = TMessageType.EXCEPTION
+            result = TApplicationException(TApplicationException.INTERNAL_ERROR, 'Internal error')
+        oprot.writeMessageBegin("raices", msg_type, seqid)
+        result.write(oprot)
+        oprot.writeMessageEnd()
+        oprot.trans.flush()
+
+    def process_potencia(self, seqid, iprot, oprot):
+        args = potencia_args()
+        args.read(iprot)
+        iprot.readMessageEnd()
+        result = potencia_result()
+        try:
+            result.success = self._handler.potencia(args.num1, args.num2)
+            msg_type = TMessageType.REPLY
+        except TTransport.TTransportException:
+            raise
+        except TApplicationException as ex:
+            logging.exception('TApplication exception in handler')
+            msg_type = TMessageType.EXCEPTION
+            result = ex
+        except Exception:
+            logging.exception('Unexpected exception in handler')
+            msg_type = TMessageType.EXCEPTION
+            result = TApplicationException(TApplicationException.INTERNAL_ERROR, 'Internal error')
+        oprot.writeMessageBegin("potencia", msg_type, seqid)
+        result.write(oprot)
+        oprot.writeMessageEnd()
+        oprot.trans.flush()
+
+    def process_logaritmo(self, seqid, iprot, oprot):
+        args = logaritmo_args()
+        args.read(iprot)
+        iprot.readMessageEnd()
+        result = logaritmo_result()
+        try:
+            result.success = self._handler.logaritmo(args.num1, args.num2)
+            msg_type = TMessageType.REPLY
+        except TTransport.TTransportException:
+            raise
+        except TApplicationException as ex:
+            logging.exception('TApplication exception in handler')
+            msg_type = TMessageType.EXCEPTION
+            result = ex
+        except Exception:
+            logging.exception('Unexpected exception in handler')
+            msg_type = TMessageType.EXCEPTION
+            result = TApplicationException(TApplicationException.INTERNAL_ERROR, 'Internal error')
+        oprot.writeMessageBegin("logaritmo", msg_type, seqid)
         result.write(oprot)
         oprot.writeMessageEnd()
         oprot.trans.flush()
@@ -1039,6 +1457,121 @@ class Processor(Iface, TProcessor):
             msg_type = TMessageType.EXCEPTION
             result = TApplicationException(TApplicationException.INTERNAL_ERROR, 'Internal error')
         oprot.writeMessageBegin("division_matriz_escalar", msg_type, seqid)
+        result.write(oprot)
+        oprot.writeMessageEnd()
+        oprot.trans.flush()
+
+    def process_suma_fracciones(self, seqid, iprot, oprot):
+        args = suma_fracciones_args()
+        args.read(iprot)
+        iprot.readMessageEnd()
+        result = suma_fracciones_result()
+        try:
+            result.success = self._handler.suma_fracciones(args.f1, args.f2)
+            msg_type = TMessageType.REPLY
+        except TTransport.TTransportException:
+            raise
+        except TApplicationException as ex:
+            logging.exception('TApplication exception in handler')
+            msg_type = TMessageType.EXCEPTION
+            result = ex
+        except Exception:
+            logging.exception('Unexpected exception in handler')
+            msg_type = TMessageType.EXCEPTION
+            result = TApplicationException(TApplicationException.INTERNAL_ERROR, 'Internal error')
+        oprot.writeMessageBegin("suma_fracciones", msg_type, seqid)
+        result.write(oprot)
+        oprot.writeMessageEnd()
+        oprot.trans.flush()
+
+    def process_resta_fracciones(self, seqid, iprot, oprot):
+        args = resta_fracciones_args()
+        args.read(iprot)
+        iprot.readMessageEnd()
+        result = resta_fracciones_result()
+        try:
+            result.success = self._handler.resta_fracciones(args.f1, args.f2)
+            msg_type = TMessageType.REPLY
+        except TTransport.TTransportException:
+            raise
+        except TApplicationException as ex:
+            logging.exception('TApplication exception in handler')
+            msg_type = TMessageType.EXCEPTION
+            result = ex
+        except Exception:
+            logging.exception('Unexpected exception in handler')
+            msg_type = TMessageType.EXCEPTION
+            result = TApplicationException(TApplicationException.INTERNAL_ERROR, 'Internal error')
+        oprot.writeMessageBegin("resta_fracciones", msg_type, seqid)
+        result.write(oprot)
+        oprot.writeMessageEnd()
+        oprot.trans.flush()
+
+    def process_multiplicacion_fracciones(self, seqid, iprot, oprot):
+        args = multiplicacion_fracciones_args()
+        args.read(iprot)
+        iprot.readMessageEnd()
+        result = multiplicacion_fracciones_result()
+        try:
+            result.success = self._handler.multiplicacion_fracciones(args.f1, args.f2)
+            msg_type = TMessageType.REPLY
+        except TTransport.TTransportException:
+            raise
+        except TApplicationException as ex:
+            logging.exception('TApplication exception in handler')
+            msg_type = TMessageType.EXCEPTION
+            result = ex
+        except Exception:
+            logging.exception('Unexpected exception in handler')
+            msg_type = TMessageType.EXCEPTION
+            result = TApplicationException(TApplicationException.INTERNAL_ERROR, 'Internal error')
+        oprot.writeMessageBegin("multiplicacion_fracciones", msg_type, seqid)
+        result.write(oprot)
+        oprot.writeMessageEnd()
+        oprot.trans.flush()
+
+    def process_division_fracciones(self, seqid, iprot, oprot):
+        args = division_fracciones_args()
+        args.read(iprot)
+        iprot.readMessageEnd()
+        result = division_fracciones_result()
+        try:
+            result.success = self._handler.division_fracciones(args.f1, args.f2)
+            msg_type = TMessageType.REPLY
+        except TTransport.TTransportException:
+            raise
+        except TApplicationException as ex:
+            logging.exception('TApplication exception in handler')
+            msg_type = TMessageType.EXCEPTION
+            result = ex
+        except Exception:
+            logging.exception('Unexpected exception in handler')
+            msg_type = TMessageType.EXCEPTION
+            result = TApplicationException(TApplicationException.INTERNAL_ERROR, 'Internal error')
+        oprot.writeMessageBegin("division_fracciones", msg_type, seqid)
+        result.write(oprot)
+        oprot.writeMessageEnd()
+        oprot.trans.flush()
+
+    def process_simplificacion_fracciones(self, seqid, iprot, oprot):
+        args = simplificacion_fracciones_args()
+        args.read(iprot)
+        iprot.readMessageEnd()
+        result = simplificacion_fracciones_result()
+        try:
+            result.success = self._handler.simplificacion_fracciones(args.f1)
+            msg_type = TMessageType.REPLY
+        except TTransport.TTransportException:
+            raise
+        except TApplicationException as ex:
+            logging.exception('TApplication exception in handler')
+            msg_type = TMessageType.EXCEPTION
+            result = ex
+        except Exception:
+            logging.exception('Unexpected exception in handler')
+            msg_type = TMessageType.EXCEPTION
+            result = TApplicationException(TApplicationException.INTERNAL_ERROR, 'Internal error')
+        oprot.writeMessageBegin("simplificacion_fracciones", msg_type, seqid)
         result.write(oprot)
         oprot.writeMessageEnd()
         oprot.trans.flush()
@@ -1668,6 +2201,411 @@ class division_result(object):
         return not (self == other)
 all_structs.append(division_result)
 division_result.thrift_spec = (
+    (0, TType.DOUBLE, 'success', None, None, ),  # 0
+)
+
+
+class raices_args(object):
+    """
+    Attributes:
+     - num1
+     - num2
+
+    """
+
+
+    def __init__(self, num1=None, num2=None,):
+        self.num1 = num1
+        self.num2 = num2
+
+    def read(self, iprot):
+        if iprot._fast_decode is not None and isinstance(iprot.trans, TTransport.CReadableTransport) and self.thrift_spec is not None:
+            iprot._fast_decode(self, iprot, [self.__class__, self.thrift_spec])
+            return
+        iprot.readStructBegin()
+        while True:
+            (fname, ftype, fid) = iprot.readFieldBegin()
+            if ftype == TType.STOP:
+                break
+            if fid == 1:
+                if ftype == TType.DOUBLE:
+                    self.num1 = iprot.readDouble()
+                else:
+                    iprot.skip(ftype)
+            elif fid == 2:
+                if ftype == TType.I32:
+                    self.num2 = iprot.readI32()
+                else:
+                    iprot.skip(ftype)
+            else:
+                iprot.skip(ftype)
+            iprot.readFieldEnd()
+        iprot.readStructEnd()
+
+    def write(self, oprot):
+        if oprot._fast_encode is not None and self.thrift_spec is not None:
+            oprot.trans.write(oprot._fast_encode(self, [self.__class__, self.thrift_spec]))
+            return
+        oprot.writeStructBegin('raices_args')
+        if self.num1 is not None:
+            oprot.writeFieldBegin('num1', TType.DOUBLE, 1)
+            oprot.writeDouble(self.num1)
+            oprot.writeFieldEnd()
+        if self.num2 is not None:
+            oprot.writeFieldBegin('num2', TType.I32, 2)
+            oprot.writeI32(self.num2)
+            oprot.writeFieldEnd()
+        oprot.writeFieldStop()
+        oprot.writeStructEnd()
+
+    def validate(self):
+        return
+
+    def __repr__(self):
+        L = ['%s=%r' % (key, value)
+             for key, value in self.__dict__.items()]
+        return '%s(%s)' % (self.__class__.__name__, ', '.join(L))
+
+    def __eq__(self, other):
+        return isinstance(other, self.__class__) and self.__dict__ == other.__dict__
+
+    def __ne__(self, other):
+        return not (self == other)
+all_structs.append(raices_args)
+raices_args.thrift_spec = (
+    None,  # 0
+    (1, TType.DOUBLE, 'num1', None, None, ),  # 1
+    (2, TType.I32, 'num2', None, None, ),  # 2
+)
+
+
+class raices_result(object):
+    """
+    Attributes:
+     - success
+
+    """
+
+
+    def __init__(self, success=None,):
+        self.success = success
+
+    def read(self, iprot):
+        if iprot._fast_decode is not None and isinstance(iprot.trans, TTransport.CReadableTransport) and self.thrift_spec is not None:
+            iprot._fast_decode(self, iprot, [self.__class__, self.thrift_spec])
+            return
+        iprot.readStructBegin()
+        while True:
+            (fname, ftype, fid) = iprot.readFieldBegin()
+            if ftype == TType.STOP:
+                break
+            if fid == 0:
+                if ftype == TType.DOUBLE:
+                    self.success = iprot.readDouble()
+                else:
+                    iprot.skip(ftype)
+            else:
+                iprot.skip(ftype)
+            iprot.readFieldEnd()
+        iprot.readStructEnd()
+
+    def write(self, oprot):
+        if oprot._fast_encode is not None and self.thrift_spec is not None:
+            oprot.trans.write(oprot._fast_encode(self, [self.__class__, self.thrift_spec]))
+            return
+        oprot.writeStructBegin('raices_result')
+        if self.success is not None:
+            oprot.writeFieldBegin('success', TType.DOUBLE, 0)
+            oprot.writeDouble(self.success)
+            oprot.writeFieldEnd()
+        oprot.writeFieldStop()
+        oprot.writeStructEnd()
+
+    def validate(self):
+        return
+
+    def __repr__(self):
+        L = ['%s=%r' % (key, value)
+             for key, value in self.__dict__.items()]
+        return '%s(%s)' % (self.__class__.__name__, ', '.join(L))
+
+    def __eq__(self, other):
+        return isinstance(other, self.__class__) and self.__dict__ == other.__dict__
+
+    def __ne__(self, other):
+        return not (self == other)
+all_structs.append(raices_result)
+raices_result.thrift_spec = (
+    (0, TType.DOUBLE, 'success', None, None, ),  # 0
+)
+
+
+class potencia_args(object):
+    """
+    Attributes:
+     - num1
+     - num2
+
+    """
+
+
+    def __init__(self, num1=None, num2=None,):
+        self.num1 = num1
+        self.num2 = num2
+
+    def read(self, iprot):
+        if iprot._fast_decode is not None and isinstance(iprot.trans, TTransport.CReadableTransport) and self.thrift_spec is not None:
+            iprot._fast_decode(self, iprot, [self.__class__, self.thrift_spec])
+            return
+        iprot.readStructBegin()
+        while True:
+            (fname, ftype, fid) = iprot.readFieldBegin()
+            if ftype == TType.STOP:
+                break
+            if fid == 1:
+                if ftype == TType.DOUBLE:
+                    self.num1 = iprot.readDouble()
+                else:
+                    iprot.skip(ftype)
+            elif fid == 2:
+                if ftype == TType.I32:
+                    self.num2 = iprot.readI32()
+                else:
+                    iprot.skip(ftype)
+            else:
+                iprot.skip(ftype)
+            iprot.readFieldEnd()
+        iprot.readStructEnd()
+
+    def write(self, oprot):
+        if oprot._fast_encode is not None and self.thrift_spec is not None:
+            oprot.trans.write(oprot._fast_encode(self, [self.__class__, self.thrift_spec]))
+            return
+        oprot.writeStructBegin('potencia_args')
+        if self.num1 is not None:
+            oprot.writeFieldBegin('num1', TType.DOUBLE, 1)
+            oprot.writeDouble(self.num1)
+            oprot.writeFieldEnd()
+        if self.num2 is not None:
+            oprot.writeFieldBegin('num2', TType.I32, 2)
+            oprot.writeI32(self.num2)
+            oprot.writeFieldEnd()
+        oprot.writeFieldStop()
+        oprot.writeStructEnd()
+
+    def validate(self):
+        return
+
+    def __repr__(self):
+        L = ['%s=%r' % (key, value)
+             for key, value in self.__dict__.items()]
+        return '%s(%s)' % (self.__class__.__name__, ', '.join(L))
+
+    def __eq__(self, other):
+        return isinstance(other, self.__class__) and self.__dict__ == other.__dict__
+
+    def __ne__(self, other):
+        return not (self == other)
+all_structs.append(potencia_args)
+potencia_args.thrift_spec = (
+    None,  # 0
+    (1, TType.DOUBLE, 'num1', None, None, ),  # 1
+    (2, TType.I32, 'num2', None, None, ),  # 2
+)
+
+
+class potencia_result(object):
+    """
+    Attributes:
+     - success
+
+    """
+
+
+    def __init__(self, success=None,):
+        self.success = success
+
+    def read(self, iprot):
+        if iprot._fast_decode is not None and isinstance(iprot.trans, TTransport.CReadableTransport) and self.thrift_spec is not None:
+            iprot._fast_decode(self, iprot, [self.__class__, self.thrift_spec])
+            return
+        iprot.readStructBegin()
+        while True:
+            (fname, ftype, fid) = iprot.readFieldBegin()
+            if ftype == TType.STOP:
+                break
+            if fid == 0:
+                if ftype == TType.DOUBLE:
+                    self.success = iprot.readDouble()
+                else:
+                    iprot.skip(ftype)
+            else:
+                iprot.skip(ftype)
+            iprot.readFieldEnd()
+        iprot.readStructEnd()
+
+    def write(self, oprot):
+        if oprot._fast_encode is not None and self.thrift_spec is not None:
+            oprot.trans.write(oprot._fast_encode(self, [self.__class__, self.thrift_spec]))
+            return
+        oprot.writeStructBegin('potencia_result')
+        if self.success is not None:
+            oprot.writeFieldBegin('success', TType.DOUBLE, 0)
+            oprot.writeDouble(self.success)
+            oprot.writeFieldEnd()
+        oprot.writeFieldStop()
+        oprot.writeStructEnd()
+
+    def validate(self):
+        return
+
+    def __repr__(self):
+        L = ['%s=%r' % (key, value)
+             for key, value in self.__dict__.items()]
+        return '%s(%s)' % (self.__class__.__name__, ', '.join(L))
+
+    def __eq__(self, other):
+        return isinstance(other, self.__class__) and self.__dict__ == other.__dict__
+
+    def __ne__(self, other):
+        return not (self == other)
+all_structs.append(potencia_result)
+potencia_result.thrift_spec = (
+    (0, TType.DOUBLE, 'success', None, None, ),  # 0
+)
+
+
+class logaritmo_args(object):
+    """
+    Attributes:
+     - num1
+     - num2
+
+    """
+
+
+    def __init__(self, num1=None, num2=None,):
+        self.num1 = num1
+        self.num2 = num2
+
+    def read(self, iprot):
+        if iprot._fast_decode is not None and isinstance(iprot.trans, TTransport.CReadableTransport) and self.thrift_spec is not None:
+            iprot._fast_decode(self, iprot, [self.__class__, self.thrift_spec])
+            return
+        iprot.readStructBegin()
+        while True:
+            (fname, ftype, fid) = iprot.readFieldBegin()
+            if ftype == TType.STOP:
+                break
+            if fid == 1:
+                if ftype == TType.DOUBLE:
+                    self.num1 = iprot.readDouble()
+                else:
+                    iprot.skip(ftype)
+            elif fid == 2:
+                if ftype == TType.I32:
+                    self.num2 = iprot.readI32()
+                else:
+                    iprot.skip(ftype)
+            else:
+                iprot.skip(ftype)
+            iprot.readFieldEnd()
+        iprot.readStructEnd()
+
+    def write(self, oprot):
+        if oprot._fast_encode is not None and self.thrift_spec is not None:
+            oprot.trans.write(oprot._fast_encode(self, [self.__class__, self.thrift_spec]))
+            return
+        oprot.writeStructBegin('logaritmo_args')
+        if self.num1 is not None:
+            oprot.writeFieldBegin('num1', TType.DOUBLE, 1)
+            oprot.writeDouble(self.num1)
+            oprot.writeFieldEnd()
+        if self.num2 is not None:
+            oprot.writeFieldBegin('num2', TType.I32, 2)
+            oprot.writeI32(self.num2)
+            oprot.writeFieldEnd()
+        oprot.writeFieldStop()
+        oprot.writeStructEnd()
+
+    def validate(self):
+        return
+
+    def __repr__(self):
+        L = ['%s=%r' % (key, value)
+             for key, value in self.__dict__.items()]
+        return '%s(%s)' % (self.__class__.__name__, ', '.join(L))
+
+    def __eq__(self, other):
+        return isinstance(other, self.__class__) and self.__dict__ == other.__dict__
+
+    def __ne__(self, other):
+        return not (self == other)
+all_structs.append(logaritmo_args)
+logaritmo_args.thrift_spec = (
+    None,  # 0
+    (1, TType.DOUBLE, 'num1', None, None, ),  # 1
+    (2, TType.I32, 'num2', None, None, ),  # 2
+)
+
+
+class logaritmo_result(object):
+    """
+    Attributes:
+     - success
+
+    """
+
+
+    def __init__(self, success=None,):
+        self.success = success
+
+    def read(self, iprot):
+        if iprot._fast_decode is not None and isinstance(iprot.trans, TTransport.CReadableTransport) and self.thrift_spec is not None:
+            iprot._fast_decode(self, iprot, [self.__class__, self.thrift_spec])
+            return
+        iprot.readStructBegin()
+        while True:
+            (fname, ftype, fid) = iprot.readFieldBegin()
+            if ftype == TType.STOP:
+                break
+            if fid == 0:
+                if ftype == TType.DOUBLE:
+                    self.success = iprot.readDouble()
+                else:
+                    iprot.skip(ftype)
+            else:
+                iprot.skip(ftype)
+            iprot.readFieldEnd()
+        iprot.readStructEnd()
+
+    def write(self, oprot):
+        if oprot._fast_encode is not None and self.thrift_spec is not None:
+            oprot.trans.write(oprot._fast_encode(self, [self.__class__, self.thrift_spec]))
+            return
+        oprot.writeStructBegin('logaritmo_result')
+        if self.success is not None:
+            oprot.writeFieldBegin('success', TType.DOUBLE, 0)
+            oprot.writeDouble(self.success)
+            oprot.writeFieldEnd()
+        oprot.writeFieldStop()
+        oprot.writeStructEnd()
+
+    def validate(self):
+        return
+
+    def __repr__(self):
+        L = ['%s=%r' % (key, value)
+             for key, value in self.__dict__.items()]
+        return '%s(%s)' % (self.__class__.__name__, ', '.join(L))
+
+    def __eq__(self, other):
+        return isinstance(other, self.__class__) and self.__dict__ == other.__dict__
+
+    def __ne__(self, other):
+        return not (self == other)
+all_structs.append(logaritmo_result)
+logaritmo_result.thrift_spec = (
     (0, TType.DOUBLE, 'success', None, None, ),  # 0
 )
 
@@ -3323,6 +4261,683 @@ class division_matriz_escalar_result(object):
 all_structs.append(division_matriz_escalar_result)
 division_matriz_escalar_result.thrift_spec = (
     (0, TType.LIST, 'success', (TType.LIST, (TType.DOUBLE, None, False), False), None, ),  # 0
+)
+
+
+class suma_fracciones_args(object):
+    """
+    Attributes:
+     - f1
+     - f2
+
+    """
+
+
+    def __init__(self, f1=None, f2=None,):
+        self.f1 = f1
+        self.f2 = f2
+
+    def read(self, iprot):
+        if iprot._fast_decode is not None and isinstance(iprot.trans, TTransport.CReadableTransport) and self.thrift_spec is not None:
+            iprot._fast_decode(self, iprot, [self.__class__, self.thrift_spec])
+            return
+        iprot.readStructBegin()
+        while True:
+            (fname, ftype, fid) = iprot.readFieldBegin()
+            if ftype == TType.STOP:
+                break
+            if fid == 1:
+                if ftype == TType.STRUCT:
+                    self.f1 = Fraccion()
+                    self.f1.read(iprot)
+                else:
+                    iprot.skip(ftype)
+            elif fid == 2:
+                if ftype == TType.STRUCT:
+                    self.f2 = Fraccion()
+                    self.f2.read(iprot)
+                else:
+                    iprot.skip(ftype)
+            else:
+                iprot.skip(ftype)
+            iprot.readFieldEnd()
+        iprot.readStructEnd()
+
+    def write(self, oprot):
+        if oprot._fast_encode is not None and self.thrift_spec is not None:
+            oprot.trans.write(oprot._fast_encode(self, [self.__class__, self.thrift_spec]))
+            return
+        oprot.writeStructBegin('suma_fracciones_args')
+        if self.f1 is not None:
+            oprot.writeFieldBegin('f1', TType.STRUCT, 1)
+            self.f1.write(oprot)
+            oprot.writeFieldEnd()
+        if self.f2 is not None:
+            oprot.writeFieldBegin('f2', TType.STRUCT, 2)
+            self.f2.write(oprot)
+            oprot.writeFieldEnd()
+        oprot.writeFieldStop()
+        oprot.writeStructEnd()
+
+    def validate(self):
+        return
+
+    def __repr__(self):
+        L = ['%s=%r' % (key, value)
+             for key, value in self.__dict__.items()]
+        return '%s(%s)' % (self.__class__.__name__, ', '.join(L))
+
+    def __eq__(self, other):
+        return isinstance(other, self.__class__) and self.__dict__ == other.__dict__
+
+    def __ne__(self, other):
+        return not (self == other)
+all_structs.append(suma_fracciones_args)
+suma_fracciones_args.thrift_spec = (
+    None,  # 0
+    (1, TType.STRUCT, 'f1', [Fraccion, None], None, ),  # 1
+    (2, TType.STRUCT, 'f2', [Fraccion, None], None, ),  # 2
+)
+
+
+class suma_fracciones_result(object):
+    """
+    Attributes:
+     - success
+
+    """
+
+
+    def __init__(self, success=None,):
+        self.success = success
+
+    def read(self, iprot):
+        if iprot._fast_decode is not None and isinstance(iprot.trans, TTransport.CReadableTransport) and self.thrift_spec is not None:
+            iprot._fast_decode(self, iprot, [self.__class__, self.thrift_spec])
+            return
+        iprot.readStructBegin()
+        while True:
+            (fname, ftype, fid) = iprot.readFieldBegin()
+            if ftype == TType.STOP:
+                break
+            if fid == 0:
+                if ftype == TType.STRUCT:
+                    self.success = Fraccion()
+                    self.success.read(iprot)
+                else:
+                    iprot.skip(ftype)
+            else:
+                iprot.skip(ftype)
+            iprot.readFieldEnd()
+        iprot.readStructEnd()
+
+    def write(self, oprot):
+        if oprot._fast_encode is not None and self.thrift_spec is not None:
+            oprot.trans.write(oprot._fast_encode(self, [self.__class__, self.thrift_spec]))
+            return
+        oprot.writeStructBegin('suma_fracciones_result')
+        if self.success is not None:
+            oprot.writeFieldBegin('success', TType.STRUCT, 0)
+            self.success.write(oprot)
+            oprot.writeFieldEnd()
+        oprot.writeFieldStop()
+        oprot.writeStructEnd()
+
+    def validate(self):
+        return
+
+    def __repr__(self):
+        L = ['%s=%r' % (key, value)
+             for key, value in self.__dict__.items()]
+        return '%s(%s)' % (self.__class__.__name__, ', '.join(L))
+
+    def __eq__(self, other):
+        return isinstance(other, self.__class__) and self.__dict__ == other.__dict__
+
+    def __ne__(self, other):
+        return not (self == other)
+all_structs.append(suma_fracciones_result)
+suma_fracciones_result.thrift_spec = (
+    (0, TType.STRUCT, 'success', [Fraccion, None], None, ),  # 0
+)
+
+
+class resta_fracciones_args(object):
+    """
+    Attributes:
+     - f1
+     - f2
+
+    """
+
+
+    def __init__(self, f1=None, f2=None,):
+        self.f1 = f1
+        self.f2 = f2
+
+    def read(self, iprot):
+        if iprot._fast_decode is not None and isinstance(iprot.trans, TTransport.CReadableTransport) and self.thrift_spec is not None:
+            iprot._fast_decode(self, iprot, [self.__class__, self.thrift_spec])
+            return
+        iprot.readStructBegin()
+        while True:
+            (fname, ftype, fid) = iprot.readFieldBegin()
+            if ftype == TType.STOP:
+                break
+            if fid == 1:
+                if ftype == TType.STRUCT:
+                    self.f1 = Fraccion()
+                    self.f1.read(iprot)
+                else:
+                    iprot.skip(ftype)
+            elif fid == 2:
+                if ftype == TType.STRUCT:
+                    self.f2 = Fraccion()
+                    self.f2.read(iprot)
+                else:
+                    iprot.skip(ftype)
+            else:
+                iprot.skip(ftype)
+            iprot.readFieldEnd()
+        iprot.readStructEnd()
+
+    def write(self, oprot):
+        if oprot._fast_encode is not None and self.thrift_spec is not None:
+            oprot.trans.write(oprot._fast_encode(self, [self.__class__, self.thrift_spec]))
+            return
+        oprot.writeStructBegin('resta_fracciones_args')
+        if self.f1 is not None:
+            oprot.writeFieldBegin('f1', TType.STRUCT, 1)
+            self.f1.write(oprot)
+            oprot.writeFieldEnd()
+        if self.f2 is not None:
+            oprot.writeFieldBegin('f2', TType.STRUCT, 2)
+            self.f2.write(oprot)
+            oprot.writeFieldEnd()
+        oprot.writeFieldStop()
+        oprot.writeStructEnd()
+
+    def validate(self):
+        return
+
+    def __repr__(self):
+        L = ['%s=%r' % (key, value)
+             for key, value in self.__dict__.items()]
+        return '%s(%s)' % (self.__class__.__name__, ', '.join(L))
+
+    def __eq__(self, other):
+        return isinstance(other, self.__class__) and self.__dict__ == other.__dict__
+
+    def __ne__(self, other):
+        return not (self == other)
+all_structs.append(resta_fracciones_args)
+resta_fracciones_args.thrift_spec = (
+    None,  # 0
+    (1, TType.STRUCT, 'f1', [Fraccion, None], None, ),  # 1
+    (2, TType.STRUCT, 'f2', [Fraccion, None], None, ),  # 2
+)
+
+
+class resta_fracciones_result(object):
+    """
+    Attributes:
+     - success
+
+    """
+
+
+    def __init__(self, success=None,):
+        self.success = success
+
+    def read(self, iprot):
+        if iprot._fast_decode is not None and isinstance(iprot.trans, TTransport.CReadableTransport) and self.thrift_spec is not None:
+            iprot._fast_decode(self, iprot, [self.__class__, self.thrift_spec])
+            return
+        iprot.readStructBegin()
+        while True:
+            (fname, ftype, fid) = iprot.readFieldBegin()
+            if ftype == TType.STOP:
+                break
+            if fid == 0:
+                if ftype == TType.STRUCT:
+                    self.success = Fraccion()
+                    self.success.read(iprot)
+                else:
+                    iprot.skip(ftype)
+            else:
+                iprot.skip(ftype)
+            iprot.readFieldEnd()
+        iprot.readStructEnd()
+
+    def write(self, oprot):
+        if oprot._fast_encode is not None and self.thrift_spec is not None:
+            oprot.trans.write(oprot._fast_encode(self, [self.__class__, self.thrift_spec]))
+            return
+        oprot.writeStructBegin('resta_fracciones_result')
+        if self.success is not None:
+            oprot.writeFieldBegin('success', TType.STRUCT, 0)
+            self.success.write(oprot)
+            oprot.writeFieldEnd()
+        oprot.writeFieldStop()
+        oprot.writeStructEnd()
+
+    def validate(self):
+        return
+
+    def __repr__(self):
+        L = ['%s=%r' % (key, value)
+             for key, value in self.__dict__.items()]
+        return '%s(%s)' % (self.__class__.__name__, ', '.join(L))
+
+    def __eq__(self, other):
+        return isinstance(other, self.__class__) and self.__dict__ == other.__dict__
+
+    def __ne__(self, other):
+        return not (self == other)
+all_structs.append(resta_fracciones_result)
+resta_fracciones_result.thrift_spec = (
+    (0, TType.STRUCT, 'success', [Fraccion, None], None, ),  # 0
+)
+
+
+class multiplicacion_fracciones_args(object):
+    """
+    Attributes:
+     - f1
+     - f2
+
+    """
+
+
+    def __init__(self, f1=None, f2=None,):
+        self.f1 = f1
+        self.f2 = f2
+
+    def read(self, iprot):
+        if iprot._fast_decode is not None and isinstance(iprot.trans, TTransport.CReadableTransport) and self.thrift_spec is not None:
+            iprot._fast_decode(self, iprot, [self.__class__, self.thrift_spec])
+            return
+        iprot.readStructBegin()
+        while True:
+            (fname, ftype, fid) = iprot.readFieldBegin()
+            if ftype == TType.STOP:
+                break
+            if fid == 1:
+                if ftype == TType.STRUCT:
+                    self.f1 = Fraccion()
+                    self.f1.read(iprot)
+                else:
+                    iprot.skip(ftype)
+            elif fid == 2:
+                if ftype == TType.STRUCT:
+                    self.f2 = Fraccion()
+                    self.f2.read(iprot)
+                else:
+                    iprot.skip(ftype)
+            else:
+                iprot.skip(ftype)
+            iprot.readFieldEnd()
+        iprot.readStructEnd()
+
+    def write(self, oprot):
+        if oprot._fast_encode is not None and self.thrift_spec is not None:
+            oprot.trans.write(oprot._fast_encode(self, [self.__class__, self.thrift_spec]))
+            return
+        oprot.writeStructBegin('multiplicacion_fracciones_args')
+        if self.f1 is not None:
+            oprot.writeFieldBegin('f1', TType.STRUCT, 1)
+            self.f1.write(oprot)
+            oprot.writeFieldEnd()
+        if self.f2 is not None:
+            oprot.writeFieldBegin('f2', TType.STRUCT, 2)
+            self.f2.write(oprot)
+            oprot.writeFieldEnd()
+        oprot.writeFieldStop()
+        oprot.writeStructEnd()
+
+    def validate(self):
+        return
+
+    def __repr__(self):
+        L = ['%s=%r' % (key, value)
+             for key, value in self.__dict__.items()]
+        return '%s(%s)' % (self.__class__.__name__, ', '.join(L))
+
+    def __eq__(self, other):
+        return isinstance(other, self.__class__) and self.__dict__ == other.__dict__
+
+    def __ne__(self, other):
+        return not (self == other)
+all_structs.append(multiplicacion_fracciones_args)
+multiplicacion_fracciones_args.thrift_spec = (
+    None,  # 0
+    (1, TType.STRUCT, 'f1', [Fraccion, None], None, ),  # 1
+    (2, TType.STRUCT, 'f2', [Fraccion, None], None, ),  # 2
+)
+
+
+class multiplicacion_fracciones_result(object):
+    """
+    Attributes:
+     - success
+
+    """
+
+
+    def __init__(self, success=None,):
+        self.success = success
+
+    def read(self, iprot):
+        if iprot._fast_decode is not None and isinstance(iprot.trans, TTransport.CReadableTransport) and self.thrift_spec is not None:
+            iprot._fast_decode(self, iprot, [self.__class__, self.thrift_spec])
+            return
+        iprot.readStructBegin()
+        while True:
+            (fname, ftype, fid) = iprot.readFieldBegin()
+            if ftype == TType.STOP:
+                break
+            if fid == 0:
+                if ftype == TType.STRUCT:
+                    self.success = Fraccion()
+                    self.success.read(iprot)
+                else:
+                    iprot.skip(ftype)
+            else:
+                iprot.skip(ftype)
+            iprot.readFieldEnd()
+        iprot.readStructEnd()
+
+    def write(self, oprot):
+        if oprot._fast_encode is not None and self.thrift_spec is not None:
+            oprot.trans.write(oprot._fast_encode(self, [self.__class__, self.thrift_spec]))
+            return
+        oprot.writeStructBegin('multiplicacion_fracciones_result')
+        if self.success is not None:
+            oprot.writeFieldBegin('success', TType.STRUCT, 0)
+            self.success.write(oprot)
+            oprot.writeFieldEnd()
+        oprot.writeFieldStop()
+        oprot.writeStructEnd()
+
+    def validate(self):
+        return
+
+    def __repr__(self):
+        L = ['%s=%r' % (key, value)
+             for key, value in self.__dict__.items()]
+        return '%s(%s)' % (self.__class__.__name__, ', '.join(L))
+
+    def __eq__(self, other):
+        return isinstance(other, self.__class__) and self.__dict__ == other.__dict__
+
+    def __ne__(self, other):
+        return not (self == other)
+all_structs.append(multiplicacion_fracciones_result)
+multiplicacion_fracciones_result.thrift_spec = (
+    (0, TType.STRUCT, 'success', [Fraccion, None], None, ),  # 0
+)
+
+
+class division_fracciones_args(object):
+    """
+    Attributes:
+     - f1
+     - f2
+
+    """
+
+
+    def __init__(self, f1=None, f2=None,):
+        self.f1 = f1
+        self.f2 = f2
+
+    def read(self, iprot):
+        if iprot._fast_decode is not None and isinstance(iprot.trans, TTransport.CReadableTransport) and self.thrift_spec is not None:
+            iprot._fast_decode(self, iprot, [self.__class__, self.thrift_spec])
+            return
+        iprot.readStructBegin()
+        while True:
+            (fname, ftype, fid) = iprot.readFieldBegin()
+            if ftype == TType.STOP:
+                break
+            if fid == 1:
+                if ftype == TType.STRUCT:
+                    self.f1 = Fraccion()
+                    self.f1.read(iprot)
+                else:
+                    iprot.skip(ftype)
+            elif fid == 2:
+                if ftype == TType.STRUCT:
+                    self.f2 = Fraccion()
+                    self.f2.read(iprot)
+                else:
+                    iprot.skip(ftype)
+            else:
+                iprot.skip(ftype)
+            iprot.readFieldEnd()
+        iprot.readStructEnd()
+
+    def write(self, oprot):
+        if oprot._fast_encode is not None and self.thrift_spec is not None:
+            oprot.trans.write(oprot._fast_encode(self, [self.__class__, self.thrift_spec]))
+            return
+        oprot.writeStructBegin('division_fracciones_args')
+        if self.f1 is not None:
+            oprot.writeFieldBegin('f1', TType.STRUCT, 1)
+            self.f1.write(oprot)
+            oprot.writeFieldEnd()
+        if self.f2 is not None:
+            oprot.writeFieldBegin('f2', TType.STRUCT, 2)
+            self.f2.write(oprot)
+            oprot.writeFieldEnd()
+        oprot.writeFieldStop()
+        oprot.writeStructEnd()
+
+    def validate(self):
+        return
+
+    def __repr__(self):
+        L = ['%s=%r' % (key, value)
+             for key, value in self.__dict__.items()]
+        return '%s(%s)' % (self.__class__.__name__, ', '.join(L))
+
+    def __eq__(self, other):
+        return isinstance(other, self.__class__) and self.__dict__ == other.__dict__
+
+    def __ne__(self, other):
+        return not (self == other)
+all_structs.append(division_fracciones_args)
+division_fracciones_args.thrift_spec = (
+    None,  # 0
+    (1, TType.STRUCT, 'f1', [Fraccion, None], None, ),  # 1
+    (2, TType.STRUCT, 'f2', [Fraccion, None], None, ),  # 2
+)
+
+
+class division_fracciones_result(object):
+    """
+    Attributes:
+     - success
+
+    """
+
+
+    def __init__(self, success=None,):
+        self.success = success
+
+    def read(self, iprot):
+        if iprot._fast_decode is not None and isinstance(iprot.trans, TTransport.CReadableTransport) and self.thrift_spec is not None:
+            iprot._fast_decode(self, iprot, [self.__class__, self.thrift_spec])
+            return
+        iprot.readStructBegin()
+        while True:
+            (fname, ftype, fid) = iprot.readFieldBegin()
+            if ftype == TType.STOP:
+                break
+            if fid == 0:
+                if ftype == TType.STRUCT:
+                    self.success = Fraccion()
+                    self.success.read(iprot)
+                else:
+                    iprot.skip(ftype)
+            else:
+                iprot.skip(ftype)
+            iprot.readFieldEnd()
+        iprot.readStructEnd()
+
+    def write(self, oprot):
+        if oprot._fast_encode is not None and self.thrift_spec is not None:
+            oprot.trans.write(oprot._fast_encode(self, [self.__class__, self.thrift_spec]))
+            return
+        oprot.writeStructBegin('division_fracciones_result')
+        if self.success is not None:
+            oprot.writeFieldBegin('success', TType.STRUCT, 0)
+            self.success.write(oprot)
+            oprot.writeFieldEnd()
+        oprot.writeFieldStop()
+        oprot.writeStructEnd()
+
+    def validate(self):
+        return
+
+    def __repr__(self):
+        L = ['%s=%r' % (key, value)
+             for key, value in self.__dict__.items()]
+        return '%s(%s)' % (self.__class__.__name__, ', '.join(L))
+
+    def __eq__(self, other):
+        return isinstance(other, self.__class__) and self.__dict__ == other.__dict__
+
+    def __ne__(self, other):
+        return not (self == other)
+all_structs.append(division_fracciones_result)
+division_fracciones_result.thrift_spec = (
+    (0, TType.STRUCT, 'success', [Fraccion, None], None, ),  # 0
+)
+
+
+class simplificacion_fracciones_args(object):
+    """
+    Attributes:
+     - f1
+
+    """
+
+
+    def __init__(self, f1=None,):
+        self.f1 = f1
+
+    def read(self, iprot):
+        if iprot._fast_decode is not None and isinstance(iprot.trans, TTransport.CReadableTransport) and self.thrift_spec is not None:
+            iprot._fast_decode(self, iprot, [self.__class__, self.thrift_spec])
+            return
+        iprot.readStructBegin()
+        while True:
+            (fname, ftype, fid) = iprot.readFieldBegin()
+            if ftype == TType.STOP:
+                break
+            if fid == 1:
+                if ftype == TType.STRUCT:
+                    self.f1 = Fraccion()
+                    self.f1.read(iprot)
+                else:
+                    iprot.skip(ftype)
+            else:
+                iprot.skip(ftype)
+            iprot.readFieldEnd()
+        iprot.readStructEnd()
+
+    def write(self, oprot):
+        if oprot._fast_encode is not None and self.thrift_spec is not None:
+            oprot.trans.write(oprot._fast_encode(self, [self.__class__, self.thrift_spec]))
+            return
+        oprot.writeStructBegin('simplificacion_fracciones_args')
+        if self.f1 is not None:
+            oprot.writeFieldBegin('f1', TType.STRUCT, 1)
+            self.f1.write(oprot)
+            oprot.writeFieldEnd()
+        oprot.writeFieldStop()
+        oprot.writeStructEnd()
+
+    def validate(self):
+        return
+
+    def __repr__(self):
+        L = ['%s=%r' % (key, value)
+             for key, value in self.__dict__.items()]
+        return '%s(%s)' % (self.__class__.__name__, ', '.join(L))
+
+    def __eq__(self, other):
+        return isinstance(other, self.__class__) and self.__dict__ == other.__dict__
+
+    def __ne__(self, other):
+        return not (self == other)
+all_structs.append(simplificacion_fracciones_args)
+simplificacion_fracciones_args.thrift_spec = (
+    None,  # 0
+    (1, TType.STRUCT, 'f1', [Fraccion, None], None, ),  # 1
+)
+
+
+class simplificacion_fracciones_result(object):
+    """
+    Attributes:
+     - success
+
+    """
+
+
+    def __init__(self, success=None,):
+        self.success = success
+
+    def read(self, iprot):
+        if iprot._fast_decode is not None and isinstance(iprot.trans, TTransport.CReadableTransport) and self.thrift_spec is not None:
+            iprot._fast_decode(self, iprot, [self.__class__, self.thrift_spec])
+            return
+        iprot.readStructBegin()
+        while True:
+            (fname, ftype, fid) = iprot.readFieldBegin()
+            if ftype == TType.STOP:
+                break
+            if fid == 0:
+                if ftype == TType.STRUCT:
+                    self.success = Fraccion()
+                    self.success.read(iprot)
+                else:
+                    iprot.skip(ftype)
+            else:
+                iprot.skip(ftype)
+            iprot.readFieldEnd()
+        iprot.readStructEnd()
+
+    def write(self, oprot):
+        if oprot._fast_encode is not None and self.thrift_spec is not None:
+            oprot.trans.write(oprot._fast_encode(self, [self.__class__, self.thrift_spec]))
+            return
+        oprot.writeStructBegin('simplificacion_fracciones_result')
+        if self.success is not None:
+            oprot.writeFieldBegin('success', TType.STRUCT, 0)
+            self.success.write(oprot)
+            oprot.writeFieldEnd()
+        oprot.writeFieldStop()
+        oprot.writeStructEnd()
+
+    def validate(self):
+        return
+
+    def __repr__(self):
+        L = ['%s=%r' % (key, value)
+             for key, value in self.__dict__.items()]
+        return '%s(%s)' % (self.__class__.__name__, ', '.join(L))
+
+    def __eq__(self, other):
+        return isinstance(other, self.__class__) and self.__dict__ == other.__dict__
+
+    def __ne__(self, other):
+        return not (self == other)
+all_structs.append(simplificacion_fracciones_result)
+simplificacion_fracciones_result.thrift_spec = (
+    (0, TType.STRUCT, 'success', [Fraccion, None], None, ),  # 0
 )
 fix_spec(all_structs)
 del all_structs

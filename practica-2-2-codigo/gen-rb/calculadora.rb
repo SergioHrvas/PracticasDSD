@@ -85,6 +85,51 @@ module Calculadora
       raise ::Thrift::ApplicationException.new(::Thrift::ApplicationException::MISSING_RESULT, 'division failed: unknown result')
     end
 
+    def raices(num1, num2)
+      send_raices(num1, num2)
+      return recv_raices()
+    end
+
+    def send_raices(num1, num2)
+      send_message('raices', Raices_args, :num1 => num1, :num2 => num2)
+    end
+
+    def recv_raices()
+      result = receive_message(Raices_result)
+      return result.success unless result.success.nil?
+      raise ::Thrift::ApplicationException.new(::Thrift::ApplicationException::MISSING_RESULT, 'raices failed: unknown result')
+    end
+
+    def potencia(num1, num2)
+      send_potencia(num1, num2)
+      return recv_potencia()
+    end
+
+    def send_potencia(num1, num2)
+      send_message('potencia', Potencia_args, :num1 => num1, :num2 => num2)
+    end
+
+    def recv_potencia()
+      result = receive_message(Potencia_result)
+      return result.success unless result.success.nil?
+      raise ::Thrift::ApplicationException.new(::Thrift::ApplicationException::MISSING_RESULT, 'potencia failed: unknown result')
+    end
+
+    def logaritmo(num1, num2)
+      send_logaritmo(num1, num2)
+      return recv_logaritmo()
+    end
+
+    def send_logaritmo(num1, num2)
+      send_message('logaritmo', Logaritmo_args, :num1 => num1, :num2 => num2)
+    end
+
+    def recv_logaritmo()
+      result = receive_message(Logaritmo_result)
+      return result.success unless result.success.nil?
+      raise ::Thrift::ApplicationException.new(::Thrift::ApplicationException::MISSING_RESULT, 'logaritmo failed: unknown result')
+    end
+
     def suma_vectores(vector1, vector2)
       send_suma_vectores(vector1, vector2)
       return recv_suma_vectores()
@@ -235,6 +280,81 @@ module Calculadora
       raise ::Thrift::ApplicationException.new(::Thrift::ApplicationException::MISSING_RESULT, 'division_matriz_escalar failed: unknown result')
     end
 
+    def suma_fracciones(f1, f2)
+      send_suma_fracciones(f1, f2)
+      return recv_suma_fracciones()
+    end
+
+    def send_suma_fracciones(f1, f2)
+      send_message('suma_fracciones', Suma_fracciones_args, :f1 => f1, :f2 => f2)
+    end
+
+    def recv_suma_fracciones()
+      result = receive_message(Suma_fracciones_result)
+      return result.success unless result.success.nil?
+      raise ::Thrift::ApplicationException.new(::Thrift::ApplicationException::MISSING_RESULT, 'suma_fracciones failed: unknown result')
+    end
+
+    def resta_fracciones(f1, f2)
+      send_resta_fracciones(f1, f2)
+      return recv_resta_fracciones()
+    end
+
+    def send_resta_fracciones(f1, f2)
+      send_message('resta_fracciones', Resta_fracciones_args, :f1 => f1, :f2 => f2)
+    end
+
+    def recv_resta_fracciones()
+      result = receive_message(Resta_fracciones_result)
+      return result.success unless result.success.nil?
+      raise ::Thrift::ApplicationException.new(::Thrift::ApplicationException::MISSING_RESULT, 'resta_fracciones failed: unknown result')
+    end
+
+    def multiplicacion_fracciones(f1, f2)
+      send_multiplicacion_fracciones(f1, f2)
+      return recv_multiplicacion_fracciones()
+    end
+
+    def send_multiplicacion_fracciones(f1, f2)
+      send_message('multiplicacion_fracciones', Multiplicacion_fracciones_args, :f1 => f1, :f2 => f2)
+    end
+
+    def recv_multiplicacion_fracciones()
+      result = receive_message(Multiplicacion_fracciones_result)
+      return result.success unless result.success.nil?
+      raise ::Thrift::ApplicationException.new(::Thrift::ApplicationException::MISSING_RESULT, 'multiplicacion_fracciones failed: unknown result')
+    end
+
+    def division_fracciones(f1, f2)
+      send_division_fracciones(f1, f2)
+      return recv_division_fracciones()
+    end
+
+    def send_division_fracciones(f1, f2)
+      send_message('division_fracciones', Division_fracciones_args, :f1 => f1, :f2 => f2)
+    end
+
+    def recv_division_fracciones()
+      result = receive_message(Division_fracciones_result)
+      return result.success unless result.success.nil?
+      raise ::Thrift::ApplicationException.new(::Thrift::ApplicationException::MISSING_RESULT, 'division_fracciones failed: unknown result')
+    end
+
+    def simplificacion_fracciones(f1)
+      send_simplificacion_fracciones(f1)
+      return recv_simplificacion_fracciones()
+    end
+
+    def send_simplificacion_fracciones(f1)
+      send_message('simplificacion_fracciones', Simplificacion_fracciones_args, :f1 => f1)
+    end
+
+    def recv_simplificacion_fracciones()
+      result = receive_message(Simplificacion_fracciones_result)
+      return result.success unless result.success.nil?
+      raise ::Thrift::ApplicationException.new(::Thrift::ApplicationException::MISSING_RESULT, 'simplificacion_fracciones failed: unknown result')
+    end
+
   end
 
   class Processor
@@ -273,6 +393,27 @@ module Calculadora
       result = Division_result.new()
       result.success = @handler.division(args.num1, args.num2)
       write_result(result, oprot, 'division', seqid)
+    end
+
+    def process_raices(seqid, iprot, oprot)
+      args = read_args(iprot, Raices_args)
+      result = Raices_result.new()
+      result.success = @handler.raices(args.num1, args.num2)
+      write_result(result, oprot, 'raices', seqid)
+    end
+
+    def process_potencia(seqid, iprot, oprot)
+      args = read_args(iprot, Potencia_args)
+      result = Potencia_result.new()
+      result.success = @handler.potencia(args.num1, args.num2)
+      write_result(result, oprot, 'potencia', seqid)
+    end
+
+    def process_logaritmo(seqid, iprot, oprot)
+      args = read_args(iprot, Logaritmo_args)
+      result = Logaritmo_result.new()
+      result.success = @handler.logaritmo(args.num1, args.num2)
+      write_result(result, oprot, 'logaritmo', seqid)
     end
 
     def process_suma_vectores(seqid, iprot, oprot)
@@ -343,6 +484,41 @@ module Calculadora
       result = Division_matriz_escalar_result.new()
       result.success = @handler.division_matriz_escalar(args.matriz1, args.escalar)
       write_result(result, oprot, 'division_matriz_escalar', seqid)
+    end
+
+    def process_suma_fracciones(seqid, iprot, oprot)
+      args = read_args(iprot, Suma_fracciones_args)
+      result = Suma_fracciones_result.new()
+      result.success = @handler.suma_fracciones(args.f1, args.f2)
+      write_result(result, oprot, 'suma_fracciones', seqid)
+    end
+
+    def process_resta_fracciones(seqid, iprot, oprot)
+      args = read_args(iprot, Resta_fracciones_args)
+      result = Resta_fracciones_result.new()
+      result.success = @handler.resta_fracciones(args.f1, args.f2)
+      write_result(result, oprot, 'resta_fracciones', seqid)
+    end
+
+    def process_multiplicacion_fracciones(seqid, iprot, oprot)
+      args = read_args(iprot, Multiplicacion_fracciones_args)
+      result = Multiplicacion_fracciones_result.new()
+      result.success = @handler.multiplicacion_fracciones(args.f1, args.f2)
+      write_result(result, oprot, 'multiplicacion_fracciones', seqid)
+    end
+
+    def process_division_fracciones(seqid, iprot, oprot)
+      args = read_args(iprot, Division_fracciones_args)
+      result = Division_fracciones_result.new()
+      result.success = @handler.division_fracciones(args.f1, args.f2)
+      write_result(result, oprot, 'division_fracciones', seqid)
+    end
+
+    def process_simplificacion_fracciones(seqid, iprot, oprot)
+      args = read_args(iprot, Simplificacion_fracciones_args)
+      result = Simplificacion_fracciones_result.new()
+      result.success = @handler.simplificacion_fracciones(args.f1)
+      write_result(result, oprot, 'simplificacion_fracciones', seqid)
     end
 
   end
@@ -500,6 +676,108 @@ module Calculadora
   end
 
   class Division_result
+    include ::Thrift::Struct, ::Thrift::Struct_Union
+    SUCCESS = 0
+
+    FIELDS = {
+      SUCCESS => {:type => ::Thrift::Types::DOUBLE, :name => 'success'}
+    }
+
+    def struct_fields; FIELDS; end
+
+    def validate
+    end
+
+    ::Thrift::Struct.generate_accessors self
+  end
+
+  class Raices_args
+    include ::Thrift::Struct, ::Thrift::Struct_Union
+    NUM1 = 1
+    NUM2 = 2
+
+    FIELDS = {
+      NUM1 => {:type => ::Thrift::Types::DOUBLE, :name => 'num1'},
+      NUM2 => {:type => ::Thrift::Types::I32, :name => 'num2'}
+    }
+
+    def struct_fields; FIELDS; end
+
+    def validate
+    end
+
+    ::Thrift::Struct.generate_accessors self
+  end
+
+  class Raices_result
+    include ::Thrift::Struct, ::Thrift::Struct_Union
+    SUCCESS = 0
+
+    FIELDS = {
+      SUCCESS => {:type => ::Thrift::Types::DOUBLE, :name => 'success'}
+    }
+
+    def struct_fields; FIELDS; end
+
+    def validate
+    end
+
+    ::Thrift::Struct.generate_accessors self
+  end
+
+  class Potencia_args
+    include ::Thrift::Struct, ::Thrift::Struct_Union
+    NUM1 = 1
+    NUM2 = 2
+
+    FIELDS = {
+      NUM1 => {:type => ::Thrift::Types::DOUBLE, :name => 'num1'},
+      NUM2 => {:type => ::Thrift::Types::I32, :name => 'num2'}
+    }
+
+    def struct_fields; FIELDS; end
+
+    def validate
+    end
+
+    ::Thrift::Struct.generate_accessors self
+  end
+
+  class Potencia_result
+    include ::Thrift::Struct, ::Thrift::Struct_Union
+    SUCCESS = 0
+
+    FIELDS = {
+      SUCCESS => {:type => ::Thrift::Types::DOUBLE, :name => 'success'}
+    }
+
+    def struct_fields; FIELDS; end
+
+    def validate
+    end
+
+    ::Thrift::Struct.generate_accessors self
+  end
+
+  class Logaritmo_args
+    include ::Thrift::Struct, ::Thrift::Struct_Union
+    NUM1 = 1
+    NUM2 = 2
+
+    FIELDS = {
+      NUM1 => {:type => ::Thrift::Types::DOUBLE, :name => 'num1'},
+      NUM2 => {:type => ::Thrift::Types::I32, :name => 'num2'}
+    }
+
+    def struct_fields; FIELDS; end
+
+    def validate
+    end
+
+    ::Thrift::Struct.generate_accessors self
+  end
+
+  class Logaritmo_result
     include ::Thrift::Struct, ::Thrift::Struct_Union
     SUCCESS = 0
 
@@ -845,6 +1123,174 @@ module Calculadora
 
     FIELDS = {
       SUCCESS => {:type => ::Thrift::Types::LIST, :name => 'success', :element => {:type => ::Thrift::Types::LIST, :element => {:type => ::Thrift::Types::DOUBLE}}}
+    }
+
+    def struct_fields; FIELDS; end
+
+    def validate
+    end
+
+    ::Thrift::Struct.generate_accessors self
+  end
+
+  class Suma_fracciones_args
+    include ::Thrift::Struct, ::Thrift::Struct_Union
+    F1 = 1
+    F2 = 2
+
+    FIELDS = {
+      F1 => {:type => ::Thrift::Types::STRUCT, :name => 'f1', :class => ::Fraccion},
+      F2 => {:type => ::Thrift::Types::STRUCT, :name => 'f2', :class => ::Fraccion}
+    }
+
+    def struct_fields; FIELDS; end
+
+    def validate
+    end
+
+    ::Thrift::Struct.generate_accessors self
+  end
+
+  class Suma_fracciones_result
+    include ::Thrift::Struct, ::Thrift::Struct_Union
+    SUCCESS = 0
+
+    FIELDS = {
+      SUCCESS => {:type => ::Thrift::Types::STRUCT, :name => 'success', :class => ::Fraccion}
+    }
+
+    def struct_fields; FIELDS; end
+
+    def validate
+    end
+
+    ::Thrift::Struct.generate_accessors self
+  end
+
+  class Resta_fracciones_args
+    include ::Thrift::Struct, ::Thrift::Struct_Union
+    F1 = 1
+    F2 = 2
+
+    FIELDS = {
+      F1 => {:type => ::Thrift::Types::STRUCT, :name => 'f1', :class => ::Fraccion},
+      F2 => {:type => ::Thrift::Types::STRUCT, :name => 'f2', :class => ::Fraccion}
+    }
+
+    def struct_fields; FIELDS; end
+
+    def validate
+    end
+
+    ::Thrift::Struct.generate_accessors self
+  end
+
+  class Resta_fracciones_result
+    include ::Thrift::Struct, ::Thrift::Struct_Union
+    SUCCESS = 0
+
+    FIELDS = {
+      SUCCESS => {:type => ::Thrift::Types::STRUCT, :name => 'success', :class => ::Fraccion}
+    }
+
+    def struct_fields; FIELDS; end
+
+    def validate
+    end
+
+    ::Thrift::Struct.generate_accessors self
+  end
+
+  class Multiplicacion_fracciones_args
+    include ::Thrift::Struct, ::Thrift::Struct_Union
+    F1 = 1
+    F2 = 2
+
+    FIELDS = {
+      F1 => {:type => ::Thrift::Types::STRUCT, :name => 'f1', :class => ::Fraccion},
+      F2 => {:type => ::Thrift::Types::STRUCT, :name => 'f2', :class => ::Fraccion}
+    }
+
+    def struct_fields; FIELDS; end
+
+    def validate
+    end
+
+    ::Thrift::Struct.generate_accessors self
+  end
+
+  class Multiplicacion_fracciones_result
+    include ::Thrift::Struct, ::Thrift::Struct_Union
+    SUCCESS = 0
+
+    FIELDS = {
+      SUCCESS => {:type => ::Thrift::Types::STRUCT, :name => 'success', :class => ::Fraccion}
+    }
+
+    def struct_fields; FIELDS; end
+
+    def validate
+    end
+
+    ::Thrift::Struct.generate_accessors self
+  end
+
+  class Division_fracciones_args
+    include ::Thrift::Struct, ::Thrift::Struct_Union
+    F1 = 1
+    F2 = 2
+
+    FIELDS = {
+      F1 => {:type => ::Thrift::Types::STRUCT, :name => 'f1', :class => ::Fraccion},
+      F2 => {:type => ::Thrift::Types::STRUCT, :name => 'f2', :class => ::Fraccion}
+    }
+
+    def struct_fields; FIELDS; end
+
+    def validate
+    end
+
+    ::Thrift::Struct.generate_accessors self
+  end
+
+  class Division_fracciones_result
+    include ::Thrift::Struct, ::Thrift::Struct_Union
+    SUCCESS = 0
+
+    FIELDS = {
+      SUCCESS => {:type => ::Thrift::Types::STRUCT, :name => 'success', :class => ::Fraccion}
+    }
+
+    def struct_fields; FIELDS; end
+
+    def validate
+    end
+
+    ::Thrift::Struct.generate_accessors self
+  end
+
+  class Simplificacion_fracciones_args
+    include ::Thrift::Struct, ::Thrift::Struct_Union
+    F1 = 1
+
+    FIELDS = {
+      F1 => {:type => ::Thrift::Types::STRUCT, :name => 'f1', :class => ::Fraccion}
+    }
+
+    def struct_fields; FIELDS; end
+
+    def validate
+    end
+
+    ::Thrift::Struct.generate_accessors self
+  end
+
+  class Simplificacion_fracciones_result
+    include ::Thrift::Struct, ::Thrift::Struct_Union
+    SUCCESS = 0
+
+    FIELDS = {
+      SUCCESS => {:type => ::Thrift::Types::STRUCT, :name => 'success', :class => ::Fraccion}
     }
 
     def struct_fields; FIELDS; end

@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.RecursiveTask;
+import java.math.*;
 
 import org.apache.thrift.TException;
 import org.apache.thrift.transport.TSSLTransportFactory;
@@ -22,7 +24,7 @@ class CalculadoraHandler implements Calculadora.Iface {
 
 	CalculadoraHandler(){
 		try {
-			  this.transport = new TSocket("localhost", 9092);
+			  this.transport = new TSocket("localhost", 9093);
 
 			TProtocol protocol = new  TBinaryProtocol(transport);
 			this.client = new Calculadora.Client(protocol);
@@ -60,6 +62,40 @@ class CalculadoraHandler implements Calculadora.Iface {
 		System.out.println("He dividido");
 
 		return a / b;
+	}
+
+	public double potencia(double a, int b){
+		return Math.pow(a, b);
+	}
+
+	public double raices(double a, int b){
+		return Math.pow((double)a,1/(double)b);
+	}
+
+	private double funcionRepeticion(double x, int i){
+		double r = 1.0;
+		for (int k = i; k > 0; k--)
+			r *= x;
+		return r;
+	}
+
+	public double logaritmo(double n, int b){
+		double resultado = 0;
+
+	
+		double variable = 0;
+		int i, precision = 10, repeticiones = 0;
+		while (n != 1 && precision >= 0)
+		{
+			for (i = 0; n >= b; i++)
+				n /= b;
+			n = funcionRepeticion(n, 10);
+			variable = 10 * (variable + i);
+			precision--;
+			repeticiones++;
+		}
+		resultado = (double)variable / funcionRepeticion(10, repeticiones);
+		return resultado;
 	}
 
 	public List<Double> suma_vectores(List<Double> vector1, List<Double> vector2) {
@@ -167,4 +203,81 @@ class CalculadoraHandler implements Calculadora.Iface {
 
 		return resultado;
 	}
+
+	private int maximo_comun_divisor(int a, int b){
+		int n1 = Math.abs(a);
+		int n2 = Math.abs(b);
+		if (n2 == 0)
+		{
+			return n1;
+		}
+	
+		int resto;
+		while (n2 != 0)
+		{
+			resto = n1 % n2;
+			n1 = n2;
+			n2 = resto;
+		}
+	
+		return n1;
+	}
+
+	public Fraccion suma_fracciones(Fraccion f1, Fraccion f2){
+		Fraccion resultado = new Fraccion();
+		if(f1.den == f2.den){
+			resultado.den = f1.den;
+			resultado.num = f1.num + f1.num;
+		}
+		else{
+			resultado.den = f1.den * f2.den;
+			resultado.num = f1.num * f2.den + f2.num * f1.den;
+		}
+
+		int mcd = maximo_comun_divisor(resultado.num, resultado.den);
+		resultado.den = resultado.den / mcd;
+		resultado.num = resultado.num / mcd;
+		System.out.println(""+resultado.num+"   "+resultado.den+"\n");
+		return resultado;
+	}
+
+	public Fraccion resta_fracciones(Fraccion f1, Fraccion f2){
+		Fraccion resultado = new Fraccion();
+		if(f1.den == f2.den){
+			resultado.den = f1.den;
+			resultado.num = f1.num - f1.num;
+		}
+		else{
+			resultado.den = f1.den * f2.den;
+			resultado.num = f1.num * f2.den - f2.num * f1.den;
+		}
+
+		int mcd = maximo_comun_divisor(resultado.num, resultado.den);
+		resultado.den = resultado.den / mcd;
+		resultado.num = resultado.num / mcd;
+		return resultado;
+	}
+
+	public Fraccion multiplicacion_fracciones(Fraccion f1, Fraccion f2){
+		Fraccion resultado = new Fraccion();
+		resultado.num = f1.num * f2.num;
+		resultado.den = f1.den * f2.den;
+		return resultado;
+	}
+
+	public Fraccion division_fracciones(Fraccion f1, Fraccion f2){
+		Fraccion resultado = new Fraccion();
+		resultado.num = f1.num * f2.den;
+		resultado.den = f1.den * f2.num;
+		return resultado;
+	}
+
+	public Fraccion simplificacion_fracciones(Fraccion f1){
+		Fraccion resultado = new Fraccion();
+		int mcd = maximo_comun_divisor(f1.num, f1.den);
+		resultado.num = f1.num / mcd;
+		resultado.den = f1.den / mcd;
+		return resultado;
+	}
 }
+

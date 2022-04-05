@@ -5,5 +5,5 @@
 #
 
 require 'thrift'
-require './calculadora_types'
+require 'calculadora_types'
 

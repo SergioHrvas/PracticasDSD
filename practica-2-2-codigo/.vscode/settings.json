@@ -9,5 +9,6 @@
         "gen-java/lib/javax.annotation-api-1.3.2.jar",
         "gen-java/lib/libthrift-0.16.0.jar",
         "gen-java/lib/slf4j-api-1.7.35.jar"
-    ]
+    ],
+    "python.formatting.provider": "black"
 }

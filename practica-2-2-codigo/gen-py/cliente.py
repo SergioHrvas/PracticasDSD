@@ -1,4 +1,5 @@
 from calculadora import Calculadora
+from calculadora import ttypes
 
 from thrift import Thrift
 from thrift.transport import TSocket
@@ -22,13 +23,21 @@ def operacionesSimples():
                 print(operando1)
 
             if (primeravez or interactivo == 0):
-                print("Introduzca la operacion (ej: '4 + 5'):")
+                print("Introduzca la operacion (ej: '4 + 5'):");
+                print("Operaciones posibles: + | - | * | / | ^ | l | r");
+                print("Formato: ( 3 ^ 4 ) para 3 elevado a 4");
+                print("Formato: ( 3 l 4 ) para logaritmo de 3 en base 4");
+                print("Formato: ( 3 r 4 ) para raiz cuarta de 3");
                 operando1 = int(input())
                 primeravez = 0
 
             operacion = input()
 
-            operando2 = int(input())
+            if(operacion == "^" or operacion == "l" or operacion == "r"):
+                operando2 = int(input())
+            else:
+                operando2 = input()
+                
             if (operacion == "+"):
                 resultado = client.suma(operando1, operando2)
             elif (operacion == "-"):
@@ -37,6 +46,12 @@ def operacionesSimples():
                 resultado = client.multiplicacion(operando1, operando2)
             elif (operacion == "/"):
                 resultado = client.division(operando1, operando2)
+            elif (operacion == "l"):
+                resultado = client.logaritmo(operando1, operando2)
+            elif (operacion == "^"):
+                resultado = client.potencia(operando1, operando2)
+            elif (operacion == "r"):
+                resultado = client.raices(operando1, operando2)
 
             print(f"{operando1} {operacion} {operando2} = {resultado}")
 
@@ -46,6 +61,63 @@ def operacionesSimples():
                 print("\n¿Desea continuar?: ('s' para si | 'n' para no)")
                 continuo = input()
 
+
+
+
+def operacionesFracciones():
+    f1 = Calculadora.Fraccion()
+
+    print("Introduzca la operación que desea realizar:")
+    print("> Suma: +")
+    print("> Resta: -")
+    print("> Multiplicación: *")
+    print("> División: /")
+    print("> Simplificar: s")
+    operacion = input()
+    while ((operacion != "+") and (operacion != "-") and (operacion != "*") and (operacion != "/") and (operacion != "s")):
+        print("Introduzca una operacion correcta: ")
+        operacion = input()
+		
+    if (operacion != "s"):
+        print("Introduzca el numerador de la primera fraccion:")
+    else:
+        print("Introduzca el numerador de la fraccion:")
+    f1.num  = int(input())
+    
+    if (operacion != "s"):
+        print("Introduzca el denominador de la segunda fraccion:")
+    else:
+        print("Introduzca el denominador de la fraccion:")
+    f1.den = int(input())
+
+    f2 = Calculadora.Fraccion()
+    if (operacion != "s"):
+        print("Introduzca el numerador de la segunda fracción:")
+        f2.num = int(input())
+
+        print("Introduzca el denominador de la segunda fracción:")
+        f2.den = int(input())
+
+    fres = Calculadora.Fraccion()
+    if (operacion == "+"):
+        fres = client.suma_fracciones(f1, f2)
+    elif(operacion == "-"):
+        fres = client.resta_fracciones(f1, f2)
+    elif(operacion == "*"):
+        fres = client.multiplicacion_fracciones(f1, f2)
+    elif(operacion == "/"):
+        fres = client.division_fracciones(f1, f2)
+    elif(operacion == "s"):
+        fres = client.simplificacion_fracciones(f1)
+
+    if(operacion!="s"):
+        print(f"        {f1.num}                 {f2.num}                       {fres.num}")
+        print(f" ------------   {operacion} ----------------  ======  ------------")
+        print(f"        {f1.den}                 {f2.den}                       {fres.den}")
+    else:
+        print(f"   {f1.num}                            {fres.num}")
+        print(f"  ------------    ======   ------------")
+        print(f"   {f1.den}                            {fres.den}")
 
 
 
@@ -212,10 +284,6 @@ def operacionesMatrices():
 
         print(f"{escalar}")
 
-
-
-
-            
     tamfilasres=tamfilas1
     tamcolumnasres=tamcolumnas1
     if(operacion=="+"):
@@ -242,7 +310,7 @@ def operacionesMatrices():
 
 
 
-transport = TSocket.TSocket("localhost", 9090)
+transport = TSocket.TSocket("localhost", 9091)
 transport = TTransport.TBufferedTransport(transport)
 protocol = TBinaryProtocol.TBinaryProtocol(transport)
 
@@ -258,16 +326,16 @@ while (opcion != 'q'):
     print("=======CALCULADORA========")
     print("Operaciones simples: s")
     print("Operaciones simples (interactivo): i")
-    print("Operaciones con fracciones: p")
+    print("Operaciones con fracciones: f")
     print("Operaciones con vectores: v")
     print("Operaciones con matrices: m")
     print("Salir: q\n")
     opcion = input()
-    while(opcion != 'i' and opcion != 's' and opcion != 'p' and opcion!= 'v' and opcion != 'm' and opcion != 'q'):
+    while(opcion != 'i' and opcion != 's' and opcion != 'f' and opcion!= 'v' and opcion != 'm' and opcion != 'q'):
         print("Introduzca una opción correcta:")
         print("Operaciones simples: s")
         print("Operaciones simples (interactivo): i")
-        print("Operaciones con fracciones: p")
+        print("Operaciones con fracciones: f")
         print("Operaciones con vectores: v")
         print("Operaciones con matrices: m")
         print("Salir: q\n")
@@ -278,6 +346,10 @@ while (opcion != 'q'):
         operacionesSimples()        
     elif(opcion == 'v'):
         operacionesVectores()
+    elif(opcion == 'v'):
+        operacionesVectores()
+    elif(opcion == 'f'):
+        operacionesFracciones()
     elif(opcion == 'm'):
         operacionesMatrices()
 

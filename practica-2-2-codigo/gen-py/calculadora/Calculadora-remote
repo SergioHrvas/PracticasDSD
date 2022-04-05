@@ -29,6 +29,9 @@ if len(sys.argv) <= 1 or sys.argv[1] == '--help':
     print('  double resta(double num1, double num2)')
     print('  double multiplicacion(double num1, double num2)')
     print('  double division(double num1, double num2)')
+    print('  double raices(double num1, i32 num2)')
+    print('  double potencia(double num1, i32 num2)')
+    print('  double logaritmo(double num1, i32 num2)')
     print('   suma_vectores( vector1,  vector2)')
     print('   resta_vectores( vector1,  vector2)')
     print('  double producto_escalar( vector1,  vector2)')
@@ -39,6 +42,11 @@ if len(sys.argv) <= 1 or sys.argv[1] == '--help':
     print('   producto_matrices( matriz1,  matriz2)')
     print('   multi_matriz_escalar( matriz1, double escalar)')
     print('   division_matriz_escalar( matriz1, double escalar)')
+    print('  Fraccion suma_fracciones(Fraccion f1, Fraccion f2)')
+    print('  Fraccion resta_fracciones(Fraccion f1, Fraccion f2)')
+    print('  Fraccion multiplicacion_fracciones(Fraccion f1, Fraccion f2)')
+    print('  Fraccion division_fracciones(Fraccion f1, Fraccion f2)')
+    print('  Fraccion simplificacion_fracciones(Fraccion f1)')
     print('')
     sys.exit(0)
 
@@ -148,6 +156,24 @@ elif cmd == 'division':
         sys.exit(1)
     pp.pprint(client.division(eval(args[0]), eval(args[1]),))
 
+elif cmd == 'raices':
+    if len(args) != 2:
+        print('raices requires 2 args')
+        sys.exit(1)
+    pp.pprint(client.raices(eval(args[0]), eval(args[1]),))
+
+elif cmd == 'potencia':
+    if len(args) != 2:
+        print('potencia requires 2 args')
+        sys.exit(1)
+    pp.pprint(client.potencia(eval(args[0]), eval(args[1]),))
+
+elif cmd == 'logaritmo':
+    if len(args) != 2:
+        print('logaritmo requires 2 args')
+        sys.exit(1)
+    pp.pprint(client.logaritmo(eval(args[0]), eval(args[1]),))
+
 elif cmd == 'suma_vectores':
     if len(args) != 2:
         print('suma_vectores requires 2 args')
@@ -207,6 +233,36 @@ elif cmd == 'division_matriz_escalar':
         print('division_matriz_escalar requires 2 args')
         sys.exit(1)
     pp.pprint(client.division_matriz_escalar(eval(args[0]), eval(args[1]),))
+
+elif cmd == 'suma_fracciones':
+    if len(args) != 2:
+        print('suma_fracciones requires 2 args')
+        sys.exit(1)
+    pp.pprint(client.suma_fracciones(eval(args[0]), eval(args[1]),))
+
+elif cmd == 'resta_fracciones':
+    if len(args) != 2:
+        print('resta_fracciones requires 2 args')
+        sys.exit(1)
+    pp.pprint(client.resta_fracciones(eval(args[0]), eval(args[1]),))
+
+elif cmd == 'multiplicacion_fracciones':
+    if len(args) != 2:
+        print('multiplicacion_fracciones requires 2 args')
+        sys.exit(1)
+    pp.pprint(client.multiplicacion_fracciones(eval(args[0]), eval(args[1]),))
+
+elif cmd == 'division_fracciones':
+    if len(args) != 2:
+        print('division_fracciones requires 2 args')
+        sys.exit(1)
+    pp.pprint(client.division_fracciones(eval(args[0]), eval(args[1]),))
+
+elif cmd == 'simplificacion_fracciones':
+    if len(args) != 1:
+        print('simplificacion_fracciones requires 1 args')
+        sys.exit(1)
+    pp.pprint(client.simplificacion_fracciones(eval(args[0]),))
 
 else:
     print('Unrecognized method %s' % cmd)
