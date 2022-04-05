@@ -1,19 +1,11 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.RecursiveTask;
-import java.math.*;
 
 import org.apache.thrift.TException;
-import org.apache.thrift.transport.TSSLTransportFactory;
 import org.apache.thrift.transport.TTransport;
-import org.apache.thrift.transport.TTransportException;
 import org.apache.thrift.transport.TSocket;
-import org.apache.thrift.transport.TSSLTransportFactory.TSSLTransportParameters;
 import org.apache.thrift.protocol.TBinaryProtocol;
 import org.apache.thrift.protocol.TProtocol;
-
-// Importar cosas
 
 // Implementar clase handler ( en este u en otro fichero )
 class CalculadoraHandler implements Calculadora.Iface {

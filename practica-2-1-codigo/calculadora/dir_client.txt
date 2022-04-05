@@ -1,5 +1,4 @@
 
-
 #include "dir.h"
 
 void dirprog_1(char *host)
