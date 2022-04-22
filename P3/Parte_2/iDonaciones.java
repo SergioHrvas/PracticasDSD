@@ -15,6 +15,9 @@ public interface iDonaciones extends Remote {
 
     public boolean suscribirse(int id, int cantidad) throws RemoteException, NotBoundException;
 
+    public void solicitar() throws RemoteException, NotBoundException;
+
+    public void liberar() throws RemoteException, NotBoundException;
 
     public boolean desuscribirse(int id) throws RemoteException, NotBoundException;
 }
