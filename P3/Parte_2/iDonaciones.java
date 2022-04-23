@@ -7,7 +7,7 @@ public interface iDonaciones extends Remote {
 
     int Registrar(int valor) throws RemoteException, NotBoundException;
 
-    public int ConsultarDonado(int id) throws RemoteException;
+    public int consultarDonado(int id) throws RemoteException;
 
     public int estaRegistrado(int id) throws RemoteException, NotBoundException;
 

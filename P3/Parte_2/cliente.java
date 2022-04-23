@@ -39,7 +39,7 @@ public class cliente {
             System.out.println("Registrado en replica" + n_replica);
             System.out.println(donaciones.Donar(Integer.parseInt(args[0]), 100));
 
-            int donado = donaciones.ConsultarDonado(Integer.parseInt(args[0]));
+            int donado = donaciones.consultarDonado(Integer.parseInt(args[0]));
             System.out.println("He donado " + donado);
 
             int totalDonado = donaciones.getTotalDonado();
