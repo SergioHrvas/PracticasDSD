@@ -3,10 +3,7 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.Map;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 import java.util.*;
-import java.net.MalformedURLException;
 
 public class Donaciones extends UnicastRemoteObject implements iDonaciones, SDonaciones, Runnable {
     private int suma;
