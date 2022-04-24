@@ -2,8 +2,9 @@ import java.rmi.*;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
+
 //import contador.contador;
-public class servidor {
+public class Servidor {
     public static void main(String[] args) throws AlreadyBoundException, InterruptedException, NotBoundException {
         // Crea e instala el gestor de seguridad
         if (System.getSecurityManager() == null) {
@@ -11,10 +12,10 @@ public class servidor {
         }
         try {
             Registry reg;
-            Donaciones d = new Donaciones(Integer.parseInt(args[0]));
+            int n_replicas = Integer.parseInt(args[1]);
 
-            if (Integer.parseInt(args[0]) < 3 && Integer.parseInt(args[0]) >= 0) {
-                // Crea una instancia de contador
+            Donaciones d = new Donaciones(Integer.parseInt(args[0]), n_replicas);
+            if (Integer.parseInt(args[0]) < n_replicas && Integer.parseInt(args[0]) >= 0) {
 
                 if (Integer.parseInt(args[0]) != 0)
                     reg = LocateRegistry.getRegistry("127.0.0.1", 1099);
@@ -25,14 +26,17 @@ public class servidor {
                 // suma = 0;
                 reg.bind("Replica" + args[0], d);
                 d.setRegistro(reg);
-                if(Integer.parseInt(args[0]) == 2)
+                if(Integer.parseInt(args[0]) == n_replicas-1)
                     d.estanTodas();
                 // Hebras suscriptoras
-                Thread hebra = new Thread(d, "adsdf");
+                
+                Thread hebra = new Thread(d, "Hebra"+args[0]);
 
-                while(!d.getEstanTodas()){
-                    System.out.println("Soy replica" + args[0] + " y " + d.getEstanTodas());
-
+                SDonaciones don = (SDonaciones) reg.lookup("Replica"+args[0]);
+                boolean estan = don.getEstanTodas();
+                while(!estan){
+                    don = (SDonaciones) reg.lookup("Replica"+args[0]);
+                    estan = don.getEstanTodas();
                 }
 
                 hebra.start();

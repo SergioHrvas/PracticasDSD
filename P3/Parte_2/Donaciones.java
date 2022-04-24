@@ -2,10 +2,11 @@ import java.rmi.*;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
-import java.util.Map;
+import java.util.Map.Entry;
+
 import java.util.*;
 
-public class Donaciones extends UnicastRemoteObject implements iDonaciones, SDonaciones, Runnable {
+public class Donaciones extends UnicastRemoteObject implements IDonaciones, SDonaciones, Runnable{
     private int suma;
     private Map<Integer, Integer> registro = new HashMap<Integer, Integer>();
     private Map<Integer, Integer> suscripciones = new HashMap<Integer, Integer>();
@@ -13,11 +14,13 @@ public class Donaciones extends UnicastRemoteObject implements iDonaciones, SDon
     private int n_replica = -1;
     private static Registry reg;
     private boolean estanTodas;
-    private boolean a = false;
+    private int n_replicas;
 
-    public Donaciones(int i) throws RemoteException {
+    public Donaciones(int i, int n_rep) throws RemoteException {
         suma = 0;
         n_replica = i;
+        n_replicas = n_rep;
+
         estanTodas = false;
         if (n_replica == 0) {
             tieneToken = true;
@@ -30,16 +33,15 @@ public class Donaciones extends UnicastRemoteObject implements iDonaciones, SDon
 
     public void estanTodas() {
         estanTodas = true;
-        if (n_replica == 2) {
-            for (int i = 0; i < 3; i++) {
-                if (i != 2) {
+        if (n_replica == n_replicas-1) {
+            for (int i = 0; i < n_replicas; i++) {
+                if (i != n_replicas-1) {
                     SDonaciones s;
                     try {
                         s = (SDonaciones) reg.lookup("Replica" + i);
                         s.estanTodas();
 
                     } catch (RemoteException | NotBoundException e) {
-                        // TODO Auto-generated catch block
                         e.printStackTrace();
                     }
                 }
@@ -62,9 +64,10 @@ public class Donaciones extends UnicastRemoteObject implements iDonaciones, SDon
         tieneToken = tk;
     }
 
-    public Boolean Donar(int id, int donado) throws RemoteException {
+    public synchronized Boolean Donar(int id, int donado) throws RemoteException {
         Boolean hadonado = false, estaRegistrado = registro.containsKey(id);
         if (estaRegistrado) {
+            System.out.println("Cliente " + id + " dona " + donado + "( + " + suma + " = " + (suma+donado) + ")");
             suma += donado;
             registro.put(id, registro.get(id) + donado);
             hadonado = true;
@@ -76,7 +79,8 @@ public class Donaciones extends UnicastRemoteObject implements iDonaciones, SDon
         Registry reg = LocateRegistry.getRegistry("127.0.0.1", 1099);
         SDonaciones d, min_d = (SDonaciones) this;
         int n_reg = -1, n_clientes = 0, min_clientes = Integer.MAX_VALUE;
-        for (int k = 0; k < 3; k++) {
+        for (int k = 0; k < n_replicas; k++) {
+            System.out.println(k);
             if (k != n_replica) {
                 d = (SDonaciones) reg.lookup("Replica" + k);
                 n_clientes = d.getNumeroClientes();
@@ -133,7 +137,7 @@ public class Donaciones extends UnicastRemoteObject implements iDonaciones, SDon
     public int getReplicaRegistro(int id) throws RemoteException, NotBoundException {
         boolean registrado = false;
         int n_reg = -1;
-        for (int k = 0; k < 3 && !registrado; k++) {
+        for (int k = 0; k < n_replicas && !registrado; k++) {
             if (k != n_replica) {
                 SDonaciones d = (SDonaciones) reg.lookup("Replica" + k);
                 registrado = d.estaRegistradoAqui(id);
@@ -151,7 +155,7 @@ public class Donaciones extends UnicastRemoteObject implements iDonaciones, SDon
 
     public int getTotalDonado() throws RemoteException, NotBoundException {
         int sumaTotal = 0;
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < n_replicas; i++) {
             if (i != n_replica) {
                 SDonaciones d = (SDonaciones) reg.lookup("Replica" + i);
                 sumaTotal += d.getTotalDonadoReplica();
@@ -166,46 +170,40 @@ public class Donaciones extends UnicastRemoteObject implements iDonaciones, SDon
         return suma;
     }
 
-    public boolean getV() {
-        return a;
-    }
-
     @Override
     public void run() {
         System.out.println("Buscando el objeto remoto");
         try {
-
+            int i = 0;
             while (true) {
                 boolean tiene = ((SDonaciones) reg.lookup("Replica" + n_replica)).getTieneToken();
                 boolean esta = ((SDonaciones) reg.lookup("Replica" + n_replica)).getEstaOperando();
-                System.out.println("fuera:" + tiene + "- " + esta + "\n");
-                while (esta) {
-                    esta = ((SDonaciones) reg.lookup("Replica" + n_replica)).getEstaOperando();
-                }
-                /*
-                 * for(int i = 0; i < 3; i++){
-                 * System.out.println("| L | Tiene Token Replica " + i + " :"
-                 * +((SDonaciones)reg.lookup("Replica"+i)).getTieneToken());
-                 * }
-                 */
-                System.out.println("tras:" + tiene + "- " + esta + "\n");
-                if (tiene && !esta) {
-                    // System.out.println("AAAAAAA");
-                    ((SDonaciones) reg.lookup("Replica" + n_replica)).setToken(false);
-                    tieneToken = false;
 
-                    ((SDonaciones) reg.lookup("Replica" + (n_replica + 1) % 3)).setToken(true);
+
+                if (i == 10) {
+                    while(!tiene){
+                        tiene = ((SDonaciones) reg.lookup("Replica" + n_replica)).getTieneToken();
+                    }
+                    Iterator<Integer> it = suscripciones.keySet().iterator();
+                    while(esta){
+                        esta = ((SDonaciones) reg.lookup("Replica" + n_replica)).getEstaOperando();
+                    }
+                    ((SDonaciones) reg.lookup("Replica" + n_replica)).setOperando(true);
+                    while (it.hasNext()) {
+                        Integer indice = (Integer) it.next();
+                        Donar(indice, suscripciones.get(indice));
+                    }
+                    ((SDonaciones) reg.lookup("Replica" + n_replica)).setOperando(false);
+
+                    i = 0;
                 }
-                /*
-                 * Iterator it = suscripciones.keySet().iterator();
-                 * while (it.hasNext()) {
-                 * Integer indice = (Integer) it.next();
-                 * Donar(indice, suscripciones.get(indice));
-                 * }
-                 */
-                Random r = new Random();
-                Thread.sleep(r.nextInt(2000 - 400 + 1) + 400);
+                if (tiene && !esta) {
+                    ((SDonaciones) reg.lookup("Replica" + n_replica)).setToken(false);
+                    ((SDonaciones) reg.lookup("Replica" + (n_replica + 1) % n_replicas)).setToken(true);
+                }
+                Thread.sleep(200);
                 System.out.println("Termino de dormir");
+                i++;
 
             }
         } catch (Exception e) {
@@ -247,35 +245,51 @@ public class Donaciones extends UnicastRemoteObject implements iDonaciones, SDon
         estaOperando = eo;
     }
 
-    public void setA(boolean ax) {
-        a = ax;
-    }
-
     public void solicitar() throws AccessException, RemoteException, NotBoundException {
-        System.out.println("| S | Esta Operando Replica " + n_replica + " :"
-                + ((SDonaciones) reg.lookup("Replica" + n_replica)).getEstaOperando());
-        System.out.println("| S | Tiene Token Replica " + n_replica + " :"
-                + ((SDonaciones) reg.lookup("Replica" + n_replica)).getTieneToken());
         boolean tiene = ((SDonaciones) reg.lookup("Replica" + n_replica)).getTieneToken();
         while (tiene == false) {
             tiene = ((SDonaciones) reg.lookup("Replica" + n_replica)).getTieneToken();
         }
-        // ((SDonaciones)reg.lookup("Replica"+n_replica)).setToken(true);
         ((SDonaciones) reg.lookup("Replica" + n_replica)).setOperando(true);
-
     }
 
     public void liberar() throws RemoteException, NotBoundException {
-        ((SDonaciones) reg.lookup("Replica" + n_replica)).setA(true);
-
-        System.out.println("| L | Esta Operando Replica " + n_replica + " :"
-                + ((SDonaciones) reg.lookup("Replica" + n_replica)).getEstaOperando());
-        System.out.println("| L | Tiene Token Replica " + n_replica + " :"
-                + ((SDonaciones) reg.lookup("Replica" + n_replica)).getTieneToken());
-
-        ((SDonaciones) reg.lookup("Replica" + n_replica)).setToken(false);
         ((SDonaciones) reg.lookup("Replica" + n_replica)).setOperando(false);
-        ((SDonaciones) reg.lookup("Replica" + n_replica)).setA(false);
     }
 
+    public ArrayList<Integer> mayorDonacionLocal(){
+        Iterator<Integer> it = registro.keySet().iterator();
+        int mayor = 0, mayor_cantidad = 0;
+
+        while (it.hasNext()) {
+            Integer indice = (Integer) it.next();
+            int cantidad = registro.get(indice);
+            if(cantidad > mayor_cantidad){
+                mayor_cantidad = cantidad;
+                mayor = indice;
+            }
+        }
+        ArrayList<Integer> pair = new ArrayList<>();
+        pair.add(mayor);
+        pair.add(mayor_cantidad);
+        
+        return pair;
+    }
+    public ArrayList<Integer> mayorDonacion() throws RemoteException, NotBoundException{
+        int mayor = 0, mayor_cantidad = 0;
+
+        for (int i = 0 ; i < n_replicas; i++) {
+            ArrayList<Integer> pair = ((SDonaciones) reg.lookup("Replica"+i)).mayorDonacionLocal();
+            int cantidad = pair.get(1);
+            if(cantidad > mayor_cantidad){
+                mayor_cantidad = cantidad;
+                mayor = pair.get(0);
+            }
+    }
+        ArrayList<Integer> resultado = new ArrayList<>();
+        resultado.add(mayor);
+        resultado.add(mayor_cantidad);
+        
+        return resultado;
+    }
 }

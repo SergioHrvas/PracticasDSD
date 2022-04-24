@@ -2,6 +2,8 @@ import java.rmi.NotBoundException;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.rmi.registry.Registry;
+import java.util.ArrayList;
+import java.util.Map.Entry;
 
 public interface SDonaciones extends Remote {
 
@@ -33,7 +35,11 @@ public interface SDonaciones extends Remote {
 
     public boolean getEstaOperando()  throws RemoteException, NotBoundException;
 
-	public boolean getV()  throws RemoteException, NotBoundException;
+    public boolean getEstanTodas() throws RemoteException, NotBoundException;
 
-	public void setA(boolean b) throws RemoteException, NotBoundException;
+    public void solicitar() throws RemoteException, NotBoundException;
+
+    public void liberar() throws RemoteException, NotBoundException;
+
+    public ArrayList<Integer> mayorDonacionLocal() throws RemoteException, NotBoundException;
 };
