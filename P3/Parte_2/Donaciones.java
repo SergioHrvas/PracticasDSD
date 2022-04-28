@@ -32,7 +32,7 @@ public class Donaciones extends UnicastRemoteObject implements IDonaciones, SDon
     }
 
     //Obtener el número de réplicas que tiene el servidor
-    public int getNumReplicas() {
+    public synchronized int getNumReplicas() {
         return n_replicas;
     }
 
@@ -75,16 +75,20 @@ public class Donaciones extends UnicastRemoteObject implements IDonaciones, SDon
         return registro.size();
     }
 
-    public int getDonado(int id) throws RemoteException {
+    public synchronized int getDonado(int id) throws RemoteException {
         System.out.println("CLiente " + id);
         return registro.get(id);
     }
 
-    public int estaRegistrado(int id) throws RemoteException, NotBoundException {
+    public synchronized int estaRegistrado(int id) throws RemoteException, NotBoundException {
         int n_reg = -1;
+        System.out.println("id: "+id);
+
         if (estaRegistradoAqui(id)) {
+            System.out.println("bbb");
             n_reg = n_replica;
         } else {
+            System.out.println("aaa");
             n_reg = getReplicaRegistro(id);
         }
         return n_reg;
@@ -109,7 +113,7 @@ public class Donaciones extends UnicastRemoteObject implements IDonaciones, SDon
         return registro.containsKey(id);
     }
 
-    public int getTotalDonado() throws RemoteException, NotBoundException {
+    public synchronized int getTotalDonado() throws RemoteException, NotBoundException {
         int sumaTotal = 0;
         for (int i = 0; i < n_replicas; i++) {
             if (i != n_replica) {
@@ -149,7 +153,7 @@ public class Donaciones extends UnicastRemoteObject implements IDonaciones, SDon
         return hadonado;
     }
 
-    public int Registrar(int codigo) throws RemoteException, NotBoundException {
+    public synchronized int Registrar(int codigo) throws RemoteException, NotBoundException {
         Registry reg = LocateRegistry.getRegistry("127.0.0.1", 1099);
         SDonaciones d, min_d = (SDonaciones) this;
         int n_reg = -1, n_clientes = 0, min_clientes = Integer.MAX_VALUE;
@@ -217,7 +221,7 @@ public class Donaciones extends UnicastRemoteObject implements IDonaciones, SDon
         }
     }
 
-    public boolean suscribirse(int id, int cantidad) throws RemoteException, NotBoundException {
+    public synchronized boolean suscribirse(int id, int cantidad) throws RemoteException, NotBoundException {
         boolean suscrito = false;
         int dondeEstaRegistrado = estaRegistrado(id);
         if (dondeEstaRegistrado >= 0) {
@@ -233,7 +237,7 @@ public class Donaciones extends UnicastRemoteObject implements IDonaciones, SDon
         return suscripciones.containsKey(id);
     }
 
-    public boolean desuscribirse(int id) throws RemoteException, NotBoundException {
+    public synchronized boolean desuscribirse(int id) throws RemoteException, NotBoundException {
         boolean desuscrito = false;
         int dondeEstaRegistrado = estaRegistrado(id);
         boolean estasuscrito = estaSuscritoAqui(id);
@@ -246,7 +250,7 @@ public class Donaciones extends UnicastRemoteObject implements IDonaciones, SDon
     }
 
     //Solicitar la exclusión mutua
-    public void solicitar() throws AccessException, RemoteException, NotBoundException {
+    public synchronized void solicitar() throws AccessException, RemoteException, NotBoundException {
         boolean tiene = ((SDonaciones) reg.lookup("Replica" + n_replica)).getTieneToken();
         while (tiene == false) {
             tiene = ((SDonaciones) reg.lookup("Replica" + n_replica)).getTieneToken();
@@ -255,7 +259,7 @@ public class Donaciones extends UnicastRemoteObject implements IDonaciones, SDon
     }
 
     //Salir de la exclusión mutua
-    public void liberar() throws RemoteException, NotBoundException {
+    public synchronized void liberar() throws RemoteException, NotBoundException {
         ((SDonaciones) reg.lookup("Replica" + n_replica)).setOperando(false);
     }
 
@@ -278,7 +282,7 @@ public class Donaciones extends UnicastRemoteObject implements IDonaciones, SDon
         return pair;
     }
 
-    public ArrayList<Integer> mayorDonacion() throws RemoteException, NotBoundException {
+    public synchronized ArrayList<Integer> mayorDonacion() throws RemoteException, NotBoundException {
         int mayor = 0, mayor_cantidad = 0;
 
         for (int i = 0; i < n_replicas; i++) {

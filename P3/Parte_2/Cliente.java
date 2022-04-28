@@ -2,20 +2,15 @@ import java.rmi.registry.LocateRegistry;
 import java.rmi.*;
 import java.rmi.registry.Registry;
 import java.util.ArrayList;
-import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
-import java.util.Map.Entry;
-
-import javax.xml.crypto.dsig.keyinfo.KeyValue;
 
 /*
-java -cp . -Djava.security.policy=server.policy servidor 0
-java -cp . -Djava.security.policy=server.policy servidor 1
-java -cp . -Djava.security.policy=server.policy servidor 2
+java -cp . -Djava.security.policy=server.policy Servidor 0 4
+java -cp . -Djava.security.policy=server.policy Servidor 1 4 
+java -cp . -Djava.security.policy=server.policy Servidor 2 4
 
-java -cp . -Djava.security.policy=server.policy cliente 0
-java -cp . -Djava.security.policy=server.policy cliente 1
+java -cp . -Djava.security.policy=server.policy Cliente
 
 */
 public class Cliente {
@@ -79,7 +74,7 @@ public class Cliente {
 
                             System.out.println("Petición a réplica " + i);
                             n_replica = donaciones.Registrar(n_cliente);
-                            System.out.println(n_replica);
+                            System.out.println("Registrado en Réplica " + n_replica);
                         }
                         // Cambio de ŕéplica a la que está registrado
                         donaciones = (IDonaciones) mireg.lookup("Replica" + n_replica);
@@ -119,11 +114,15 @@ public class Cliente {
                         }
                         break;
                     case 5: // Consultar cantidad que ha donado
+                        System.out.println("NCliente: " +  n_cliente);
+                        if(donaciones.estaRegistrado(n_cliente)>=0){
                         donaciones.solicitar();
                         donado = donaciones.getDonado(n_cliente);
                         donaciones.liberar();
                         System.out.println("He donado a la causa " + donado + "€ en total");
-
+                        }else{
+                            System.out.println("No estás registrado en el sistema");
+                        }
                         break;
                     case 6: // Consultar cantidad total donada en el servidor
                         donaciones.solicitar();
@@ -132,12 +131,11 @@ public class Cliente {
                         System.out.println("En total se han donado " + donado + "€ en el servidor");
                         break;
                     case 7: // Consultar quién es el mayor donador
-
                         donaciones.solicitar();
                         ArrayList<Integer> mayorDonacion = donaciones.mayorDonacion();
                         donaciones.liberar();
                         System.out.println(
-                                "Mayor donacion hecha por " + mayorDonacion.get(0) + " de " + mayorDonacion.get(1));
+                                "Mayor donacion hecha por el cliente" + mayorDonacion.get(0) + " de " + mayorDonacion.get(1));
                         break;
                 }
             }
