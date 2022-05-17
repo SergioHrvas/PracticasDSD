@@ -7,27 +7,47 @@
 </head>
 
 <body>
+	<div id="titulo" class="boton">MONITORIZACIÓN DE DOMÓTICA</div>
+
 	<div id="botones">
 		<div id="Persiana" class="boton"><img class="icono" src="images/ventana.png" />Persiana</div>
 		<div id="AireAcon" class="boton"><img class="icono" src="images/aire.png" />Aire Acondicionado</div>
 		<div id="Temperatura" class="boton"><img class="icono" src="images/temperatura.png" />Temperatura
 			<div id="tempsensor">23</div>
+			<div class="alerta"></div>
 		</div>
 		<div id="Luminosidad" class="boton"><img class="icono" src="images/bombilla.png" />Luminosidad<div
-				id="luzsensor">23</div>
+				id="luzsensor">100</div>
+			<div class="alerta"></div>
+
 		</div>
-		</div>
-		<div id="botonesform">
+	</div>
+	<div id="botonesform">
 		<div id="formulariotemp" class="boton">
+			<img class="iconoeditar" src="images/lapiz.png"/>
 			<label for="temperatura">Temperatura</label>
 			<input id="temp">
 			<button type="button" id="enviar1">Enviar</button>
-		</div>		<div id="formularioluz" class="boton">
+		</div>
+		<div id="formularioluz" class="boton">
+			<img class="iconoeditar" src="images/lapiz.png"/>
 			<label for="luminosidad">Luminosidad</label>
 			<input id="luz">
 			<button type="button" id="enviar2">Enviar</button>
 		</div>
-</div>
+	</div>
+	<div id="historico" class="boton"><img class="iconochat" src="images/historia.png"/>
+		<div class="chattitulo">HISTÓRICO</div>
+		<div class="mensajes"></div>
+	</div>
+	<div id="chat" class="boton"><img class="iconochat" src="images/chat.png"/>
+		<div class="chattitulo">CHAT</div>
+		<div class="mensajes"></div>
+	</div>
+	<div id="conexiones" class="boton"><img class="iconochat" src="images/conexion.png"/>
+		<div class="chattitulo">CONEXIONES</div>
+		<div class="mensajes"></div>
+	</div>
 </body>
 <script src="/socket.io/socket.io.js"></script>
 <script type="text/javascript" src="domotica.js"></script>

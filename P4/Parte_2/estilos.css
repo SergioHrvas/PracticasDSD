@@ -6,12 +6,11 @@
 
 #botones{
     display:grid;
-    height: 200px;
 
     grid-template-columns: repeat(4, 1fr);
 
     gap: 1%;
-    margin-bottom: 2%;
+    margin-bottom: 1%;
 }
 #botonesform{
     display:grid;
@@ -20,7 +19,7 @@
     grid-template-columns: repeat(2, 1fr);
 
     gap: 1%;
-    margin-bottom: 2%;
+    margin-bottom: 1%;
 }
 
 #AireAcon{
@@ -83,3 +82,58 @@
      width: 40%;
     margin:auto;
     }
+
+.alerta{
+    color: red;
+}
+
+#titulo{
+    background-color: #a1ebef;
+    outline-color:rgb(39, 153, 165);
+    margin-bottom: 1%;
+}
+
+#chat{
+    background-color: #ffe46d;
+    outline-color:#c66613;
+    margin-bottom: 1%;
+    padding-bottom: 2%;
+
+}
+
+
+.iconoeditar{
+    width: 10%;
+    margin: auto;
+    margin-bottom: 1%;
+}
+
+
+.iconochat{
+    width: 8%;
+    margin: auto;
+}
+
+#historico{
+    background-color: #e1bee7;
+    outline-color:#983ba9;
+    margin-bottom: 1%;
+    padding-bottom: 2%;
+}
+
+#conexiones{
+    background-color: #9db7f8;
+    outline-color:#180891;
+    margin-bottom: 1%;
+    padding-bottom: 2%;
+
+}
+
+.mensajes{
+    height:250px;
+    width: 80%;
+    margin:auto;
+    margin-top:2%;
+    background-color: #f1f1f1;
+    overflow: scroll;
+}
