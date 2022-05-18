@@ -60,6 +60,28 @@ function eventoPersiana() {
     }
 }
 
+function convertirDia(dia){
+    var semana = new Array(7);
+    semana[0] = "Lunes";
+    semana[1] = "Martes";
+    semana[2] = "Miércoles";
+    semana[3] = "Jueves";
+    semana[4] = "Viernes";
+    semana[5] = "Sábado";
+    semana[6] = "Domingo";
+    return semana[dia];
+}
+
+function convertirNumero(n){
+    var resultado;
+    if(n < 10 && n>=0){
+        resultado = "0"+n;
+    }
+    else{
+        resultado = n;
+    }
+    return resultado;
+}
 function setTemperatura() {
     var x = document.getElementById("temp").value;
     temperatura = parseInt(x);
@@ -67,7 +89,7 @@ function setTemperatura() {
     alertarTemp();
     
     var t = new Date();
-    t = t.getTime;
+    t = convertirDia(t.getDay())+ ", " + t.getDate() + " " + t.getMonth()  + " " + t.getFullYear()  + " | " + convertirNumero(t.getHours())  + ":" + convertirNumero(t.getMinutes())  + ":" + convertirNumero(t.getSeconds());
     socket.emit('nuevaTemp', { temperatura, t });
 }
 
@@ -95,12 +117,12 @@ function actualizarConexiones(usuarios) {
 function actualizarHistorico(temperaturas) {
     var listContainer = document.getElementsByClassName('mensajes').item(0);
     listContainer.innerHTML = '';
-    var listElement = document.createElement('ol');
+    var listElement = document.createElement('ul');
     listContainer.appendChild(listElement);
     var num = temperaturas.length;
     for (var i = 0; i < num; i++) {
         var listItem = document.createElement('li');
-        listItem.innerHTML = temperaturas[i].t + ":" + temperaturas[i].temperatura;
+        listItem.innerHTML = temperaturas[i].t + " - " + temperaturas[i].temperatura;
         listElement.appendChild(listItem);
     }
 }
@@ -109,12 +131,7 @@ function actualizarHistorico(temperaturas) {
 socket.on('ack', function (data) {
     console.log(data);
     socket.emit('ack', "Conexion establecida correctamente!")
-    var d = new Date();
-    d.getTime();
-    console.log(d);
 
-
-    //
     //socket.emit('obtener', { host: data.address });
 });
 socket.on('all-connections', function (data) {
@@ -130,9 +147,12 @@ socket.on('envioTemp', function (data) {
     document.getElementById("tempsensor").innerHTML = temperatura;
     alertarTemp();
 
+});
 
-
+socket.on('envioHistorico', function(data){
+    console.log(data[0].temperatura);
     actualizarHistorico(data);
+
 });
 
 socket.on('persiana', function (data) {

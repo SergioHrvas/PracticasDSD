@@ -125,9 +125,73 @@ MongoClient.connect("mongodb://localhost:27017/", { useUnifiedTopology: true }, 
 					temperatura = data.temperatura;
 					if (collection != null) {
 						collection.insertOne(data, { safe: true }, function (err, result) { });
+						collection.find().toArray(function (err, results) {
+								if (err) {
+									console.log("ERROR");
+								}
+								else {
+									console.log(results[0].temperatura)
+									io.sockets.emit('envioHistorico', results);
+								}
+	
+							});
+	
 					}
 					io.sockets.emit('envioTemp', data);
 				});
+			});
+	});
+	dbo.createCollection("chat", function (err, collection) {
+		io.sockets.on('connection',
+			function (client) {
+/*
+				client.on('ack', function (data) {
+					console.log(data);
+					allClients.push({ address: client.request.connection.remoteAddress, port: client.request.connection.remotePort });
+					io.sockets.emit('all-connections', allClients);
+				});
+
+				client.on('aire', function (data) {
+					console.log(`Aire: ${data.cambio}`);
+					aire = data.cambio;
+					io.sockets.emit('aire', aire);
+				});
+
+				client.on('persiana', function (data) {
+					console.log(`Persiana: ${data.cambio}`);
+					ventana = data.cambio;
+					io.sockets.emit('persiana', ventana);
+				});
+
+				client.on('disconnect', function () {
+					console.log("El cliente " + client.request.connection.remoteAddress + " se va a desconectar");
+					console.log(allClients);
+
+					var index = -1;
+					for (var i = 0; i < allClients.length; i++) {
+						if (allClients[i].address == client.request.connection.remoteAddress
+							&& allClients[i].port == client.request.connection.remotePort) {
+							index = i;
+						}
+					}
+
+					
+					if (index != -1) {
+						allClients.splice(index, 1);
+						io.sockets.emit('all-connections', allClients);
+					} else {
+						console.log("EL USUARIO NO SE HA ENCONTRADO!")
+					}
+					console.log('El usuario ' + client.request.connection.remoteAddress + ' se ha desconectado');
+				});
+
+				client.on('nuevaTemp', function (data) {
+					temperatura = data.temperatura;
+					if (collection != null) {
+						collection.insertOne(data, { safe: true }, function (err, result) { });
+					}
+					io.sockets.emit('envioTemp', data);
+				});*/
 			});
 	});
 });
