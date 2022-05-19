@@ -24,28 +24,50 @@
 	</div>
 	<div id="botonesform">
 		<div id="formulariotemp" class="boton">
-			<img class="iconoeditar" src="images/lapiz.png"/>
+			<img class="iconoeditar" src="images/lapiz.png" />
 			<label for="temperatura">Temperatura</label>
 			<input id="temp">
 			<button type="button" id="enviar1">Enviar</button>
 		</div>
 		<div id="formularioluz" class="boton">
-			<img class="iconoeditar" src="images/lapiz.png"/>
+			<img class="iconoeditar" src="images/lapiz.png" />
 			<label for="luminosidad">Luminosidad</label>
 			<input id="luz">
 			<button type="button" id="enviar2">Enviar</button>
 		</div>
 	</div>
-	<div id="historico" class="boton"><img class="iconochat" src="images/historia.png"/>
-		<div class="chattitulo">HISTÓRICO</div>
-		<div class="mensajes"></div>
+	<div id="historico" class="boton"><img class="iconochat" src="images/historia.png" />
+		<div class="chattitulo">HISTÓRICOS</div>
+		<div id="mensajesduo"><div class="historicopar"></div><div class="historicopar"></div></div>
 	</div>
-	<div id="chat" class="boton"><img class="iconochat" src="images/chat.png"/>
+	<div id="chat" class="boton"><img class="iconochat" src="images/chat.png" />
 		<div class="chattitulo">CHAT</div>
 		<div class="mensajes"></div>
+		<div id="cajamensaje">
+			<form>
+				<input id="mensaje" class="textinput"><button type="button" id="enviarmensaje" class="enviar"><img class="imagenenviar" src="images/send.png"></button>
+				<div id="contadormensaje" class="contador"></div>
+
+			</form>
+		</div>
 	</div>
-	<div id="conexiones" class="boton"><img class="iconochat" src="images/conexion.png"/>
+	<div id="conexiones" class="boton"><img class="iconochat" src="images/conexion.png" />
 		<div class="chattitulo">CONEXIONES</div>
+		<div class="mensajes"></div>
+	</div>
+	<div id="calendario" class="boton"><img class="iconochat" src="images/calendario.png" />
+		<div class="chattitulo">CALENDARIO</div>
+		<div class="mensajes" id="mes"></div>
+		<div id="cajamensajes"><div class="mensajes"><div id="fecha"></div></div>
+		<form>
+			<input id="nota" class="textinput"><button type="button" id="enviarnota" class="enviar"><img class="imagenenviar" src="images/send.png"></button>
+			<div id="contadornota" class="contador"></div>
+
+		</form>
+	</div></div>
+
+		<div id="qr" class="boton"><img class="iconochat" src="images/qr.png" />
+		<div class="chattitulo">QR</div>
 		<div class="mensajes"></div>
 	</div>
 </body>

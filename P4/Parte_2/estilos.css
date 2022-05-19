@@ -129,6 +129,22 @@
 
 }
 
+#calendario{
+    background-color: #e598c2;
+    outline-color:#910858;
+    margin-bottom: 1%;
+    padding-bottom: 2%;
+
+}
+
+#qr{
+    background-color: #cacaca;
+    outline-color:#515151;
+    margin-bottom: 1%;
+    padding-bottom: 2%;
+
+}
+
 .mensajes{
     height:250px;
     width: 80%;
@@ -136,4 +152,49 @@
     margin-top:2%;
     background-color: #f1f1f1;
     overflow: scroll;
+}
+
+#mensajesduo{
+    display:grid;
+        grid-template-columns: repeat(2, 1fr);
+
+    gap: 1%;
+}
+
+.historicopar{
+    display:grid;
+    height:300px;
+    width: 90%;
+    margin:auto;
+    margin-top:2%;
+    background-color: #f1f1f1;
+    overflow: scroll;
+}
+
+
+#cajamensaje{
+    height: 100px;
+}
+.textinput{
+    height: 20px;
+    width:80%;
+
+}
+
+.enviar{
+    width:8%;
+    height:40px;
+}
+
+.imagenenviar{
+    height: 20px;
+}
+
+.contador{
+    width: 10%;
+    margin-left: 6%;
+}
+
+#cajamensajes{
+    display: none;
 }
