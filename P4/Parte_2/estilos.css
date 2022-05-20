@@ -198,3 +198,25 @@
 #cajamensajes{
     display: none;
 }
+
+.flecha {
+    width: 25%;
+    margin: auto;
+
+}
+
+.botonslider {
+    width: 15%;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+}
+
+#fechamensaje{
+        height:40px;
+    width: 80%;
+    margin:auto;
+    margin-top:2%;
+    background-color: #acacac;
+
+}

@@ -2,77 +2,94 @@ document.getElementById("AireAcon").addEventListener('click', function () { even
 document.getElementById("Persiana").addEventListener('click', function () { eventoPersiana() });
 document.getElementById("enviar1").addEventListener('click', function () { setTemperatura() });
 document.getElementById("enviar2").addEventListener('click', function () { setLuz() });
-document.getElementById("enviarmensaje").addEventListener('click', function () { enviarMensaje(document.getElementById("mensaje"));});
+document.getElementById("enviarmensaje").addEventListener('click', function () { enviarMensaje(document.getElementById("mensaje")); });
 document.getElementById("mensaje").addEventListener("keyup", function () { evaluarComentario(this, document.getElementById("contadormensaje")) });
 
-document.getElementById("enviarnota").addEventListener('click', function () { enviarMensaje(document.getElementById("nota"));});
+document.getElementById("enviarnota").addEventListener('click', function () { enviarMensaje(document.getElementById("nota")); });
 document.getElementById("nota").addEventListener("keyup", function () { evaluarComentario(this, document.getElementById("contadornota")) });
 
+document.getElementById("flechaizq").addEventListener('click', function () { izquierda(); });
+document.getElementById("flechader").addEventListener("click", function () { derecha(); });
 
-//document.getElementById("calendarioenviar").addEventListener('click', function(){ enviarEventoDia(); })
-document.addEventListener('DOMContentLoaded', function(){ pintarMeses()});
+
+document.addEventListener('DOMContentLoaded', function () { pintarMeses() });
 
 let longitudmax = 1000, longitudrestante = 1000;
 var ventana = true, aire = true;
 var temperatura = 23, luz = 100;
 const meses = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+var fecha = new Date();
 
 var diaSeleccionado, mesSeleccionado, añoSeleccionado;
 var serviceURL = document.URL;
 var socket = io.connect(serviceURL);
 
-contar(document.getElementById("enviarmensaje"),document.getElementById("contadormensaje"));
+contar(document.getElementById("enviarmensaje"), document.getElementById("contadormensaje"));
 contar(document.getElementById("enviarnota"), document.getElementById("contadornota"));
 
-setInterval(function(){
+setInterval(function () {
     scroll()
 }, 100);
 
 const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 const mesesNombres = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 
-function pintarMeses(){
+function derecha(){
+    fecha.setMonth(fecha.getMonth()+1)
+
+    pintarMeses();
+}
+
+function izquierda(){
+    fecha.setMonth((fecha.getMonth()-1)%12)
+
+    pintarMeses();
+}
+
+function pintarMeses() {
     var mes = document.getElementById("mes");
-    mes.style.display="grid";
+    document.getElementById("fechamensaje").innerHTML=mesesNombres[fecha.getMonth()]+"/"+fecha.getFullYear();
+    mes.innerHTML = "";
+    mes.style.display = "grid";
     mes.style.gridTemplateColumns = "repeat(7,1fr)";
-    var d = new Date();
-    var nummes = d.getMonth();
-    var primerdia = new Date(monthNames[nummes] + " 01, " + d.getFullYear() + " 00:00:01");
-    
+    var nummes = fecha.getMonth();
+    var primerdia = new Date(monthNames[nummes] + " 01, " + fecha.getFullYear() + " 00:00:01");
+
     mesSeleccionado = nummes;
-    añoSeleccionado = d.getFullYear();
+    añoSeleccionado = fecha.getFullYear();
 
     var dia = (primerdia.getDay() + 6) % 7;
     var diasmes = meses[nummes] + dia;
-    console.log(dia);
-    console.log(diasmes);
+
 
     var contador = 1;
-    for(var d = 0; d < diasmes; d++){
+    for (var d = 0; d < diasmes; d++) {
         var diaelement = document.createElement("div");
-        diaelement.style.display="grid";
+        diaelement.style.display = "grid";
         diaelement.style.cursor = "pointer";
         diaelement.className = "dia";
 
-        if(d < dia){
+        if (d < dia) {
             diaelement.innerHTML = " - ";
         }
-        else{
+        else {
             diaelement.innerHTML = contador;
             contador++;
-            diaelement.addEventListener('click', function(){mostrarform(this.innerHTML)});
+            diaelement.addEventListener('click', function () { mostrarform(this.innerHTML) });
 
         }
         mes.appendChild(diaelement);
     }
-}   
+}
 
 
-function mostrarform(dia){
+function mostrarform(dia) {
     diaSeleccionado = parseInt(dia);
     document.getElementById("cajamensajes").style.display = "initial";
-    fecha = diaSeleccionado + "/" + mesesNombres[mesSeleccionado] + "/" + añoSeleccionado; 
+    fecha = diaSeleccionado + "/" + mesesNombres[mesSeleccionado] + "/" + añoSeleccionado;
     document.getElementById("fecha").innerHTML = fecha;
+    var a = document.getElementById("fecha").innerHTML;
+    socket.emit('getEvento', fecha);
 }
 
 function evaluarComentario(elemento, contador) {
@@ -97,10 +114,11 @@ function alertarLuz(alerta) {
         document.getElementById("Luminosidad").setAttribute("style", "filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-50deg) saturate(600%) contrast(0.8);");
 
     }
-else{
-    document.getElementsByClassName("alerta").item(1).innerHTML = "";
-    document.getElementById("Luminosidad").setAttribute("style","filter: ;");
-}}
+    else {
+        document.getElementsByClassName("alerta").item(1).innerHTML = "";
+        document.getElementById("Luminosidad").setAttribute("style", "filter: ;");
+    }
+}
 
 function eventoAire() {
     if (aire) {
@@ -158,7 +176,7 @@ function convertirNumero(n) {
 function setTemperatura() {
     var x = document.getElementById("temp").value;
     temperatura = parseInt(x);
-//    document.getElementById("tempsensor").innerHTML = temperatura;
+    //    document.getElementById("tempsensor").innerHTML = temperatura;
 
     var t = new Date();
     t = convertirDia(t.getDay()) + ", " + t.getDate() + "/" + t.getMonth() + "/" + t.getFullYear() + " | " + convertirNumero(t.getHours()) + ":" + convertirNumero(t.getMinutes()) + ":" + convertirNumero(t.getSeconds());
@@ -215,6 +233,7 @@ function actualizarHistoricoLuces(luces) {
         listElement.appendChild(listItem);
     }
 }
+
 function actualizarChat(datos) {
     var listContainer = document.getElementsByClassName('mensajes').item(0);
     listContainer.innerHTML = '';
@@ -226,6 +245,19 @@ function actualizarChat(datos) {
     }
 }
 
+function actualizarCalendario(datos) {
+    var listContainer = document.getElementsByClassName('mensajes').item(3);
+    var fecha = document.getElementById('fecha');
+    listContainer.innerHTML = "";
+    listContainer.appendChild(fecha);
+
+    var num = datos.length;
+    for (var i = 0; i < num; i++) {
+        var listItem = document.createElement('div');
+        listItem.innerHTML = datos[i].msg;
+        listContainer.appendChild(listItem);
+    }
+}
 //Contamos los caractéres
 function contar(elemento, contador) {
     comentario = elemento.value;
@@ -274,9 +306,14 @@ function revisarMensaje(mensaje) {
 
 function enviarMensaje(elemento) {
     var mensaje = elemento.value;
-    console.log("Mensaje" + mensaje);
     if (revisarMensaje(mensaje)) {
-        socket.emit('chat', mensaje);
+        if(elemento.id == "mensaje"){
+            socket.emit('chat', mensaje);
+        }
+        else if(elemento.id == "nota"){
+            var fecha = diaSeleccionado + "/" + mesesNombres[mesSeleccionado] + "/" + añoSeleccionado;
+            socket.emit('calendario', {mensaje,fecha});
+        }
     }
 
 }
@@ -287,12 +324,11 @@ function scroll() {
 }
 
 
-function enviarEventoDia(){
+function enviarEventoDia() {
     socket.emit
 }
 
 socket.on('ack', function (data) {
-    console.log(data);
     socket.emit('ack', "Conexion establecida correctamente!")
 
     //socket.emit('obtener', { host: data.address });
@@ -313,7 +349,6 @@ socket.on('envioTemp', function (data) {
 
 socket.on('envioLuz', function (data) {
     luz = data.luz;
-    console.log("LUUUUZ" + luz);
     document.getElementById("luzsensor").innerHTML = luz + "%";
 
 });
@@ -332,8 +367,6 @@ socket.on('envioHistoricoLuces', function (data) {
 
 socket.on('persiana', function (data) {
     ventana = data;
-    console.log(ventana);
-
     if (!ventana) {
         luz = 0;
         document.getElementById("Persiana").setAttribute("style", "-webkit-filter:grayscale(100%)");
@@ -350,7 +383,6 @@ socket.on('persiana', function (data) {
 
 socket.on('aire', function (data) {
     aire = data;
-    console.log(aire);
     if (aire) {
         //      document.getElementById("tempsensor").innerHTML = temperatura;
         document.getElementById("AireAcon").setAttribute("style", "-webkit-filter:grayscale(0%)");
@@ -366,10 +398,15 @@ socket.on('chat', function (data) {
     actualizarChat(data);
 });
 
-socket.on('alertatemp', function(data){
+socket.on('calendario', function (data) {
+    actualizarCalendario(data);
+});
+
+
+socket.on('alertatemp', function (data) {
     alertarTemp(data);
 });
 
-socket.on('alertaluz', function(data){
+socket.on('alertaluz', function (data) {
     alertarLuz(data);
 });
