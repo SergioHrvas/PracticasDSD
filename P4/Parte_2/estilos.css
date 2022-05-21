@@ -1,208 +1,193 @@
-#persiana{
-    display:grid;
-    background-color:rgb(160, 218, 220);
-    outline-color:rgb(71, 55, 176);
+#persiana {
+    display: grid;
+    background-color: rgb(160, 218, 220);
+    outline-color: rgb(71, 55, 176);
 }
 
-#botones{
-    display:grid;
-
+#botones {
+    display: grid;
     grid-template-columns: repeat(4, 1fr);
-
     gap: 1%;
     margin-bottom: 1%;
 }
-#botonesform{
-    display:grid;
+
+#botonesform {
+    display: grid;
     height: 200px;
-
     grid-template-columns: repeat(2, 1fr);
-
     gap: 1%;
     margin-bottom: 1%;
 }
 
-#AireAcon{
+#AireAcon {
     display: grid;
     background-color: #ff6961;
-    outline-color:rgb(149, 35, 35);
-
+    outline-color: rgb(149, 35, 35);
 }
 
- #Temperatura{
-     display: grid;
-     background-color: #fdfd96;
-     outline-color:rgb(200, 192, 48);
+#Temperatura {
+    display: grid;
+    background-color: #fdfd96;
+    outline-color: rgb(200, 192, 48);
+}
 
- }
+#Luminosidad {
+    display: grid;
+    background-color: #fdcae1;
+    outline-color: rgb(176, 55, 142);
+}
 
- #Luminosidad{
-     display:grid;
-     background-color: #fdcae1;
-     outline-color:rgb(176, 55, 142);
-
-
- }
-
- #formulariotemp{
-    display:grid;
+#formulariotemp {
+    display: grid;
     background-color: #aefc9e;
-    outline-color:rgb(36, 118, 25);
+    outline-color: rgb(36, 118, 25);
 }
 
-#formularioluz{
-    display:grid;
+#formularioluz {
+    display: grid;
     background-color: #aefc9e;
-    outline-color:rgb(36, 118, 25);
+    outline-color: rgb(36, 118, 25);
 }
 
- .boton{
-     width: 100%;
-     text-align: center;
-     align-content: center;
-     font-size: 30px;
-     word-break: break-all;
-     outline-width: 2px;
-     outline: solid;
-     border-radius: 5px;
- }  
+.boton {
+    width: 100%;
+    text-align: center;
+    align-content: center;
+    font-size: 30px;
+    word-break: break-all;
+    outline-width: 2px;
+    outline: solid;
+    border-radius: 5px;
+}
 
- .icono{
-     width: 30%;
+.icono {
+    width: 30%;
     margin: auto;
- }
+}
 
- input{
-     width: 300px;
-     margin:auto;
-     margin-bottom: 15px;
- }
+input {
+    width: 300px;
+    margin: auto;
+    margin-bottom: 15px;
+}
 
- button{
-     width: 40%;
-    margin:auto;
-    }
+button {
+    width: 40%;
+    margin: auto;
+}
 
-.alerta{
+.alerta {
     color: red;
 }
 
-#titulo{
+#titulo {
     background-color: #a1ebef;
-    outline-color:rgb(39, 153, 165);
+    outline-color: rgb(39, 153, 165);
     margin-bottom: 1%;
 }
 
-#chat{
+#chat {
     background-color: #ffe46d;
-    outline-color:#c66613;
+    outline-color: #c66613;
     margin-bottom: 1%;
     padding-bottom: 2%;
-
 }
 
-
-.iconoeditar{
+.iconoeditar {
     width: 10%;
     margin: auto;
     margin-bottom: 1%;
 }
 
-
-.iconochat{
+.iconochat {
     width: 8%;
     margin: auto;
 }
 
-#historico{
+#historico {
     background-color: #e1bee7;
-    outline-color:#983ba9;
+    outline-color: #983ba9;
     margin-bottom: 1%;
     padding-bottom: 2%;
 }
 
-#conexiones{
+#conexiones {
     background-color: #9db7f8;
-    outline-color:#180891;
+    outline-color: #180891;
     margin-bottom: 1%;
     padding-bottom: 2%;
-
 }
 
-#calendario{
+#calendario {
     background-color: #e598c2;
-    outline-color:#910858;
+    outline-color: #910858;
     margin-bottom: 1%;
     padding-bottom: 2%;
-
 }
 
-#qr{
+#qr {
     background-color: #cacaca;
-    outline-color:#515151;
+    outline-color: #515151;
     margin-bottom: 1%;
     padding-bottom: 2%;
-
 }
 
-.mensajes{
-    height:250px;
+.mensajes {
+    height: 250px;
     width: 80%;
-    margin:auto;
-    margin-top:2%;
+    margin: auto;
+    margin-top: 2%;
     background-color: #f1f1f1;
     overflow: scroll;
 }
 
-#mensajesduo{
-    display:grid;
-        grid-template-columns: repeat(2, 1fr);
-
+#mensajesduo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 1%;
 }
 
-.historicopar{
-    display:grid;
-    height:300px;
+.historicopar {
+    display: grid;
+    height: 300px;
     width: 90%;
-    margin:auto;
-    margin-top:2%;
+    margin: auto;
+    margin-top: 2%;
     background-color: #f1f1f1;
     overflow: scroll;
 }
 
 
-#cajamensaje{
+#cajamensaje {
     height: 100px;
 }
-.textinput{
+
+.textinput {
     height: 20px;
-    width:80%;
-
+    width: 80%;
 }
 
-.enviar{
-    width:8%;
-    height:40px;
+.enviar {
+    width: 8%;
+    height: 40px;
 }
 
-.imagenenviar{
+.imagenenviar {
     height: 20px;
 }
 
-.contador{
+.contador {
     width: 10%;
     margin-left: 6%;
 }
 
-#cajamensajes{
+#cajamensajes {
     display: none;
 }
 
 .flecha {
     width: 25%;
     margin: auto;
-
 }
 
 .botonslider {
@@ -212,11 +197,14 @@
     margin: auto;
 }
 
-#fechamensaje{
-        height:40px;
+#fechamensaje {
+    height: 40px;
     width: 80%;
-    margin:auto;
-    margin-top:2%;
+    margin: auto;
+    margin-top: 2%;
     background-color: #acacac;
+}
 
+#qrmsg {
+    height: 300px;
 }

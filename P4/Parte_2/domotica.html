@@ -38,14 +38,18 @@
 	</div>
 	<div id="historico" class="boton"><img class="iconochat" src="images/historia.png" />
 		<div class="chattitulo">HISTÓRICOS</div>
-		<div id="mensajesduo"><div class="historicopar"></div><div class="historicopar"></div></div>
+		<div id="mensajesduo">
+			<div class="historicopar"></div>
+			<div class="historicopar"></div>
+		</div>
 	</div>
 	<div id="chat" class="boton"><img class="iconochat" src="images/chat.png" />
 		<div class="chattitulo">CHAT</div>
 		<div class="mensajes"></div>
 		<div id="cajamensaje">
 			<form>
-				<input id="mensaje" class="textinput"><button type="button" id="enviarmensaje" class="enviar"><img class="imagenenviar" src="images/send.png"></button>
+				<input id="mensaje" class="textinput"><button type="button" id="enviarmensaje" class="enviar"><img
+						class="imagenenviar" src="images/send.png"></button>
 				<div id="contadormensaje" class="contador"></div>
 
 			</form>
@@ -59,21 +63,32 @@
 		<div class="chattitulo">CALENDARIO</div>
 		<div id="fechamensaje"></div>
 		<div class="mensajes" id="mes"></div>
-		<div class="botonslider"><img class=flecha id="flechaizq" src="images/flecha_izq.png"/><img class=flecha id="flechader" src="images/flecha_der.png"/></div>
-		<div id="cajamensajes"><div class="mensajes"><div id="fecha"></div></div>
+		<div class="botonslider"><img class=flecha id="flechaizq" src="images/flecha_izq.png" /><img class=flecha
+				id="flechader" src="images/flecha_der.png" /></div>
+		<div id="cajamensajes">
+			<div class="mensajes">
+				<div id="fecha"></div>
+			</div>
+			<form>
+				<input id="nota" class="textinput"><button type="button" id="enviarnota" class="enviar"><img
+						class="imagenenviar" src="images/send.png"></button>
+				<div id="contadornota" class="contador"></div>
+
+			</form>
+		</div>
+	</div>
+
+	<div id="qr" class="boton"><img class="iconochat" src="images/qr.png" />
+		<div class="chattitulo">QR</div>
+		<div class="mensajes" id="qrmsg"><canvas id="canvas"></canvas></div>
 		<form>
-			<input id="nota" class="textinput"><button type="button" id="enviarnota" class="enviar"><img class="imagenenviar" src="images/send.png"></button>
-			<div id="contadornota" class="contador"></div>
+			<input id="qrtexto" class="textinput"><button type="button" id="enviarqr" class="enviar"><img
+					class="imagenenviar" src="images/send.png"></button>
 
 		</form>
-	</div></div>
-
-		<div id="qr" class="boton"><img class="iconochat" src="images/qr.png" />
-		<div class="chattitulo">QR</div>
-		<div class="mensajes"></div>
 	</div>
 </body>
 <script src="/socket.io/socket.io.js"></script>
-<script type="text/javascript" src="domotica.js"></script>
+<script type="text/javascript" src="bundle.js"></script>
 
 </html>
